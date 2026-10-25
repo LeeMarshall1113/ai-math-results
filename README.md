@@ -6,10 +6,10 @@ Original mathematical results produced by Lee Marshall with AI assistance, colle
 
 | Result | Status | Calibrated level | One-command check | Folder |
 |---|---|---|---|---|
-| Collatz: no nontrivial cycle with fewer than 112 local minima (m <= 111); computed for m <= 127 | m <= 111 Lean-verified (conditional on two published inputs); m <= 127 computed, refereed | 3.5 (3 to 4) | `lake build Collatz && lake env lean scripts/Statement.lean` in the [separate repo](https://github.com/LeeMarshall1113/collatz-m-cycles) | [results/collatz-m-cycles](results/collatz-m-cycles) |
+| Collatz: no nontrivial cycle with fewer than 112 local minima (m <= 111); computed for m <= 127 | m <= 111 Lean-verified (conditional on two published inputs); m <= 127 computed, refereed | 3.5 (3 to 4) | `lake build Collatz && lake env lean scripts/Statement.lean` (about 9–10 h, one module at a time) in the [separate repo](https://github.com/LeeMarshall1113/collatz-m-cycles) | [results/collatz-m-cycles](results/collatz-m-cycles) |
 | Turan density of K4-: pi(K4-) <= 0.2867430154 (previous 0.286889) | Exact certificate, refereed | 3 (3 to 3.5) | `cd results/turan-k4minus && python check_bound.py 0.2867433 certs/cert_plain.json.gz certs/cert_C.json.gz` (about 25 min) | [results/turan-k4minus](results/turan-k4minus) |
 | Ulam's packing conjecture holds for origin-symmetric bodies within Banach-Mazur distance 1 + 6e-8 of the ball | Computed (interval arithmetic), refereed | 2.5 (2 to 3). The radius is tiny. | `cd results/ulam-explicit-radius && python certify.py` (about 1 s) | [results/ulam-explicit-radius](results/ulam-explicit-radius) |
-| Lonely runner, 8, 9 and 10 runners: first formally verified certificates (cake_lpr) | Lean-free machine-verified certificates; the cases were already proved in unrefereed preprints | 2.5 (2 to 3) | `python proofs/common/verify.py proofs/k7` in the folder (needs CaDiCaL and the checkers; hours for k8/k9) | [results/lonely-runner-8-10](results/lonely-runner-8-10) |
+| Lonely runner, 8, 9 and 10 runners: first formally verified certificates (cake_lpr) | Certificates checked by cake_lpr (a formally verified LRAT checker); the cases were already proved in unrefereed preprints | 2.5 (2 to 3) | `python proofs/common/verify.py proofs/k7` in the folder (needs CaDiCaL and the checkers; hours for k8/k9) | [results/lonely-runner-8-10](results/lonely-runner-8-10) |
 
 ## In progress
 
