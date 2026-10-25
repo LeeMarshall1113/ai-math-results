@@ -1,0 +1,50 @@
+GRANTED 2.0 GB
+jobcap: pid 38024 capped at 8 GB commit (whole process tree)
+exact max_H val (prep counts): 14337150771693633/50000000000000000 0.28674301543387265
+wrote certs/cert_C.json.gz factors 1889 bound 0.28674301543387265
+=== certs/cert_plain.json.gz
+(1) catalogue
+  labelled K4^- -free: n=6 33652, n=7 35333735; catalogue orbit sum 35333735; classes 8157
+  ok  2s
+(2) blocks
+  14 blocks ok  8s
+(3) coefficients
+  0/8157  max so far 0.2868884678  8s
+  1000/8157  max so far 0.2868885120  100s
+  2000/8157  max so far 0.2868885120  192s
+  3000/8157  max so far 0.2868885176  287s
+  4000/8157  max so far 0.2868885176  378s
+  5000/8157  max so far 0.2868885176  470s
+  6000/8157  max so far 0.2868885176  564s
+  7000/8157  max so far 0.2868885176  657s
+  8000/8157  max so far 0.2868885176  751s
+max_H val(H) = 3012329434941157/10500000000000000  = 0.286888517613   (attained at H = 4132800)
+claimed bound 3012329434941157/10500000000000000 = 0.286888517613
+PASS  766s
+=== certs/cert_C.json.gz
+(1) catalogue
+  labelled K4^- -free: n=6 33652, n=7 35333735; catalogue orbit sum 35333735; classes 8157
+  ok  2s
+(2) blocks
+  14 blocks ok  7s
+(3) coefficients
+  0/8157  max so far 0.2867430154  7s
+  1000/8157  max so far 0.2867430154  113s
+  2000/8157  max so far 0.2867430154  216s
+  3000/8157  max so far 0.2867430154  319s
+  4000/8157  max so far 0.2867430154  420s
+  5000/8157  max so far 0.2867430154  516s
+  6000/8157  max so far 0.2867430154  613s
+  7000/8157  max so far 0.2867430154  713s
+  8000/8157  max so far 0.2867430154  806s
+max_H val(H) = 14337150771693633/50000000000000000  = 0.286743015434   (attained at H = 0)
+claimed bound 14337150771693633/50000000000000000 = 0.286743015434
+interval [2867/10000, 28689/100000] = [0.286700000, 0.286890000]: not excluded
+PASS  820s
+
+plain: pi <= 3012329434941157/10500000000000000 = 0.2868885176
+  [0.286700, 0.286890]  value 0.2867430154  pi <= 0.2867430154   (certs/cert_C.json.gz)
+cover [0.286700, 0.286890] contains [t0, plain bound]
+=> pi(K4^-) <= 14337150771693633/50000000000000000 = 0.286743015434
+BOUND 2867433/10000000 = 0.286743300000  ESTABLISHED
+jobcap: exit 0, peak job commit 0.85 GB of 8 GB cap

@@ -1,0 +1,15 @@
+GRANTED 2.0 GB
+jobcap: pid 16548 capped at 8 GB commit (whole process tree)
+C:\Python314\python.exe 2.5.4
+4 11
+5 253
+6 33652
+labelled n=7: 35333735
+classes 8157 orbit sum 35333735 match: True
+evaluated 8157 graphs; max val = 3012329434941157/10500000000000000 = 0.2868885176134 at H=4132800
+claimed bound 3012329434941157/10500000000000000 = 0.2868885176134
+max <= claim: True
+evaluated 8157 graphs; max val = 14337150771693633/50000000000000000 = 0.2867430154339 at H=0
+claimed bound 14337150771693633/50000000000000000 = 0.2867430154339
+max <= claim: True
+jobcap: exit 0, peak job commit 0.09 GB of 8 GB cap

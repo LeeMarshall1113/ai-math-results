@@ -1,0 +1,71 @@
+GRANTED 3.0 GB
+jobcap: pid 31888 capped at 9 GB commit (whole process tree)
+[1] gate-set size: 36 gates, ln prod = 176.2969 > needed 176.2095 : True (exact integer test)
+[2] p=47   leaves=4604   ok=True  proofs 5501 MB  level1 0s solve 442s own 157s cake 445s wall 524s
+[2] p=53   leaves=1504   ok=True  proofs 664 MB  level1 0s solve 127s own 54s cake 58s wall 82s
+jobcap: pid 33020 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 5896 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 34172 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 25632 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 8268 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32676 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 17636 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 14980 escaped the job (Store-Python app activation); watching it against the cap instead
+[2] p=59   leaves=9160   ok=True  proofs 5483 MB  level1 0s solve 831s own 402s cake 599s wall 762s
+jobcap: pid 29760 escaped the job (Store-Python app activation); watching it against the cap instead
+[2] p=61   leaves=6400   ok=True  proofs 3054 MB  level1 0s solve 998s own 514s cake 353s wall 550s
+[2] p=71   leaves=3000   ok=True  proofs 939 MB  level1 0s solve 300s own 173s cake 110s wall 173s
+jobcap: pid 14904 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 19740 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 33868 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 33504 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 34052 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 8708 escaped the job (Store-Python app activation); watching it against the cap instead
+[2] p=79   leaves=3350   ok=True  proofs 1219 MB  level1 0s solve 455s own 240s cake 207s wall 298s
+jobcap: pid 17388 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 2948 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 25580 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 20972 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 7568 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 17484 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 24688 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 34288 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 28768 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32084 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 24292 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 9172 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 3100 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 29092 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 30848 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32572 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 24220 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 28576 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 18004 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 23556 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 4732 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32560 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 9940 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 29244 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32276 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32516 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 15052 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 9432 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32624 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 23748 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 24680 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 17332 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 21404 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 13460 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 9080 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 27088 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 12316 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 31156 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 32204 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 30572 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 33760 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 26996 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 1652 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 12976 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 33928 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: exit 4294967295, peak job commit 0.10 GB of 9 GB cap
+jobcap: NOTE 60 process(es) ran outside the job (Store-Python app activation); they were soft-capped by polling. Call the venv python directly to get the hard cap.

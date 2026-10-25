@@ -1,0 +1,30 @@
+GRANTED 2.0 GB
+jobcap: pid 26084 capped at 8 GB commit (whole process tree)
+=== certs/cert_plain.json.gz
+(1) catalogue
+  labelled K4^- -free: n=6 33652, n=7 35333735; catalogue orbit sum 35333735; classes 8157
+  ok  2s
+(2) blocks
+  14 blocks ok  7s
+(3) coefficients
+max_H val(H) = 3012329434941157/10500000000000000  = 0.286888517613   (attained at H = 4132800)
+claimed bound 3012329434941157/10500000000000000 = 0.286888517613
+PASS  544s
+=== certs/cert_C.json.gz
+(1) catalogue
+  labelled K4^- -free: n=6 33652, n=7 35333735; catalogue orbit sum 35333735; classes 8157
+  ok  2s
+(2) blocks
+  14 blocks ok  5s
+(3) coefficients
+max_H val(H) = 14337150771693633/50000000000000000  = 0.286743015434   (attained at H = 0)
+claimed bound 14337150771693633/50000000000000000 = 0.286743015434
+interval [2867/10000, 28689/100000] = [0.286700000, 0.286890000]: not excluded
+PASS  553s
+
+plain: pi <= 3012329434941157/10500000000000000 = 0.2868885176
+  [0.286700, 0.286890]  value 0.2867430154  pi <= 0.2867430154   (certs/cert_C.json.gz)
+cover [0.286700, 0.286890] contains [t0, plain bound]
+=> pi(K4^-) <= 14337150771693633/50000000000000000 = 0.286743015434
+BOUND 2867433/10000000 = 0.286743300000  ESTABLISHED
+jobcap: exit 0, peak job commit 0.05 GB of 8 GB cap

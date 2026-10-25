@@ -1,0 +1,71 @@
+GRANTED 1.0 GB
+jobcap: pid 34784 capped at 8.5 GB commit (whole process tree)
+[1] gate-set size: 45 gates, ln prod = 250.9207 > needed 246.4727 : True (exact integer test)
+[2] p=139  ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=149  ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=157  ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=167  ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=173  leaves=4302   ok=True  proofs 6528 MB  level1 18s solve 351s own 208s cake 394s wall 485s
+[2] p=179  leaves=459    ok=True  proofs 699 MB  level1 6s solve 43s own 24s cake 43s wall 58s
+[2] p=181  leaves=4524   ok=True  proofs 7516 MB  level1 14s solve 404s own 239s cake 455s wall 554s
+[2] p=191  leaves=2448   ok=True  proofs 4487 MB  level1 17s solve 236s own 135s cake 259s wall 326s
+[2] p=193  leaves=1107   ok=True  proofs 1997 MB  level1 28s solve 102s own 58s cake 125s wall 175s
+[2] p=197  leaves=225    ok=True  proofs 452 MB  level1 18s solve 24s own 13s cake 23s wall 47s
+[2] p=199  leaves=180    ok=True  proofs 328 MB  level1 23s solve 18s own 10s cake 19s wall 46s
+[2] p=211  leaves=1110   ok=True  proofs 2217 MB  level1 28s solve 107s own 64s cake 142s wall 193s
+[2] p=223  leaves=711    ok=True  proofs 1677 MB  level1 62s solve 83s own 50s cake 102s wall 182s
+[2] p=227  leaves=198    ok=True  proofs 473 MB  level1 48s solve 23s own 13s cake 28s wall 82s
+[2] p=229  leaves=63     ok=True  proofs 145 MB  level1 38s solve 8s own 4s cake 9s wall 49s
+[2] p=233  leaves=270    ok=True  proofs 628 MB  level1 59s solve 32s own 20s cake 40s wall 106s
+[2] p=239  leaves=54     ok=True  proofs 158 MB  level1 59s solve 8s own 4s cake 8s wall 70s
+[2] p=241  leaves=279    ok=True  proofs 718 MB  level1 49s solve 33s own 20s cake 47s wall 103s
+[2] p=251  leaves=117    ok=True  proofs 372 MB  level1 120s solve 18s own 10s cake 18s wall 142s
+[2] p=257  leaves=27     ok=True  proofs 100 MB  level1 63s solve 6s own 3s cake 6s wall 70s
+[2] p=263  leaves=63     ok=True  proofs 209 MB  level1 73s solve 11s own 6s cake 12s wall 88s
+[2] p=269  leaves=9      ok=True  proofs 44 MB  level1 89s solve 3s own 1s cake 3s wall 92s
+[2] p=271  leaves=144    ok=True  proofs 411 MB  level1 133s solve 21s own 12s cake 27s wall 166s
+[2] p=277  leaves=18     ok=True  proofs 76 MB  level1 105s solve 4s own 2s cake 5s wall 111s
+[2] p=281  leaves=54     ok=True  proofs 192 MB  level1 104s solve 12s own 6s cake 13s wall 119s
+[2] p=283  leaves=63     ok=True  proofs 238 MB  level1 138s solve 9s own 5s cake 14s wall 155s
+[2] p=293  leaves=45     ok=True  proofs 153 MB  level1 158s solve 8s own 4s cake 11s wall 171s
+[2] p=307  leaves=72     ok=True  proofs 262 MB  level1 151s solve 12s own 7s cake 18s wall 172s
+[2] p=311  leaves=36     ok=True  proofs 172 MB  level1 139s solve 7s own 4s cake 7s wall 148s
+[2] p=313  leaves=27     ok=True  proofs 149 MB  level1 129s solve 6s own 2s cake 6s wall 136s
+[2] p=317  leaves=18     ok=True  proofs 97 MB  level1 109s solve 4s own 2s cake 6s wall 117s
+[2] p=331  leaves=81     ok=True  proofs 390 MB  level1 267s solve 13s own 8s cake 18s wall 289s
+[2] p=337  leaves=18     ok=True  proofs 99 MB  level1 216s solve 5s own 2s cake 5s wall 222s
+[2] p=347  leaves=18     ok=True  proofs 115 MB  level1 299s solve 5s own 2s cake 6s wall 306s
+[2] p=349  leaves=27     ok=True  proofs 155 MB  level1 332s solve 6s own 3s cake 8s wall 341s
+[2] p=353  leaves=18     ok=True  proofs 113 MB  level1 343s solve 5s own 2s cake 6s wall 351s
+[2] p=359  leaves=18     ok=True  proofs 112 MB  level1 338s solve 5s own 3s cake 9s wall 349s
+[2] p=367  leaves=9      ok=True  proofs 66 MB  level1 642s solve 4s own 2s cake 4s wall 648s
+[2] p=373  leaves=9      ok=True  proofs 67 MB  level1 520s solve 3s own 1s cake 4s wall 525s
+[2] p=379  leaves=18     ok=True  proofs 115 MB  level1 280s solve 6s own 2s cake 7s wall 289s
+[2] p=383  leaves=36     ok=True  proofs 218 MB  level1 582s solve 9s own 4s cake 13s wall 597s
+[2] p=389  leaves=27     ok=True  proofs 179 MB  level1 488s solve 6s own 3s cake 8s wall 497s
+[2] p=397  leaves=18     ok=True  proofs 127 MB  level1 352s solve 5s own 2s cake 6s wall 359s
+[2] p=401  leaves=18     ok=True  proofs 141 MB  level1 521s solve 5s own 3s cake 7s wall 530s
+[2] p=409  leaves=9      ok=True  proofs 80 MB  level1 521s solve 5s own 2s cake 6s wall 529s
+[3] {"k": 9, "L": 10, "mode": "split", "gates": 45, "mass_ok": true, "all_ok": true, "cake_used": true, "wall_s": 10001.8, "proof_bytes": 50941243673, "leaves": 31593, "steps": 290804445, "cpu_solve_s": 3748.4, "cpu_own_s": 2080.2, "cpu_cake_s": 5880.8, "when_utc": "2026-10-22T01:57:29Z"}
+VERIFIED: LRC(9) follows from the cited lemmas + these 45 gates (31593 leaf certificates, both checkers).
+[1] gate-set size: 35 gates, ln prod = 178.7309 > needed 176.2095 : True (exact integer test)
+[2] p=47   ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=53   ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=59   ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=61   ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=71   ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=79   ok=True (checked earlier, 2026-10-21 (run 1, see verify_run1_partial.log))
+[2] p=107  leaves=1272   ok=True  proofs 438 MB  level1 3s solve 35s own 23s cake 28s wall 39s
+[2] p=131  leaves=2000   ok=True  proofs 623 MB  level1 18s solve 60s own 44s cake 58s wall 90s
+[2] p=139  leaves=1512   ok=True  proofs 508 MB  level1 26s solve 49s own 36s cake 46s wall 84s
+[2] p=149  leaves=1052   ok=True  proofs 362 MB  level1 21s solve 36s own 26s cake 32s wall 61s
+[2] p=151  leaves=536    ok=True  proofs 183 MB  level1 12s solve 16s own 12s cake 17s wall 33s
+[2] p=157  leaves=576    ok=True  proofs 210 MB  level1 19s solve 20s own 13s cake 21s wall 45s
+[2] p=167  leaves=368    ok=True  proofs 148 MB  level1 55s solve 14s own 10s cake 16s wall 75s
+[2] p=173  leaves=580    ok=True  proofs 210 MB  level1 65s solve 22s own 14s cake 25s wall 96s
+[2] p=179  leaves=56     ok=True  proofs 30 MB  level1 55s solve 2s own 2s cake 3s wall 59s
+[2] p=181  leaves=744    ok=True  proofs 288 MB  level1 118s solve 31s own 20s cake 33s wall 157s
+[2] p=191  leaves=384    ok=True  proofs 186 MB  level1 105s solve 17s own 10s cake 21s wall 130s
+[2] p=193  leaves=136    ok=True  proofs 62 MB  level1 91s solve 6s own 4s cake 7s wall 100s
+[2] p=197  leaves=116    ok=True  proofs 62 MB  level1 80s solve 6s own 4s cake 6s wall 87s
+[2] p=199  leaves=576    ok=True  proofs 238 MB  level1 140s solve 19s own 12s cake 21s wall 166s
