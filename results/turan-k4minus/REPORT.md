@@ -1,9 +1,9 @@
-# Turán density of K₄⁻: upper bound 0.2867430154 (candidate)
+# Turán density of K₄⁻: upper bound < 0.28674302 (candidate)
 
 Written 2026-10-24 by the coordinator from the lane agent's report; commits 609e86f, d1846f5 and 99879aa. **Status: REFEREED (SURVIVES, notes/REFEREE.md; independent reproduction of both exact maxima); novelty NEW (notes/NOVELTY.md).** There is no Lean check.
 
 ## Claim
-π(K₄⁻) ≤ 14337150771693633 / 5·10¹⁶ = 0.2867430154…
+π(K₄⁻) ≤ 14337150771693633 / 5·10¹⁶ = 0.28674301543…
 
 K₄⁻ is the 3-graph on 4 vertices with 3 edges.
 - **Previous best upper bound:** 0.286889, Falgas-Ravry–Vaughan (2012, flag algebras).

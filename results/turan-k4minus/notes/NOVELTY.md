@@ -1,4 +1,4 @@
-# Novelty check: pi(K4-) <= 0.2867430154 (checked 2026-10-24, web search only)
+# Novelty check: pi(K4-) < 0.28674302 (checked 2026-10-24, web search only)
 
 Verdict: **NEW, with caveats** (no published bound below 0.286889 found; see "Not reached").
 

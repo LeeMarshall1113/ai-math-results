@@ -1,9 +1,9 @@
-# Turan density of K4-: pi(K4-) <= 0.2867430154
+# Turan density of K4-: pi(K4-) < 0.28674302
 
 **Status: exact certificate, refereed (hostile AI referee, independent reproduction). No Lean check.**
 
 ## Claim
-pi(K4-) <= 14337150771693633 / (5 * 10^16) = 0.2867430154..., where K4- is the 3-graph on 4 vertices with 3 edges.
+pi(K4-) <= 14337150771693633 / (5 * 10^16) = 0.28674302..., where K4- is the 3-graph on 4 vertices with 3 edges.
 - Previous best upper bound: 0.286889, Falgas-Ravry and Vaughan (2012, flag algebras).
 - Conjectured value: 2/7 = 0.285714 (Frankl-Furedi construction).
 - Improvement 1.46e-4, about 12% of the gap to 2/7.

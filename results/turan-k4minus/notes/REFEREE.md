@@ -1,4 +1,4 @@
-# Hostile referee: π(K₄⁻) ≤ 14337150771693633/5·10¹⁶ ≈ 0.2867430154
+# Hostile referee: π(K₄⁻) ≤ 14337150771693633/5·10¹⁶ ≈ 0.28674302
 
 Referee pass on 2026-10-24 by an agent that had not seen the work before. My brief was to break the claim.
 
@@ -41,7 +41,7 @@ The tetrahedron paper encodes the same fact as the single linear equality S = 0.
 
 **The interval logic.** Let π = φ(e) at a regular extremal limit.
 - If π > t₂ = 0.28689: impossible, because the plain certificate (no regularity used) gives π ≤ 0.2868885176 < t₂.
-- If π ∈ [t₁, t₂]: then π ≤ max_H val_C(H) = 0.28674301543.
+- If π ∈ [t₁, t₂]: then π ≤ max_H val_C(H) = 0.2867430154338… < 0.28674302.
 - If π < t₁ = 0.2867: the claim holds trivially.
 
 So π ≤ max(t₁, v) = v. This is exactly the logic of check_bound.py: the cover must reach the plain bound, the worst case is max(t₀, v_i), and an interval with v < t₁ is treated as excluded.
