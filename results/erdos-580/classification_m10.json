@@ -1,0 +1,1144 @@
+[
+ {
+  "index": 0,
+  "g6": "IsOGGC@?G",
+  "route": "P",
+  "witness": {
+   "path_length": 8,
+   "centre": 1,
+   "leaves": 1
+  },
+  "core_size": 7,
+  "marked": 2
+ },
+ {
+  "index": 1,
+  "g6": "IsO_OC@?G",
+  "route": "P",
+  "witness": {
+   "path_length": 8,
+   "centre": 2,
+   "leaves": 1
+  },
+  "core_size": 7,
+  "marked": 3
+ },
+ {
+  "index": 2,
+  "g6": "IsO_OGA?G",
+  "route": "P",
+  "witness": {
+   "path_length": 8,
+   "centre": 3,
+   "leaves": 1
+  },
+  "core_size": 7,
+  "marked": 3
+ },
+ {
+  "index": 3,
+  "g6": "IsO_OGA?O",
+  "route": "P",
+  "witness": {
+   "path_length": 8,
+   "centre": 4,
+   "leaves": 1
+  },
+  "core_size": 7,
+  "marked": 3
+ },
+ {
+  "index": 4,
+  "g6": "IqGOOGA?O",
+  "route": "P",
+  "witness": {
+   "path_length": 9,
+   "centre": 0,
+   "leaves": 0
+  },
+  "core_size": 8,
+  "marked": 2
+ },
+ {
+  "index": 5,
+  "g6": "IsaA?C@?G",
+  "route": "P",
+  "witness": {
+   "path_length": 6,
+   "centre": 1,
+   "leaves": 3
+  },
+  "core_size": 5,
+  "marked": 2
+ },
+ {
+  "index": 6,
+  "g6": "Is`A?G@?G",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 7,
+  "g6": "Is`?GC@?O",
+  "route": "C",
+  "witness": {
+   "path_length": 5,
+   "l": 4,
+   "c": 4,
+   "centres": [
+    0,
+    4
+   ],
+   "leaves": [
+    2,
+    2
+   ]
+  },
+  "core_size": 5,
+  "marked": 2
+ },
+ {
+  "index": 8,
+  "g6": "Is`?GCA?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 9,
+  "g6": "Is`?GGA?G",
+  "route": "C",
+  "witness": {
+   "path_length": 6,
+   "l": 3,
+   "c": 2,
+   "centres": [
+    1,
+    3
+   ],
+   "leaves": [
+    2,
+    1
+   ]
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 10,
+  "g6": "Is`?GC@?G",
+  "route": "P",
+  "witness": {
+   "path_length": 7,
+   "centre": 1,
+   "leaves": 2
+  },
+  "core_size": 6,
+  "marked": 2
+ },
+ {
+  "index": 11,
+  "g6": "IsP@?_A?G",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 12,
+  "g6": "Is`A@?@?G",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 13,
+  "g6": "IsP@?C@?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 14,
+  "g6": "IsP@?CA?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 15,
+  "g6": "IsP@@?G?G",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 16,
+  "g6": "IsP@?C@?G",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 17,
+  "g6": "IsO_OOC@?",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 18,
+  "g6": "IsO__O@?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 19,
+  "g6": "Is`@?G@?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 20,
+  "g6": "IsP@?OA?_",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 21,
+  "g6": "IsO__OG@?",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 22,
+  "g6": "Is`@?GC?_",
+  "route": "C",
+  "witness": {
+   "path_length": 6,
+   "l": 3,
+   "c": 2,
+   "centres": [
+    1,
+    3
+   ],
+   "leaves": [
+    1,
+    2
+   ]
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 23,
+  "g6": "IsO_OOC?G",
+  "route": "C",
+  "witness": {
+   "path_length": 7,
+   "l": 2,
+   "c": 2,
+   "centres": [
+    1,
+    3
+   ],
+   "leaves": [
+    1,
+    1
+   ]
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 24,
+  "g6": "IsOGGC@?O",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 6,
+  "marked": 2
+ },
+ {
+  "index": 25,
+  "g6": "IsO_OC@?O",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 26,
+  "g6": "IsO_OGA?_",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 27,
+  "g6": "Is`@?_C?G",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 28,
+  "g6": "IsO__OG?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 29,
+  "g6": "IsP@?_G?G",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 30,
+  "g6": "IsO__O@?G",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 7,
+  "marked": 3
+ },
+ {
+  "index": 31,
+  "g6": "IsaA@?A?G",
+  "route": "P",
+  "witness": {
+   "path_length": 6,
+   "centre": 2,
+   "leaves": 3
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 32,
+  "g6": "Is`@?GC?O",
+  "route": "C",
+  "witness": {
+   "path_length": 6,
+   "l": 3,
+   "c": 2,
+   "centres": [
+    2,
+    4
+   ],
+   "leaves": [
+    1,
+    2
+   ]
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 33,
+  "g6": "Is`A@?C?G",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 34,
+  "g6": "Is`@?G@?G",
+  "route": "P",
+  "witness": {
+   "path_length": 7,
+   "centre": 2,
+   "leaves": 2
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 35,
+  "g6": "IsP@@?G?_",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 5
+ },
+ {
+  "index": 36,
+  "g6": "IsP@?_G?_",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 37,
+  "g6": "Is`A@?C?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 38,
+  "g6": "IsP@?OA?G",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 39,
+  "g6": "IsO_OCA?O",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 40,
+  "g6": "IsO_OOC?_",
+  "route": "C",
+  "witness": {
+   "path_length": 7,
+   "l": 2,
+   "c": 2,
+   "centres": [
+    2,
+    4
+   ],
+   "leaves": [
+    1,
+    1
+   ]
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 41,
+  "g6": "IsO__OC?_",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 7,
+  "marked": 3
+ },
+ {
+  "index": 42,
+  "g6": "IsP@?_A?O",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 43,
+  "g6": "Is`@?_C?_",
+  "route": "E",
+  "witness": {
+   "diameter": 6
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 44,
+  "g6": "IsaA@?A?O",
+  "route": "P",
+  "witness": {
+   "path_length": 6,
+   "centre": 3,
+   "leaves": 3
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 45,
+  "g6": "IsO__OC?O",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 7,
+  "marked": 3
+ },
+ {
+  "index": 46,
+  "g6": "Is`@?GA?O",
+  "route": "P",
+  "witness": {
+   "path_length": 7,
+   "centre": 3,
+   "leaves": 2
+  },
+  "core_size": 6,
+  "marked": 3
+ },
+ {
+  "index": 47,
+  "g6": "IsP@?OA?O",
+  "route": "E",
+  "witness": {
+   "diameter": 7
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 48,
+  "g6": "IsaCC@??G",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 2
+ },
+ {
+  "index": 49,
+  "g6": "IsaCA?@?O",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 2
+ },
+ {
+  "index": 50,
+  "g6": "IsaCA@??O",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 51,
+  "g6": "IsaCA?@?G",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 2
+ },
+ {
+  "index": 52,
+  "g6": "IsaA?CA?_",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 2
+ },
+ {
+  "index": 53,
+  "g6": "IsaAA?A?_",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 54,
+  "g6": "IsaAA?A?O",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 55,
+  "g6": "IsaAA@??_",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 56,
+  "g6": "IsaAA?A?G",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 57,
+  "g6": "IsaA?C@?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 2
+ },
+ {
+  "index": 58,
+  "g6": "IsaA?CA?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 59,
+  "g6": "Is`A?GC@?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 60,
+  "g6": "Is`A?GC?_",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 61,
+  "g6": "Is`AA?_G?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 62,
+  "g6": "Is`AA?_C?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 63,
+  "g6": "IsaAA@?G?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 64,
+  "g6": "Is`A?GA?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 65,
+  "g6": "Is`AA?_?G",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 66,
+  "g6": "Is`A?G@?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 67,
+  "g6": "Is`A?GC?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 68,
+  "g6": "Is`?GCA?_",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 2
+ },
+ {
+  "index": 69,
+  "g6": "Is`?GGA?_",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 70,
+  "g6": "Is`?GGA?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 71,
+  "g6": "Is`@?GC@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 72,
+  "g6": "IsP@@?OC?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 73,
+  "g6": "Is`A@?_C?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 74,
+  "g6": "IsaAA?_G?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 75,
+  "g6": "IsP@@?O?G",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 76,
+  "g6": "Is`A@?OA?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 77,
+  "g6": "IsaAA?_C?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 78,
+  "g6": "IsaCA@?G?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 79,
+  "g6": "Is`A@?O?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 80,
+  "g6": "IsP@?_A?_",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 81,
+  "g6": "IsP@@?OA?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 82,
+  "g6": "IsaAA?_?G",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 83,
+  "g6": "Is`A@?@?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 84,
+  "g6": "Is`A@?_@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 85,
+  "g6": "IsP@@?GA?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 86,
+  "g6": "IsP@@?G@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 87,
+  "g6": "Is`A@?C@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 88,
+  "g6": "Is`@?_C@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 89,
+  "g6": "IsaA@?A?_",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 90,
+  "g6": "IsaA@?OA?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 5,
+  "marked": 5
+ },
+ {
+  "index": 91,
+  "g6": "IsaCA?_C?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 92,
+  "g6": "Is`@?_G@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 93,
+  "g6": "IsaCC@?G?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 94,
+  "g6": "IsaA@?O?_",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 95,
+  "g6": "Is`A@?O@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 5
+ },
+ {
+  "index": 96,
+  "g6": "IsP@?_G@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 6,
+  "marked": 4
+ },
+ {
+  "index": 97,
+  "g6": "Is`A@?C?_",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 4
+ },
+ {
+  "index": 98,
+  "g6": "IsaCA?_?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 99,
+  "g6": "IsaAA?_?_",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 100,
+  "g6": "Is`AA?_@?",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 101,
+  "g6": "IsaCCA?_?",
+  "route": "D",
+  "witness": {
+   "diameter": 2
+  },
+  "core_size": 1,
+  "marked": 1
+ },
+ {
+  "index": 102,
+  "g6": "IsaCCA?O?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ },
+ {
+  "index": 103,
+  "g6": "IsaCC@?O?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ },
+ {
+  "index": 104,
+  "g6": "IsaCA@?O?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ },
+ {
+  "index": 105,
+  "g6": "IsaAA@?O?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ }
+]

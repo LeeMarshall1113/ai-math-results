@@ -10,11 +10,11 @@ Original mathematical results produced by Lee Marshall with AI assistance, colle
 | Turan density of K4-: pi(K4-) < 0.28674302 (previous 0.286889) | Exact certificate, refereed | 3 (3 to 3.5) | `cd results/turan-k4minus && python check_bound.py 0.2867433 certs/cert_plain.json.gz certs/cert_C.json.gz` (about 25 min) | [results/turan-k4minus](results/turan-k4minus) |
 | Ulam's packing conjecture holds for origin-symmetric bodies within Banach-Mazur distance 1 + 6e-8 of the ball | Computed (interval arithmetic), refereed | 2.5 (2 to 3). The radius is tiny. | `cd results/ulam-explicit-radius && python certify.py` (about 1 s) | [results/ulam-explicit-radius](results/ulam-explicit-radius) |
 | Lonely runner, 8, 9 and 10 runners: first formally verified certificates (cake_lpr) | Certificates checked by cake_lpr (a formally verified LRAT checker); the cases were already proved in unrefereed preprints | 2.5 (2 to 3) | `python proofs/common/verify.py proofs/k7` in the folder (needs CaDiCaL and the checkers; hours for k8/k9) | [results/lonely-runner-8-10](results/lonely-runner-8-10) |
+| Erdős problem #580 (vertex form) holds for n <= 21; n = 20 and 21 new (earlier work: n <= 19, reproduced to 18) | 75 trees by cited theorems, 31 by SAT with LRAT certificates checked by cake_lpr (a formally verified checker); passed one hostile AI referee | 2.5 (2 to 3) | `cd results/erdos-580 && python verify.py --quick` (needs CaDiCaL and the checkers; full run about 6 CPU-hours) | [results/erdos-580](results/erdos-580) |
 
 ## In progress
 
 - Lonely runner with 16 runners: a GPU production run of about 240 GPU-hours, conditional on preprints for 12 to 15 runners. Not a result yet.
-- Erdos problem #580, n = 20 and 21: one proof check left.
 
 ## AI disclosure
 

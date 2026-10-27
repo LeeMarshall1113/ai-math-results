@@ -1,0 +1,240 @@
+[
+ {
+  "index": 0,
+  "g6": "GsOGGC",
+  "route": "P",
+  "witness": {
+   "path_length": 6,
+   "centre": 1,
+   "leaves": 1
+  },
+  "core_size": 5,
+  "marked": 2
+ },
+ {
+  "index": 1,
+  "g6": "GsO_OC",
+  "route": "P",
+  "witness": {
+   "path_length": 6,
+   "centre": 2,
+   "leaves": 1
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 2,
+  "g6": "GsO_OG",
+  "route": "P",
+  "witness": {
+   "path_length": 6,
+   "centre": 3,
+   "leaves": 1
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 3,
+  "g6": "GqGOOG",
+  "route": "P",
+  "witness": {
+   "path_length": 7,
+   "centre": 0,
+   "leaves": 0
+  },
+  "core_size": 6,
+  "marked": 2
+ },
+ {
+  "index": 4,
+  "g6": "GsaA?C",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 2
+ },
+ {
+  "index": 5,
+  "g6": "Gs`?GG",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 2
+ },
+ {
+  "index": 6,
+  "g6": "Gs`A?G",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 7,
+  "g6": "Gs`?GC",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 2
+ },
+ {
+  "index": 8,
+  "g6": "GsP@@?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 9,
+  "g6": "GsP@?_",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 10,
+  "g6": "Gs`A@?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 11,
+  "g6": "GsP@?C",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 12,
+  "g6": "GsOGGG",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 2
+ },
+ {
+  "index": 13,
+  "g6": "GsO_OO",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 14,
+  "g6": "Gs`@?_",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 15,
+  "g6": "GsaA@?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 16,
+  "g6": "GsO__O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 5,
+  "marked": 3
+ },
+ {
+  "index": 17,
+  "g6": "Gs`@?G",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 18,
+  "g6": "GsP@?O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 4
+ },
+ {
+  "index": 19,
+  "g6": "GsaCC?",
+  "route": "D",
+  "witness": {
+   "diameter": 2
+  },
+  "core_size": 1,
+  "marked": 1
+ },
+ {
+  "index": 20,
+  "g6": "GsaCA?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ },
+ {
+  "index": 21,
+  "g6": "GsaAA?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ },
+ {
+  "index": 22,
+  "g6": "Gs`AA?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ }
+]

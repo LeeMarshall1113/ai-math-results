@@ -1,0 +1,114 @@
+[
+ {
+  "index": 0,
+  "g6": "FqGOO",
+  "route": "P",
+  "witness": {
+   "path_length": 6,
+   "centre": 0,
+   "leaves": 0
+  },
+  "core_size": 5,
+  "marked": 2
+ },
+ {
+  "index": 1,
+  "g6": "Fs`?G",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 2
+ },
+ {
+  "index": 2,
+  "g6": "FsOGO",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 2
+ },
+ {
+  "index": 3,
+  "g6": "FsP@?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 4,
+  "g6": "FsOGG",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 2
+ },
+ {
+  "index": 5,
+  "g6": "FsO__",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 6,
+  "g6": "Fs`@?",
+  "route": "D",
+  "witness": {
+   "diameter": 4
+  },
+  "core_size": 3,
+  "marked": 3
+ },
+ {
+  "index": 7,
+  "g6": "FsO_O",
+  "route": "D",
+  "witness": {
+   "diameter": 5
+  },
+  "core_size": 4,
+  "marked": 3
+ },
+ {
+  "index": 8,
+  "g6": "FsaC?",
+  "route": "D",
+  "witness": {
+   "diameter": 2
+  },
+  "core_size": 1,
+  "marked": 1
+ },
+ {
+  "index": 9,
+  "g6": "FsaA?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ },
+ {
+  "index": 10,
+  "g6": "Fs`A?",
+  "route": "D",
+  "witness": {
+   "diameter": 3
+  },
+  "core_size": 2,
+  "marked": 2
+ }
+]
