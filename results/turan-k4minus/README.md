@@ -1,3 +1,5 @@
+> **Superseded (2026-10-28).** Lidický–Volec report a numerical upper bound of 0.2865 (arXiv 2610.33850, 24 Oct 2026). Our exactly certified 0.28674302 is no longer the best bound; it stays here as an independently checkable certificate.
+
 # Turan density of K4-: pi(K4-) < 0.28674302
 
 **Status: exact certificate, refereed (hostile AI referee, independent reproduction). No Lean check.**
