@@ -1,5 +1,7 @@
 # ai-math-results
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748158.svg)](https://doi.org/10.5281/zenodo.23748158)
+
 Original mathematical results produced by Lee Marshall with AI assistance, collected in one place. Each result has its own folder under `results/` with a README stating the claim, prior work, method, how to check it, status and caveats. The calibrated levels below are our own honest estimates on a 1 to 6 scale (central estimate, then plausible range); they are not endorsements, and none of this has been through human peer review.
 
 ## Results
