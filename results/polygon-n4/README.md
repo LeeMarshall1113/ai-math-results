@@ -12,7 +12,8 @@ Conjecture 1 of R. Agaev and P. Chebotarev, *On the spectra of nonsymmetric Lapl
 
 - n <= 3: known (2005).
 - n >= 5: the conjecture is false. P. Chebotarev, arXiv:2610.14100 (v1 8 Oct 2026, v2 20 Oct 2026), gives counterexamples for every n >= 5. It lists n = 4 as open (Question 1).
-- n = 4: proved here. This completes the conjecture. Novelty check on 2026-10-28 (see `notes/NOVELTY.md`) found no earlier n = 4 proof. Searches can miss things.
+- n = 4: proved here, with open certificates that anyone can replay. This completes the conjecture.
+- **Prior claim.** Our novelty search missed an earlier claim of the n = 4 case: D. Z. Liu, *The Agaev–Chebotarev Polygon Conjecture Holds Exactly for n ≤ 4*, Zenodo record [23630989](https://zenodo.org/records/23630989), created 2026-10-25 (01:43 UTC), before this work began. It uses a related approach: an LP reduction to at most six fractional weights, then exact Bernstein expansions on 9583 classes. As of 2026-10-28 the record contains only the PDF (its code is announced but not included). Liu's claim has priority; what this repository adds is an independent proof whose certificates are open and replay cleanly.
 
 ## Method (full details in `PROOF.md`)
 
