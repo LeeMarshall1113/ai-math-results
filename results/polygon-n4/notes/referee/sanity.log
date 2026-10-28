@@ -1,0 +1,11 @@
+resultant/(8i) == Phi: True
+identity OK
+faces 38016 38016
+orbits 836 canon file 836 one canon per orbit: True
+max rel diff N_F vs numpy charpoly: 7.292183000516633e-13
+numerical max |Im mu| over 400 runs: 1.0000000000000029
+bern(N) on tight face (expect False): False
+bern(N - 1/10^6) (expect False): False
+tree replay (expect True): True
+tree replay on N - 1/10^6 (expect False): False
+flipped mono in **0**0*0111* (expect False): False

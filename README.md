@@ -11,6 +11,8 @@ Original mathematical results produced by Lee Marshall with AI assistance, colle
 | Ulam's packing conjecture holds for origin-symmetric bodies within Banach-Mazur distance 1 + 6e-8 of the ball | Computed (interval arithmetic), refereed | 2.5 (2 to 3). The radius is tiny. | `cd results/ulam-explicit-radius && python certify.py` (about 1 s) | [results/ulam-explicit-radius](results/ulam-explicit-radius) |
 | Lonely runner, 8, 9 and 10 runners: first formally verified certificates (cake_lpr) | Certificates checked by cake_lpr (a formally verified LRAT checker); the cases were already proved in unrefereed preprints | 2.5 (2 to 3) | `python proofs/common/verify.py proofs/k7` in the folder (needs CaDiCaL and the checkers; hours for k8/k9) | [results/lonely-runner-8-10](results/lonely-runner-8-10) |
 | Erdős problem #580 (vertex form) holds for n <= 21; n = 20 and 21 new (earlier work: n <= 19, reproduced to 18) | 75 trees by cited theorems, 31 by SAT with LRAT certificates checked by cake_lpr (a formally verified checker); passed one hostile AI referee | 2.5 (2 to 3) | `cd results/erdos-580 && python verify.py --quick` (needs CaDiCaL and the checkers; full run about 6 CPU-hours) | [results/erdos-580](results/erdos-580) |
+| Agaev–Chebotarev polygon conjecture, n = 4: Lambda_4 = S_4 (n <= 3 known, n >= 5 disproved by Chebotarev 2026; this completes the conjecture) | Computer-assisted, exact arithmetic, 836 face certificates; passed one hostile AI referee | 2.5 (2 to 3) | `cd results/polygon-n4/proof && bash fullcheck.sh` (about 10 min; needs sympy, python-flint) | [results/polygon-n4](results/polygon-n4) |
+
 
 ## In progress
 

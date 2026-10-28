@@ -1,0 +1,59 @@
+easy **00**011*0* True 0.0
+easy **0*1011*0** True 0.0
+easy **0*1100***0 True 0.0
+easy **0**0*10*10 True 0.0
+easy **0*110*1**1 True 0.0
+easy **0*0**001*1 True 0.0
+easy **0**0*1*001 True 0.0
+easy **0*1*1*0*00 True 0.0
+easy **0*101***11 True 0.0
+easy **0**1*10*11 True 0.0
+easy **0*0*00**11 True 0.0
+easy **0**0**1011 True 0.0
+easy **0*1**11*00 True 0.0
+easy **0*0**10*10 True 0.0
+easy **0*111*00** True 0.0
+easy **0*0**01*01 True 0.1
+easy **0*1100***1 True 0.0
+easy **00*11*00** True 0.0
+easy **0**0*0101* True 0.0
+easy **0*1100**1* True 0.0
+tree **0**0**1110 True 80.6 {'blowup': 13, 'bern': 60, 'factor': 12}
+tree **0**0*011*0 True 52.3 {'blowup': 13, 'factor': 12, 'bern': 58}
+tree **0*0*0*0*01 True 45.9 {'blowup': 8, 'bern': 33, 'factor': 7, 'mono': 2}
+tree **0**0*0*110 True 47.0 {'blowup': 6, 'bern': 28, 'factor': 5}
+tree **0**0*0111* True 0.2 {'mono': 2, 'blowup': 6, 'bern': 18, 'factor': 5}
+tree **0*01*1*1*0 True 4.5 {'blowup': 12, 'splitat': 6, 'bern': 45, 'factor': 11, 'mono': 14}
+tree **00**001*1* True 0.1 {'mono': 1, 'blowup': 1, 'bern': 4}
+tree **0*111***01 True 0.3 {'blowup': 1, 'bern': 5}
+tree **0*100**1*0 True 3.4 {'splitat': 1, 'blowup': 3, 'bern': 17, 'factor': 3}
+tree **0*0001**1* True 0.3 {'blowup': 1, 'bern': 6}
+  leaves {'bern': 9, 'reduce': 4} volume 1
+tube tube_t158.jsonl **0**1*0110* True 0.8
+    leaves {'bern': 86, 'reduce': 24, 'tree': 8} volume 1
+  leaves {'bern': 15, 'reduce': 4} volume 1
+tube tube_tubeA.jsonl **0**0*01*10 True 3.6
+    leaves {'bern': 88, 'reduce': 32, 'tree': 24} volume 1
+  leaves {'bern': 17, 'reduce': 4, 'tree': 2} volume 1
+tube tube_tubeA.jsonl **0**1*1*101 True 17.2
+    leaves {'bern': 114, 'reduce': 34, 'tree': 8} volume 1
+  leaves {'bern': 15, 'reduce': 6} volume 1
+tube tube_tubeA.jsonl **0*0**10*01 True 4.2
+    leaves {'bern': 37, 'reduce': 13, 'tree': 4} volume 1
+  leaves {'bern': 48, 'reduce': 6, 'tree': 9} volume 1
+tube tube_tubeB.jsonl **0*01*10*0* True 11.7
+  leaves {'bern': 31, 'reduce': 28, 'tree': 5} volume 1
+tube tube_tubeB.jsonl **0*010**10* True 17.2
+    leaves {'bern': 12, 'reduce': 8} volume 1
+  leaves {'bern': 9, 'reduce': 4} volume 1
+tube tube_tubeB.jsonl **0*010*1**0 True 0.9
+    leaves {'bern': 62, 'reduce': 30, 'tree': 28} volume 1
+  leaves {'bern': 8, 'reduce': 5} volume 1
+tube tube_tubeB.jsonl **0*010*11** True 15.0
+    leaves {'bern': 74, 'reduce': 25, 'tree': 8} volume 1
+  leaves {'bern': 7, 'reduce': 4} volume 1
+tube tube_tubeC.jsonl **0*01*10**1 True 2.6
+    leaves {'bern': 26, 'tree': 12, 'reduce': 2} volume 1
+  leaves {'bern': 32, 'tree': 8, 'reduce': 4} volume 1
+tube tube_tubeD.jsonl **0*01*1**01 True 43.3
+ALLDONE
