@@ -170,7 +170,12 @@ Steps 1-4b give the Theorem, and hence Lambda_4 = S_4.
 ## 3. How to check
 
     cd proof
-    python verify.py        # the full replay: asserts exact, disjoint coverage of the 836 faces
+    bash fullcheck.sh       # the full replay: all 836 faces; nonzero exit unless every class passes
+
+or, with the independent third checker, `python indep3/check3.py all`.
+
+`fullcheck.sh` runs `verify.py` (Bernstein faces and trees) and then `verify_tube.py` (the 10 tube
+certificates). `verify.py` on its own skips the tube certificates' content, so it is not a full replay.
 
 `verify.py` does the following, without importing any of the search code:
 1. It re-proves identity (*).

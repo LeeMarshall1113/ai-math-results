@@ -75,6 +75,8 @@ def main(files):
             if ok: done.add(face)
     assert len(done) == 10 or len(files) < 5, 'expected 10 tube certificates'
     print('tube certificates verified:', len(done), 'all ok' if allok else 'SOME FAILED')
+    if not allok:
+        sys.exit(1)
 
 if __name__ == '__main__':
     main(sys.argv[1:] or sorted(glob.glob('tube_*.jsonl')))

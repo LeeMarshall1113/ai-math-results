@@ -2,3 +2,6 @@
 *.py text eol=lf
 *.md text eol=lf
 *.gz binary
+results/polygon-n4/proof/*.jsonl -text
+results/polygon-n4/proof/faces_canon.txt -text
+results/polygon-n4/proof/CHECKSUMS.sha256 -text

@@ -24,3 +24,5 @@ for f, tr in list(trees.items())[:nhard]:
     t = time.time(); ok = verify.replay(poly(f), tr, ctx); n += 1; nb += (not ok)
     print('hard', f, ok, round(time.time() - t, 1), flush=True)
 print('hard trees verified:', n - nb, 'of', n)
+if bad or nb:
+    sys.exit(1)

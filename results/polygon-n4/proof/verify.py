@@ -7,7 +7,7 @@ for polynomial arithmetic in the proof-tree replay, python integers for Bernstei
 coefficients.  It does not import any of the search code (faces.py, phiface.py,
 bern.py, prover2.py); it only reads the proof trees they produced.
 """
-import itertools, json, glob
+import itertools, json, glob, sys
 from math import factorial, comb
 import sympy as sp
 import flint
@@ -118,6 +118,8 @@ def bern_nonneg(P, ctx, depth=0, maxdepth=14, budget=None):
     if depth >= maxdepth:
         return False
     act = [l for l in range(k) if deg[l] > 0]
+    if not act:
+        return False  # negative constant: nothing to bisect
     def spread(l):
         s = 0
         for m, cf in arr.items():
@@ -373,6 +375,8 @@ def main(only_with_trees=False):
         print(n, f, 'ok' if ok else 'FAIL', flush=True)
     print('checked', len(can) - len(missing) - len(tubes), 'faces (tube faces: verify_tube.py); failures:', len(bad), bad[:10])
     print('ALL OK' if not bad and not missing else 'NOT COMPLETE')
+    if bad or missing:
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()

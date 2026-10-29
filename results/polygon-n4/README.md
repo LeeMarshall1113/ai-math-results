@@ -32,7 +32,7 @@ cd proof
 bash fullcheck.sh
 ```
 
-This runs `vsome.py 500` (re-derives identity (*), re-enumerates the 38016 faces and 836 representatives, **asserts that the Bernstein faces, trees and tubes validate as inputs and cover exactly the 836 canonical faces, disjointly**, then replays every Bernstein face and all 136 trees) and then `verify_tube.py` on the five tube files (replays all 10 tube certificates). The recorded run is `proof/fullcheck.log`. Expected tail: `hard trees verified: 136 of 136` and `tube certificates verified: 10 all ok`. Runtime: about 10 minutes on one thread, peak about 0.5 GB. `python verify.py` does the same in one script for the non-tube faces. `proof/CHECKSUMS.sha256` lists the certificate files.
+This runs `verify.py` (re-derives identity (*), re-enumerates the 38016 faces and 836 representatives, **asserts that the Bernstein faces, trees and tubes validate as inputs and cover exactly the 836 canonical faces, disjointly**, then replays every Bernstein face and all 136 trees) and then `verify_tube.py` on the five tube files (replays all 10 tube certificates). It exits nonzero unless all 836 classes pass; the expected last line is `FULL CHECK PASSED: 826 + 10 = 836 canonical faces certified`. `proof/fullcheck.log` is the recorded run. Runtime: about 10 minutes on one thread, peak about 0.5 GB. `python verify.py` alone skips the tube certificates, so use `fullcheck.sh` or `indep3/check3.py all` for a full replay. `proof/CHECKSUMS.sha256` lists the certificate files (`cd proof && sha256sum -c CHECKSUMS.sha256`; the data files are stored byte-exact).
 
 Certificates are included in full (all files under 5 MB, about 12 MB total); the search code that generated them is not. Checkers import only sympy, flint and each other.
 
