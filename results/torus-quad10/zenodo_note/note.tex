@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\title{No torus with ten convex quadrilateral faces}
+\author{Lee Marshall}
+\date{29 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% LEE: abstract (Lee writes).
+\end{abstract}
+
+\section{Introduction}
+% LEE: introduction (Lee writes). Context: Grünbaum--Szilassi 2009, Conjecture 3.2; Seamons 2026 (F=11).
+
+\section{Statement}
+We use the definitions of Gr\"unbaum and Szilassi \cite[p.~21]{GS}.
+\begin{itemize}
+\item Faces are planar simple polygons with no collinear adjacent edges.
+\item The faces at a vertex form one circuit.
+\item Adjacent faces are not coplanar.
+\item The polyhedron is acoptic: every component of the intersection of two faces is a common vertex or a common
+  edge.
+\end{itemize}
+
+\begin{theorem}\label{thm:main}
+No acoptic polyhedral torus in $\mathbb{R}^3$ has exactly ten faces that are all strictly convex quadrilaterals.
+\end{theorem}
+
+\begin{theorem}\label{thm:strong}
+Let $Q_i=(i,i+1,i+8,i+7)$, indices mod $10$, be the faces of the map $\{4,4\}_{(3,1)}$. The map has no
+realisation in $\mathbb{R}^3$ with planar, strictly convex faces and non-coplanar adjacent faces, even if faces
+may intersect.
+\end{theorem}
+
+\begin{corollary}
+Assume the eleven-face witness of \cite{Seamons} is correct, and assume \cite[Prop.~3.1]{GS}. Then an acoptic
+torus with $F$ strictly convex quadrilateral faces exists if and only if $F=9$ or $F\ge 11$.
+\end{corollary}
+
+\section{Reduction to one map}
+\begin{lemma}\label{lem:star}
+In a torus as in Theorem~\ref{thm:main}, $V=10$, $E=20$ and every vertex has degree $4$.
+\end{lemma}
+\begin{proof}[Proof outline]
+\begin{itemize}
+\item From $4F=2E$ and $V-E+F=0$ we get $E=20$ and $V=10$.
+\item Two convex faces have a convex intersection. Being acoptic, it is empty, a common vertex or a common edge.
+\item At a vertex $v$ of degree $d$, the points $v$, its $d$ neighbours and its $d$ opposite corners are pairwise
+  distinct. A coincidence would make some segment $vw$ a diagonal of one face lying in a second face, which the
+  previous point forbids.
+\item Hence $2d+1\le 10$, so $d\le 4$. The degree sum is $40=4V$, so every vertex has degree $4$.
+\end{itemize}
+\end{proof}
+
+\begin{lemma}\label{lem:map}
+The face lattice is that of $\{4,4\}_{(3,1)}$.
+\end{lemma}
+\begin{proof}[Proof outline]
+\begin{itemize}
+\item A degree-$4$ quadrangulation of the torus is $\mathbb{Z}^2/L$ with $[\mathbb{Z}^2:L]=10$.
+\item By Lemma~\ref{lem:star}, $L\cap\{-2,\dots,2\}^2=\{0\}$.
+\item In Hermite normal form $L=\langle(a,0),(b,d)\rangle$ with $ad=10$, this leaves only
+  $L=\langle(10,0),(3,1)\rangle$ and its mirror image.
+\item Two independent exhaustive enumerations confirm this.
+\end{itemize}
+\end{proof}
+
+\section{Sign conditions and the SAT certificate}
+Write $\chi(p_1,\dots,p_4)=\operatorname{sign}\det[1\;p_i]$. Every realisation satisfies the following.
+\begin{description}
+\item[(GP)] For all $a,b$ and all distinct $y_1,\dots,y_4$, the signs of
+  $[aby_1y_2][aby_3y_4]$, $-[aby_1y_3][aby_2y_4]$ and $[aby_1y_4][aby_2y_3]$ are all zero or contain both signs
+  (the three-term Pl\"ucker identity).
+\item[(PL)] $\chi(Q_i)=0$ for every face.
+\item[(AD)] If faces $F$ and $G$ share an edge $ab$, $c$ is another vertex of $F$, and $x,y$ are the vertices of
+  $G$ off $ab$, then $\chi(a,b,c,x)=\chi(a,b,c,y)\neq 0$. Reason: $G$ is strictly convex, and its plane meets
+  $\operatorname{plane}(F)$ exactly in the line $ab$.
+\end{description}
+
+\begin{lemma}\label{lem:sat}
+GP, PL and AD for $\{4,4\}_{(3,1)}$ are jointly unsatisfiable.
+\end{lemma}
+\begin{itemize}
+\item The CNF has 420 sign variables and 133\,310 clauses.
+\item CaDiCaL proves it unsatisfiable. The LRAT proof (92\,KB) is accepted by the CakeML-verified checker
+  \texttt{cake\_lpr} and by a second checker.
+\item A separately written encoder (no auxiliary variables) gives a CNF that is also unsatisfiable, with a
+  verified LRAT proof.
+\item Both encoders are tested on genuine nine- and eleven-face tori: every clause holds for their exact
+  chirotopes.
+\item A minimal unsatisfiable core uses 8 faces, 16 AD conditions and 37 GP relations.
+\end{itemize}
+Lemmas~\ref{lem:star}--\ref{lem:sat} prove Theorem~\ref{thm:main}. Lemma~\ref{lem:sat} does not use
+non-intersection, which gives Theorem~\ref{thm:strong}.
+
+\section{Data and verification}
+Code, certificates and a one-command checker: \url{% LEE: repository / DOI link
+}.
+\begin{itemize}
+\item The SHA-256 hash of the core CNF is
+  \texttt{55025880f4c97063\allowbreak 59a1eec24a2e519a\allowbreak 569b56095adc0ad2\allowbreak 68d5fa5456925293}.
+\item The check needs no human-readable proof of Lemma~\ref{lem:sat}. Such a proof is not available.
+\item Residual literature risk: Simutis's 1977 thesis was not obtained.
+\end{itemize}
+
+\section{Discussion}
+% LEE: discussion (Lee writes). Open follow-up: acoptic realisations of {4,4}_(3,1) with non-convex faces.
+
+\section*{AI use}
+% LEE: AI-use statement (Lee writes; same style as the README disclosure).
+
+\begin{thebibliography}{9}
+\bibitem{GS} B.~Gr\"unbaum and L.~Szilassi, Geometric realizations of special toroidal complexes,
+  \emph{Contrib.\ Discrete Math.} 4(1) (2009) 21--39, doi:10.55016/ojs/cdm.v4i1.61986.
+\bibitem{G99} B.~Gr\"unbaum, Acoptic polyhedra, in \emph{Advances in Discrete and Computational Geometry},
+  Contemp.\ Math.\ 223 (1999) 163--199.
+\bibitem{Seamons} J.~W.~G.~Seamons, A torus with eleven convex quadrilateral faces, Zenodo (2026),
+  doi:10.5281/zenodo.23750303.
+\bibitem{BK} U.~Brehm and W.~K\"uhnel, Equivelar maps on the torus, \emph{European J.\ Combin.} 29 (2008)
+  1843--1861.
+\bibitem{cake} Y.~K.~Tan, M.~J.~H.~Heule and M.~O.~Myreen, Verified propagation redundancy and compositional UNSAT
+  checking in CakeML, \emph{Int.\ J.\ Softw.\ Tools Technol.\ Transf.} 25 (2023) 167--184.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,40 @@
+== Lemma 2: map enumeration, two independent methods
+isomorphism classes passing C1-C3: 1
+  class with 2 lattices: [((10, 0), (3, 1)), ((10, 0), (7, 1))] faces: [[0, 1, 8, 7], [1, 2, 9, 8], [2, 3, 0, 9], [3, 4, 1, 0], [4, 5, 2, 1], [5, 6, 3, 2], [6, 7, 4, 3], [7, 8, 5, 4], [8, 9, 6, 5], [9, 0, 7, 6]]
+  orientable: 2  non-orientable: 0
+orientable isomorphism classes: 1
+   [(0, 1, 5, 2), (0, 2, 6, 3), (0, 3, 7, 4), (0, 4, 8, 1), (1, 5, 3, 7), (1, 7, 9, 8), (2, 5, 9, 8), (2, 6, 4, 8), (3, 5, 9, 6), (4, 6, 9, 7)]  == {4,4}_(3,1): True
+== exact geometric checker + encoder soundness on genuine tori (9-face, Seamons 11-face)
+T9 geomcheck: {'valid': True, 'V': 9, 'E': 18, 'F': 9, 'pairs': {'edge': 18, 'vertex': 18, 'empty': 0}}
+T9 clauses 63478 violated by true chirotope: 0
+T9 solver: s SATISFIABLE
+T11 geomcheck: {'valid': True, 'V': 11, 'E': 22, 'F': 11, 'pairs': {'edge': 22, 'vertex': 24, 'empty': 9}}
+T11 clauses 321620 violated by true chirotope: 0
+T11 solver: s SATISFIABLE
+ALL SOUNDNESS TESTS PASSED
+soundness: clauses violated by the true chirotope: 0
+soundness: clauses violated by the true chirotope: 0
+== mutation tests
+warped face: rejected: face 0 not planar
+reflected ring (intersecting): rejected: face 0 not strictly convex
+bow-tie face order: rejected: edge not in exactly 2 faces
+moved vertex: rejected: face 1 not planar
+reversed face cycle (must stay valid): True
+zeroed AD bracket -> violated clauses: 86
+non-planar face bracket -> violated clauses: 1
+MUTATION TESTS PASSED
+== Lemma 5: regenerate CNFs, compare hashes, solve, check LRAT
+../work/m10_core.cnf vars 19530 clauses 133310 {'gp_rel': 3150}
+../work/m10_full.cnf vars 19530 clauses 151951 {'gp_rel': 3150}
+../work/m10_indep.cnf vars 420 clauses 1373700 faces [(0, 1, 8, 7), (1, 2, 9, 8), (2, 3, 0, 9), (3, 4, 1, 0), (4, 5, 2, 1), (5, 6, 3, 2), (6, 7, 4, 3), (7, 8, 5, 4), (8, 9, 6, 5), (9, 0, 7, 6)]
+CNF hashes match certs/CHECKSUMS.sha256
+m10_core: s UNSATISFIABLE
+m10_full: s UNSATISFIABLE
+m10_indep: s UNSATISFIABLE
+m10_core: bash tools/cake_wsl.sh -> s VERIFIED UNSAT
+m10_core: gate_lrat_check -> 1847 135127
+m10_full: bash tools/cake_wsl.sh -> s VERIFIED UNSAT
+m10_full: gate_lrat_check -> 5314 153888
+m10_indep: bash tools/cake_wsl.sh -> s VERIFIED UNSAT
+m10_indep: gate_lrat_check -> 327844 1373752
+ALL CHECKS DONE

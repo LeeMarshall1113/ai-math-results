@@ -1,0 +1,17 @@
+Title: No torus with ten convex quadrilateral faces
+Upload type: Publication / Preprint
+Creators: Marshall, Lee
+Description (abstract): LEE writes. Technical summary for reference: no acoptic polyhedral torus in R^3 has exactly
+  10 strictly convex quadrilateral faces (the F = 10 case of Grünbaum–Szilassi 2009, Conjecture 3.2). The proof
+  reduces to the map {4,4}_(3,1) and certifies with an LRAT proof (checked by cake_lpr) that no planar,
+  strictly convex realisation exists, even with self-intersections.
+Keywords: polyhedral torus; quadrangulation; convex faces; Grünbaum–Szilassi conjecture; acoptic polyhedra;
+  equivelar map; oriented matroid; chirotope; SAT; LRAT; computer-assisted proof
+Related identifiers:
+  - doi:10.55016/ojs/cdm.v4i1.61986  (references; Grünbaum–Szilassi 2009)
+  - doi:10.5281/zenodo.23750303      (references; Seamons 2026, eleven faces)
+  - doi:10.1016/j.ejc.2008.01.010    (references; Brehm–Kühnel 2008)
+  - <repository / software DOI>      (is supplemented by; LEE fills in after upload)
+License: CC BY 4.0 (note); code: MIT (to confirm with Lee)
+Language: English
+Version: v1 (technical fast-stake note; prose rewrite to follow as v2 on the same concept DOI)

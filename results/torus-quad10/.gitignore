@@ -1,0 +1,5 @@
+work/
+code/cnf/
+__pycache__/
+*.aux
+*.log.tmp
