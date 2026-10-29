@@ -1,0 +1,1520 @@
+{
+ "k": 7,
+ "pmin": 11,
+ "pmax": 1153,
+ "n_primes": 187,
+ "n_gates": 175,
+ "nongates": [
+  11,
+  17,
+  19,
+  23,
+  29,
+  31,
+  37,
+  41,
+  43,
+  47,
+  53,
+  67
+ ],
+ "note": "gate = no non-exempt level-one orbit has a closed-improper, non-Lemma-G lift mod (k+1)p; impl1 counts surviving lifts up to its symmetry reduction, impl2 counts orbits with at least one surviving lift",
+ "primes": [
+  {
+   "p": 11,
+   "gate": false,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 2720,
+   "impl2_surviving_orbits": 2
+  },
+  {
+   "p": 13,
+   "gate": true,
+   "level1_orbits": 1,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 17,
+   "gate": false,
+   "level1_orbits": 56,
+   "nonexempt_orbits": 53,
+   "impl1_surviving_lifts": 47396,
+   "impl2_surviving_orbits": 53
+  },
+  {
+   "p": 19,
+   "gate": false,
+   "level1_orbits": 38,
+   "nonexempt_orbits": 35,
+   "impl1_surviving_lifts": 1844,
+   "impl2_surviving_orbits": 35
+  },
+  {
+   "p": 23,
+   "gate": false,
+   "level1_orbits": 11,
+   "nonexempt_orbits": 9,
+   "impl1_surviving_lifts": 24,
+   "impl2_surviving_orbits": 4
+  },
+  {
+   "p": 29,
+   "gate": false,
+   "level1_orbits": 46,
+   "nonexempt_orbits": 43,
+   "impl1_surviving_lifts": 76,
+   "impl2_surviving_orbits": 11
+  },
+  {
+   "p": 31,
+   "gate": false,
+   "level1_orbits": 19,
+   "nonexempt_orbits": 16,
+   "impl1_surviving_lifts": 4,
+   "impl2_surviving_orbits": 1
+  },
+  {
+   "p": 37,
+   "gate": false,
+   "level1_orbits": 177,
+   "nonexempt_orbits": 174,
+   "impl1_surviving_lifts": 16,
+   "impl2_surviving_orbits": 3
+  },
+  {
+   "p": 41,
+   "gate": false,
+   "level1_orbits": 402,
+   "nonexempt_orbits": 399,
+   "impl1_surviving_lifts": 24,
+   "impl2_surviving_orbits": 4
+  },
+  {
+   "p": 43,
+   "gate": false,
+   "level1_orbits": 234,
+   "nonexempt_orbits": 231,
+   "impl1_surviving_lifts": 4,
+   "impl2_surviving_orbits": 1
+  },
+  {
+   "p": 47,
+   "gate": false,
+   "level1_orbits": 50,
+   "nonexempt_orbits": 47,
+   "impl1_surviving_lifts": 8,
+   "impl2_surviving_orbits": 2
+  },
+  {
+   "p": 53,
+   "gate": false,
+   "level1_orbits": 310,
+   "nonexempt_orbits": 307,
+   "impl1_surviving_lifts": 4,
+   "impl2_surviving_orbits": 1
+  },
+  {
+   "p": 59,
+   "gate": true,
+   "level1_orbits": 287,
+   "nonexempt_orbits": 284,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 61,
+   "gate": true,
+   "level1_orbits": 217,
+   "nonexempt_orbits": 214,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 67,
+   "gate": false,
+   "level1_orbits": 494,
+   "nonexempt_orbits": 491,
+   "impl1_surviving_lifts": 4,
+   "impl2_surviving_orbits": 1
+  },
+  {
+   "p": 71,
+   "gate": true,
+   "level1_orbits": 89,
+   "nonexempt_orbits": 86,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 73,
+   "gate": true,
+   "level1_orbits": 539,
+   "nonexempt_orbits": 536,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 79,
+   "gate": true,
+   "level1_orbits": 79,
+   "nonexempt_orbits": 76,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 83,
+   "gate": true,
+   "level1_orbits": 451,
+   "nonexempt_orbits": 448,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 89,
+   "gate": true,
+   "level1_orbits": 638,
+   "nonexempt_orbits": 635,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 97,
+   "gate": true,
+   "level1_orbits": 391,
+   "nonexempt_orbits": 388,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 101,
+   "gate": true,
+   "level1_orbits": 133,
+   "nonexempt_orbits": 130,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 103,
+   "gate": true,
+   "level1_orbits": 34,
+   "nonexempt_orbits": 31,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 107,
+   "gate": true,
+   "level1_orbits": 106,
+   "nonexempt_orbits": 103,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 109,
+   "gate": true,
+   "level1_orbits": 57,
+   "nonexempt_orbits": 54,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 113,
+   "gate": true,
+   "level1_orbits": 308,
+   "nonexempt_orbits": 305,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 127,
+   "gate": true,
+   "level1_orbits": 42,
+   "nonexempt_orbits": 39,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 131,
+   "gate": true,
+   "level1_orbits": 106,
+   "nonexempt_orbits": 103,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 137,
+   "gate": true,
+   "level1_orbits": 87,
+   "nonexempt_orbits": 84,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 139,
+   "gate": true,
+   "level1_orbits": 52,
+   "nonexempt_orbits": 49,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 149,
+   "gate": true,
+   "level1_orbits": 37,
+   "nonexempt_orbits": 34,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 151,
+   "gate": true,
+   "level1_orbits": 38,
+   "nonexempt_orbits": 35,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 157,
+   "gate": true,
+   "level1_orbits": 32,
+   "nonexempt_orbits": 29,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 163,
+   "gate": true,
+   "level1_orbits": 31,
+   "nonexempt_orbits": 28,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 167,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 173,
+   "gate": true,
+   "level1_orbits": 7,
+   "nonexempt_orbits": 4,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 179,
+   "gate": true,
+   "level1_orbits": 39,
+   "nonexempt_orbits": 36,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 181,
+   "gate": true,
+   "level1_orbits": 37,
+   "nonexempt_orbits": 34,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 191,
+   "gate": true,
+   "level1_orbits": 7,
+   "nonexempt_orbits": 4,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 193,
+   "gate": true,
+   "level1_orbits": 33,
+   "nonexempt_orbits": 30,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 197,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 199,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 211,
+   "gate": true,
+   "level1_orbits": 39,
+   "nonexempt_orbits": 36,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 223,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 227,
+   "gate": true,
+   "level1_orbits": 15,
+   "nonexempt_orbits": 12,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 229,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 233,
+   "gate": true,
+   "level1_orbits": 14,
+   "nonexempt_orbits": 11,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 239,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 241,
+   "gate": true,
+   "level1_orbits": 16,
+   "nonexempt_orbits": 13,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 251,
+   "gate": true,
+   "level1_orbits": 14,
+   "nonexempt_orbits": 11,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 257,
+   "gate": true,
+   "level1_orbits": 9,
+   "nonexempt_orbits": 6,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 263,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 269,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 271,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 277,
+   "gate": true,
+   "level1_orbits": 17,
+   "nonexempt_orbits": 14,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 281,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 283,
+   "gate": true,
+   "level1_orbits": 7,
+   "nonexempt_orbits": 4,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 293,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 307,
+   "gate": true,
+   "level1_orbits": 19,
+   "nonexempt_orbits": 16,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 311,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 313,
+   "gate": true,
+   "level1_orbits": 7,
+   "nonexempt_orbits": 4,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 317,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 331,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 337,
+   "gate": true,
+   "level1_orbits": 14,
+   "nonexempt_orbits": 11,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 347,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 349,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 353,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 359,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 367,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 373,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 379,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 383,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 389,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 397,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 401,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 409,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 419,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 421,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 431,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 433,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 439,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 443,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 449,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 457,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 461,
+   "gate": true,
+   "level1_orbits": 6,
+   "nonexempt_orbits": 3,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 463,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 467,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 479,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 487,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 491,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 499,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 503,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 509,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 521,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 523,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 541,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 547,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 557,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 563,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 569,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 571,
+   "gate": true,
+   "level1_orbits": 4,
+   "nonexempt_orbits": 1,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 577,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 587,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 593,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 599,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 601,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 607,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 613,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 617,
+   "gate": true,
+   "level1_orbits": 5,
+   "nonexempt_orbits": 2,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 619,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 631,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 641,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 643,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 647,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 653,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 659,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 661,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 673,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 677,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 683,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 691,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 701,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 709,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 719,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 727,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 733,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 739,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 743,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 751,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 757,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 761,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 769,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 773,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 787,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 797,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 809,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 811,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 821,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 823,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 827,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 829,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 839,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 853,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 857,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 859,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 863,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 877,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 881,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 883,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 887,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 907,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 911,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 919,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 929,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 937,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 941,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 947,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 953,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 967,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 971,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 977,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 983,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 991,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 997,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1009,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1013,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1019,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1021,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1031,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1033,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1039,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1049,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1051,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1061,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1063,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1069,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1087,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1091,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1093,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1097,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1103,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1109,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1117,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1123,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1129,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1151,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  },
+  {
+   "p": 1153,
+   "gate": true,
+   "level1_orbits": 3,
+   "nonexempt_orbits": 0,
+   "impl1_surviving_lifts": 0,
+   "impl2_surviving_orbits": 0
+  }
+ ]
+}

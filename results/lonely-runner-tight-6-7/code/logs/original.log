@@ -1,0 +1,36 @@
+validate p=11: brute 1 orbits with closed-improper lift, pipeline 1, equal=True, tight rep (1, 1, 2, 3, 4, 5) in brute: True  (6.4s)
+validate p=13: brute 1 orbits with closed-improper lift, pipeline 1, equal=True, tight rep (1, 2, 3, 4, 5, 6) in brute: True  (2.7s)
+validate sym p=17: True
+validate sym p=19: True
+validate sym p=23: True
+validate real ML values: ok
+VALIDATION OK
+validate2 p=17: brute 19, pipeline 19, equal=True (9.9s)
+validate2 p=19: brute 5, pipeline 5, equal=True (14.9s)
+validate2 p=23: brute 7, pipeline 7, equal=True (36.2s)
+validate2 p=29: brute 6, pipeline 6, equal=True (105.0s)
+VALIDATION2 OK
+k=7 p=11: brute 3 orbits, pipeline 3, equal=True, known tight orbits in brute: 1 (27s)
+k=7 p=13: brute 1 orbits, pipeline 1, equal=True, known tight orbits in brute: 1 (65s)
+k=7 p=17: brute 56 orbits, pipeline 56, equal=True, known tight orbits in brute: 3 (218s)
+(1, 2, 3) II.b holds: True  D = 4  equality times ['1/4', '3/4']  admissible Q: [0]
+(1, 2, 3, 4) II.b holds: True  D = 5  equality times ['1/5', '2/5', '3/5', '4/5']  admissible Q: [0]
+(1, 3, 4, 7) II.b holds: True  D = 5  equality times ['1/5', '2/5', '3/5', '4/5']  admissible Q: [0]
+(1, 2, 3, 4, 5) II.b holds: True  D = 6  equality times ['1/6', '5/6']  admissible Q: [0]
+(1, 3, 4, 5, 9) II.b holds: True  D = 6  equality times ['1/6', '5/6']  admissible Q: [0]
+(1, 2, 3, 4, 5, 6) II.b holds: True  D = 7  equality times ['1/7', '2/7', '3/7', '4/7', '5/7', '6/7']  admissible Q: [0]
+(1, 2, 3, 4, 5, 6, 7) II.b holds: True  D = 8  equality times ['1/8', '3/8', '5/8', '7/8']  admissible Q: [0]
+(1, 2, 3, 4, 5, 7, 12) II.b holds: True  D = 8  equality times ['1/8', '3/8', '5/8', '7/8']  admissible Q: [0]
+(1, 4, 5, 6, 7, 11, 13) II.b holds: True  D = 8  equality times ['1/8', '3/8', '5/8', '7/8']  admissible Q: [0]
+k=6: primes 11..997 (164), non-gates [17, 19, 23, 29, 31, 37, 47, 53, 61, 79]
+k=7: primes 11..1153 (187), non-gates [11, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 67]
+k=6: m=22, S0=m^5=5153632, needed gate mass log(B) = 283.799574 nats
+  primes 11..997: 154 gates, mass 915.272049 nats, margin 631.472475 nats, exact inequality holds: True
+k=7: m=29, S0=m^6=594823321, needed gate mass log(B) = 1050.943096 nats
+  primes 11..1129: 173 gates, mass 1056.086713 nats, margin 5.143617 nats, exact inequality holds: True
+  primes 11..1153: 175 gates, mass 1070.185222 nats, margin 19.242126 nats, exact inequality holds: True
+ORIGINAL CHECK OK
+
+real	63m33.739s
+user	0m0.091s
+sys	0m2.026s

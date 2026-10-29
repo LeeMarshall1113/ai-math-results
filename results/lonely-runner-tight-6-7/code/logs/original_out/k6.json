@@ -1,0 +1,2392 @@
+[
+ {
+  "p": 11,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.354,
+  "gate_mass_so_far": 2.398
+ },
+ {
+  "p": 13,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.0,
+  "gate_mass_so_far": 4.963
+ },
+ {
+  "p": 17,
+  "level1_orbits": 19,
+  "tight_in_level1": true,
+  "nontight": 18,
+  "lifted_survivors": 280,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     1,
+     1,
+     3,
+     4,
+     5
+    ],
+    [
+     [
+      1,
+      1,
+      35,
+      105,
+      21,
+      56
+     ],
+     [
+      1,
+      86,
+      35,
+      105,
+      21,
+      56
+     ],
+     [
+      1,
+      52,
+      35,
+      105,
+      21,
+      56
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     1,
+     1,
+     4,
+     6,
+     7
+    ],
+    [
+     [
+      1,
+      1,
+      35,
+      21,
+      91,
+      7
+     ],
+     [
+      1,
+      86,
+      35,
+      21,
+      91,
+      7
+     ],
+     [
+      1,
+      52,
+      35,
+      21,
+      91,
+      7
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     [
+      1,
+      35,
+      36,
+      105,
+      21,
+      56
+     ],
+     [
+      35,
+      1,
+      36,
+      105,
+      21,
+      56
+     ],
+     [
+      1,
+      35,
+      2,
+      105,
+      21,
+      56
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.053,
+  "gate_mass_so_far": 4.963
+ },
+ {
+  "p": 19,
+  "level1_orbits": 9,
+  "tight_in_level1": true,
+  "nontight": 8,
+  "lifted_survivors": 9,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     1,
+     3,
+     4,
+     5,
+     7
+    ],
+    [
+     [
+      1,
+      20,
+      117,
+      4,
+      100,
+      121
+     ],
+     [
+      1,
+      20,
+      79,
+      80,
+      5,
+      26
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     1,
+     3,
+     4,
+     7,
+     9
+    ],
+    [
+     [
+      1,
+      58,
+      117,
+      80,
+      64,
+      85
+     ],
+     [
+      1,
+      39,
+      41,
+      61,
+      102,
+      123
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7
+    ],
+    [
+     [
+      1,
+      40,
+      117,
+      4,
+      24,
+      64
+     ],
+     [
+      1,
+      59,
+      60,
+      61,
+      62,
+      121
+     ],
+     [
+      1,
+      78,
+      79,
+      80,
+      81,
+      26
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.022,
+  "gate_mass_so_far": 4.963
+ },
+ {
+  "p": 23,
+  "level1_orbits": 37,
+  "tight_in_level1": true,
+  "nontight": 36,
+  "lifted_survivors": 16,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     [
+      1,
+      93,
+      94,
+      95,
+      96,
+      28
+     ],
+     [
+      1,
+      116,
+      117,
+      72,
+      27,
+      28
+     ],
+     [
+      1,
+      139,
+      140,
+      141,
+      142,
+      120
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     1,
+     3,
+     4,
+     5,
+     7
+    ],
+    [
+     [
+      1,
+      47,
+      141,
+      27,
+      74,
+      7
+     ],
+     [
+      1,
+      24,
+      3,
+      4,
+      5,
+      7
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     1,
+     4,
+     5,
+     6,
+     7
+    ],
+    [
+     [
+      1,
+      139,
+      73,
+      51,
+      29,
+      7
+     ],
+     [
+      1,
+      139,
+      4,
+      5,
+      6,
+      7
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.109,
+  "gate_mass_so_far": 4.963
+ },
+ {
+  "p": 29,
+  "level1_orbits": 94,
+  "tight_in_level1": true,
+  "nontight": 93,
+  "lifted_survivors": 8,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     [
+      1,
+      59,
+      60,
+      119,
+      178,
+      179
+     ],
+     [
+      1,
+      117,
+      118,
+      119,
+      120,
+      34
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     1,
+     5,
+     6,
+     11,
+     13
+    ],
+    [
+     [
+      1,
+      59,
+      34,
+      93,
+      127,
+      42
+     ],
+     [
+      1,
+      117,
+      121,
+      122,
+      40,
+      42
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     2,
+     3,
+     4,
+     5,
+     7
+    ],
+    [
+     [
+      175,
+      176,
+      148,
+      120,
+      92,
+      65
+     ],
+     [
+      1,
+      31,
+      32,
+      33,
+      34,
+      65
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.321,
+  "gate_mass_so_far": 4.963
+ },
+ {
+  "p": 31,
+  "level1_orbits": 58,
+  "tight_in_level1": true,
+  "nontight": 57,
+  "lifted_survivors": 2,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     2,
+     3,
+     5,
+     7,
+     8
+    ],
+    [
+     [
+      1,
+      64,
+      65,
+      129,
+      193,
+      194
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     2,
+     3,
+     9,
+     10,
+     12
+    ],
+    [
+     [
+      1,
+      95,
+      96,
+      40,
+      41,
+      136
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.187,
+  "gate_mass_so_far": 4.963
+ },
+ {
+  "p": 37,
+  "level1_orbits": 74,
+  "tight_in_level1": true,
+  "nontight": 73,
+  "lifted_survivors": 2,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     2,
+     3,
+     5,
+     7,
+     8
+    ],
+    [
+     [
+      1,
+      113,
+      114,
+      227,
+      81,
+      82
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     3,
+     4,
+     7,
+     10,
+     11
+    ],
+    [
+     [
+      1,
+      225,
+      226,
+      192,
+      158,
+      159
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.254,
+  "gate_mass_so_far": 4.963
+ },
+ {
+  "p": 41,
+  "level1_orbits": 15,
+  "tight_in_level1": true,
+  "nontight": 14,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.049,
+  "gate_mass_so_far": 8.676
+ },
+ {
+  "p": 43,
+  "level1_orbits": 201,
+  "tight_in_level1": true,
+  "nontight": 200,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.735,
+  "gate_mass_so_far": 12.438
+ },
+ {
+  "p": 47,
+  "level1_orbits": 53,
+  "tight_in_level1": true,
+  "nontight": 52,
+  "lifted_survivors": 2,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     2,
+     3,
+     14,
+     16,
+     17
+    ],
+    [
+     [
+      1,
+      284,
+      285,
+      249,
+      204,
+      205
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     3,
+     4,
+     14,
+     15,
+     18
+    ],
+    [
+     [
+      1,
+      144,
+      145,
+      61,
+      62,
+      206
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.203,
+  "gate_mass_so_far": 12.438
+ },
+ {
+  "p": 53,
+  "level1_orbits": 39,
+  "tight_in_level1": true,
+  "nontight": 38,
+  "lifted_survivors": 1,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     3,
+     4,
+     7,
+     10,
+     11
+    ],
+    [
+     [
+      1,
+      162,
+      163,
+      325,
+      116,
+      117
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.15,
+  "gate_mass_so_far": 12.438
+ },
+ {
+  "p": 59,
+  "level1_orbits": 72,
+  "tight_in_level1": true,
+  "nontight": 71,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.365,
+  "gate_mass_so_far": 16.515
+ },
+ {
+  "p": 61,
+  "level1_orbits": 34,
+  "tight_in_level1": true,
+  "nontight": 33,
+  "lifted_survivors": 2,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     4,
+     5,
+     6,
+     7,
+     11
+    ],
+    [
+     [
+      1,
+      309,
+      310,
+      311,
+      312,
+      194
+     ]
+    ]
+   ],
+   [
+    [
+     1,
+     4,
+     5,
+     9,
+     13,
+     14
+    ],
+    [
+     [
+      1,
+      309,
+      310,
+      192,
+      74,
+      75
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.163,
+  "gate_mass_so_far": 16.515
+ },
+ {
+  "p": 67,
+  "level1_orbits": 61,
+  "tight_in_level1": true,
+  "nontight": 60,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.333,
+  "gate_mass_so_far": 20.72
+ },
+ {
+  "p": 71,
+  "level1_orbits": 129,
+  "tight_in_level1": true,
+  "nontight": 128,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.723,
+  "gate_mass_so_far": 24.983
+ },
+ {
+  "p": 73,
+  "level1_orbits": 58,
+  "tight_in_level1": true,
+  "nontight": 57,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.329,
+  "gate_mass_so_far": 29.273
+ },
+ {
+  "p": 79,
+  "level1_orbits": 46,
+  "tight_in_level1": true,
+  "nontight": 45,
+  "lifted_survivors": 1,
+  "gate": false,
+  "examples": [
+   [
+    [
+     1,
+     4,
+     5,
+     9,
+     13,
+     14
+    ],
+    [
+     [
+      1,
+      162,
+      163,
+      325,
+      487,
+      488
+     ]
+    ]
+   ]
+  ],
+  "secs": 0.263,
+  "gate_mass_so_far": 29.273
+ },
+ {
+  "p": 83,
+  "level1_orbits": 11,
+  "tight_in_level1": true,
+  "nontight": 10,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.053,
+  "gate_mass_so_far": 33.692
+ },
+ {
+  "p": 89,
+  "level1_orbits": 14,
+  "tight_in_level1": true,
+  "nontight": 13,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.074,
+  "gate_mass_so_far": 38.18
+ },
+ {
+  "p": 97,
+  "level1_orbits": 8,
+  "tight_in_level1": true,
+  "nontight": 7,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.052,
+  "gate_mass_so_far": 42.755
+ },
+ {
+  "p": 101,
+  "level1_orbits": 22,
+  "tight_in_level1": true,
+  "nontight": 21,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.142,
+  "gate_mass_so_far": 47.37
+ },
+ {
+  "p": 103,
+  "level1_orbits": 20,
+  "tight_in_level1": true,
+  "nontight": 19,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.132,
+  "gate_mass_so_far": 52.005
+ },
+ {
+  "p": 107,
+  "level1_orbits": 11,
+  "tight_in_level1": true,
+  "nontight": 10,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.065,
+  "gate_mass_so_far": 56.678
+ },
+ {
+  "p": 109,
+  "level1_orbits": 10,
+  "tight_in_level1": true,
+  "nontight": 9,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.073,
+  "gate_mass_so_far": 61.369
+ },
+ {
+  "p": 113,
+  "level1_orbits": 23,
+  "tight_in_level1": true,
+  "nontight": 22,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.173,
+  "gate_mass_so_far": 66.097
+ },
+ {
+  "p": 127,
+  "level1_orbits": 18,
+  "tight_in_level1": true,
+  "nontight": 17,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.129,
+  "gate_mass_so_far": 70.941
+ },
+ {
+  "p": 131,
+  "level1_orbits": 8,
+  "tight_in_level1": true,
+  "nontight": 7,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.064,
+  "gate_mass_so_far": 75.816
+ },
+ {
+  "p": 137,
+  "level1_orbits": 4,
+  "tight_in_level1": true,
+  "nontight": 3,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.034,
+  "gate_mass_so_far": 80.736
+ },
+ {
+  "p": 139,
+  "level1_orbits": 4,
+  "tight_in_level1": true,
+  "nontight": 3,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.033,
+  "gate_mass_so_far": 85.67
+ },
+ {
+  "p": 149,
+  "level1_orbits": 6,
+  "tight_in_level1": true,
+  "nontight": 5,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.057,
+  "gate_mass_so_far": 90.674
+ },
+ {
+  "p": 151,
+  "level1_orbits": 7,
+  "tight_in_level1": true,
+  "nontight": 6,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.046,
+  "gate_mass_so_far": 95.692
+ },
+ {
+  "p": 157,
+  "level1_orbits": 11,
+  "tight_in_level1": true,
+  "nontight": 10,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.099,
+  "gate_mass_so_far": 100.748
+ },
+ {
+  "p": 163,
+  "level1_orbits": 7,
+  "tight_in_level1": true,
+  "nontight": 6,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.074,
+  "gate_mass_so_far": 105.842
+ },
+ {
+  "p": 167,
+  "level1_orbits": 5,
+  "tight_in_level1": true,
+  "nontight": 4,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.053,
+  "gate_mass_so_far": 110.96
+ },
+ {
+  "p": 173,
+  "level1_orbits": 3,
+  "tight_in_level1": true,
+  "nontight": 2,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.033,
+  "gate_mass_so_far": 116.113
+ },
+ {
+  "p": 179,
+  "level1_orbits": 3,
+  "tight_in_level1": true,
+  "nontight": 2,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.034,
+  "gate_mass_so_far": 121.3
+ },
+ {
+  "p": 181,
+  "level1_orbits": 3,
+  "tight_in_level1": true,
+  "nontight": 2,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.032,
+  "gate_mass_so_far": 126.499
+ },
+ {
+  "p": 191,
+  "level1_orbits": 6,
+  "tight_in_level1": true,
+  "nontight": 5,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.074,
+  "gate_mass_so_far": 131.751
+ },
+ {
+  "p": 193,
+  "level1_orbits": 6,
+  "tight_in_level1": true,
+  "nontight": 5,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.069,
+  "gate_mass_so_far": 137.014
+ },
+ {
+  "p": 197,
+  "level1_orbits": 6,
+  "tight_in_level1": true,
+  "nontight": 5,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.063,
+  "gate_mass_so_far": 142.297
+ },
+ {
+  "p": 199,
+  "level1_orbits": 5,
+  "tight_in_level1": true,
+  "nontight": 4,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.062,
+  "gate_mass_so_far": 147.59
+ },
+ {
+  "p": 211,
+  "level1_orbits": 4,
+  "tight_in_level1": true,
+  "nontight": 3,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.063,
+  "gate_mass_so_far": 152.942
+ },
+ {
+  "p": 223,
+  "level1_orbits": 6,
+  "tight_in_level1": true,
+  "nontight": 5,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.072,
+  "gate_mass_so_far": 158.349
+ },
+ {
+  "p": 227,
+  "level1_orbits": 4,
+  "tight_in_level1": true,
+  "nontight": 3,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.058,
+  "gate_mass_so_far": 163.774
+ },
+ {
+  "p": 229,
+  "level1_orbits": 5,
+  "tight_in_level1": true,
+  "nontight": 4,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.071,
+  "gate_mass_so_far": 169.208
+ },
+ {
+  "p": 233,
+  "level1_orbits": 6,
+  "tight_in_level1": true,
+  "nontight": 5,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.093,
+  "gate_mass_so_far": 174.659
+ },
+ {
+  "p": 239,
+  "level1_orbits": 7,
+  "tight_in_level1": true,
+  "nontight": 6,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.107,
+  "gate_mass_so_far": 180.135
+ },
+ {
+  "p": 241,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.046,
+  "gate_mass_so_far": 185.62
+ },
+ {
+  "p": 251,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.039,
+  "gate_mass_so_far": 191.146
+ },
+ {
+  "p": 257,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.032,
+  "gate_mass_so_far": 196.695
+ },
+ {
+  "p": 263,
+  "level1_orbits": 3,
+  "tight_in_level1": true,
+  "nontight": 2,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.067,
+  "gate_mass_so_far": 202.267
+ },
+ {
+  "p": 269,
+  "level1_orbits": 3,
+  "tight_in_level1": true,
+  "nontight": 2,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.064,
+  "gate_mass_so_far": 207.862
+ },
+ {
+  "p": 271,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.032,
+  "gate_mass_so_far": 213.464
+ },
+ {
+  "p": 277,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.055,
+  "gate_mass_so_far": 219.088
+ },
+ {
+  "p": 281,
+  "level1_orbits": 4,
+  "tight_in_level1": true,
+  "nontight": 3,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.095,
+  "gate_mass_so_far": 224.726
+ },
+ {
+  "p": 283,
+  "level1_orbits": 3,
+  "tight_in_level1": true,
+  "nontight": 2,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.08,
+  "gate_mass_so_far": 230.372
+ },
+ {
+  "p": 293,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.055,
+  "gate_mass_so_far": 236.052
+ },
+ {
+  "p": 307,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.038,
+  "gate_mass_so_far": 241.779
+ },
+ {
+  "p": 311,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.072,
+  "gate_mass_so_far": 247.518
+ },
+ {
+  "p": 313,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.062,
+  "gate_mass_so_far": 253.265
+ },
+ {
+  "p": 317,
+  "level1_orbits": 4,
+  "tight_in_level1": true,
+  "nontight": 3,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.11,
+  "gate_mass_so_far": 259.024
+ },
+ {
+  "p": 331,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.098,
+  "gate_mass_so_far": 264.826
+ },
+ {
+  "p": 337,
+  "level1_orbits": 3,
+  "tight_in_level1": true,
+  "nontight": 2,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.126,
+  "gate_mass_so_far": 270.646
+ },
+ {
+  "p": 347,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.102,
+  "gate_mass_so_far": 276.495
+ },
+ {
+  "p": 349,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.095,
+  "gate_mass_so_far": 282.35
+ },
+ {
+  "p": 353,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.095,
+  "gate_mass_so_far": 288.217
+ },
+ {
+  "p": 359,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.09,
+  "gate_mass_so_far": 294.1
+ },
+ {
+  "p": 367,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.084,
+  "gate_mass_so_far": 300.005
+ },
+ {
+  "p": 373,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.081,
+  "gate_mass_so_far": 305.927
+ },
+ {
+  "p": 379,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.096,
+  "gate_mass_so_far": 311.864
+ },
+ {
+  "p": 383,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.099,
+  "gate_mass_so_far": 317.812
+ },
+ {
+  "p": 389,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.092,
+  "gate_mass_so_far": 323.776
+ },
+ {
+  "p": 397,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.118,
+  "gate_mass_so_far": 329.76
+ },
+ {
+  "p": 401,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.128,
+  "gate_mass_so_far": 335.754
+ },
+ {
+  "p": 409,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.119,
+  "gate_mass_so_far": 341.768
+ },
+ {
+  "p": 419,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.123,
+  "gate_mass_so_far": 347.806
+ },
+ {
+  "p": 421,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.155,
+  "gate_mass_so_far": 353.848
+ },
+ {
+  "p": 431,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.145,
+  "gate_mass_so_far": 359.914
+ },
+ {
+  "p": 433,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.123,
+  "gate_mass_so_far": 365.985
+ },
+ {
+  "p": 439,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.136,
+  "gate_mass_so_far": 372.069
+ },
+ {
+  "p": 443,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.146,
+  "gate_mass_so_far": 378.163
+ },
+ {
+  "p": 449,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.137,
+  "gate_mass_so_far": 384.27
+ },
+ {
+  "p": 457,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.175,
+  "gate_mass_so_far": 390.395
+ },
+ {
+  "p": 461,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.188,
+  "gate_mass_so_far": 396.528
+ },
+ {
+  "p": 463,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.18,
+  "gate_mass_so_far": 402.666
+ },
+ {
+  "p": 467,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.184,
+  "gate_mass_so_far": 408.812
+ },
+ {
+  "p": 479,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.172,
+  "gate_mass_so_far": 414.984
+ },
+ {
+  "p": 487,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.21,
+  "gate_mass_so_far": 421.172
+ },
+ {
+  "p": 491,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.238,
+  "gate_mass_so_far": 427.369
+ },
+ {
+  "p": 499,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.219,
+  "gate_mass_so_far": 433.581
+ },
+ {
+  "p": 503,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.219,
+  "gate_mass_so_far": 439.802
+ },
+ {
+  "p": 509,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.239,
+  "gate_mass_so_far": 446.034
+ },
+ {
+  "p": 521,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.29,
+  "gate_mass_so_far": 452.29
+ },
+ {
+  "p": 523,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.299,
+  "gate_mass_so_far": 458.55
+ },
+ {
+  "p": 541,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.341,
+  "gate_mass_so_far": 464.843
+ },
+ {
+  "p": 547,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.376,
+  "gate_mass_so_far": 471.147
+ },
+ {
+  "p": 557,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.35,
+  "gate_mass_so_far": 477.47
+ },
+ {
+  "p": 563,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.298,
+  "gate_mass_so_far": 483.803
+ },
+ {
+  "p": 569,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.4,
+  "gate_mass_so_far": 490.147
+ },
+ {
+  "p": 571,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.401,
+  "gate_mass_so_far": 496.495
+ },
+ {
+  "p": 577,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.346,
+  "gate_mass_so_far": 502.852
+ },
+ {
+  "p": 587,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.361,
+  "gate_mass_so_far": 509.227
+ },
+ {
+  "p": 593,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.424,
+  "gate_mass_so_far": 515.613
+ },
+ {
+  "p": 599,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.445,
+  "gate_mass_so_far": 522.008
+ },
+ {
+  "p": 601,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.404,
+  "gate_mass_so_far": 528.406
+ },
+ {
+  "p": 607,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.427,
+  "gate_mass_so_far": 534.815
+ },
+ {
+  "p": 613,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.447,
+  "gate_mass_so_far": 541.233
+ },
+ {
+  "p": 617,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.462,
+  "gate_mass_so_far": 547.658
+ },
+ {
+  "p": 619,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.553,
+  "gate_mass_so_far": 554.086
+ },
+ {
+  "p": 631,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.522,
+  "gate_mass_so_far": 560.534
+ },
+ {
+  "p": 641,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.563,
+  "gate_mass_so_far": 566.997
+ },
+ {
+  "p": 643,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.653,
+  "gate_mass_so_far": 573.463
+ },
+ {
+  "p": 647,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.655,
+  "gate_mass_so_far": 579.935
+ },
+ {
+  "p": 653,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.73,
+  "gate_mass_so_far": 586.417
+ },
+ {
+  "p": 659,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.772,
+  "gate_mass_so_far": 592.907
+ },
+ {
+  "p": 661,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.745,
+  "gate_mass_so_far": 599.401
+ },
+ {
+  "p": 673,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.806,
+  "gate_mass_so_far": 605.913
+ },
+ {
+  "p": 677,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.729,
+  "gate_mass_so_far": 612.431
+ },
+ {
+  "p": 683,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.746,
+  "gate_mass_so_far": 618.957
+ },
+ {
+  "p": 691,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.747,
+  "gate_mass_so_far": 625.495
+ },
+ {
+  "p": 701,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.946,
+  "gate_mass_so_far": 632.048
+ },
+ {
+  "p": 709,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.963,
+  "gate_mass_so_far": 638.612
+ },
+ {
+  "p": 719,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.898,
+  "gate_mass_so_far": 645.19
+ },
+ {
+  "p": 727,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.024,
+  "gate_mass_so_far": 651.778
+ },
+ {
+  "p": 733,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 0.879,
+  "gate_mass_so_far": 658.376
+ },
+ {
+  "p": 739,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.054,
+  "gate_mass_so_far": 664.981
+ },
+ {
+  "p": 743,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.097,
+  "gate_mass_so_far": 671.592
+ },
+ {
+  "p": 751,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.161,
+  "gate_mass_so_far": 678.213
+ },
+ {
+  "p": 757,
+  "level1_orbits": 2,
+  "tight_in_level1": true,
+  "nontight": 1,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.267,
+  "gate_mass_so_far": 684.842
+ },
+ {
+  "p": 761,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.151,
+  "gate_mass_so_far": 691.477
+ },
+ {
+  "p": 769,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.201,
+  "gate_mass_so_far": 698.122
+ },
+ {
+  "p": 773,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.455,
+  "gate_mass_so_far": 704.772
+ },
+ {
+  "p": 787,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.576,
+  "gate_mass_so_far": 711.441
+ },
+ {
+  "p": 797,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.481,
+  "gate_mass_so_far": 718.121
+ },
+ {
+  "p": 809,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.678,
+  "gate_mass_so_far": 724.817
+ },
+ {
+  "p": 811,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.646,
+  "gate_mass_so_far": 731.516
+ },
+ {
+  "p": 821,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.863,
+  "gate_mass_so_far": 738.226
+ },
+ {
+  "p": 823,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.744,
+  "gate_mass_so_far": 744.939
+ },
+ {
+  "p": 827,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.878,
+  "gate_mass_so_far": 751.657
+ },
+ {
+  "p": 829,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.816,
+  "gate_mass_so_far": 758.377
+ },
+ {
+  "p": 839,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.815,
+  "gate_mass_so_far": 765.109
+ },
+ {
+  "p": 853,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.877,
+  "gate_mass_so_far": 771.858
+ },
+ {
+  "p": 857,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.013,
+  "gate_mass_so_far": 778.611
+ },
+ {
+  "p": 859,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.125,
+  "gate_mass_so_far": 785.367
+ },
+ {
+  "p": 863,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.04,
+  "gate_mass_so_far": 792.128
+ },
+ {
+  "p": 877,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.371,
+  "gate_mass_so_far": 798.904
+ },
+ {
+  "p": 881,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.17,
+  "gate_mass_so_far": 805.685
+ },
+ {
+  "p": 883,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.453,
+  "gate_mass_so_far": 812.468
+ },
+ {
+  "p": 887,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.276,
+  "gate_mass_so_far": 819.256
+ },
+ {
+  "p": 907,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 1.95,
+  "gate_mass_so_far": 826.066
+ },
+ {
+  "p": 911,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.087,
+  "gate_mass_so_far": 832.881
+ },
+ {
+  "p": 919,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.122,
+  "gate_mass_so_far": 839.704
+ },
+ {
+  "p": 929,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.05,
+  "gate_mass_so_far": 846.538
+ },
+ {
+  "p": 937,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.151,
+  "gate_mass_so_far": 853.381
+ },
+ {
+  "p": 941,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.27,
+  "gate_mass_so_far": 860.228
+ },
+ {
+  "p": 947,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.324,
+  "gate_mass_so_far": 867.081
+ },
+ {
+  "p": 953,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.367,
+  "gate_mass_so_far": 873.941
+ },
+ {
+  "p": 967,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.607,
+  "gate_mass_so_far": 880.815
+ },
+ {
+  "p": 971,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.266,
+  "gate_mass_so_far": 887.693
+ },
+ {
+  "p": 977,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.465,
+  "gate_mass_so_far": 894.578
+ },
+ {
+  "p": 983,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.678,
+  "gate_mass_so_far": 901.469
+ },
+ {
+  "p": 991,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.682,
+  "gate_mass_so_far": 908.367
+ },
+ {
+  "p": 997,
+  "level1_orbits": 1,
+  "tight_in_level1": true,
+  "nontight": 0,
+  "lifted_survivors": 0,
+  "gate": true,
+  "examples": [],
+  "secs": 2.755,
+  "gate_mass_so_far": 915.272
+ }
+]

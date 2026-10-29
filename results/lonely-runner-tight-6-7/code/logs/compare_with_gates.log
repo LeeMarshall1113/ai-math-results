@@ -1,0 +1,24 @@
+# 2026-10-29: after make_gates.py, both checkers re-run on the recorded outputs against gates/*.json
+k=6: 164 primes 11..997, 154 gates, non-gates [17, 19, 23, 29, 31, 37, 47, 53, 61, 79]
+k=7: 187 primes 11..1153, 175 gates, non-gates [11, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 67]
+GATE LISTS WRITTEN (implementations agree)
+k=6: primes 11..997 (164), non-gates [17, 19, 23, 29, 31, 37, 47, 53, 61, 79]
+k=7: primes 11..1153 (187), non-gates [11, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 67]
+k=6: m=22, S0=m^5=5153632, needed gate mass log(B) = 283.799574 nats
+  primes 11..997: 154 gates, mass 915.272049 nats, margin 631.472475 nats, exact inequality holds: True
+k=7: m=29, S0=m^6=594823321, needed gate mass log(B) = 1050.943096 nats
+  primes 11..1129: 173 gates, mass 1056.086713 nats, margin 5.143617 nats, exact inequality holds: True
+  primes 11..1153: 175 gates, mass 1070.185222 nats, margin 19.242126 nats, exact inequality holds: True
+  k=6: 164 published primes, verdict/orbit-count mismatches: [], unpublished primes: []
+  k=7: 187 published primes, verdict/orbit-count mismatches: [], unpublished primes: []
+ORIGINAL CHECK OK
+k=6: 164 primes, non-gates [17, 19, 23, 29, 31, 37, 47, 53, 61, 79]
+k=7: 187 primes, non-gates [11, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 67]
+k=6: m=22, S0=5153632, needed log(B) = 283.799574 nats, exempt orbits sane: True
+  primes 11..997: 154 gates, margin 631.472475 nats, exact inequality holds: True
+k=7: m=29, S0=594823321, needed log(B) = 1050.943096 nats, exempt orbits sane: True
+  primes 11..1129: 173 gates, margin 5.143617 nats, exact inequality holds: True
+  primes 11..1153: 175 gates, margin 19.242126 nats, exact inequality holds: True
+  k=6: 164 published primes, verdict/orbit-count mismatches: [], unpublished primes: []
+  k=7: 187 published primes, verdict/orbit-count mismatches: [], unpublished primes: []
+REFEREE CHECK OK
