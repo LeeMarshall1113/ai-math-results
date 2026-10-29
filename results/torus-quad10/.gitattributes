@@ -1,0 +1,3 @@
+certs/* -text
+*.cnf -text
+*.lrat -text
