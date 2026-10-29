@@ -36,6 +36,17 @@ This runs `vsome.py 500` (re-derives identity (*), re-enumerates the 38016 faces
 
 Certificates are included in full (all files under 5 MB, about 12 MB total); the search code that generated them is not. Checkers import only sympy, flint and each other.
 
+
+### Third independent checker (pure Python, no CAS libraries)
+`proof/indep3/` re-checks everything using **only the Python standard library** (Fractions and integers). It uses no python-flint, sympy or numpy, and none of the other checkers' code, so the two libraries the first two checkers rely on are no longer a single point of failure. It derives Phi, re-enumerates the 38016 faces and 836 orbits, rebuilds every face polynomial, replays every certificate with its own Bernstein/de Casteljau code, and checks exact, disjoint coverage by orbit.
+
+```
+cd proof/indep3
+python -I check3.py           # about 4-5 min, under 0.1 GB; ends with ALL OK
+python -I mutation_tests.py   # 47 deliberately corrupted inputs, all rejected
+```
+Limits are stated in `indep3/README.md`: it trusts CPython integer arithmetic, and the hand arguments (Bendixson, the LP-vertex reduction, why symmetry preserves |Im|) are proved in PROOF.md, not machine-checked.
+
 ## Referee summary
 
 `notes/REFEREE.md` (hostile AI referee, 2026-10-28): verdict SURVIVES. The referee re-derived the identity and Bendixson bound (correcting the constant to sqrt(3/2); this folder uses that), checked the LP-vertex reduction and symmetry, independently recounted 38016 and 836, wrote its own checker (`notes/referee/refcheck.py`, own Bernstein and replay, no project code) and validated samples of all three certificate types plus mutation tests, and ran 400 numerical ascents finding no violation. Its minor points (no coverage assertion, unvalidated certificate inputs, stale text) are fixed here. Remaining caveats: both checkers rely on python-flint; the proof relies on the published 2005 Theorems 5 and 6 (Dmitriev-Dynkin bound).

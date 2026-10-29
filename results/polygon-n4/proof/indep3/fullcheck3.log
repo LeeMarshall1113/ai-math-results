@@ -1,0 +1,165 @@
+(1) Disc via own Sylvester determinant; Phi matches PROOF.md; Phi = Res(p(t+i),p(t-i))/(8i); identity (*): OK
+    simplex move: 5 tetrahedra tile the cube (volume 1, lattice test): OK
+(2) faces: 38016  distinct: 38016  orbits under S4 x complement: 836
+(5) coverage: 690 Bernstein + 136 trees + 10 tubes = 836, one certified face in each of the 836 orbits, families disjoint: OK
+    (info) certified faces == faces_canon.txt: True
+(3) N_F vs Faddeev-LeVerrier at 2 rational points, all 836 certified faces: OK (16s)
+    symmetry: N_{gF} o (relabel/complement) == N_F exactly, 150 random (F,g) + 20 faces x all 48 g: OK (35s)
+(4) Bernstein faces: 690/690 OK (17s)
+tree **0**0**1110 hard3_0_20.jsonl OK 29.6s
+tree **0**0*0*110 hard3_0_20.jsonl OK 11.4s
+tree **0**0*011*0 hard3_0_20.jsonl OK 15.4s
+tree **0**0*0111* hard3_0_20.jsonl OK 0.1s
+tree **0**0*1*110 hard3_0_20.jsonl OK 0.1s
+tree **0**0*11*10 hard3_0_20.jsonl OK 0.1s
+tree **0**0*111*0 hard3_0_20.jsonl OK 0.1s
+tree **0**0*1111* hard3_0_20.jsonl OK 0.0s
+tree **0**000**10 hard3_0_20.jsonl OK 0.1s
+tree **0**0001**0 hard3_0_20.jsonl OK 7.3s
+tree **0**0001*1* hard3_0_20.jsonl OK 0.0s
+tree **0**001**10 hard3_0_20.jsonl OK 0.1s
+tree **0**001*1*0 hard3_0_20.jsonl OK 0.1s
+tree **0**001*11* hard3_0_20.jsonl OK 0.1s
+tree **0**0011**0 hard3_0_20.jsonl OK 0.1s
+tree **0**0011*1* hard3_0_20.jsonl OK 0.1s
+tree **0**00111** hard3_0_20.jsonl OK 0.0s
+tree **0**1*0*100 hard3_0_20.jsonl OK 0.2s
+tree **0**1*00*01 hard3_0_20.jsonl OK 0.1s
+tree **0**1*01*00 iso_remA.jsonl OK 0.1s
+tree **0**1*011*0 hard6_0_200.jsonl OK 1.5s
+tree **0**1*1*100 hard3_20_146.jsonl OK 2.6s
+tree **0**1*10*01 hard3_20_146.jsonl OK 3.5s
+tree **0**1*101*1 hard3_20_146.jsonl OK 0.1s
+tree **0**1*1010* hard3_20_146.jsonl OK 0.7s
+tree **0**1*11*00 hard3_20_146.jsonl OK 0.0s
+tree **0**1*111*0 iso_remA.jsonl OK 1.9s
+tree **0**1*1110* hard3_20_146.jsonl OK 0.1s
+tree **0**101**00 hard3_20_146.jsonl OK 0.0s
+tree **0**101**01 iso_remA.jsonl OK 0.1s
+tree **0**101*10* hard3_20_146.jsonl OK 0.1s
+tree **0**1010**1 hard3_20_146.jsonl OK 0.2s
+tree **0**1010*0* hard6_0_200.jsonl OK 0.2s
+tree **0**10101** hard3_20_146.jsonl OK 0.1s
+tree **0**110**01 hard3_20_146.jsonl OK 0.1s
+tree **0**1100**1 hard3_20_146.jsonl OK 0.1s
+tree **0**1100*0* hard3_20_146.jsonl OK 0.1s
+tree **0*0**1*100 hard3_20_146.jsonl OK 1.4s
+tree **0*0**1*101 hard6_0_200.jsonl OK 0.2s
+tree **0*0**101*1 hard3_20_146.jsonl OK 10.1s
+tree **0*0**1010* iso_remA.jsonl OK 1.4s
+tree **0*0**11*00 hard3_20_146.jsonl OK 0.0s
+tree **0*0**1110* hard3_20_146.jsonl OK 0.1s
+tree **0*0*0**100 iso_remA.jsonl OK 1.0s
+tree **0*0*0**101 hard3_20_146.jsonl OK 0.5s
+tree **0*0*0*0*01 hard3_20_146.jsonl OK 11.1s
+tree **0*0*0*010* hard3_20_146.jsonl OK 0.6s
+tree **0*0*0*1*10 hard3_20_146.jsonl OK 0.1s
+tree **0*0*0*110* iso2_rem2.jsonl OK 0.8s
+tree **0*0*01**10 hard3_20_146.jsonl OK 0.1s
+tree **0*0*01*10* hard3_20_146.jsonl OK 12.8s
+tree **0*00*1**10 hard3_20_146.jsonl OK 0.1s
+tree **0*000***10 hard3_20_146.jsonl OK 0.6s
+tree **0*000*1**0 hard3_20_146.jsonl OK 0.1s
+tree **0*000*1*1* hard3_20_146.jsonl OK 0.0s
+tree **0*0001***0 hard3_20_146.jsonl OK 0.1s
+tree **0*0001**1* hard3_20_146.jsonl OK 0.1s
+tree **0*01*1**00 hard3_20_146.jsonl OK 0.1s
+tree **0*01*1*1*0 iso_remA.jsonl OK 1.7s
+tree **0*01*1*1*1 hard6_0_200.jsonl OK 0.1s
+tree **0*01*1*10* iso_remA.jsonl OK 2.5s
+tree **0*01*101** hard3_20_146.jsonl OK 10.1s
+tree **0*01*11**0 iso_remA.jsonl OK 0.9s
+tree **0*01*11*0* hard3_20_146.jsonl OK 0.2s
+tree **0*01*111** hard6_0_200.jsonl OK 0.5s
+tree **0*010***00 iso_remA.jsonl OK 0.6s
+tree **0*010***01 iso_remA.jsonl OK 0.9s
+tree **0*010**1*0 iso_remA.jsonl OK 1.7s
+tree **0*010**1*0 iso_remC.jsonl OK 1.8s
+tree **0*010**1*1 hard3_20_146.jsonl OK 0.0s
+tree **0*010*0**1 hard3_20_146.jsonl OK 0.1s
+tree **0*010*0*0* kd_remaining2.txt.jsonl OK 0.3s
+tree **0*010*01** hard5_0_200.jsonl OK 0.0s
+tree **0*010*1*0* iso_remB.jsonl OK 1.5s
+tree **0*0101***0 iso_remB.jsonl OK 1.8s
+tree **0*0101***1 iso_remB.jsonl OK 1.1s
+tree **0*0101*1** iso2_rem3.jsonl OK 1.7s
+tree **0*011***01 hard5_0_200.jsonl OK 0.3s
+tree **0*011**10* hard5_0_200.jsonl OK 0.1s
+tree **0*011*0**1 hard5_0_200.jsonl OK 0.6s
+tree **0*011*0*0* kd_remaining2.txt.jsonl OK 0.6s
+tree **0*011*01** hard5_0_200.jsonl OK 0.1s
+tree **0*1*0**100 iso_remB.jsonl OK 0.3s
+tree **0*1*0**110 hard5_0_200.jsonl OK 0.1s
+tree **0*1*0*1*00 iso_remB.jsonl OK 0.8s
+tree **0*1*0*1*10 hard5_0_200.jsonl OK 0.1s
+tree **0*1*0*110* iso_remB.jsonl OK 0.7s
+tree **0*1*0*111* hard5_0_200.jsonl OK 0.0s
+tree **0*1*00**00 iso_one593.jsonl OK 0.2s
+tree **0*1*00**00 kd_remaining2.txt.jsonl OK 0.1s
+tree **0*1*00*10* kd_remaining2.txt.jsonl OK 1.6s
+tree **0*1*001*0* kd_remaining2.txt.jsonl OK 0.6s
+tree **0*1*1**101 hard5_0_200.jsonl OK 0.1s
+tree **0*1*1*0*01 hard5_0_200.jsonl OK 0.1s
+tree **0*1*1*010* hard5_0_200.jsonl OK 0.1s
+tree **0*100***10 hard5_0_200.jsonl OK 0.1s
+tree **0*100**1*0 hard5_0_200.jsonl OK 0.5s
+tree **0*100*1**0 kd_remaining2.txt.jsonl OK 0.4s
+tree **0*100*1*1* hard5_0_200.jsonl OK 0.1s
+tree **0*100*11** hard5_0_200.jsonl OK 0.4s
+tree **0*1000***0 hard5_0_200.jsonl OK 0.7s
+tree **0*1000**1* hard5_0_200.jsonl OK 0.1s
+tree **0*1000*1** hard5_0_200.jsonl OK 0.4s
+tree **0*101***10 hard5_0_200.jsonl OK 0.1s
+tree **0*101**1*0 hard5_0_200.jsonl OK 0.1s
+tree **0*101*1**0 hard5_0_200.jsonl OK 0.0s
+tree **0*101*1*1* hard5_0_200.jsonl OK 0.0s
+tree **0*101*11** hard5_0_200.jsonl OK 0.0s
+tree **0*1010***0 hard5_0_200.jsonl OK 0.1s
+tree **0*1010*1** hard5_0_200.jsonl OK 0.1s
+tree **0*111***01 hard5_0_200.jsonl OK 0.1s
+tree **0*111**1*0 hard5_0_200.jsonl OK 0.5s
+tree **0*111**1*1 hard5_0_200.jsonl OK 0.1s
+tree **0*111*0**1 hard5_0_200.jsonl OK 0.1s
+tree **0*111*0*0* hard5_0_200.jsonl OK 0.1s
+tree **0*111*01** hard5_0_200.jsonl OK 0.1s
+tree **0*111*1**0 hard5_0_200.jsonl OK 0.0s
+tree **0*111*11** hard5_0_200.jsonl OK 0.2s
+tree **0*1110***0 hard5_0_200.jsonl OK 0.2s
+tree **00**00**00 iso_remB.jsonl OK 0.9s
+tree **00**00**10 hard5_0_200.jsonl OK 0.1s
+tree **00**00*10* iso_remB.jsonl OK 0.7s
+tree **00**001*0* iso_remB.jsonl OK 0.9s
+tree **00**001*1* hard5_0_200.jsonl OK 0.0s
+tree **00**01**00 kd_remaining2.txt.jsonl OK 0.3s
+tree **00**01**01 hard5_0_200.jsonl OK 0.1s
+tree **00**01*10* kd_remaining2.txt.jsonl OK 1.1s
+tree **00**10**01 kd_remaining2.txt.jsonl OK 0.6s
+tree **00**10**10 hard5_0_200.jsonl OK 0.5s
+tree **00**10*11* hard5_0_200.jsonl OK 0.2s
+tree **00**101*1* hard5_0_200.jsonl OK 0.0s
+tree **00*00*1*1* hard5_0_200.jsonl OK 0.0s
+tree **00*00*11** hard5_0_200.jsonl OK 0.1s
+tree **00*101***1 hard5_0_200.jsonl OK 0.1s
+tree **00*11*0**1 kd_remaining2.txt.jsonl OK 0.4s
+tree **00*11*01** iso2_rem3.jsonl OK 1.0s
+tree **00*110***1 hard5_0_200.jsonl OK 0.5s
+tree **000*1***01 hard5_0_200.jsonl OK 0.0s
+(4) proof trees: 138/138 OK (165s)
+tube **0**0*01*10 tube_tubeA.jsonl OK 0.9s
+tube **0**1*0110* tube_t158.jsonl OK 0.2s
+tube **0**1*1*101 tube_tubeA.jsonl OK 4.9s
+tube **0*0**10*01 tube_tubeA.jsonl OK 1.1s
+tube **0*01*1**01 tube_tubeD.jsonl OK 16.0s
+tube **0*01*10**1 tube_tubeC.jsonl OK 0.7s
+tube **0*01*10*0* tube_tubeB.jsonl OK 4.7s
+tube **0*010**10* tube_tubeB.jsonl OK 5.4s
+tube **0*010*1**0 tube_tubeB.jsonl OK 0.3s
+tube **0*010*11** tube_tubeB.jsonl OK 3.3s
+(4) tube certificates: 10/10 OK (38s)
+node types replayed: {'bern': 4925, 'blowup': 1359, 'factor': 1276, 'mono': 946, 'simplex': 93, 'splitat': 377}  bern calls: 7614  Bernstein boxes: 9399
+total 271s
+ALL OK
+
+real	4m32.227s
+user	0m0.031s
+sys	0m0.219s
