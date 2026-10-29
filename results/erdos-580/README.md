@@ -51,10 +51,7 @@ python verify.py           # all certificates; about 6 CPU-hours, tens of GB of 
 
 To regenerate one certificate, for example m = 10, tree 45: `python run_certs.py 10:45`. Set `KEEP_LRAT=1` to keep the proof, and `CAKE_HEAP_MB` and `CAKE_STACK_MB` for the large cases. The Zenodo audit is skipped when `zenodo/` is absent. `python classify.py 10` alone re-derives the 75 / 31 split in seconds.
 
-## Status and level
+## Status
 
 Verified by SAT with formally checked certificates, plus cited theorems, and survived one AI hostile referee. No human peer review. The earlier n <= 19 claim is unrefereed, and we reproduced n <= 18 independently.
 
-**Calibrated level: 2.5 (range 2 to 3).** It is a finite extension of an existing method, but it is a first for n = 20 and 21 and uses a verified checker.
-
-No post or contact about this result has been made on erdosproblems.com or elsewhere.

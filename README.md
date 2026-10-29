@@ -2,24 +2,33 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748158.svg)](https://doi.org/10.5281/zenodo.23748158)
 
-Original mathematical results produced by Lee Marshall with AI assistance, collected in one place. Each result has its own folder under `results/` with a README stating the claim, prior work, method, how to check it, status and caveats. The calibrated levels below are our own honest estimates on a 1 to 6 scale (central estimate, then plausible range); they are not endorsements, and none of this has been through human peer review.
+Computer-assisted mathematical results by Lee Marshall, produced with AI assistance and checked by independent verifiers. Every result comes with its certificates and a checker you can run yourself.
+
+Each folder under `results/` has its own README with:
+- the precise statement and its sources;
+- prior work, including any earlier or overlapping claims;
+- the method;
+- how to check it, and what the check does and does not cover.
 
 ## Results
 
-| Result | Status | Calibrated level | One-command check | Folder |
-|---|---|---|---|---|
-| Collatz: no nontrivial cycle with fewer than 112 local minima (m <= 111); computed for m <= 127 | m <= 111 Lean-verified (conditional on two published inputs); m <= 127 computed, refereed | 3.5 (3 to 4) | `lake build Collatz && lake env lean scripts/Statement.lean` (about 9–10 h, one module at a time) in the [separate repo](https://github.com/LeeMarshall1113/collatz-m-cycles) | [results/collatz-m-cycles](results/collatz-m-cycles) |
-| Turan density of K4-: pi(K4-) < 0.28674302 (previous 0.286889). **Superseded:** Lidický–Volec report a numerical 0.2865 (arXiv 2610.33850, 24 Oct 2026). Kept as an exact certificate | Exact certificate, refereed | 3 (3 to 3.5) | `cd results/turan-k4minus && python check_bound.py 0.2867433 certs/cert_plain.json.gz certs/cert_C.json.gz` (about 25 min) | [results/turan-k4minus](results/turan-k4minus) |
-| Ulam's packing conjecture holds for origin-symmetric bodies within Banach-Mazur distance 1 + 6e-8 of the ball | Computed (interval arithmetic), refereed | 2.5 (2 to 3). The radius is tiny. | `cd results/ulam-explicit-radius && python certify.py` (about 1 s) | [results/ulam-explicit-radius](results/ulam-explicit-radius) |
-| Lonely runner, 8, 9 and 10 runners: first formally verified certificates (cake_lpr) | Certificates checked by cake_lpr (a formally verified LRAT checker); the cases were already proved in unrefereed preprints | 2.5 (2 to 3) | `python proofs/common/verify.py proofs/k7` in the folder (needs CaDiCaL and the checkers; hours for k8/k9) | [results/lonely-runner-8-10](results/lonely-runner-8-10) |
-| Erdős problem #580 (vertex form) holds for n <= 21; n = 20 and 21 new (earlier work: n <= 19, reproduced to 18) | 75 trees by cited theorems, 31 by SAT with LRAT certificates checked by cake_lpr (a formally verified checker); passed one hostile AI referee | 2.5 (2 to 3) | `cd results/erdos-580 && python verify.py --quick` (needs CaDiCaL and the checkers; full run about 6 CPU-hours) | [results/erdos-580](results/erdos-580) |
-| Agaev–Chebotarev polygon conjecture, n = 4: Lambda_4 = S_4 (n <= 3 known, n >= 5 disproved by Chebotarev 2026; this completes the conjecture) | Computer-assisted, exact arithmetic, 836 face certificates; passed one hostile AI referee | 2.5 (2 to 3) | `cd results/polygon-n4/proof && bash fullcheck.sh` (about 10 min; needs sympy, python-flint) | [results/polygon-n4](results/polygon-n4) |
+| Result | Verification | How to check | Folder |
+|---|---|---|---|
+| **Collatz cycles:** no nontrivial positive cycle has 111 or fewer local minima. A further extension to 127 is computed but not formally verified | Lean 4, kernel-checked, conditional on two published inputs stated in the README | `lake build Collatz && lake env lean scripts/Statement.lean` in [collatz-m-cycles](https://github.com/LeeMarshall1113/collatz-m-cycles) (about 9–10 h) | [results/collatz-m-cycles](results/collatz-m-cycles) |
+| **Agaev–Chebotarev polygon conjecture, n = 4:** Λ₄ = S₄. Together with n ≤ 3 (2005) and Chebotarev's disproof for n ≥ 5 (2026), this settles the conjecture. An earlier claim by D. Z. Liu is credited in the folder | Exact certificates for 836 face inequalities; three independent checkers, one using only the Python standard library | `cd results/polygon-n4/proof && bash fullcheck.sh` (about 10 min), or `cd indep3 && python -I check3.py` (about 5 min) | [results/polygon-n4](results/polygon-n4) |
+| **Erdős problem #580 (vertex form)** holds for n ≤ 21; n = 20 and 21 are new | SAT with LRAT proofs checked by cake_lpr (a formally verified checker), plus cited theorems | `cd results/erdos-580 && python verify.py --quick` (full run about 6 CPU-hours) | [results/erdos-580](results/erdos-580) |
+| **Lonely runner conjecture, 8, 9 and 10 runners:** formally verified certificates for cases already proved in the literature | LRAT certificates checked by cake_lpr | `python proofs/common/verify.py proofs/k7` in the folder | [results/lonely-runner-8-10](results/lonely-runner-8-10) |
+| **Ulam's packing conjecture** holds for origin-symmetric convex bodies within Banach–Mazur distance 1 + 6·10⁻⁸ of the ball | Interval arithmetic | `cd results/ulam-explicit-radius && python certify.py` (about 1 s) | [results/ulam-explicit-radius](results/ulam-explicit-radius) |
+| **Turán density of K₄⁻:** π(K₄⁻) < 0.28674302. Since superseded by Lidický–Volec (0.2865, arXiv 2610.33850); kept as an exact, checkable certificate | Exact rational flag-algebra certificate | `cd results/turan-k4minus && python check_bound.py 0.2867433 certs/cert_plain.json.gz certs/cert_C.json.gz` (about 25 min) | [results/turan-k4minus](results/turan-k4minus) |
 
+## Citing
 
-## In progress
+Use the Zenodo DOI above, or the "Cite this repository" button (from `CITATION.cff`), and name the result folder. Each GitHub release is archived on Zenodo with its own version DOI.
 
-- Lonely runner with 16 runners: a GPU production run of about 240 GPU-hours, conditional on preprints for 12 to 15 runners. Not a result yet.
+## Corrections
+
+If you find an error, a gap, or earlier work we missed, please open an issue. Earlier claims we learn about are credited in the relevant folder.
 
 ## AI disclosure
 
-The new work in this repository was generated by AI (Claude, from Anthropic), directed by Lee Marshall. Each result was attacked by hostile AI referees, whose reports are included in the result folders where they exist. There has been no human peer review of any of it unless a result's README says so. Treat every claim as unrefereed by humans, and check the certificates yourself where a check is provided.
+The work in this repository was generated with AI (Claude, from Anthropic), directed by Lee Marshall. Each result was checked by independent verifiers and attacked by hostile AI referees, whose reports are included where they exist. None of it has been through human peer review unless a result's README says so. Please check the certificates yourself where a check is provided.

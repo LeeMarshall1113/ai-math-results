@@ -51,10 +51,6 @@ Limits are stated in `indep3/README.md`: it trusts CPython integer arithmetic, a
 
 `notes/REFEREE.md` (hostile AI referee, 2026-10-28): verdict SURVIVES. The referee re-derived the identity and Bendixson bound (correcting the constant to sqrt(3/2); this folder uses that), checked the LP-vertex reduction and symmetry, independently recounted 38016 and 836, wrote its own checker (`notes/referee/refcheck.py`, own Bernstein and replay, no project code) and validated samples of all three certificate types plus mutation tests, and ran 400 numerical ascents finding no violation. Its minor points (no coverage assertion, unvalidated certificate inputs, stale text) are fixed here. Remaining caveats: both checkers rely on python-flint; the proof relies on the published 2005 Theorems 5 and 6 (Dmitriev-Dynkin bound).
 
-## Calibrated level
-
-**2.5 (range 2 to 3).** It closes a stated conjecture, but the surrounding conjecture was already false for n >= 5, and the n = 4 case is a finite, if large, computation.
-
 ## Files
 
 - `PROOF.md`: the full argument. `notes/`: referee report and scripts, novelty check.
