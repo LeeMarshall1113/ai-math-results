@@ -25,7 +25,8 @@ $PY encode2.py $W/m10_indep.cnf
 $PY encode.py $W/m8_core.cnf GP,PL,AD 0,3
 $PY encode2.py $W/m8_indep.cnf --drop=0,3
 (cd $W && sha256sum m10_core.cnf m10_full.cnf m10_indep.cnf m8_core.cnf m8_indep.cnf) > $W/cnf.sha256
-diff <(sed 's/ [ *]/  /' $W/cnf.sha256 | sort -k2) <(grep 'cnf$' ../certs/CHECKSUMS.sha256 | sort -k2) && echo "CNF hashes match certs/CHECKSUMS.sha256"
+diff <(sed 's/ [ *]/  /' $W/cnf.sha256 | sort -k2) <(grep 'cnf$' ../certs/CHECKSUMS.sha256 | sort -k2) || { echo "CNF HASH MISMATCH"; exit 1; }
+echo "CNF hashes match certs/CHECKSUMS.sha256"
 NAMES="m10_core m10_full m10_indep m8_core m8_indep"
 for n in $NAMES; do
   r=$($CADICAL -q $W/$n.cnf | head -1 || true); echo "$n: $r"

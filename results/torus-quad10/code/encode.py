@@ -185,7 +185,7 @@ def build(groups=("GP", "PL", "CV", "AD", "INT", "SYM"), faces=None, drop=()):
     return E, info
 
 def write(E, path):
-    with open(path, "w") as fh:
+    with open(path, "w", newline="\n") as fh:
         fh.write(f"p cnf {E.nv} {len(E.cls)}\n")
         for c in E.cls: fh.write(" ".join(map(str, c)) + " 0\n")
 

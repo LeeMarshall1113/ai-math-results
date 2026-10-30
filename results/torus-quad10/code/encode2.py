@@ -71,7 +71,7 @@ for f in F:
                 if vx * vy <= 0:
                     forbid(cond((q, p, r, x), vx) + cond((q, p, r, y), vy))
 
-with open(sys.argv[1], "w") as fh:
+with open(sys.argv[1], "w", newline="\n") as fh:
     fh.write(f"p cnf {NV} {len(clauses)}\n")
     for c in clauses: fh.write(" ".join(map(str, c)) + " 0\n")
 if W is not None:
