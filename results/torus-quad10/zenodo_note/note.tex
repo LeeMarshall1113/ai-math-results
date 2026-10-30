@@ -94,7 +94,9 @@ GP, PL and AD for $\{4,4\}_{(3,1)}$ are jointly unsatisfiable.
   verified LRAT proof.
 \item Both encoders are tested on genuine nine- and eleven-face tori: every clause holds for their exact
   chirotopes.
-\item A minimal unsatisfiable core uses 8 faces, 16 AD conditions and 37 GP relations.
+\item Already the 8 faces left after deleting $Q_0$ and $Q_3$ give an unsatisfiable CNF, with verified
+  LRAT proofs from both encoders. Inside it, a solver-reported group-minimal core uses 16 AD conditions
+  and 37 GP relations; its minimality is not certificate-checked.
 \end{itemize}
 Lemmas~\ref{lem:star}--\ref{lem:sat} prove Theorem~\ref{thm:main}. Lemma~\ref{lem:sat} does not use
 non-intersection, which gives Theorem~\ref{thm:strong}.
