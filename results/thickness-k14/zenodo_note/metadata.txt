@@ -1,0 +1,17 @@
+Title: The geometric thickness of K14 is 4
+Upload type: Publication / Preprint
+Creators: Marshall, Lee
+Description (abstract): LEE writes. Technical summary for reference: no straight-line drawing of the complete graph
+  K14 has its edges split into three crossing-free layers, so its geometric thickness is 4 (the upper bound is
+  Dillencourt–Eppstein–Hirschberg 2000, Thm 2.1). The lower bound is a SAT computation over signotopes with a
+  hull-size case split and an Euler bound; two independently written encoders give UNSAT, and every leaf LRAT proof
+  was checked by cake_lpr.
+Keywords: geometric thickness; complete graph; straight-line drawing; graph drawing; signotope; SAT; LRAT;
+  computer-assisted proof
+Related identifiers:
+  - arXiv:math/9910185               (references; Dillencourt–Eppstein–Hirschberg 2000)
+  - doi:10.5281/zenodo.22239253      (references; Seamons 2026, K13)
+  - <repository / software DOI>      (is supplemented by; LEE fills in after upload)
+License: CC BY 4.0 (note); code: MIT (to confirm with Lee)
+Language: English
+Version: v1 (technical fast-stake note; prose rewrite to follow as v2 on the same concept DOI)
