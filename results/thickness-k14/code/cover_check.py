@@ -41,8 +41,8 @@ print(f"cases {len(case_list(n))}  verified leaves {leaves}  missing {len(missin
 if missing: print("first missing:", missing[:5])
 if bad: print("first unverified:", bad[:5])
 if sat: print("SAT:", sat[:5])
+mism = 0
 if "--regen" in sys.argv:
-    mism = 0
     for case in case_list(n):
         nv, cl, _ = case_clauses(n, t, *case)
         body = f"".join(" ".join(map(str, c)) + " 0\n" for c in cl)
@@ -54,7 +54,7 @@ if "--regen" in sys.argv:
             if hashlib.sha256(s.encode()).hexdigest() != r["cnf_sha"]:
                 mism += 1
     print("regenerated CNF hash mismatches:", mism)
-ok = not missing and not bad and not sat
+ok = not missing and not bad and not sat and mism == 0
 if "--replay" in sys.argv:
     rp = {}
     for line in open(sys.argv[sys.argv.index("--replay") + 1]):

@@ -41,14 +41,14 @@ while st:
 print(f"leaves {len(leaves)}  missing {len(missing)}  cake-unverified {len(bad)}  SAT {len(sat)}  "
       f"solve CPU-s {sum(r.get('solve_s', 0) for r in rec.values()):.0f}  "
       f"LRAT GB {sum(r.get('lrat_bytes', 0) for r in rec.values()) / 1e9:.1f}")
+mism = 0
 if "--regen" in sys.argv:
     body = enc.dimacs().split("\n", 1)[1]
-    mism = 0
     for c in leaves:
         s = f"p cnf {enc.nv} {len(enc.cl) + len(c)}\n" + body + "".join(f"{l} 0\n" for l in c)
         mism += hashlib.sha256(s.encode()).hexdigest() != rec[c]["cnf_sha"]
     print("regenerated leaf CNF hash mismatches:", mism)
-ok = not (missing or bad or sat)
+ok = not (missing or bad or sat or mism)
 if "--replay" in sys.argv:
     rp = {}
     for line in open(sys.argv[sys.argv.index("--replay") + 1]):
