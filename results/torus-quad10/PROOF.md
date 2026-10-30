@@ -60,5 +60,8 @@ Lemmas 3–5 use neither embeddedness nor the absence of intersections, which gi
 ## Remarks
 * **Not a forced flattening.** With planarity alone (no AD), non-degenerate numerical solutions exist; with AD,
   none were found (`code/numtest_ad.py`).
-* **Minimal core.** A group-minimal unsatisfiable core uses 8 faces (all except Q₀ and Q₃, which share an edge),
-  16 AD conditions and 37 GP relations (`code/mus.log`).
+* **8-face core.** Keeping all GP relations but only the PL and AD constraints of the 8 faces other than Q₀ and
+  Q₃ (which share an edge) is already unsatisfiable. This is certificate-checked: `certs/m8_core.lrat` (from
+  `encode.py`) and `certs/m8_indep.lrat` (from `encode2.py`) both give `s VERIFIED UNSAT` from cake_lpr.
+* **Minimal core.** Within it, a group-minimal unsatisfiable core uses the 8 PL conditions, 16 AD conditions and 37 GP
+  relations (`code/mus.log`). That minimality is solver-reported, not certificate-checked.

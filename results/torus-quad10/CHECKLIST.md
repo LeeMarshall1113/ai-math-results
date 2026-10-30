@@ -25,7 +25,7 @@
 - [x] End-to-end replay with one command (`code/check_all.sh`, about 1.5 min). Log: `certs/replay_2026-10-29.log`.
   Peak memory under 1 GB, not separately recorded.
 - [x] Hostile referee: SURVIVES (erdos-triage/torus-quad10/referee/REFEREE.md). Fixes applied.
-- [x] Verified checker: cake_lpr on all three LRATs. There is no Lean proof of the generators or of Lemmas 1–2.
+- [x] Verified checker: cake_lpr on all three 10-face LRATs and both 8-face LRATs. There is no Lean proof of the generators or of Lemmas 1–2.
 
 ## 3. Novelty and context
 - [ ] Fresh novelty re-check on the day of publishing.

@@ -18,21 +18,24 @@ $PY soundness_test.py
 for w in T9_known9face T11_seamons; do $PY encode2.py cnf/e2_$w.cnf witnesses/$w.json | head -1; done
 echo "== mutation tests"
 $PY mutation_test.py
-echo "== Lemma 5: regenerate CNFs, compare hashes, solve, check LRAT"
+echo "== Lemma 5: regenerate CNFs (10 faces; and 8 faces: Q0, Q3 dropped), compare hashes, solve, check LRAT"
 $PY encode.py $W/m10_core.cnf GP,PL,AD
 $PY encode.py $W/m10_full.cnf GP,PL,CV,AD,INT,SYM
 $PY encode2.py $W/m10_indep.cnf
-(cd $W && sha256sum m10_core.cnf m10_full.cnf m10_indep.cnf) > $W/cnf.sha256
+$PY encode.py $W/m8_core.cnf GP,PL,AD 0,3
+$PY encode2.py $W/m8_indep.cnf --drop=0,3
+(cd $W && sha256sum m10_core.cnf m10_full.cnf m10_indep.cnf m8_core.cnf m8_indep.cnf) > $W/cnf.sha256
 diff <(sed 's/ [ *]/  /' $W/cnf.sha256 | sort -k2) <(grep 'cnf$' ../certs/CHECKSUMS.sha256 | sort -k2) && echo "CNF hashes match certs/CHECKSUMS.sha256"
-for n in core full indep; do
-  r=$($CADICAL -q $W/m10_$n.cnf | head -1 || true); echo "m10_$n: $r"
+NAMES="m10_core m10_full m10_indep m8_core m8_indep"
+for n in $NAMES; do
+  r=$($CADICAL -q $W/$n.cnf | head -1 || true); echo "$n: $r"
   [ "$r" = "s UNSATISFIABLE" ] || { echo "FAIL: not UNSAT"; exit 1; }
 done
 [ -f ../certs/m10_indep.lrat ] || { echo "regenerating m10_indep.lrat (31 MB)"; $CADICAL -q --lrat=true --binary=false $W/m10_indep.cnf ../certs/m10_indep.lrat >/dev/null || true; }
-for n in core full indep; do
+for n in $NAMES; do
   for C in "${LRAT_CHECK:-}" "${LRAT_CHECK2:-}"; do
     [ -n "$C" ] || continue
-    echo "m10_$n: $C -> $($C $W/m10_$n.cnf ../certs/m10_$n.lrat 2>&1 | tr -d '\000' | tail -1)"
+    echo "$n: $C -> $($C $W/$n.cnf ../certs/$n.lrat 2>&1 | tr -d '\000' | tail -1)"
   done
 done
 echo "ALL CHECKS DONE"

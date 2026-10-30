@@ -20,7 +20,8 @@ Proposition 3.1, with F = 10 or 11").
 **Theorem′ (stronger, about one map).** The quadrangulation {4,4}_(3,1) has no realisation in R³ with planar,
 strictly convex faces and non-coplanar adjacent faces, *even if faces may intersect*.
 * The faces are Q_i = (i, i+1, i+8, i+7) mod 10, and the graph is the circulant C₁₀(1,3).
-* Already the 8 faces left after deleting two adjacent faces admit no such realisation.
+* Already the 8 faces left after deleting two adjacent faces (Q₀ and Q₃) admit no such realisation. This is
+  certificate-checked in the same way as the 10-face result (`m8_core`, `m8_indep` below).
 
 **Corollary (conditional).** Assume two things:
 * J. W. G. Seamons's 11-face torus is correct (*A Torus with Eleven Convex Quadrilateral Faces*, Zenodo,
@@ -86,11 +87,12 @@ CADICAL=/path/cadical LRAT_CHECK="/path/cake_lpr" PY=python3 bash code/check_all
   them with the exact checker `geomcheck.py`, and requires their exact chirotopes to satisfy every generated
   clause of both encoders. It also requires their own CNFs to be SAT.
 * Runs `mutation_test.py`, which corrupts tori and chirotopes and requires them to be rejected.
-* Regenerates the three CNFs and compares their SHA-256 hashes with `certs/CHECKSUMS.sha256`.
+* Regenerates the five CNFs (three 10-face, two 8-face) and compares their SHA-256 hashes with `certs/CHECKSUMS.sha256`.
 * Solves each CNF and checks the LRAT proofs.
 
 **Recorded run.** 2026-10-29, one thread, about 1.5 min, `certs/replay_2026-10-29.log`. All three LRATs gave
-`s VERIFIED UNSAT` from cake_lpr and passed a second LRAT checker.
+`s VERIFIED UNSAT` from cake_lpr and passed a second LRAT checker. The two 8-face certificates were added
+later the same day and checked the same way (cake_lpr: `s VERIFIED UNSAT`; second checker: pass).
 
 **Certificates.**
 
@@ -99,6 +101,8 @@ CADICAL=/path/cadical LRAT_CHECK="/path/cake_lpr" PY=python3 bash code/check_all
 | `m10_core` | GP + PL + AD; this is the proof | 92 KB |
 | `m10_full` | adds convexity, intersection patterns and mirror symmetry breaking | 320 KB |
 | `m10_indep` | separately written encoder `encode2.py`; no auxiliary variables, different AD triple, brute-force GP tables | 31 MB |
+| `m8_core` | as `m10_core`, without the PL and AD constraints of Q₀ and Q₃ (`encode.py ... GP,PL,AD 0,3`); all GP relations kept | 89 KB |
+| `m8_indep` | as `m10_indep`, without the PL and AD constraints of Q₀ and Q₃ (`encode2.py ... --drop=0,3`) | 50 KB |
 
 ## Limits
 
@@ -113,8 +117,9 @@ CADICAL=/path/cadical LRAT_CHECK="/path/cake_lpr" PY=python3 bash code/check_all
 * There is no formal proof that each generator faithfully encodes GP, PL and AD.
 * The star lemma and the grid-quotient step are hand proofs. They are cross-checked only by the combinatorial
   enumerations.
-* There is no human-readable proof of the SAT step. A minimal unsatisfiable core has 37 GP relations, 16 AD
-  conditions and 8 faces (`code/mus.log`).
+* There is no human-readable proof of the SAT step. A group-minimal unsatisfiable core has 37 GP relations,
+  16 AD conditions and 8 faces (`code/mus.log`). Its minimality is solver-reported, not certificate-checked;
+  the unsatisfiability of the 8-face formula is certificate-checked (`m8_core`, `m8_indep`).
 * Residual literature risk: Simutis's 1977 thesis could not be obtained. Grünbaum knew it and still listed
   {4,4}_(3,1) as unknown in 1999, and the F = 10 case as open in 2009.
 * The corollary depends on Seamons's unrefereed witness.

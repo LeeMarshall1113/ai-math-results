@@ -12,6 +12,9 @@ so UNSAT => no realisation.  Clause groups (toggle with flags for ablation):
   AD   edge-adjacent faces (a,b,c,d),(b,a,x,y): chi(a,b,c,x) = chi(a,b,c,y) != 0
   INT  forbidden intersection patterns for vertex-adjacent and vertex-disjoint face pairs
   SYM  mirror symmetry breaking (chi -> -chi is a symmetry of every clause above)
+Optional third argument: comma-separated face indices i whose PL and AD constraints are dropped
+(every AD pair involving a dropped face is dropped too); GP is kept on all 10 points.  E.g.
+  encode.py m8_core.cnf GP,PL,AD 0,3     (Q0, Q3 share the edge {0,1}: the 8-face core)
 """
 import itertools, sys
 
@@ -115,14 +118,16 @@ def ray_in_cone(E, v, a, x, y, others):
             E.forbid(E.eq((v, x, y, a), 0), E.eq((v, x, y, e), sg),
                      E.notv((v, x, a, e), -sg), E.notv((v, a, y, e), -sg))
 
-def build(groups=("GP", "PL", "CV", "AD", "INT", "SYM"), faces=None):
+def build(groups=("GP", "PL", "CV", "AD", "INT", "SYM"), faces=None, drop=()):
     global F, N
     if faces is not None:
         F = [tuple(f) for f in faces]; N = len({u for f in F for u in f})
+    assert not (drop and ("CV" in groups or "INT" in groups)), "drop is only for GP,PL,AD(,SYM)"
     E = Enc(); info = {}; E.sym = None
     if "GP" in groups: info["gp_rel"] = gp(E)
     if "PL" in groups:
-        for f in F: E.forbid(E.nz(f))
+        for i, f in enumerate(F):
+            if i not in drop: E.forbid(E.nz(f))
     if "CV" in groups:
         for f in F:
             a, b, c, d = f
@@ -135,7 +140,7 @@ def build(groups=("GP", "PL", "CV", "AD", "INT", "SYM"), faces=None):
     if "AD" in groups:
         for i, f in enumerate(F):
             for j, g in enumerate(F):
-                if i == j: continue
+                if i == j or i in drop or j in drop: continue
                 s = set(f) & set(g)
                 if len(s) != 2: continue
                 a, b = [u for u in f if u in s]
@@ -186,7 +191,9 @@ def write(E, path):
 
 if __name__ == "__main__":
     groups = sys.argv[2].split(",") if len(sys.argv) > 2 else ("GP", "PL", "CV", "AD", "INT", "SYM")
-    E, info = build(groups)
+    drop = tuple(int(i) for i in sys.argv[3].split(",")) if len(sys.argv) > 3 else ()
+    E, info = build(groups, drop=drop)
+    if drop: info["dropped_faces"] = [F[i] for i in drop]
     write(E, sys.argv[1])
     print(sys.argv[1], "vars", E.nv, "clauses", len(E.cls), info)
 

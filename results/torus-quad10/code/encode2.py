@@ -3,12 +3,18 @@ Differences from encode.py: variables z_T ("chi(T) != 0") and s_T ("chi(T) > 0 i
 GP encoded by brute-force enumeration of all 3^6 sign assignments of the six brackets of each
 relation (no auxiliary product variables); AD uses a different spanning triple of F; faces are
 generated from lattice coordinates rather than the closed formula.
-usage: encode2.py out.cnf"""
+usage: encode2.py out.cnf [--drop=0,3]
+--drop=i,j,...: omit the PL and AD constraints of faces Q_i (and every AD pair involving them);
+GP is kept on all 10 points.  --drop=0,3 gives the 8-face core (Q0, Q3 share the edge {0,1})."""
 import itertools, sys
+DROP = ()
+if len(sys.argv) > 2 and sys.argv[2].startswith("--drop="):
+    DROP = tuple(int(i) for i in sys.argv.pop(2)[len("--drop="):].split(","))
 
 # faces from Z^2 / <(10,0),(3,1)> : (x,y) -> (x - 3y) mod 10
 lab = lambda x, y: (x - 3 * y) % 10
 F = [(lab(x, 0), lab(x + 1, 0), lab(x + 1, 1), lab(x, 1)) for x in range(10)]
+DROPPED = {F[i] for i in DROP}
 NPT = 10
 W = None
 if len(sys.argv) > 2:   # soundness test mode: faces + coordinates of a known torus from JSON
@@ -47,12 +53,13 @@ for a, b in itertools.combinations(range(NPT), 2):
                 forbid(conj)
 # PL: every face is coplanar
 for f in F:
+    if f in DROPPED: continue
     forbid(cond(f, 1)); forbid(cond(f, -1))
 # AD: for faces f, g sharing an edge {p,q}: the two vertices of g off the edge lie strictly on the
 # same side of plane(f).  Spanning triple of f: q, p and the vertex of f adjacent to q (not p).
 for f in F:
     for g in F:
-        if f == g: continue
+        if f == g or f in DROPPED or g in DROPPED: continue
         sh = set(f) & set(g)
         if len(sh) != 2: continue
         k = [i for i in range(4) if f[i] in sh and f[(i + 1) % 4] in sh][0]
@@ -79,4 +86,4 @@ if W is not None:
         b = br(T); val[Z[T]] = b != 0; val[S[T]] = b > 0
     bad = sum(1 for c in clauses if not any(val[abs(l)] == (l > 0) for l in c))
     print("soundness: clauses violated by the true chirotope:", bad)
-print(sys.argv[1], "vars", NV, "clauses", len(clauses), "faces", F)
+print(sys.argv[1], "vars", NV, "clauses", len(clauses), "faces", [f for f in F if f not in DROPPED])
