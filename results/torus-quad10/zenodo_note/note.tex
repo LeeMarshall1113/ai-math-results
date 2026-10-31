@@ -12,11 +12,17 @@
 \maketitle
 
 \begin{abstract}
-% LEE: abstract (Lee writes).
+No acoptic polyhedral torus in $\mathbb{R}^3$ has exactly $10$ strictly convex quadrilateral faces. This is the
+$F=10$ case of Gr\"unbaum--Szilassi Conjecture~3.2; with Seamons's $11$-face torus it settles which face counts
+occur. The proof reduces to the map $\{4,4\}_{(3,1)}$ and certifies, by an LRAT proof checked with the formally
+verified checker \texttt{cake\_lpr}, that it has no planar strictly convex realisation, even allowing
+self-intersections.
 \end{abstract}
 
 \section{Introduction}
-% LEE: introduction (Lee writes). Context: Grünbaum--Szilassi 2009, Conjecture 3.2; Seamons 2026 (F=11).
+Gr\"unbaum and Szilassi \cite{GS} asked which numbers $F$ of strictly convex quadrilateral faces an acoptic
+polyhedral torus can have (Conjecture~3.2). Seamons realised $F=11$ (2026), leaving $F=10$ as the remaining case.
+This note shows that $F=10$ is impossible. The certificates and checker are public.
 
 \section{Statement}
 We use the definitions of Gr\"unbaum and Szilassi \cite[p.~21]{GS}.
@@ -102,8 +108,7 @@ Lemmas~\ref{lem:star}--\ref{lem:sat} prove Theorem~\ref{thm:main}. Lemma~\ref{le
 non-intersection, which gives Theorem~\ref{thm:strong}.
 
 \section{Data and verification}
-Code, certificates and a one-command checker: \url{% LEE: repository / DOI link
-}.
+Code, certificates and a one-command checker: \url{https://github.com/LeeMarshall1113/ai-math-results}, archived on Zenodo, doi:10.5281/zenodo.23748157 (all versions).
 \begin{itemize}
 \item The SHA-256 hash of the core CNF is
   \texttt{9afbf70b30fd88a8\allowbreak c95839f163f25f1e\allowbreak e21c89f380faf986\allowbreak a1284b239938f4a2}.
@@ -112,10 +117,13 @@ Code, certificates and a one-command checker: \url{% LEE: repository / DOI link
 \end{itemize}
 
 \section{Discussion}
-% LEE: discussion (Lee writes). Open follow-up: acoptic realisations of {4,4}_(3,1) with non-convex faces.
+The argument uses strict convexity of every face. Whether $\{4,4\}_{(3,1)}$ has an acoptic realisation with
+some non-convex quadrilateral faces is left open.
 
 \section*{AI use}
-% LEE: AI-use statement (Lee writes; same style as the README disclosure).
+This work was carried out with AI assistance (Claude, Anthropic), directed by the author. The computations were
+independently re-implemented and checked, and the result was attacked by adversarial AI referees whose reports are
+in the repository. It has not been peer reviewed. The author is responsible for all content.
 
 \begin{thebibliography}{9}
 \bibitem{GS} B.~Gr\"unbaum and L.~Szilassi, Geometric realizations of special toroidal complexes,

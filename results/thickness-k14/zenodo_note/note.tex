@@ -7,18 +7,21 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \title{The geometric thickness of $K_{14}$ is 4}
 \author{Lee Marshall}
-\date{% LEE: date of upload
-}
+\date{31 October 2026}
 \begin{document}
 \maketitle
 
 \begin{abstract}
-% LEE: abstract (Lee writes).
+No straight-line drawing of $K_{14}$ has its edges split into three crossing-free layers, so the geometric
+thickness of $K_{14}$ is $4$. Together with the upper bound of Dillencourt, Eppstein and Hirschberg this completes
+the values of $\bar\theta(K_n)$ for $n\le 16$. The lower bound is a SAT computation over signotopes with a
+hull-size case split and an Euler-type edge bound; two independently written encoders give UNSAT, and every leaf
+LRAT proof was checked with \texttt{cake\_lpr}.
 \end{abstract}
 
 \section{Introduction}
-% LEE: introduction (Lee writes). Context: Dillencourt--Eppstein--Hirschberg 2000 (bounds, open problem for K13, K14);
-% Seamons 2026 (K13 = 3).
+Dillencourt, Eppstein and Hirschberg \cite{DEH} bounded $\bar\theta(K_n)$ and left $K_{13}$ and $K_{14}$ open.
+Seamons showed $\bar\theta(K_{13})=3$ \cite{Seamons}. This note settles $K_{14}$.
 
 \section{Statement}
 The geometric thickness $\bar\theta(G)$ is the least $t$ such that $G$ has a straight-line drawing whose edges split
@@ -55,7 +58,6 @@ Points $1,\dots,n$ in general position, sorted by $x$; $X(a,b,c)$ is the orienta
 Every straight-line drawing of $K_n$ with $t$ crossing-free layers has an image satisfying (S), (K), (N), (E).
 \end{lemma}
 \begin{proof}[Proof outline]
-% LEE: prose. Points to cover (README "Method", referee report section 1.1 and 3):
 \begin{itemize}
 \item no collinear triple; rotation to distinct $x$; signotope axioms for $x$-sorted sets;
 \item projective map sending a hull vertex first and the rest in angular order; mirror if needed;
@@ -75,8 +77,7 @@ Every straight-line drawing of $K_n$ with $t$ crossing-free layers has an image 
 \end{itemize}
 
 \section{Data and verification}
-Code, case trees with CNF and LRAT hashes, witnesses and a one-command checker: \url{% LEE: repository / DOI link
-}.
+Code, case trees with CNF and LRAT hashes, witnesses and a one-command checker: \url{https://github.com/LeeMarshall1113/ai-math-results}, archived on Zenodo, doi:10.5281/zenodo.23748157 (all versions).
 \begin{itemize}
 \item The LRAT proofs (about $56$\,GB in total) are not archived; \texttt{FULL=1 check\_all.sh} regenerates and
   checks them in about $3.5$ hours on one thread.
@@ -85,10 +86,12 @@ Code, case trees with CNF and LRAT hashes, witnesses and a one-command checker: 
 \end{itemize}
 
 \section{Discussion}
-% LEE: discussion (Lee writes). Possible follow-ups: K17 lower bound; a human-readable proof.
+Open: a computer-free proof that $\bar\theta(K_{14})>3$, and the value of $\bar\theta(K_{17})$.
 
 \section*{AI use}
-% LEE: AI-use statement (Lee writes; same style as the README disclosure).
+This work was carried out with AI assistance (Claude, Anthropic), directed by the author. The computations were
+independently re-implemented and checked, and the result was attacked by adversarial AI referees whose reports are
+in the repository. It has not been peer reviewed. The author is responsible for all content.
 
 \begin{thebibliography}{9}
 \bibitem{DEH} M.~B.~Dillencourt, D.~Eppstein and D.~S.~Hirschberg, Geometric thickness of complete graphs,

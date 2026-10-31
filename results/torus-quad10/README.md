@@ -131,7 +131,7 @@ later the same day and checked the same way (cake_lpr: `s VERIFIED UNSAT`; secon
 * `NOVELTY.md`: the searches.
 * `code/`: generators, enumerations, checkers, tests and `check_all.sh`.
 * `certs/`: the LRAT proofs, `CHECKSUMS.sha256` and the replay log.
-* `zenodo_note/`: the LaTeX source of the technical note and its metadata.
+* `zenodo_note/`: the LaTeX source of the technical note and its metadata. The note is published as doi:10.5281/zenodo.23842783 (all versions).
 
 ## AI disclosure
 

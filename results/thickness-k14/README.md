@@ -168,7 +168,7 @@ cd code && FULL=1 CADICAL=cadical LRAT_CHECK="cake_lpr --CML_HEAP_SIZE=2500 --CM
 * `code/check_all.sh`: one-command check.
 * `certs/tree_*.jsonl`: case trees with CNF and LRAT hashes. `certs/witnesses/`: exact drawings.
   `certs/CHECKSUMS.sha256`.
-* `zenodo_note/`: LaTeX source of the technical note and its metadata.
+* `zenodo_note/`: LaTeX source of the technical note and its metadata. The note is published as doi:10.5281/zenodo.23842785 (all versions).
 
 ## AI disclosure
 

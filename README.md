@@ -1,6 +1,6 @@
 # ai-math-results
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748158.svg)](https://doi.org/10.5281/zenodo.23748158)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748157.svg)](https://doi.org/10.5281/zenodo.23748157)
 
 Computer-assisted mathematical results by Lee Marshall, produced with AI assistance and checked by independent verifiers. Every result comes with its certificates and a checker you can run yourself.
 
