@@ -77,7 +77,7 @@ centre (1,771 leaves, 118 of them chord leaves) and six other start boxes, copie
 **Full check** (about 45 CPU-hours; resumable; `WORKERS` processes of about 1.5 GB each):
 
 1. Download `hadwiger-h3-fullcert.tar` (2.2 GB) and `hadwiger-h3-fullcert_ext.tar` (26 MB) from the Zenodo
-   dataset record, doi:10.5281/zenodo.XXXXXXXX.
+   dataset record, doi:10.5281/zenodo.23853716.
 2. Run
 
    ```
@@ -134,7 +134,7 @@ for the 87,828 extension leaves; `replay_strict_SUMMARY.json` records 7,561,583 
 * `lean/`: the Lean 4 project.
 * `certs/`: SHA-256 sums of the archives and of every chunk file, the start-box lists, the verdict files, the
   production policies, the replay summary, and `sample/`.
-* `zenodo_note/`: LaTeX source and PDF of the technical note, doi:10.5281/zenodo.XXXXXXXX.
+* `zenodo_note/`: LaTeX source and PDF of the technical note, doi:10.5281/zenodo.23853719.
 
 ## References
 

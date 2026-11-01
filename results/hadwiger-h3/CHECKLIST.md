@@ -36,7 +36,7 @@
 ## 4. Ship (Lee decides; nothing pushed)
 - [ ] Zenodo dataset record (certificate archives) and note record: drafts via the private draft script; Lee
   reviews and publishes.
-- [ ] Replace the two `zenodo.XXXXXXXX` placeholders in `README.md` and the note.
+- [x] Replace the two DOI placeholders (dataset 23853716, note 23853719) in `README.md` and the note.
 - [ ] Push ai-math-results; new GitHub release, so the repository concept DOI gets a new version.
 - [ ] Same-day courtesy email to A. Prymak and A. Arman (skeleton in the private papers folder).
 - [ ] LEDGER.md, BOARD.md and GATES.md updated.
