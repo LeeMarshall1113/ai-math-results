@@ -1,0 +1,27 @@
+lake build (Lean v4.35.0-rc3, Mathlib v4.35.0-rc3), 2026-11-01: Build completed successfully; grep sorry: none
+=== AUDIT
+'Hadwiger.exists_sym_mem_DStar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.QP_sub_O' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.lemmaM' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.touching_chord' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.exists_minimalBox'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.lemma4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.leaf_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.Certified.exists_leaf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.H3_le_13_of_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.H3_le_13_of_symcover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Hadwiger.orbit_cover' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ Hadwiger.gridCheck_true._native.native_decide.ax_1_1]
+'Hadwiger.H3_le_13' depends on axioms: [propext,
+ Classical.choice,
+ Hadwiger.all_leaves_pass,
+ Quot.sound,
+ Hadwiger.gridCheck_true._native.native_decide.ax_1_1]
+'Hadwiger.H3_le_13_homothets' depends on axioms: [propext,
+ Classical.choice,
+ Hadwiger.all_leaves_pass,
+ Quot.sound,
+ Hadwiger.gridCheck_true._native.native_decide.ax_1_1]
+'Hadwiger.DPrymak_not_fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]

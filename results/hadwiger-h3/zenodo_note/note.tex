@@ -1,0 +1,157 @@
+% Technical draft. LEE: rewrite the abstract, the introduction and the remarks in Section 7 in your own words.
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\inter}{\operatorname{int}}
+\newcommand{\conv}{\operatorname{conv}}
+\title{Every convex body in $\mathbb{R}^3$ can be covered by $13$ smaller homothetic copies}
+\author{Lee Marshall}
+\date{November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Every convex body in $\R^3$ is covered by $13$ translates of its interior, so Hadwiger's covering number
+satisfies $H_3\le 13$. The previous bound was $14$ (Prymak). We keep Prymak's framework and add one ingredient:
+a minimal circumscribed parallelotope forces a chord of length at least $0.569$ (per coordinate) in a
+face-diagonal direction for every axis. One of the $13$ covering sets uses this chord. The proof is completed by
+an exact linear-programming certificate with $7{,}561{,}583$ leaves, checked by two separately written exact
+checkers. The reduction from the certificate to the theorem is formalised in Lean~4. We also correct two points
+in the $H_3\le 14$ argument: the symmetry-reduced region used there is not a fundamental domain, and its
+Lemma~2.4(ii) fails at some box corners.
+\end{abstract}
+
+\section{Introduction}
+For a convex body $K\subset\R^n$ let $C(K,\inter K)$ be the least number of translates of $\inter K$ covering $K$,
+and $H_n=\max_K C(K,\inter K)$. The conjecture of Levi, Hadwiger, Gohberg and Markus is $H_n=2^n$. In
+dimension~$3$ the bounds $20$ (Lassak \cite{Las}), $16$ (Papadoperakis \cite{Pap}) and $14$ (Prymak \cite{Pry}) are known; see \cite{BK} for a survey and \cite{PS,ABP} for related work.
+Prymak notes that $14$ is the limit of his method: at the central configuration there are $14$ points no two of
+which lie in one translate of his covering body. We remove this obstruction.
+
+\begin{theorem}\label{thm:main}
+Every convex body $K\subset\R^3$ is covered by $13$ translates of $\inter K$. Consequently $K$ is covered by $13$
+sets $x_i+rK$ with $0<r<1$, and $H_3\le 13$.
+\end{theorem}
+
+\section{Framework}
+After an affine map, $C=[0,1]^3$ is a parallelotope of minimal volume containing $K$. One can choose contact
+points $q_{i0}\in K\cap\{x_i=0\}$ with $q_{i1}=q_{i0}+e_i\in K$ (Papadoperakis, Lemma~3(a)). They are the columns
+of
+\[
+A_p=\begin{pmatrix}0&1&p_3&p_3&p_5&p_5\\ p_1&p_1&0&1&p_6&p_6\\ p_2&p_2&p_4&p_4&0&1\end{pmatrix},
+\qquad V_p=\{A_pe_1,\dots,A_pe_6\},\qquad O_p=\conv V_p\subseteq K,
+\]
+for some $p\in[0,1]^6$. Let $E$ be the edge skeleton of $C$.
+
+\begin{lemma}[Papadoperakis, Lemma~4]\label{lem:red}
+Suppose $E\cup V_p\subseteq\bigcup_{i\le m}(v_i+X_i)$, where every $X_i\subseteq\inter K$. Then
+$C(K,\inter K)\le m$.
+\end{lemma}
+
+We prove both lemmas directly (first variation of the box volume for Lemma~3(a); for each $x\in\partial K$ the
+cone $x-\mathrm{cone}(K-x)$ meets $E\cup V_p$, which gives illumination directions). Both proofs are formalised.
+
+\section{The long-chord lemma}
+\begin{lemma}\label{lem:M}
+Let $[0,1]^3$ be a minimal-volume parallelotope containing $K$. For each axis $i$, with $\{j,k\}$ the other two,
+there is $s\in\{\pm1\}$ such that $K$ contains a segment of vector $\tau(e_j+se_k)$, where
+$\tau=\tfrac12+\tfrac{\sqrt2-1}{6}=0.5690\ldots$.
+\end{lemma}
+\begin{proof}
+Let $D=K-K$, so $\pm e_l\in D\subseteq[-1,1]^3$. Take $i=1$. For $u_1=e_1$, $u_2=(a,1,1)$, $u_3=(b,1,-1)$ we have
+$|\det U|=2$, and the parallelotope cut out by the three slabs of $K$ has volume
+$h_D(u_1)h_D(u_2)h_D(u_3)/2$. Minimality gives $h_D(a,1,1)\,h_D(b,1,-1)\ge2$ for all $a,b$, so, say,
+$\inf_a h_D(a,1,1)\ge\sqrt2$. Let $(0,t,t)\in\partial D$ with outer normal $n=(a',1+d,1-d)$, $h_D(n)=2t$. Then
+$2t\ge1+|d|$ and $\sqrt2\le h_D(n)+h_D(0,-d,d)\le 2t+2|d|$, so $2t\ge1+(\sqrt2-1)/3$.
+\end{proof}
+
+With $w=e_j+se_k$, $\lambda=7/10$ and $t=569/1000<\tau$: if $[z,z+tw]\subseteq K$ then
+$\lambda z+(1-\lambda)\inter O_p+\lambda t[0,w]\subseteq\inter K$. The position $z$ only shifts this set.
+
+\section{Boxes and strict leaves}
+For a box $P\subset[0,1]^6$ let $Q_P=\bigcap_{v}O_v$ over the vertices $v$ of $P$. Prymak's Lemma~2.4(i) gives
+$Q_P\subseteq O_p$ for $p\in P$, hence $\inter Q_P\subseteq\inter K$. A \emph{plain leaf} is a box with $13$
+translation vectors such that $13$ translates of $\inter Q_P$ cover $E$ and the six rectangles
+$\{A_pe_f:p\in P\}$, in a fixed combinatorial pattern (eight vertex translates, five face translates, breakpoints
+on edges). A \emph{chord leaf} for axis $i$ has, for each sign $s=\pm1$, such a cover in which one translate is
+replaced by $T+\mu\lambda t w_s+(1-\lambda)\inter Q_P$, $\mu\in[0,1]$. All memberships are \emph{strict} linear
+inequalities against the exact H-representation of $Q_P$. By Lemmas~\ref{lem:red} and~\ref{lem:M}, if $p$ lies in a
+leaf then $C(K,\inter K)\le 13$.
+
+Prymak instead uses Lemma~2.4(ii), that some translate of $Q_P$ lies in $\inter O_p$. This fails for
+$P=\prod[a_i,a_i+\tfrac1{160}]$, $a=(0,0,\tfrac{63}{160},\tfrac58,0,\tfrac{57}{80})$, at the corner
+$p=a+\tfrac1{160}(1,1,0,0,1,0)$: $Q_P$ meets facets of $O_p$ with inner normals
+$n_1=(0,80,9040)$, $n_2=(18080,-160,0)$, $n_3=(-480,0,-496)$, $n_4=(3680,-4960,0)$, and
+$\tfrac{215760}{113}n_1+\tfrac{104377}{113}n_2+34800\,n_3+n_4=0$. So every translate of $Q_P$ has a point outside
+$\inter O_p$. Strict leaf inequalities make Lemma~2.4(ii) unnecessary.
+
+\section{Symmetry}
+The cube symmetries act on $p$ by signed coordinate permutations. Let $s_x=p_3+p_5$, $s_y=p_1+p_6$,
+$s_z=p_2+p_4$. Prymak's region $D=\{p_1,p_2,p_3\le\tfrac12,\ s_z\le s_y\le s_x\}$ is not a fundamental domain:
+$p=(\tfrac{459}{500},\tfrac{1481}{5000},\tfrac{1689}{10000},\tfrac{9529}{10000},\tfrac{9359}{10000},\tfrac{3079}{10000})$
+has no image in $D$ or in the union of the start boxes certified in~\cite{Pry}; about $2.7\%$ of random $p$ behave
+this way. The reason is that a reflection sends $s_i\mapsto 2-s_i$, so permutations can order $|s_i-1|$ but not
+$s_i$. The region $D^*=\{p_1,p_2,p_3\le\tfrac12,\ |s_z-1|\le|s_y-1|\le|s_x-1|\}$ meets every orbit.
+
+We do not certify $D^*$. Symmetries map the $1/10$ grid of $[0,1]^6$ to itself, so it suffices that every orbit
+of $1/10$ boxes contains a certified start box. The $39{,}380$ start boxes of Prymak's region miss $570$ orbits;
+we certify one box of each. Given $K$, a symmetry $g$ moves its configuration into a certified box, and the leaf is
+applied to $gK$.
+
+\section{The certificate and its checks}
+\begin{itemize}
+\item $39{,}950$ start boxes of side $1/10$, bisected on the longest side to side at least $1/640$;
+  $7{,}561{,}583$ leaves. The $999$ chord leaves all lie in the $8$ start boxes around $(\tfrac12)^6$.
+\item Solutions are rational with denominator $10^9$, found by floating-point LPs and stored per leaf.
+\item Checker 1 (\texttt{certcheck\_strict.py}): exact integer arithmetic, strict inequalities, tiling of every
+  start box; all leaves pass. A non-strict variant, cross-checked against a rational reference on $1\%$ of the
+  leaves, also passes. A separate script checks orbit coverage of the $10^6$ grid boxes.
+\item Checker 2 (\texttt{hcheck.py}): written from the specification only; ignores the stored structures and
+  requires the exact intervals of the $13$ translates on each edge to cover it; all leaves pass strictly, all
+  start boxes are tiled, and every grid orbit contains a certified box.
+\item Lean~4: Lemmas~3(a) and~4 of Papadoperakis, existence of the minimal box, Lemma~\ref{lem:M}, Lemma~2.4(i),
+  leaf soundness, the symmetry reduction and the passage to homothets are proved without \texttt{sorry}. The only
+  assumptions beyond Lean's standard axioms are the certificate (every certified start box is tiled by leaves
+  satisfying the strict leaf predicate) and one \texttt{native\_decide} computation (orbit coverage of the grid).
+\end{itemize}
+
+\section{Remarks}
+The two corrections apply to the proof of $H_3\le14$ in~\cite{Pry}. The $570$ extension boxes are certified by
+plain leaves, which lie inside Prymak's framework, and the strict-containment argument replaces Lemma~2.4(ii) for
+every leaf that satisfies its inequalities strictly. We have not re-checked Prymak's certificate under the strict
+test. Lemma~\ref{lem:M} is elementary and may be known; we did not find it in the literature.
+
+\section*{Data}
+\begin{itemize}
+\item Code, checkers, Lean project and certificate hashes:
+  \url{https://github.com/LeeMarshall1113/ai-math-results}, folder \texttt{results/hadwiger-h3}; archived as
+  doi:10.5281/zenodo.23748157 (all versions).
+\item Certificate data ($2.2$\,GB): doi:10.5281/zenodo.XXXXXXXX. SHA-256 of the main archive:\
+  \texttt{8929c5b3599230d0d63234d0497d06e0eda12741380b4363666309987bd995bb}.
+\end{itemize}
+
+\section*{AI use}
+This work was carried out with AI assistance (Claude, Anthropic), directed by the author. The certificate was
+checked by two separately written exact checkers, the reduction is formalised in Lean, and the result was attacked
+by adversarial AI referees. It has not been peer reviewed. The author is responsible for all content.
+
+\begin{thebibliography}{9}
+\bibitem{Pap} I.~Papadoperakis, An estimate for the problem of illumination of the boundary of a convex body in
+  $E^3$, \emph{Geom.\ Dedicata} 75 (1999) 275--285, doi:10.1023/A:1005056207406.
+\bibitem{Pry} A.~Prymak, A new bound for Hadwiger's covering problem in $\mathbb{E}^3$, \emph{SIAM J.\ Discrete
+  Math.} 37 (2023) 17--24, doi:10.1137/22M1490314.
+\bibitem{PS} A.~Prymak and V.~Shepelska, On the Hadwiger covering problem in low dimensions, \emph{J.\ Geom.}
+  111 (2020) 42, arXiv:1811.08962.
+\bibitem{ABP} A.~Arman, A.~Bondarenko and A.~Prymak, On Hadwiger's covering problem in small dimensions,
+  \emph{Canad.\ Math.\ Bull.} (2025), arXiv:2404.00547.
+\bibitem{Las} M.~Lassak, Covering a three-dimensional convex body by smaller homothetic copies,
+  \emph{Beitr\"age Algebra Geom.} 39 (1998) 259--262.
+\bibitem{BK} K.~Bezdek and M.~A.~Khan, The geometry of homothetic covering and illumination, in \emph{Discrete
+  Geometry and Symmetry}, Springer (2018) 1--30.
+\end{thebibliography}
+\end{document}

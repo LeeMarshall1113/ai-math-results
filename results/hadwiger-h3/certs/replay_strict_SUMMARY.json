@@ -1,0 +1,92 @@
+{
+ "files": 254,
+ "cpu_sec": 7110,
+ "totals": {
+  "n": 7561583,
+  "plain": 7560584,
+  "chord": 999,
+  "fast_ok": 7560584,
+  "exact_fallback_ok": 0,
+  "startboxes_checked": 39950,
+  "tiling_ok": 39950
+ },
+ "skipped_startboxes": 0,
+ "chord_slot_stats": {
+  "ax2 plus@True minus@True": 69,
+  "ax1 plus@True minus@True": 452,
+  "ax0 plus@True minus@True": 478
+ },
+ "policies": {
+  "null": 30000,
+  "L3": 9830,
+  "certify2": 69,
+  "L2": 50,
+  "L3-split4": 1
+ },
+ "duplicate_startboxes": 0,
+ "dup_examples": [],
+ "n_fail": 0,
+ "fails": [],
+ "coverage": {
+  "boxes_meeting_D": 38500,
+  "boxes_meeting_Dstar": 47420,
+  "start_boxes_present": 39950,
+  "D_missing": 0,
+  "Dstar_missing": 35320,
+  "Dstar_missing_list_head": [
+   [
+    0,
+    0,
+    0,
+    1,
+    0,
+    2
+   ],
+   [
+    0,
+    0,
+    0,
+    2,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    2,
+    0,
+    2
+   ],
+   [
+    0,
+    0,
+    0,
+    2,
+    0,
+    3
+   ],
+   [
+    0,
+    0,
+    0,
+    2,
+    1,
+    0
+   ]
+  ],
+  "orbit_test_n": 20000,
+  "orbit_misses_D": 1351,
+  "orbit_misses_Dstar": 0,
+  "orbit_misses_certified_union": 0,
+  "example_uncovered": null,
+  "referee_example_in_certified_union": true,
+  "referee_example_in_Dstar_orbit": true,
+  "grid_orbit_test": {
+   "missing_Dstar_reps": [],
+   "n_missing_orbits": 0,
+   "missing_reps_meeting_Dstar": 0,
+   "example": null
+  }
+ }
+}

@@ -1,0 +1,3 @@
+files 197 verified 197 bad files 0 disagreements 0 leaves verified 7473755 xchecked 27
+start boxes needed 39380 present 39380 missing 0 extra 0 dup 0
+COMPLETE AND VALID

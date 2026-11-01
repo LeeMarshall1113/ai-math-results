@@ -1,0 +1,7 @@
+fullcert     files 197 verified 197 unverified 0 leaves 7473755
+fullcert_ext files 57 verified 57 unverified 0 leaves 87828
+bad/disagreeing files 0 | unverified ext files []
+fullcert start boxes: need 39380 present 39380 missing 0 extra 0 dup 0
+ext start boxes: listed 570 present 570 missing 0 extra 0 dup 0 overlap-with-fullcert 0
+orbit coverage: 1/10 boxes of [0,1]^6 with no image in a verified start box: 0 []
+COMPLETE AND VALID (symmetry-correct coverage)

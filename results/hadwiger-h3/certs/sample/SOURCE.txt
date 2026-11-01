@@ -1,0 +1,6 @@
+Sample for code/check_sample.sh. Lines copied verbatim (one JSON line per start box) from the certificate:
+  chunk_00000.jsonl.gz: start box [4,4,4,4,4,4] from fullcert/chunk_00196.jsonl.gz (1,771 leaves, 118 chord
+                        leaves; the box has the centre (1/2)^6 as a corner), then the first 3 lines of
+                        fullcert/chunk_00000.jsonl.gz.
+  chunk_00001.jsonl.gz: the first 3 lines of fullcert_ext/chunk_00000.jsonl.gz.
+The files are re-compressed, so their SHA-256 differs from the full chunks.

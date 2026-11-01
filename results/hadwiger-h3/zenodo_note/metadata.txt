@@ -1,0 +1,19 @@
+Title: Every convex body in R^3 can be covered by 13 smaller homothetic copies
+Upload type: Publication / Preprint
+Creators: Marshall, Lee
+Description (abstract): LEE writes. Technical summary for reference: every convex body in R^3 is covered by 13
+  translates of its interior, so H_3 <= 13 (previous bound 14, Prymak 2023). Prymak's framework plus a long-chord
+  lemma from the minimal circumscribed parallelotope; exact LP certificate with 7,561,583 leaves checked by two
+  separately written exact checkers; reduction formalised in Lean 4. Corrects two points in the H_3 <= 14
+  argument (symmetry domain; Lemma 2.4(ii) at box corners).
+Keywords: Hadwiger covering problem; illumination conjecture; convex body; homothetic copies; minimal
+  parallelotope; linear programming; computer-assisted proof; Lean
+Related identifiers:
+  - doi:10.1137/22M1490314           (references; Prymak 2023, H_3 <= 14)
+  - arXiv:2112.10698                 (references; Prymak, preprint)
+  - doi:10.1023/A:1005056207406      (references; Papadoperakis 1999)
+  - doi:10.5281/zenodo.23748157      (is supplemented by; ai-math-results repository, concept DOI)
+  - <certificate dataset DOI>        (is supplemented by; LEE fills in after the dataset draft is created)
+License: CC BY 4.0 (note)
+Language: English
+Version: v1 (technical note; prose rewrite to follow as v2 on the same concept DOI)

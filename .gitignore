@@ -4,3 +4,8 @@ artifacts/
 *.exe
 *.obj
 *.npz
+results/hadwiger-h3/code/newmethod/fullcert/
+results/hadwiger-h3/code/newmethod/fullcert_ext/
+results/hadwiger-h3/code/newmethod/_my_*.txt
+results/hadwiger-h3/code/replay/out_strict/
+results/hadwiger-h3/code/_check.*/
