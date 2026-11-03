@@ -13,7 +13,7 @@ Conjecture 1 of R. Agaev and P. Chebotarev, *On the spectra of nonsymmetric Lapl
 - n <= 3: known (2005).
 - n >= 5: the conjecture is false. P. Chebotarev, arXiv:2610.14100 (v1 8 Oct 2026, v2 20 Oct 2026), gives counterexamples for every n >= 5. It lists n = 4 as open (Question 1).
 - n = 4: proved here, with open certificates that anyone can replay. This completes the conjecture.
-- **Prior claim.** Our novelty search missed an earlier claim of the n = 4 case: D. Z. Liu, *The Agaev–Chebotarev Polygon Conjecture Holds Exactly for n ≤ 4*, Zenodo record [23630989](https://zenodo.org/records/23630989), created 2026-10-25 (01:43 UTC), before this work began. It uses a related approach: an LP reduction to at most six fractional weights, then exact Bernstein expansions on 9583 classes. As of 2026-10-28 the record contains only the PDF (its code is announced but not included). Liu's claim has priority; what this repository adds is an independent proof whose certificates are open and replay cleanly.
+- **Prior claim.** Our novelty search missed an earlier claim of the n = 4 case: D. Z. Liu, *The Agaev–Chebotarev Polygon Conjecture Holds Exactly for n ≤ 4*, Zenodo record [23630989](https://zenodo.org/records/23630989), created 2026-10-25 (01:43 UTC), before this work began. It uses a related approach: an LP reduction to at most six fractional weights, then exact Bernstein expansions on 9583 classes. Its current version (record [23812972](https://zenodo.org/records/23812972), v2, 2026-10-30) also lists an ancillary code archive, which we have not inspected. Liu's claim has priority; what this repository adds is an independent proof whose certificates are open and replay cleanly.
 
 ## Method (full details in `PROOF.md`)
 
@@ -32,12 +32,12 @@ cd proof
 bash fullcheck.sh
 ```
 
-This runs `verify.py` (re-derives identity (*), re-enumerates the 38016 faces and 836 representatives, **asserts that the Bernstein faces, trees and tubes validate as inputs and cover exactly the 836 canonical faces, disjointly**, then replays every Bernstein face and all 136 trees) and then `verify_tube.py` on the five tube files (replays all 10 tube certificates). It exits nonzero unless all 836 classes pass; the expected last line is `FULL CHECK PASSED: 826 + 10 = 836 canonical faces certified`. `proof/fullcheck.log` is the recorded run. Runtime: about 10 minutes on one thread, peak about 0.5 GB. `python verify.py` alone skips the tube certificates, so use `fullcheck.sh` or `indep3/check3.py all` for a full replay. `proof/CHECKSUMS.sha256` lists the certificate files (`cd proof && sha256sum -c CHECKSUMS.sha256`; the data files are stored byte-exact).
+This runs `verify.py` (re-derives identity (*), re-enumerates the 38016 faces and 836 representatives, **asserts that the Bernstein faces, trees and tubes validate as inputs and cover exactly the 836 canonical faces, disjointly**, then replays every Bernstein face and all 136 trees) and then `verify_tube.py` on the five tube files (replays all 10 tube certificates). It exits nonzero unless all 836 classes pass; the expected last line is `FULL CHECK PASSED: 826 + 10 = 836 canonical faces certified`. `proof/fullcheck.log` is a recorded run of this script at tag v2026.10.29d (2026-11-03; CPython 3.14.0, sympy 1.14.0, python-flint 0.9.0): 23 minutes wall time on one thread on a shared machine, under 1 GB. (An earlier log, made on 10-28 by the previous driver, was replaced.) `python verify.py` alone skips the tube certificates, so use `fullcheck.sh` or `indep3/check3.py all` for a full replay. `proof/CHECKSUMS.sha256` lists the certificate files (`cd proof && sha256sum -c CHECKSUMS.sha256`; the data files are stored byte-exact).
 
 Certificates are included in full (all files under 5 MB, about 12 MB total); the search code that generated them is not. Checkers import only sympy, flint and each other.
 
 
-### Third independent checker (pure Python, no CAS libraries)
+### Second full replay pipeline (pure Python, no CAS libraries)
 `proof/indep3/` re-checks everything using **only the Python standard library** (Fractions and integers). It uses no python-flint, sympy or numpy, and none of the other checkers' code, so the two libraries the first two checkers rely on are no longer a single point of failure. It derives Phi, re-enumerates the 38016 faces and 836 orbits, rebuilds every face polynomial, replays every certificate with its own Bernstein/de Casteljau code, and checks exact, disjoint coverage by orbit.
 
 ```
@@ -49,7 +49,7 @@ Limits are stated in `indep3/README.md`: it trusts CPython integer arithmetic, a
 
 ## Referee summary
 
-`notes/REFEREE.md` (hostile AI referee, 2026-10-28): verdict SURVIVES. The referee re-derived the identity and Bendixson bound (correcting the constant to sqrt(3/2); this folder uses that), checked the LP-vertex reduction and symmetry, independently recounted 38016 and 836, wrote its own checker (`notes/referee/refcheck.py`, own Bernstein and replay, no project code) and validated samples of all three certificate types plus mutation tests, and ran 400 numerical ascents finding no violation. Its minor points (no coverage assertion, unvalidated certificate inputs, stale text) are fixed here. Remaining caveats: both checkers rely on python-flint; the proof relies on the published 2005 Theorems 5 and 6 (Dmitriev-Dynkin bound).
+`notes/REFEREE.md` (hostile AI referee, 2026-10-28): verdict SURVIVES. The referee re-derived the identity and Bendixson bound (correcting the constant to sqrt(3/2); this folder uses that), checked the LP-vertex reduction and symmetry, independently recounted 38016 and 836, wrote its own checker (`notes/referee/refcheck.py`, own Bernstein and replay, no project code) and replayed all 10 tube certificates and samples of the Bernstein faces and trees, plus mutation tests, and ran 400 numerical ascents finding no violation. Its minor points (no coverage assertion, unvalidated certificate inputs, stale text) are fixed here. Remaining caveats: the first pipeline and the referee checker rely on python-flint (the second pipeline does not); the proof relies on the published 2005 Theorems 5 and 6 (Dmitriev-Dynkin bound).
 
 ## Files
 

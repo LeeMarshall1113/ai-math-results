@@ -90,8 +90,9 @@ uses sympy. P. Chebotarev asked for an independent replay in a second system.
    This is an orbit-based check. It does not rely on the project's choice of canonical
    representative.
 
-Faces that have more than one certificate in the files (2 tree faces, and tube faces
-with several `ok` records) have **every** certificate replayed.
+Faces that have more than one certificate in the files (2 tree faces, giving 138 trees
+for 136 faces) have **every** certificate replayed. Each of the 10 tube faces has exactly
+one `ok` record.
 
 ## Results (2026-10-28)
 

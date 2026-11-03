@@ -172,7 +172,7 @@ Steps 1-4b give the Theorem, and hence Lambda_4 = S_4.
     cd proof
     bash fullcheck.sh       # the full replay: all 836 faces; nonzero exit unless every class passes
 
-or, with the independent third checker, `python indep3/check3.py all`.
+or, with the independent second pipeline (standard library only), `python indep3/check3.py all`.
 
 `fullcheck.sh` runs `verify.py` (Bernstein faces and trees) and then `verify_tube.py` (the 10 tube
 certificates). `verify.py` on its own skips the tube certificates' content, so it is not a full replay.
