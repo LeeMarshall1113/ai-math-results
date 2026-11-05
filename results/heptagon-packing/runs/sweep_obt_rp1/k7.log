@@ -1,0 +1,54 @@
+job mode=obt tag=7 t0=[0.14, 0.16] run=rp1
+checkpointing disabled (from-scratch replay)
+python 3.13.3 (main, May 21 2025, 23:35:07) [GCC 12.2.0] | platform Linux-4.19.0-gvisor-x86_64-with-glibc2.36
+numpy 2.5.4 /usr/local/lib/python3.13/site-packages/numpy/__init__.py
+sha256 /root/hp/src/rig.py 1ad0261beb059ca81f69fddca96199bfd8148dd808836fff676c6a825baecc9f
+sha256 /root/hp/src/bnb2.py 9f4fb62823165b03a002d874285c43d3313c305f41bc8b739c3c07ae73bba9b4
+sha256 /root/hp/src/chart_excl.py 304d874316cdb78304cf9c078e34ca7f6c8f49a163df1f947273ae32084b284d
+sha256 runs/f_w030.npy ced5a7aa9466085f72fb20ffe698897925a71f1d6666e5c24b77d383ff2da1df
+sha256 runs/dl_ref.json 79d8402d24fa812c0b369fc733a882ac74e8ac5c49e21befc81cd8b06a7c2fc0
+sha256 runs/D5_nodes.npy 87d669a7419b037b801f753c173da484833a49ab2e00726375a8448d6ff1c020
+sha256 runs/D5_bins.json afa2c4ac0d7330f73feb17f0cb16cb6426a7b6889ceef306db626ace6fbd9b85
+env HEPT_DUAL2 = 1
+env HEPT_MU = [-1.1684855e-12, -1.1684853e-12]
+env HEPT_OBT4 = runs/D5_nodes.npy,runs/D5_bins.json
+argv ["runs/f_w030.npy", "3", "2", "1.5326754446782214", "27000.0", "{\"lo\": [2.548, 0, 0.8, 0.14, -1e-12, -1e-12], \"hi\": [4.0, 2.0, 3.5, 0.16, 0.8975979010266552, 0.8975979010266552]}", "/tmp/open.npy"]
+  {'processed': 20205, 'infeasible': 1377, 'first': 3673, 'second': 0, 'dual': 0, 'split': 15155, 'stuck': 0} open 10,106 rate 320/s [63s]
+  {'processed': 53205, 'infeasible': 6275, 'first': 8351, 'second': 3401, 'dual': 2110, 'split': 33068, 'stuck': 0} open 12,932 rate 425/s [125s]
+  {'processed': 89205, 'infeasible': 13662, 'first': 12523, 'second': 8263, 'dual': 4928, 'split': 49829, 'stuck': 0} open 10,454 rate 469/s [190s]
+  {'processed': 122205, 'infeasible': 20438, 'first': 16125, 'second': 12131, 'dual': 7219, 'split': 66292, 'stuck': 0} open 10,380 rate 486/s [251s]
+  {'processed': 155205, 'infeasible': 28619, 'first': 19299, 'second': 15663, 'dual': 9395, 'split': 82229, 'stuck': 0} open 9,254 rate 498/s [312s]
+  {'processed': 188205, 'infeasible': 34040, 'first': 23471, 'second': 20089, 'dual': 11523, 'split': 99082, 'stuck': 0} open 9,960 rate 504/s [373s]
+  {'processed': 221205, 'infeasible': 41025, 'first': 25988, 'second': 24663, 'dual': 15194, 'split': 114335, 'stuck': 0} open 7,466 rate 509/s [435s]
+  {'processed': 254205, 'infeasible': 48549, 'first': 28818, 'second': 28946, 'dual': 17514, 'split': 130378, 'stuck': 0} open 6,552 rate 513/s [495s]
+  {'processed': 287205, 'infeasible': 53945, 'first': 33251, 'second': 32556, 'dual': 19101, 'split': 148352, 'stuck': 0} open 9,500 rate 516/s [557s]
+  {'processed': 323205, 'infeasible': 64721, 'first': 36156, 'second': 36256, 'dual': 21299, 'split': 164773, 'stuck': 0} open 6,342 rate 521/s [620s]
+  {'processed': 356205, 'infeasible': 71395, 'first': 39578, 'second': 39900, 'dual': 23318, 'split': 182014, 'stuck': 0} open 7,824 rate 522/s [682s]
+  {'processed': 392205, 'infeasible': 79203, 'first': 43668, 'second': 43110, 'dual': 26395, 'split': 199829, 'stuck': 0} open 7,454 rate 525/s [747s]
+  {'processed': 425205, 'infeasible': 86464, 'first': 46458, 'second': 47496, 'dual': 29486, 'split': 215301, 'stuck': 0} open 5,398 rate 527/s [807s]
+  {'processed': 458205, 'infeasible': 91813, 'first': 50669, 'second': 52103, 'dual': 32022, 'split': 231598, 'stuck': 0} open 4,992 rate 527/s [869s]
+  {'processed': 491205, 'infeasible': 97724, 'first': 54347, 'second': 55786, 'dual': 33674, 'split': 249674, 'stuck': 0} open 8,144 rate 526/s [935s]
+  {'processed': 524205, 'infeasible': 106703, 'first': 56747, 'second': 59312, 'dual': 35463, 'split': 265980, 'stuck': 0} open 7,756 rate 527/s [995s]
+  {'processed': 560205, 'infeasible': 116554, 'first': 60801, 'second': 62374, 'dual': 37608, 'split': 282868, 'stuck': 0} open 5,532 rate 529/s [1058s]
+  {'processed': 596205, 'infeasible': 125860, 'first': 64183, 'second': 65848, 'dual': 39767, 'split': 300547, 'stuck': 0} open 4,890 rate 531/s [1123s]
+  {'processed': 629205, 'infeasible': 131692, 'first': 67364, 'second': 68775, 'dual': 42785, 'split': 318589, 'stuck': 0} open 7,974 rate 530/s [1187s]
+  {'processed': 662205, 'infeasible': 140758, 'first': 68603, 'second': 71243, 'dual': 47473, 'split': 334128, 'stuck': 0} open 6,052 rate 530/s [1249s]
+  {'processed': 695205, 'infeasible': 149795, 'first': 69843, 'second': 73518, 'dual': 51918, 'split': 350131, 'stuck': 0} open 5,058 rate 529/s [1314s]
+  {'processed': 728205, 'infeasible': 158758, 'first': 71894, 'second': 76326, 'dual': 55081, 'split': 366146, 'stuck': 0} open 4,088 rate 529/s [1377s]
+  {'processed': 761205, 'infeasible': 165800, 'first': 74412, 'second': 79131, 'dual': 58622, 'split': 383240, 'stuck': 0} open 5,276 rate 529/s [1440s]
+  {'processed': 794205, 'infeasible': 173875, 'first': 76993, 'second': 81784, 'dual': 61943, 'split': 399610, 'stuck': 0} open 5,016 rate 528/s [1505s]
+  {'processed': 827205, 'infeasible': 182934, 'first': 78533, 'second': 84503, 'dual': 65718, 'split': 415517, 'stuck': 0} open 3,830 rate 528/s [1567s]
+  {'processed': 860205, 'infeasible': 190084, 'first': 81921, 'second': 86657, 'dual': 68218, 'split': 433325, 'stuck': 0} open 6,446 rate 528/s [1629s]
+  {'processed': 893205, 'infeasible': 198578, 'first': 84114, 'second': 89693, 'dual': 70661, 'split': 450159, 'stuck': 0} open 7,114 rate 528/s [1691s]
+  {'processed': 926205, 'infeasible': 207705, 'first': 86885, 'second': 91894, 'dual': 72734, 'split': 466987, 'stuck': 0} open 7,770 rate 529/s [1752s]
+  {'processed': 962205, 'infeasible': 219487, 'first': 90207, 'second': 93885, 'dual': 75358, 'split': 483268, 'stuck': 0} open 4,332 rate 530/s [1816s]
+  {'processed': 995051, 'infeasible': 229284, 'first': 92858, 'second': 95528, 'dual': 77604, 'split': 499777, 'stuck': 0} open 4,504 rate 530/s [1878s]
+  {'processed': 1028051, 'infeasible': 236392, 'first': 95335, 'second': 98485, 'dual': 79870, 'split': 517969, 'stuck': 0} open 7,888 rate 529/s [1942s]
+  {'processed': 1064051, 'infeasible': 246794, 'first': 98378, 'second': 101656, 'dual': 81350, 'split': 535873, 'stuck': 0} open 7,696 rate 530/s [2007s]
+  {'processed': 1100051, 'infeasible': 258562, 'first': 101868, 'second': 103916, 'dual': 82983, 'split': 552722, 'stuck': 0} open 5,394 rate 532/s [2069s]
+  {'processed': 1133051, 'infeasible': 268078, 'first': 104508, 'second': 106195, 'dual': 85171, 'split': 569099, 'stuck': 0} open 5,148 rate 532/s [2129s]
+  {'processed': 1163969, 'infeasible': 277365, 'first': 106860, 'second': 107680, 'dual': 86839, 'split': 585225, 'stuck': 0} open 6,482 rate 531/s [2191s]
+  {'processed': 1199969, 'infeasible': 287724, 'first': 109035, 'second': 110996, 'dual': 89748, 'split': 602466, 'stuck': 0} open 4,964 rate 532/s [2256s]
+  {'processed': 1235875, 'infeasible': 299871, 'first': 111000, 'second': 113281, 'dual': 92306, 'split': 619417, 'stuck': 0} open 2,960 rate 533/s [2319s]
+  {'processed': 1267019, 'infeasible': 310388, 'first': 113031, 'second': 115358, 'dual': 94567, 'split': 633675, 'stuck': 0} open 332 rate 532/s [2381s]
+{"processed": 1267429, "infeasible": 310622, "first": 113067, "second": 115434, "dual": 94592, "split": 633714, "stuck": 0, "done": true, "open": 0, "secs": 2388.4744143486023, "target": 1.5326754446782214, "region": {"lo": [2.548, 0, 0.8, 0.14, -1e-12, -1e-12], "hi": [4.0, 2.0, 3.5, 0.16, 0.8975979010266552, 0.8975979010266552]}, "rate": 530.6437416226877}

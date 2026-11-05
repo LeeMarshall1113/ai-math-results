@@ -1,6 +1,6 @@
 # Heptagon packing: every packing of congruent regular heptagons has density at most the Kuperberg double-lattice density
 
-**Status: Computer-assisted proof, AI-generated, not peer reviewed, not formally verified.** The geometric lemmas (L1, L2, L3, L5 below) are written up as a working draft (`PROOFS-DRAFT.md`, not paper prose) that has been attacked by two hostile AI audits but not read by a human referee. The interval computation (L4) is a rerunnable program, not a stored per-box certificate. Six of the sweep slices resumed from checkpoints and are being replayed from scratch; results will be added here when they finish.
+**Status: Computer-assisted proof, AI-generated, not peer reviewed, not formally verified.** The geometric lemmas (L1, L2, L3, L5 below) are written up as a working draft (`PROOFS-DRAFT.md`, not paper prose) that has been attacked by two hostile AI audits but not read by a human referee. The interval computation (L4) is a rerunnable program, not a stored per-box certificate. Six sweep slices that had resumed from checkpoints were replayed from scratch (run `rp1`): all finished with 0 stuck.
 
 ## Statement and sources
 
@@ -35,7 +35,7 @@ Numbers are taken from the logs in `runs/` and from the two audit reports and NO
 
 **Caveats.**
 - The branch-and-bound writes progress logs, **not** a per-box certificate, so "replay" means rerunning the program, not checking a stored proof object.
-- Six slices that resumed from checkpoints (main 2, 39f, 39g; obtuse 7, 26, 44) are being replayed from scratch. The kept checkpoints match the logged hashes, but the logs alone cannot show that each restored set was the complete open set. Those replays are not in this folder yet.
+- Six slices that resumed from checkpoints (main 2, 39f, 39g; obtuse 7, 26, 44) were replayed from scratch, with checkpointing off and the same `bnb2.py` (`runs/sweep_main_rp1/`, `runs/sweep_obt_rp1/`). All are `done: true, stuck: 0`: main k2 499,793 boxes, 39f 2,367,945, 39g 8,430,765; obtuse k7 1,267,429, k26 505,137, k44 855,327. Every slice of both sweeps is therefore backed by a from-scratch run or a checked resume chain (slice 38: two dump resumes plus six shards, multiset-checked).
 - `PROOFS-DRAFT.md` is a draft with internal markers; L1, L2, L3, L5 and the tube lemma are checked by audit only, not by a machine.
 - Nothing is formalised in Lean or another proof assistant.
 

@@ -870,3 +870,12 @@ sweep certifies whatever table it is given, but recorded here)
 - PROOFS-DRAFT updated: closed gaps marked, current bnb2 hash 9f4fb628 cited, the shared
   density definition, the de Berg statements quoted (no theorem numbers relied on), and
   Lemma 6.0 added.
+- **UNCLEAR-4 CLOSED (2026-11-05):** all six checkpoint-resumed slices were replayed FROM SCRATCH
+  on Modal (run rp1, no checkpointing, same bnb2 9f4fb628). **All DONE, 0 stuck:**
+  - main: k2 499,793 boxes; 39f 2,367,945; 39g 8,430,765 (one preemption, restarted from
+    scratch; both attempts' logs are on the Volume, /ckpt/rp1/log_main_39g_*);
+  - obtuse: k7 1,267,429; k26 505,137; k44 855,327.
+  Logs are in `runs/sweep_main_rp1/`, `runs/sweep_obt_rp1/`. The original logs record
+  post-resume work only, so box counts are not comparable; the verdicts agree.
+  **Every slice of both sweeps is now certified by a from-scratch run or a verified resume chain**
+  (main 38: two dump resumes plus 6 shards, multiset-checked).
