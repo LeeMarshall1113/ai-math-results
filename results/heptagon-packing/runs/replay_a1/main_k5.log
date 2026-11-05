@@ -1,0 +1,25 @@
+job mode=main tag=5 t0=[0.1, 0.12] (local replay)
+python 3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)] | platform Windows-11-10.0.26200-SP0
+numpy 2.5.4 C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\numpy\__init__.py
+sha256 C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\rig.py 1ad0261beb059ca81f69fddca96199bfd8148dd808836fff676c6a825baecc9f
+sha256 C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\bnb2.py 9f4fb62823165b03a002d874285c43d3313c305f41bc8b739c3c07ae73bba9b4
+sha256 C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\chart_excl.py 304d874316cdb78304cf9c078e34ca7f6c8f49a163df1f947273ae32084b284d
+sha256 runs/f_w030.npy ced5a7aa9466085f72fb20ffe698897925a71f1d6666e5c24b77d383ff2da1df
+sha256 runs\dl_ref.json 79d8402d24fa812c0b369fc733a882ac74e8ac5c49e21befc81cd8b06a7c2fc0
+sha256 runs/charts_w030c.json 3237cf5447489b47a73584b16fde632ca76b510c3290214ae206351c7256f8f1
+env HEPT_CHARTS = runs/charts_w030c.json
+env HEPT_DUAL2 = 1
+env HEPT_MU = [-1.1684855e-12, -1.1684853e-12]
+argv ["runs/f_w030.npy", "3", "2", "1.5326754446782214", "40000", "{\"lo\": [1.8019377358048, 0, 1.2, 0.1, -1e-12, -1e-12], \"hi\": [4.0, 2.0, 3.5, 0.12, 0.8975979010266552, 0.8975979010266552]}"]
+  {'processed': 32271, 'infeasible': 3698, 'first': 5419, 'second': 72, 'dual': 348, 'split': 22734, 'stuck': 0, 'chart': 0} open 13,198 rate 517/s [62s]
+  {'processed': 74271, 'infeasible': 11779, 'first': 7163, 'second': 2926, 'dual': 10075, 'split': 42328, 'stuck': 0, 'chart': 0} open 10,386 rate 589/s [126s]
+  {'processed': 116271, 'infeasible': 21990, 'first': 9492, 'second': 4924, 'dual': 17490, 'split': 62375, 'stuck': 0, 'chart': 0} open 8,480 rate 624/s [186s]
+  {'processed': 158271, 'infeasible': 30815, 'first': 12974, 'second': 7482, 'dual': 23857, 'split': 83143, 'stuck': 0, 'chart': 0} open 8,016 rate 639/s [248s]
+  {'processed': 200271, 'infeasible': 38919, 'first': 15018, 'second': 10580, 'dual': 32595, 'split': 103159, 'stuck': 0, 'chart': 0} open 6,048 rate 645/s [311s]
+  {'processed': 242271, 'infeasible': 48359, 'first': 17811, 'second': 12384, 'dual': 39678, 'split': 124039, 'stuck': 0, 'chart': 0} open 5,808 rate 653/s [371s]
+  {'processed': 284271, 'infeasible': 56980, 'first': 21697, 'second': 14452, 'dual': 45582, 'split': 145560, 'stuck': 0, 'chart': 0} open 6,850 rate 659/s [431s]
+  {'processed': 326271, 'infeasible': 65584, 'first': 23908, 'second': 16773, 'dual': 54509, 'split': 165497, 'stuck': 0, 'chart': 0} open 4,724 rate 661/s [494s]
+  {'processed': 368271, 'infeasible': 74248, 'first': 27587, 'second': 18340, 'dual': 61063, 'split': 187033, 'stuck': 0, 'chart': 0} open 5,796 rate 662/s [556s]
+  {'processed': 410271, 'infeasible': 83159, 'first': 31437, 'second': 20525, 'dual': 67942, 'split': 207208, 'stuck': 0, 'chart': 0} open 4,146 rate 665/s [617s]
+  {'processed': 454687, 'infeasible': 93048, 'first': 36262, 'second': 22654, 'dual': 74291, 'split': 228432, 'stuck': 0, 'chart': 0} open 2,178 rate 670/s [679s]
+{"processed": 466659, "infeasible": 95343, "first": 37023, "second": 23569, "dual": 77395, "split": 233329, "stuck": 0, "chart": 0, "done": true, "open": 0, "secs": 708.7865149974823, "target": 1.5326754446782214, "region": {"lo": [1.8019377358048, 0, 1.2, 0.1, -1e-12, -1e-12], "hi": [4.0, 2.0, 3.5, 0.12, 0.8975979010266552, 0.8975979010266552]}, "rate": 658.3914763130865}

@@ -1,0 +1,174 @@
+C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:43: DeprecationWarning: 'asyncio.WindowsSelectorEventLoopPolicy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:43: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+✓ Initialized. View run at 
+https://modal.com/apps/leemarshall1113/main/ap-w4ZdUM2m3DdSTOFnIp5K6k
+✓ Created objects.
+├── 🔨 Created mount 
+│   C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\modal
+│   _sweep.py
+├── 🔨 Created mount runs\D5_bins.json
+├── 🔨 Created mount runs\D5_nodes.npy
+├── 🔨 Created mount runs\dl_ref.json
+├── 🔨 Created mount runs\charts_w030c.json
+├── 🔨 Created mount src\chart_excl.py
+├── 🔨 Created mount runs\f_w030.npy
+├── 🔨 Created mount src\bnb2.py
+├── 🔨 Created mount src\rig.py
+└── 🔨 Created function run_slice.
+6 DONE {"processed": 466847, "stuck": 0, "open": 0, "secs": 703.2011950016022}
+1 DONE {"processed": 512827, "stuck": 0, "open": 0, "secs": 753.4627258777618}
+Container terminated due to preemption. For more details, see https://modal.com/docs/guide/preemption
+9 DONE {"processed": 524249, "stuck": 0, "open": 0, "secs": 817.6686253547668}
+33 DONE {"processed": 501843, "stuck": 0, "open": 0, "secs": 937.0270535945892}
+7 DONE {"processed": 471937, "stuck": 0, "open": 0, "secs": 987.0238893032074}
+31 DONE {"processed": 523337, "stuck": 0, "open": 0, "secs": 970.7872204780579}
+30 DONE {"processed": 543995, "stuck": 0, "open": 0, "secs": 1015.5199573040009}
+0 DONE {"processed": 528603, "stuck": 0, "open": 0, "secs": 1023.9377481937408}
+4 DONE {"processed": 479955, "stuck": 0, "open": 0, "secs": 1024.1029498577118}
+8 DONE {"processed": 495735, "stuck": 0, "open": 0, "secs": 1083.8408982753754}
+44 DONE {"processed": 517717, "stuck": 0, "open": 0, "secs": 1103.8867297172546}
+34 DONE {"processed": 529043, "stuck": 0, "open": 0, "secs": 1109.9215729236603}
+32 DONE {"processed": 511201, "stuck": 0, "open": 0, "secs": 1114.6093504428864}
+2 DONE {"processed": 212552, "stuck": 0, "open": 0, "secs": 309.23643922805786}
+11 DONE {"processed": 644693, "stuck": 0, "open": 0, "secs": 1146.741189956665}
+29 DONE {"processed": 582429, "stuck": 0, "open": 0, "secs": 1190.72935962677}
+42 DONE {"processed": 566381, "stuck": 0, "open": 0, "secs": 1184.6359548568726}
+43 DONE {"processed": 552667, "stuck": 0, "open": 0, "secs": 1179.1534106731415}
+10 DONE {"processed": 574983, "stuck": 0, "open": 0, "secs": 1268.361028432846}
+12 DONE {"processed": 769775, "stuck": 0, "open": 0, "secs": 1354.2860174179077}
+27 DONE {"processed": 670291, "stuck": 0, "open": 0, "secs": 1394.851291179657}
+3 DONE {"processed": 487051, "stuck": 0, "open": 0, "secs": 1413.0684466362}
+41 DONE {"processed": 685567, "stuck": 0, "open": 0, "secs": 1453.8310692310333}
+28 DONE {"processed": 622575, "stuck": 0, "open": 0, "secs": 1534.6906175613403}
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+26 DONE {"processed": 727833, "stuck": 0, "open": 0, "secs": 1620.7295897006989}
+16 DONE {"processed": 1136991, "stuck": 0, "open": 0, "secs": 1631.8577711582184}
+24 DONE {"processed": 936099, "stuck": 0, "open": 0, "secs": 1688.0712900161743}
+20 DONE {"processed": 1191827, "stuck": 0, "open": 0, "secs": 1760.1911327838898}
+35 DONE {"processed": 629695, "stuck": 0, "open": 0, "secs": 1855.8508207798004}
+5 DONE {"processed": 179388, "stuck": 0, "open": 0, "secs": 387.3410675525665}
+36 DONE {"processed": 1053939, "stuck": 0, "open": 0, "secs": 2009.473214149475}
+21 DONE {"processed": 1394283, "stuck": 0, "open": 0, "secs": 2050.5967214107513}
+14 DONE {"processed": 1032785, "stuck": 0, "open": 0, "secs": 2080.3581018447876}
+17 DONE {"processed": 1124293, "stuck": 0, "open": 0, "secs": 2132.27459025383}
+15 DONE {"processed": 1105691, "stuck": 0, "open": 0, "secs": 2171.414273262024}
+18 DONE {"processed": 1094839, "stuck": 0, "open": 0, "secs": 2300.922534942627}
+19 DONE {"processed": 1101437, "stuck": 0, "open": 0, "secs": 2286.7686121463776}
+39j DONE {"processed": 1213803, "stuck": 0, "open": 0, "secs": 2395.784662246704}
+23 DONE {"processed": 1325637, "stuck": 0, "open": 0, "secs": 2731.5508358478546}
+25 DONE {"processed": 804329, "stuck": 0, "open": 0, "secs": 2870.8699185848236}
+22 DONE {"processed": 1521699, "stuck": 0, "open": 0, "secs": 3032.704142332077}
+39d DONE {"processed": 1917057, "stuck": 0, "open": 0, "secs": 3023.348861694336}
+13 DONE {"processed": 924647, "stuck": 0, "open": 0, "secs": 3100.0617594718933}
+Container terminated due to preemption. For more details, see https://modal.com/docs/guide/preemption
+39e DONE {"processed": 1892351, "stuck": 0, "open": 0, "secs": 3589.7601385116577}
+39c DONE {"processed": 2083897, "stuck": 0, "open": 0, "secs": 3621.7330152988434}
+39i DONE {"processed": 2043853, "stuck": 0, "open": 0, "secs": 3895.7427537441254}
+39b DONE {"processed": 2323585, "stuck": 0, "open": 0, "secs": 4318.293992519379}
+39f DONE {"processed": 2048148, "stuck": 0, "open": 0, "secs": 3602.678686141968}
+39a DONE {"processed": 2595173, "stuck": 0, "open": 0, "secs": 6221.226002931595}
+40 DONE {"processed": 2001569, "stuck": 0, "open": 0, "secs": 6609.82963347435}
+37 DONE {"processed": 4529889, "stuck": 0, "open": 0, "secs": 7026.770315408707}
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+39h DONE {"processed": 9663737, "stuck": 0, "open": 0, "secs": 13266.702152013779}
+38 TIMEOUT {"processed": 4603973, "stuck": 0, "open": 16658, "secs": 13508.08064031601}
+39g DONE {"processed": 6793960, "stuck": 0, "open": 0, "secs": 11964.308638334274}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/leemarshall1113/main/ap-w4ZdUM2m3DdSTOFnIp5K6k

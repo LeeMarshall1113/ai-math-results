@@ -1,0 +1,72 @@
+C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:43: DeprecationWarning: 'asyncio.WindowsSelectorEventLoopPolicy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:43: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+✓ Initialized. View run at 
+https://modal.com/apps/leemarshall1113/main/ap-1eO4nf1Rh4eHwaW7kqGBWq
+✓ Created objects.
+├── 🔨 Created mount 
+│   C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\modal
+│   _sweep.py
+├── 🔨 Created mount runs\D5_bins.json
+├── 🔨 Created mount runs\D5_nodes.npy
+├── 🔨 Created mount runs\charts_w030c.json
+├── 🔨 Created mount runs\dl_ref.json
+├── 🔨 Created mount runs\f_w030.npy
+├── 🔨 Created mount src\chart_excl.py
+├── 🔨 Created mount src\bnb2.py
+├── 🔨 Created mount src\rig.py
+└── 🔨 Created function run_slice.
+38s1 DONE {"processed": 409072, "stuck": 0, "open": 0, "secs": 728.7722210884094}
+38s5 DONE {"processed": 465454, "stuck": 0, "open": 0, "secs": 945.6049067974091}
+38s4 DONE {"processed": 1248274, "stuck": 0, "open": 0, "secs": 1952.32599401474}
+38s2 DONE {"processed": 1459204, "stuck": 0, "open": 0, "secs": 2225.90709066391}
+38s3 DONE {"processed": 889820, "stuck": 0, "open": 0, "secs": 2515.94659948349}
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+WARNING: Logs may not be continuous
+38s0 DONE {"processed": 5026768, "stuck": 0, "open": 0, "secs": 7362.79452085495}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/leemarshall1113/main/ap-1eO4nf1Rh4eHwaW7kqGBWq

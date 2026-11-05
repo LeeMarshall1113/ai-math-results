@@ -1,0 +1,3 @@
+pairs 1529  failures 0  worst (G) lhs/rho = 0.8744  worst (Ov) gap upper = -6.388e-05 (must be < 0)
+covered s-interval approx -0.030171195943140293 0.05011042940006614
+CERTIFIED (G) and (Ov)

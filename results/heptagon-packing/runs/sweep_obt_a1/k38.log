@@ -1,0 +1,34 @@
+job mode=obt tag=38 t0=[0.76, 0.78] run=a1
+python 3.13.3 (main, May 21 2025, 23:35:07) [GCC 12.2.0] | platform Linux-4.19.0-gvisor-x86_64-with-glibc2.36
+numpy 2.5.4 /usr/local/lib/python3.13/site-packages/numpy/__init__.py
+sha256 /root/hp/src/rig.py 1ad0261beb059ca81f69fddca96199bfd8148dd808836fff676c6a825baecc9f
+sha256 /root/hp/src/bnb2.py 9f4fb62823165b03a002d874285c43d3313c305f41bc8b739c3c07ae73bba9b4
+sha256 /root/hp/src/chart_excl.py 304d874316cdb78304cf9c078e34ca7f6c8f49a163df1f947273ae32084b284d
+sha256 runs/f_w030.npy ced5a7aa9466085f72fb20ffe698897925a71f1d6666e5c24b77d383ff2da1df
+sha256 runs/dl_ref.json 79d8402d24fa812c0b369fc733a882ac74e8ac5c49e21befc81cd8b06a7c2fc0
+sha256 runs/D5_nodes.npy 87d669a7419b037b801f753c173da484833a49ab2e00726375a8448d6ff1c020
+sha256 runs/D5_bins.json afa2c4ac0d7330f73feb17f0cb16cb6426a7b6889ceef306db626ace6fbd9b85
+env HEPT_CKPT = /ckpt/a1/open_obt_38.npy
+env HEPT_CKPT_EVERY = 600
+env HEPT_DUAL2 = 1
+env HEPT_MU = [-1.1684855e-12, -1.1684853e-12]
+env HEPT_OBT4 = runs/D5_nodes.npy,runs/D5_bins.json
+argv ["runs/f_w030.npy", "3", "2", "1.5326754446782214", "13500.0", "{\"lo\": [2.548, 0, 0.8, 0.76, -1e-12, -1e-12], \"hi\": [4.0, 2.0, 3.5, 0.78, 0.8975979010266552, 0.8975979010266552]}", "/tmp/open.npy"]
+  {'processed': 20083, 'infeasible': 1383, 'first': 3698, 'second': 0, 'dual': 0, 'split': 15002, 'stuck': 0} open 9,922 rate 323/s [62s]
+  {'processed': 56083, 'infeasible': 8254, 'first': 10221, 'second': 2202, 'dual': 2288, 'split': 33118, 'stuck': 0} open 10,154 rate 450/s [125s]
+  {'processed': 92083, 'infeasible': 16708, 'first': 15884, 'second': 4561, 'dual': 5198, 'split': 49732, 'stuck': 0} open 7,382 rate 494/s [187s]
+  {'processed': 128083, 'infeasible': 23728, 'first': 21463, 'second': 6772, 'dual': 8337, 'split': 67783, 'stuck': 0} open 7,484 rate 510/s [251s]
+  {'processed': 164083, 'infeasible': 32342, 'first': 26540, 'second': 9172, 'dual': 10205, 'split': 85824, 'stuck': 0} open 7,566 rate 523/s [314s]
+  {'processed': 200083, 'infeasible': 41671, 'first': 31363, 'second': 12156, 'dual': 12314, 'split': 102579, 'stuck': 0} open 5,076 rate 532/s [376s]
+  {'processed': 236083, 'infeasible': 49743, 'first': 36900, 'second': 14228, 'dual': 14855, 'split': 120357, 'stuck': 0} open 4,632 rate 536/s [441s]
+  {'processed': 272083, 'infeasible': 57418, 'first': 42426, 'second': 16680, 'dual': 16511, 'split': 139048, 'stuck': 0} open 6,014 rate 539/s [505s]
+  {'processed': 308083, 'infeasible': 66966, 'first': 47056, 'second': 19558, 'dual': 17758, 'split': 156745, 'stuck': 0} open 5,408 rate 543/s [567s]
+  checkpoint 4,392 open boxes -> /ckpt/a1/open_obt_38.npy
+  {'processed': 344083, 'infeasible': 74718, 'first': 53020, 'second': 21449, 'dual': 20106, 'split': 174790, 'stuck': 0} open 5,498 rate 546/s [630s]
+  {'processed': 380083, 'infeasible': 83596, 'first': 57135, 'second': 22996, 'dual': 23391, 'split': 192965, 'stuck': 0} open 5,848 rate 548/s [694s]
+  {'processed': 413083, 'infeasible': 92178, 'first': 59307, 'second': 25301, 'dual': 26922, 'split': 209375, 'stuck': 0} open 5,668 rate 548/s [754s]
+  {'processed': 448577, 'infeasible': 103004, 'first': 62544, 'second': 27627, 'dual': 29883, 'split': 225519, 'stuck': 0} open 2,462 rate 548/s [819s]
+  {'processed': 483679, 'infeasible': 111040, 'first': 65722, 'second': 29305, 'dual': 32611, 'split': 245001, 'stuck': 0} open 6,324 rate 548/s [883s]
+  {'processed': 519679, 'infeasible': 122459, 'first': 69030, 'second': 31961, 'dual': 34776, 'split': 261453, 'stuck': 0} open 3,228 rate 550/s [944s]
+  {'processed': 552305, 'infeasible': 133622, 'first': 71716, 'second': 33467, 'dual': 37049, 'split': 276451, 'stuck': 0} open 598 rate 549/s [1007s]
+{"processed": 558375, "infeasible": 135612, "first": 72122, "second": 33803, "dual": 37651, "split": 279187, "stuck": 0, "done": true, "open": 0, "secs": 1040.107534646988, "target": 1.5326754446782214, "region": {"lo": [2.548, 0, 0.8, 0.76, -1e-12, -1e-12], "hi": [4.0, 2.0, 3.5, 0.78, 0.8975979010266552, 0.8975979010266552]}, "rate": 536.8435295390032}

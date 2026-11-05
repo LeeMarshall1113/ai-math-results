@@ -1,0 +1,24 @@
+job mode=obt tag=30 t0=[0.6, 0.62] (local replay)
+python 3.14.0 (tags/v3.14.0:ebf955d, Oct  7 2025, 10:15:03) [MSC v.1944 64 bit (AMD64)] | platform Windows-11-10.0.26200-SP0
+numpy 2.5.4 C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\numpy\__init__.py
+sha256 C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\rig.py 1ad0261beb059ca81f69fddca96199bfd8148dd808836fff676c6a825baecc9f
+sha256 C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\bnb2.py 9f4fb62823165b03a002d874285c43d3313c305f41bc8b739c3c07ae73bba9b4
+sha256 C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\chart_excl.py 304d874316cdb78304cf9c078e34ca7f6c8f49a163df1f947273ae32084b284d
+sha256 runs/f_w030.npy ced5a7aa9466085f72fb20ffe698897925a71f1d6666e5c24b77d383ff2da1df
+sha256 runs\dl_ref.json 79d8402d24fa812c0b369fc733a882ac74e8ac5c49e21befc81cd8b06a7c2fc0
+sha256 runs/D5_nodes.npy 87d669a7419b037b801f753c173da484833a49ab2e00726375a8448d6ff1c020
+sha256 runs/D5_bins.json afa2c4ac0d7330f73feb17f0cb16cb6426a7b6889ceef306db626ace6fbd9b85
+env HEPT_DUAL2 = 1
+env HEPT_MU = [-1.1684855e-12, -1.1684853e-12]
+env HEPT_OBT4 = runs/D5_nodes.npy,runs/D5_bins.json
+argv ["runs/f_w030.npy", "3", "2", "1.5326754446782214", "40000", "{\"lo\": [2.548, 0, 0.8, 0.6, -1e-12, -1e-12], \"hi\": [4.0, 2.0, 3.5, 0.62, 0.8975979010266552, 0.8975979010266552]}"]
+  {'processed': 34997, 'infeasible': 3289, 'first': 6663, 'second': 42, 'dual': 483, 'split': 24520, 'stuck': 0} open 14,044 rate 552/s [63s]
+  {'processed': 85997, 'infeasible': 15474, 'first': 14422, 'second': 3787, 'dual': 5381, 'split': 46933, 'stuck': 0} open 7,870 rate 687/s [125s]
+  {'processed': 133997, 'infeasible': 25409, 'first': 22156, 'second': 6698, 'dual': 9965, 'split': 69769, 'stuck': 0} open 5,542 rate 724/s [185s]
+  {'processed': 181997, 'infeasible': 34630, 'first': 29458, 'second': 10202, 'dual': 13637, 'split': 94070, 'stuck': 0} open 6,144 rate 739/s [246s]
+  {'processed': 232997, 'infeasible': 45188, 'first': 37472, 'second': 12806, 'dual': 18144, 'split': 119387, 'stuck': 0} open 5,778 rate 756/s [308s]
+  {'processed': 280997, 'infeasible': 55066, 'first': 44433, 'second': 16663, 'dual': 21707, 'split': 143128, 'stuck': 0} open 5,260 rate 761/s [369s]
+  {'processed': 328995, 'infeasible': 63708, 'first': 51551, 'second': 18814, 'dual': 25844, 'split': 169078, 'stuck': 0} open 9,162 rate 760/s [433s]
+  {'processed': 379995, 'infeasible': 78517, 'first': 55780, 'second': 21671, 'dual': 31780, 'split': 192247, 'stuck': 0} open 4,500 rate 766/s [496s]
+  {'processed': 427969, 'infeasible': 91865, 'first': 59918, 'second': 24056, 'dual': 36507, 'split': 215623, 'stuck': 0} open 3,278 rate 769/s [557s]
+{"processed": 452191, "infeasible": 99814, "first": 62037, "second": 25133, "dual": 39112, "split": 226095, "stuck": 0, "done": true, "open": 0, "secs": 603.3069448471069, "target": 1.5326754446782214, "region": {"lo": [2.548, 0, 0.8, 0.6, -1e-12, -1e-12], "hi": [4.0, 2.0, 3.5, 0.62, 0.8975979010266552, 0.8975979010266552]}, "rate": 749.520627704023}

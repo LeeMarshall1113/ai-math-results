@@ -1,0 +1,71 @@
+C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:43: DeprecationWarning: 'asyncio.WindowsSelectorEventLoopPolicy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+C:\Users\hackathon\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:43: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+✓ Initialized. View run at 
+https://modal.com/apps/leemarshall1113/main/ap-clazrPVEVTEDkxNftAOIRo
+✓ Created objects.
+├── 🔨 Created mount 
+│   C:\Users\hackathon\Documents\GitHub\erdos-triage\heptagon-packing\src\modal
+│   _sweep.py
+├── 🔨 Created mount runs\D5_bins.json
+├── 🔨 Created mount runs\D5_nodes.npy
+├── 🔨 Created mount runs\charts_w030c.json
+├── 🔨 Created mount runs\dl_ref.json
+├── 🔨 Created mount runs\f_w030.npy
+├── 🔨 Created mount src\bnb2.py
+├── 🔨 Created mount src\chart_excl.py
+├── 🔨 Created mount src\rig.py
+└── 🔨 Created function run_slice.
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+27 DONE {"processed": 483383, "stuck": 0, "open": 0, "secs": 660.2191872596741}
+36 DONE {"processed": 498073, "stuck": 0, "open": 0, "secs": 783.0278389453888}
+31 DONE {"processed": 446885, "stuck": 0, "open": 0, "secs": 837.0644264221191}
+25 DONE {"processed": 528197, "stuck": 0, "open": 0, "secs": 856.1894397735596}
+29 DONE {"processed": 458293, "stuck": 0, "open": 0, "secs": 861.5518391132355}
+34 DONE {"processed": 462119, "stuck": 0, "open": 0, "secs": 866.3109173774719}
+30 DONE {"processed": 452191, "stuck": 0, "open": 0, "secs": 892.0474691390991}
+28 DONE {"processed": 467367, "stuck": 0, "open": 0, "secs": 946.5998849868774}
+24 DONE {"processed": 560011, "stuck": 0, "open": 0, "secs": 993.4208517074585}
+37 DONE {"processed": 525801, "stuck": 0, "open": 0, "secs": 974.6064484119415}
+38 DONE {"processed": 558375, "stuck": 0, "open": 0, "secs": 1040.107534646988}
+35 DONE {"processed": 479337, "stuck": 0, "open": 0, "secs": 889.0060913562775}
+22 DONE {"processed": 624621, "stuck": 0, "open": 0, "secs": 1284.785428762436}
+21 DONE {"processed": 666309, "stuck": 0, "open": 0, "secs": 1296.2999250888824}
+20 DONE {"processed": 712725, "stuck": 0, "open": 0, "secs": 1367.7076783180237}
+43 DONE {"processed": 823181, "stuck": 0, "open": 0, "secs": 1383.2707297801971}
+19 DONE {"processed": 754773, "stuck": 0, "open": 0, "secs": 1489.9219007492065}
+33 DONE {"processed": 453703, "stuck": 0, "open": 0, "secs": 1485.992926120758}
+17 DONE {"processed": 844605, "stuck": 0, "open": 0, "secs": 1540.7136635780334}
+40 DONE {"processed": 649183, "stuck": 0, "open": 0, "secs": 1562.5813698768616}
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+11 DONE {"processed": 1174529, "stuck": 0, "open": 0, "secs": 1609.6984190940857}
+32 DONE {"processed": 446939, "stuck": 0, "open": 0, "secs": 1620.1887958049774}
+41 DONE {"processed": 707231, "stuck": 0, "open": 0, "secs": 1705.2859964370728}
+2 DONE {"processed": 1074143, "stuck": 0, "open": 0, "secs": 1834.4903166294098}
+39 DONE {"processed": 596359, "stuck": 0, "open": 0, "secs": 1826.3657994270325}
+16 DONE {"processed": 893397, "stuck": 0, "open": 0, "secs": 1841.212741613388}
+1 DONE {"processed": 1012763, "stuck": 0, "open": 0, "secs": 1848.3171200752258}
+15 DONE {"processed": 954701, "stuck": 0, "open": 0, "secs": 1863.1326689720154}
+42 DONE {"processed": 761713, "stuck": 0, "open": 0, "secs": 1873.496916770935}
+26 DONE {"processed": 185148, "stuck": 0, "open": 0, "secs": 351.57160568237305}
+12 DONE {"processed": 1120829, "stuck": 0, "open": 0, "secs": 1964.7020869255066}
+23 DONE {"processed": 591273, "stuck": 0, "open": 0, "secs": 2021.3821005821228}
+14 DONE {"processed": 1011111, "stuck": 0, "open": 0, "secs": 2027.0928525924683}
+4 DONE {"processed": 1183391, "stuck": 0, "open": 0, "secs": 2044.6959958076477}
+5 DONE {"processed": 1223555, "stuck": 0, "open": 0, "secs": 2118.134772539139}
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+3 DONE {"processed": 1133263, "stuck": 0, "open": 0, "secs": 2166.3722705841064}
+6 DONE {"processed": 1255421, "stuck": 0, "open": 0, "secs": 2382.559089899063}
+13 DONE {"processed": 1066185, "stuck": 0, "open": 0, "secs": 2397.4680461883545}
+18 DONE {"processed": 795521, "stuck": 0, "open": 0, "secs": 2409.680346250534}
+Container terminated due to preemption. Your Function will be restarted with the same input. For more details, see https://modal.com/docs/guide/preemption
+8 DONE {"processed": 1262931, "stuck": 0, "open": 0, "secs": 3179.3036279678345}
+7 DONE {"processed": 551224, "stuck": 0, "open": 0, "secs": 1027.7418417930603}
+0 DONE {"processed": 940963, "stuck": 0, "open": 0, "secs": 3389.6760687828064}
+44 DONE {"processed": 196388, "stuck": 0, "open": 0, "secs": 552.2761356830597}
+10 DONE {"processed": 1217577, "stuck": 0, "open": 0, "secs": 3856.566624403}
+9 DONE {"processed": 1242011, "stuck": 0, "open": 0, "secs": 4072.7292580604553}
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/leemarshall1113/main/ap-clazrPVEVTEDkxNftAOIRo

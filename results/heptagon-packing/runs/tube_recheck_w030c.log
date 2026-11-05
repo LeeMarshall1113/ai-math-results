@@ -1,0 +1,4 @@
+charts 1530  pairs 1529  failures 0
+worst E' ratio (reach / ((1-q+) rho (1+5e-10))) = 0.999999999500
+worst G ratio = 0.8744   worst Ov gap = -6.388e-05   worst W ratio |v.(z_c'-z_c)|/eta_c = 0.9000
+ALL CONDITIONS CERTIFIED (A)-(D), K', E', G, Ov, W

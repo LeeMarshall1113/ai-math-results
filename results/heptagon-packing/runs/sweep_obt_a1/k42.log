@@ -1,0 +1,49 @@
+job mode=obt tag=42 t0=[0.84, 0.86] run=a1
+python 3.13.3 (main, May 21 2025, 23:35:07) [GCC 12.2.0] | platform Linux-4.19.0-gvisor-x86_64-with-glibc2.36
+numpy 2.5.4 /usr/local/lib/python3.13/site-packages/numpy/__init__.py
+sha256 /root/hp/src/rig.py 1ad0261beb059ca81f69fddca96199bfd8148dd808836fff676c6a825baecc9f
+sha256 /root/hp/src/bnb2.py 9f4fb62823165b03a002d874285c43d3313c305f41bc8b739c3c07ae73bba9b4
+sha256 /root/hp/src/chart_excl.py 304d874316cdb78304cf9c078e34ca7f6c8f49a163df1f947273ae32084b284d
+sha256 runs/f_w030.npy ced5a7aa9466085f72fb20ffe698897925a71f1d6666e5c24b77d383ff2da1df
+sha256 runs/dl_ref.json 79d8402d24fa812c0b369fc733a882ac74e8ac5c49e21befc81cd8b06a7c2fc0
+sha256 runs/D5_nodes.npy 87d669a7419b037b801f753c173da484833a49ab2e00726375a8448d6ff1c020
+sha256 runs/D5_bins.json afa2c4ac0d7330f73feb17f0cb16cb6426a7b6889ceef306db626ace6fbd9b85
+env HEPT_CKPT = /ckpt/a1/open_obt_42.npy
+env HEPT_CKPT_EVERY = 600
+env HEPT_DUAL2 = 1
+env HEPT_MU = [-1.1684855e-12, -1.1684853e-12]
+env HEPT_OBT4 = runs/D5_nodes.npy,runs/D5_bins.json
+argv ["runs/f_w030.npy", "3", "2", "1.5326754446782214", "13500.0", "{\"lo\": [2.548, 0, 0.8, 0.84, -1e-12, -1e-12], \"hi\": [4.0, 2.0, 3.5, 0.86, 0.8975979010266552, 0.8975979010266552]}", "/tmp/open.npy"]
+  {'processed': 17113, 'infeasible': 1260, 'first': 3047, 'second': 0, 'dual': 0, 'split': 12806, 'stuck': 0} open 8,500 rate 264/s [65s]
+  {'processed': 41113, 'infeasible': 4601, 'first': 8340, 'second': 885, 'dual': 902, 'split': 26385, 'stuck': 0} open 11,658 rate 329/s [125s]
+  {'processed': 68113, 'infeasible': 10780, 'first': 12090, 'second': 3861, 'dual': 2855, 'split': 38527, 'stuck': 0} open 8,942 rate 359/s [190s]
+  {'processed': 95113, 'infeasible': 16938, 'first': 15688, 'second': 6103, 'dual': 4670, 'split': 51714, 'stuck': 0} open 8,316 rate 373/s [255s]
+  {'processed': 122113, 'infeasible': 22061, 'first': 20039, 'second': 7772, 'dual': 6629, 'split': 65612, 'stuck': 0} open 9,112 rate 380/s [322s]
+  {'processed': 149113, 'infeasible': 28571, 'first': 23349, 'second': 10100, 'dual': 8924, 'split': 78169, 'stuck': 0} open 7,226 rate 385/s [387s]
+  {'processed': 173113, 'infeasible': 33522, 'first': 26798, 'second': 12564, 'dual': 10609, 'split': 89620, 'stuck': 0} open 6,128 rate 387/s [448s]
+  {'processed': 200113, 'infeasible': 39481, 'first': 30483, 'second': 14864, 'dual': 11837, 'split': 103448, 'stuck': 0} open 6,784 rate 390/s [513s]
+  {'processed': 227113, 'infeasible': 46765, 'first': 33366, 'second': 16638, 'dual': 13439, 'split': 116905, 'stuck': 0} open 6,698 rate 394/s [576s]
+  checkpoint 6,420 open boxes -> /ckpt/a1/open_obt_42.npy
+  {'processed': 254113, 'infeasible': 53064, 'first': 36982, 'second': 18900, 'dual': 15630, 'split': 129537, 'stuck': 0} open 4,962 rate 397/s [640s]
+  {'processed': 281113, 'infeasible': 59362, 'first': 41296, 'second': 20402, 'dual': 17055, 'split': 142998, 'stuck': 0} open 4,884 rate 398/s [706s]
+  {'processed': 308113, 'infeasible': 66324, 'first': 43566, 'second': 23226, 'dual': 17978, 'split': 157019, 'stuck': 0} open 5,926 rate 400/s [771s]
+  {'processed': 335113, 'infeasible': 74127, 'first': 46907, 'second': 24862, 'dual': 18818, 'split': 170399, 'stuck': 0} open 5,686 rate 402/s [833s]
+  {'processed': 362113, 'infeasible': 79226, 'first': 51312, 'second': 27036, 'dual': 20658, 'split': 183881, 'stuck': 0} open 5,650 rate 402/s [900s]
+  {'processed': 389113, 'infeasible': 86271, 'first': 54341, 'second': 29163, 'dual': 23159, 'split': 196179, 'stuck': 0} open 3,246 rate 403/s [965s]
+  {'processed': 413113, 'infeasible': 90242, 'first': 58060, 'second': 30044, 'dual': 24146, 'split': 210621, 'stuck': 0} open 8,130 rate 402/s [1028s]
+  {'processed': 437113, 'infeasible': 95956, 'first': 59422, 'second': 32305, 'dual': 26400, 'split': 223030, 'stuck': 0} open 8,948 rate 401/s [1089s]
+  {'processed': 464113, 'infeasible': 104673, 'first': 62105, 'second': 34321, 'dual': 27343, 'split': 235671, 'stuck': 0} open 7,230 rate 404/s [1150s]
+  checkpoint 6,570 open boxes -> /ckpt/a1/open_obt_42.npy
+  {'processed': 491113, 'infeasible': 112889, 'first': 63991, 'second': 36195, 'dual': 29102, 'split': 248936, 'stuck': 0} open 6,760 rate 405/s [1214s]
+  {'processed': 518113, 'infeasible': 121326, 'first': 67029, 'second': 37519, 'dual': 30837, 'split': 261402, 'stuck': 0} open 4,692 rate 406/s [1275s]
+  {'processed': 542113, 'infeasible': 126844, 'first': 68473, 'second': 39138, 'dual': 32669, 'split': 274989, 'stuck': 0} open 7,866 rate 406/s [1336s]
+  {'processed': 572113, 'infeasible': 137664, 'first': 70471, 'second': 40927, 'dual': 34952, 'split': 288099, 'stuck': 0} open 4,086 rate 408/s [1402s]
+  {'processed': 599113, 'infeasible': 146508, 'first': 72478, 'second': 42224, 'dual': 36949, 'split': 300954, 'stuck': 0} open 2,796 rate 409/s [1465s]
+  {'processed': 625909, 'infeasible': 153496, 'first': 74731, 'second': 43412, 'dual': 39114, 'split': 315156, 'stuck': 0} open 4,404 rate 408/s [1533s]
+  {'processed': 652909, 'infeasible': 160905, 'first': 76518, 'second': 45697, 'dual': 40804, 'split': 328985, 'stuck': 0} open 5,062 rate 408/s [1599s]
+  {'processed': 679909, 'infeasible': 169784, 'first': 78884, 'second': 47699, 'dual': 42009, 'split': 341533, 'stuck': 0} open 3,158 rate 410/s [1660s]
+  {'processed': 706909, 'infeasible': 178278, 'first': 81292, 'second': 49219, 'dual': 43368, 'split': 354752, 'stuck': 0} open 2,596 rate 410/s [1723s]
+  {'processed': 731329, 'infeasible': 184528, 'first': 83407, 'second': 50481, 'dual': 45105, 'split': 367808, 'stuck': 0} open 4,288 rate 408/s [1791s]
+  checkpoint 5,688 open boxes -> /ckpt/a1/open_obt_42.npy
+  {'processed': 757491, 'infeasible': 193111, 'first': 85148, 'second': 52509, 'dual': 47414, 'split': 379309, 'stuck': 0} open 1,128 rate 409/s [1852s]
+{"processed": 761713, "infeasible": 194719, "first": 85389, "second": 52818, "dual": 47931, "split": 380856, "stuck": 0, "done": true, "open": 0, "secs": 1873.496916770935, "target": 1.5326754446782214, "region": {"lo": [2.548, 0, 0.8, 0.84, -1e-12, -1e-12], "hi": [4.0, 2.0, 3.5, 0.86, 0.8975979010266552, 0.8975979010266552]}, "rate": 406.57286018535336}

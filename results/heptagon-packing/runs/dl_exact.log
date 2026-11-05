@@ -1,0 +1,22 @@
+area(s2) = 1.53267544467822121307293080304  delta_DL = 0.892690686126508075767246842163
+PASS (1a) p4 = (-c, 0): x   [denominator 1.00000]
+PASS (1b) p4 y   [denominator 1.00000]
+PASS (1c) p2, p3 same height   [denominator -0.0990311]
+PASS (1d) |p2 p3| = |p1 p4|/2   [denominator -0.198062]
+PASS (2) contact (0, 2, 4, 1) g = 0   [denominator -0.198062]
+PASS (4) contact (0, 2, 4, 1) |tangential| = 0.214320867893 < 0.433883739118 (margin 0.219563)
+PASS (2) contact (1, 0, 0, 3) g = 0   [denominator 1.00000]
+PASS (4) contact (1, 0, 0, 3) |tangential| = 6.78332137904E-167 < 0.433883739118 (margin 0.433884)
+PASS (2) contact (1, 2, 5, 2) g = 0   [denominator -0.198062]
+PASS (4) contact (1, 2, 5, 2) |tangential| = 0.107160433947 < 0.433883739118 (margin 0.326723)
+PASS (2) contact (2, 0, 1, 4) g = 0   [denominator -0.198062]
+PASS (4) contact (2, 0, 1, 4) |tangential| = 0.214320867893 < 0.433883739118 (margin 0.219563)
+PASS (2) contact (2, 1, 2, 5) g = 0   [denominator -0.198062]
+PASS (4) contact (2, 1, 2, 5) |tangential| = 0.107160433947 < 0.433883739118 (margin 0.326723)
+PASS (3) area(s2) * 2 delta_DL - A = 0   [denominator -9.60602]
+ALL PASS
+negative control c - 9/10 -> zero? False (must be False)
+negative control area*2*delta - A + 1/1000 -> zero? False (must be False)
+negative control contact (0,2,4,1) g + s/10^6 -> zero? False (must be False)
+PASS (5) G v = 0, row 0
+PASS (5) G v = 0, row 1
