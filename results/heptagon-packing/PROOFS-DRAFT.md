@@ -578,7 +578,7 @@ equal acrit. tau appears only in the sweep targets (Section 1) and in (M-off), (
 - **Coordinates:** Phi(z) := (g_1, ..., g_5, v.z), where v is the exact null vector of DG(0).
   b(z) is b of this configuration, with f at mu = mu*. All of these are real-analytic near z = 0.
 
-**Hypothesis H-DL (symbolic; NOT proved here; audit "remains" item 2).**
+**Hypothesis H-DL (symbolic; checked by computer, not by hand: exact identities in `src/dl_exact.py`, denominators and rank certified in `src/dl_exact_cert.py`; see section 6a).**
 - g(0) = 0 exactly;
 - rank DG(0) = 5, with ker DG(0) = R v;
 - b(0) = acrit;
