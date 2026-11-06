@@ -158,7 +158,8 @@ with longest edge >= RTH.
   (centres (0,0), (1.900968868, 0), (1.032921632, 1.612520300); edge lengths 1.9010, 1.8313, 1.9150;
   angles 57.36, 61.71, 60.94 degrees). Each edge length changes by at most 2 sqrt2 * 0.026 < 0.08, so every T in
   E has longest edge < 2.0 < RTH = 2.548, and its angles are within a few degrees of 57-62 degrees,
-  so T is acute.
+  so T is acute. (This acuteness remark rests on numpy estimates and is informal; nothing below uses
+  it. The argument needs only longest edge < RTH, which with Lemma 3.1 gives the conclusions below.)
   By Lemma 3.1, T in E is not obtuse, Dout(T) = 0, and no neighbour can donate to it (a donor
   edge would exceed RTH). So b*(T) = b(T) for T in E, and the short-edge branch below uses (M-on)
   exactly.
