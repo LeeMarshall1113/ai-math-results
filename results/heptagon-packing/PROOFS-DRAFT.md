@@ -124,9 +124,17 @@ Call a configuration T **admissible** when
 
 (i) implies every edge is >= 2u (disjoint inscribed discs), and (ii) implies every edge is <= 4.
 
-**Statement (M), the main sweep plus the chart lemma.** For every admissible, nonobtuse T:
+**Statement (M), the main sweep plus the chart lemma (split, 2026-11-05, referee FLAW).** Let
+E := the set of admissible T whose canonical form (Lemma 1.1) lies in one of the chart regions
+E_c of Section 6 (the "chart set"). For every admissible, nonobtuse T:
 
-    b(T) >= tau (> acrit).
+    (M-off)  b(T) >= tau (> acrit)   if T is not in E;
+    (M-on)   b(T) >= acrit           if T is in E (Theorem 6.1; the sweep discards these boxes without
+                                     comparing against tau, and b = acrit is attained at the
+                                     double-lattice triangle under H-DL, so tau cannot be claimed there).
+
+Everything downstream uses only the unified consequence b(T) >= acrit for nonobtuse T of longest
+edge < RTH, never b >= tau on E. Every T in E has longest edge < RTH (see "Chart set" below).
 
 **Statement (O), the obtuse-mode sweep.** For every admissible T whose longest edge is >= 2.548:
 
@@ -134,6 +142,28 @@ Call a configuration T **admissible** when
 
 Each human lemma uses (M) only for triangles with longest edge < RTH, and (O) only for triangles
 with longest edge >= RTH.
+
+**Chart set: verified facts (2026-11-05 referee pass).**
+- Charts are enabled in the main sweep only. All 54 main-sweep logs of run a1
+  (`runs/sweep_main_a1/*.log`) print `env HEPT_CHARTS = runs/charts_w030c.json` and no `HEPT_OBT*`;
+  all 45 obtuse-sweep logs (`runs/sweep_obt_a1/*.log`) print `env HEPT_OBT4` and no `HEPT_CHARTS`;
+  `src/modal_sweep.py:61-64` and `src/local_replay.py:23-24` set the two modes exactly so. Hence (O)
+  is certified with target `tau + extra` and with no chart discards, so the long-edge branch of
+  Lemma 3.3 never uses a chart bound.
+- Every chart region lies in a small neighbourhood of the DL triangle. In `chart_excl.py` an
+  accepted box has its z-image inside K_c = {|J_c (z - z_c)|_inf <= rho_c}; over all 1530 charts of
+  `charts_w030c.json`, max rho = 6e-5 and max_c ||J_c^{-1}||_inf rho_c (1 + 1e-3) = 8.2e-4 (numpy
+  float, margin is orders of magnitude, no rounding issue), and the centres satisfy |z_c|_inf <=
+  0.025. So heptagon centres and orientations move by at most about 0.026 from the DL triangle
+  (centres (0,0), (1.900968868, 0), (1.032921632, 1.612520300); edge lengths 1.9010, 1.8313, 1.9150;
+  angles 57.36, 61.71, 60.94 degrees). Each edge length changes by at most 2 sqrt2 * 0.026 < 0.08, so every T in
+  E has longest edge < 2.0 < RTH = 2.548, and its angles are within a few degrees of 57-62 degrees,
+  so T is acute.
+  By Lemma 3.1, T in E is not obtuse, Dout(T) = 0, and no neighbour can donate to it (a donor
+  edge would exceed RTH). So b*(T) = b(T) for T in E, and the short-edge branch below uses (M-on)
+  exactly.
+- The no-incoming-transfer condition for the short-edge branch is a property of the triangle's own
+  edges (longest edge < RTH) and Lemma 3.1/Cor. 2.3; it does not depend on the sweep at all.
 
 **What the code literally checks, and why it implies (M) and (O).**
 
@@ -425,15 +455,19 @@ Din(T) <= Chat(T).
 - Sum over the edges. QED
 
 **Lemma 3.3 (per-triangle bound, consuming L4).** For every T in D_L meeting W_L,
-b*(T) >= tau >= acrit.
+b*(T) >= acrit.
+
+(Short-edge branch: b* >= acrit by (M-off) or (M-on). Long-edge branch: b* >= tau > acrit by (O).
+The lemma needs only the weaker common value acrit.)
 
 *Proof.* T is admissible (Lemma 2.1).
 - **Case: longest edge < RTH.** By Lemma 3.1, T is not obtuse, so Dout(T) = 0. A donor T' would
   have l_{T'} > RTH as an edge of T, longer than T's longest edge; so Din(T) = 0. Then
-  b*(T) = b(T) >= tau by (M).
+  b*(T) = b(T) >= acrit, by (M-off) (b >= tau > acrit) if T is not in the chart set E and by
+  (M-on) (Theorem 6.1) if it is. Charts play no role in the other case.
 - **Case: longest edge >= RTH > 2.548.** By (O) and Lemma 3.2:
 
-      b*(T) = b(T) + Dout(T) - Din(T) >= b(T) + Dout(T) - Chat(T) >= tau.
+      b*(T) = b(T) + Dout(T) - Din(T) >= b(T) + Dout(T) - Chat(T) >= tau > acrit.
 
 QED
 
@@ -525,9 +559,10 @@ the same bound holds for every packing.
 and it needs no assumption about the topology of the union of F_L, which can have holes or
 pinches. So the angle-sum form is preferred to NOTES' "Euler, + O(L)".
 
-**[FLAG] Where acrit enters.** acrit is defined as A/(2 delta_DL), and the target tau is >= acrit
-(Section 0). L5 never needs area(DL triangle) = acrit. That identity is needed only for the chart
-lemma (Section 6, hypothesis H-DL), where beta(0) must equal acrit.
+**[FLAG] Where acrit enters.** acrit is defined as A/(2 delta_DL). L5 (step 5) uses ONLY
+b*(T) >= acrit (Lemma 3.3); it does not use tau anywhere. L5 never needs area(DL triangle) = acrit.
+That identity is needed only for the chart lemma (Section 6, hypothesis H-DL), where beta(0) must
+equal acrit. tau appears only in the sweep targets (Section 1) and in (M-off), (O).
 
 ---
 
@@ -563,8 +598,8 @@ Notes on H-DL:
   and the arb solve enclosed it.
 - **[FLAG]** The code's V is an arb ball from a linear solve. The proof needs the exact v to lie
   in that ball, and needs every chart quantity (J_c, the windows) to be read with the exact v.
-  That holds under ball semantics if DG(0) is enclosed correctly. It should be stated in the
-  symbolic note (`src/dl_exact.py` appears to be in progress elsewhere).
+  That holds under ball semantics if DG(0) is enclosed correctly. This is
+  handled in `src/dl_exact_cert.py`, which encloses v by a rigorous arb solve (section 6a).
 
 **Certified per chart c** (`local_tube_arb.chart`, arb at 128 bits; read with ball semantics, so
 every statement holds for the exact matrix M_c = J_c^{-1}, J_c = DPhi(z_c)):
@@ -690,9 +725,11 @@ Combined with the rigorous canonical-box -> z map of `chart_excl.to_z` (audit 2e
 the cyclic relabelling and the KROT rotation all match), every canonical box the B&B discards by
 charts has b >= acrit everywhere on its feasible part. That is the "chart lemma" part of (M).
 
-**Note on targets.** The B&B discards chart boxes without comparing against tau. The chart part
-of (M) is therefore b >= acrit, not b >= tau. That is harmless, since L5 needs only acrit: state
-(M) as "b >= tau off the chart regions, b >= acrit on them". Lemma 3.3 holds verbatim with acrit.
+**Note on targets (APPLIED 2026-11-05).** The B&B discards chart boxes without comparing against
+tau, so the chart part of (M) is b >= acrit, not b >= tau. (M) is now stated in Section 1 as
+(M-off) b >= tau off the chart set and (M-on) b >= acrit on it; Lemma 3.3 and all later averaging
+use acrit. No other use of the old unsplit (M) remains (grep: `tau` occurs only in Sections 0, 1,
+the (O) statement, (M-off) and the Lemma 3.3 long-edge branch).
 
 **[RESOLVED by run a1] Which tube was used where.** Run a1 (the certificate of record) uses only `charts_w030c.json` (1530 charts), logged with its hash in every main-sweep log. Historical: the old DL-slice chain used `charts_w030.json` (459 charts) in
 its early steps and `charts_w030b.json` (1530 charts) after the extension. Each file is its own
@@ -708,6 +745,37 @@ need the two to agree. The replay should record which file each step of the k39 
 
 ---
 
+## 6a. Which script and log discharges which hypothesis (added 2026-11-05, referee pass)
+
+All paths are relative to the repo root; every log is committed.
+
+| hypothesis / input | discharged by | log | scope and caveat |
+|---|---|---|---|
+| H-DL: g(0) = 0 (five contacts), area(s2) = A/(2 delta_DL), KK parallelogram, translation edge (1+c,0,0) | `src/dl_exact.py` (exact identities in Q(c,s) modulo REL, reduction re-verified as an exact polynomial identity num = sum q_i REL_i + rem) | `runs/dl_exact.log`, `runs/dl_exact_cert.log` | identities valid only where denominators are nonzero: certified in the cert log (below) |
+| nonzero denominators; isolating intervals for c = cos(pi/7) (root of 8c^3-4c^2-4c+1 in [4/5,1], unique) and s = sin(pi/7) (s>0, s^2 = 1-c^2) | `src/dl_exact_cert.py` (python-flint arb, 400 bits; rational intervals of width 1e-40) | `runs/dl_exact_cert.log` ("ALL CERTIFIED", 51 certified lines, 0 not) | every is_zero combined denominator, every negative-power base, and the determinant of the KK (a,b) system are excluded from 0 |
+| contact interiority (touching vertex strictly inside its edge: abs(tangential) < s) | `src/dl_exact_cert.py` item (4) | `runs/dl_exact_cert.log` | strict for all five DL contacts: smallest gap s - abs(t) = 0.2196 (the earlier 50-digit float print in `dl_exact.py` is superseded). The other six half-planes at nearby points are condition (A), certified in the tube |
+| rank DG(0) = 5, ker DG(0) = R v | `src/dl_exact_cert.py` item (3): det(Asub) = -0.0929 (nonzero ball) and a rigorous arb solve enclosing v (radius 4e-35); also the arb solve in `local_lemma_arb.py` | `runs/dl_exact_cert.log` | the symbolic LUsolve null vector in the last section of `dl_exact.py` does NOT finish (expression swell; only rows 0, 1 printed in `runs/dl_exact.log`). It is not used by the proof; it is replaced by the arb enclosure |
+| b(0) = acrit and grad b(0).v = 0 | f = 0 on R-fixed and S-fixed edges (Lemma 0.1) for b(0); mu* by `f_arb.exactify` (audit 2h) for the gradient | `runs/dl_exact.log` (configuration), AUDIT2 section 3 | the gradient condition is not in the dl_exact scripts |
+| (A)-(D) on the enlarged cube K'_c with 2-ulp-widened exports; (E'); (K') | `src/tube_recheck_arb.py` (Lemma 6.0) | `runs/tube_recheck_w030c.log` | 1530 charts, 0 failures, worst E' ratio 0.9999999995 |
+| (G) gluing and (Ov) overlap, window check W | `src/tube_glue_arb.py`, and again inside `src/tube_recheck_arb.py` | `runs/tube_glue_w030c.log`, `runs/tube_recheck_w030c.log` | 1529 pairs, 0 failures |
+| box -> chart-frame map and membership test used by the sweep | `src/chart_excl.py` (reviewed by AUDIT2 2e and by the referee on source) | main-sweep logs of run a1 (`HEPT_CHARTS = runs/charts_w030c.json`) | membership uses the exported J'; the enlarged-cube lemma is what makes this sound, not the raw export |
+
+**Checkpoint-resumed slices (AUDIT2 UNCLEAR-4).** AUDIT2 listed six slices (main k2, 39f, 39g;
+obtuse k7, k26, k44) resumed from Modal checkpoints and not reconstructed. They were then replayed
+FROM SCRATCH (run rp1, no checkpointing, same `bnb2.py` sha 9f4fb628, same env; logs
+`runs/sweep_main_rp1/{k2,k39f,k39g}.log`, `runs/sweep_obt_rp1/{k7,k26,k44}.log`; I re-read the
+final lines: all six `done: true`, `stuck: 0`, `open: 0`; main replays carry
+`HEPT_CHARTS = runs/charts_w030c.json`, obtuse replays `HEPT_OBT4` and no charts). So these six
+are closed. Precisely what is NOT covered:
+- Main slice 38 is still a RESUME chain (two dumped open sets, then six shards; the shard multiset
+  equals the dump, AUDIT2 2b), not a from-scratch run. It is verified by that multiset check only.
+- Slices other than those six and k5, k39c, k13, k30 (local replays) are single runs (run a1), not
+  independently replayed.
+- A from-scratch replay shows the same program reaches `done` with 0 stuck. It is the same code on
+  the same inputs, not an independent reimplementation, and the sweeps log no per-box certificate.
+
+---
+
 ## 7. Status
 
 | item | status | what it rests on |
@@ -719,8 +787,8 @@ need the two to agree. The replay should record which file each step of the k39 
 | L2 (Delaunay facts, degenerate cells) | PROVED | finite Delaunay theory (de Berg et al. ch. 9, statements quoted in section 3; no theorem numbers relied on); windowed construction, no infinite triangulation |
 | L3 (bookkeeping, D5 transfer, unique neighbour, cancellation) | PROVED, given (O) | |
 | L5 (averaging) | PROVED, given L3 and (M)/(O) | angle-sum count |
-| Chart/tube (convexity form) | PROVED | (E)/(E') certified (charts_w030c + tube_recheck_arb, Lemma 6.0), (G) and (Ov) certified in arb, H-DL symbolic (`src/dl_exact.py`; null vector via arb enclosure, AUDIT2 section 3) |
-| Interface (M), (O) as certified | stated precisely; certified by run a1 (bnb2 9f4fb628), pending UNCLEAR-4 replays | FLAW-1, FLAW-2, UNCLEAR-1 closed; UNCLEAR-4 (six checkpoint-resumed slices) being replayed from scratch |
+| Chart/tube (convexity form) | PROVED, given H-DL | (E)/(E') certified (charts_w030c + tube_recheck_arb, Lemma 6.0), (G) and (Ov) certified in arb, H-DL identities exact (`src/dl_exact.py`) with denominators, c/s intervals, Asub invertibility and contact interiority certified in `src/dl_exact_cert.py`; null vector via arb enclosure (see 6a) |
+| Interface (M-off), (M-on), (O) as certified | stated precisely (split 2026-11-05); certified by run a1 (bnb2 9f4fb628) | FLAW-1, FLAW-2, UNCLEAR-1 closed; UNCLEAR-4 closed by six from-scratch replays (rp1); slice 38 remains a verified resume chain (6a) |
 
 Nothing in L1-L3 or L5 is false as stated in NOTES. Corrections to NOTES (ALL APPLIED 2026-11-04/05):
 - the "recursion over r" remark should be dropped (L3);

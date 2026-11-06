@@ -8,8 +8,19 @@ numerator to 0 modulo the two defining relations; denominators are checked nonze
       (0,2,4,1), (1,0,0,3), (1,2,5,2), (2,0,1,4), (2,1,2,5);
   (3) area(s2) = A / (2 delta_DL), with A = (7/2) sin(2pi/7) and
       delta_DL = (2/97)(-111 + 492c - 356c^2) (Kallus' closed form);
-  (4) the touching vertices lie strictly inside their edges (numerical, 50 digits; strict
-      inequalities with margin > 0.1, so float evaluation of the exact numbers suffices).
+  (4) the touching vertices lie strictly inside their edges (printed here as 50-digit
+      numerics only).
+
+RIGOROUS STATUS (2026-11-05, referee UNCLEAR): the zero tests below are exact identities, but the
+nonzero-denominator claims and the strict inequality (4) are only PRINTED here as approximations.
+Every denominator (ZERO_CHECKS), every contact-interiority comparison (INTERIOR), the (a, b)
+system determinant and the determinant of Asub (the LUsolve matrix) are recorded in module-level
+lists and certified with exact ball arithmetic by `src/dl_exact_cert.py`, which runs this file
+and reads those lists. Run that script for the certificate.
+NOTE: the last section here (symbolic LUsolve null vector, checks (5)) suffers expression swell
+and did not finish in 50 minutes (only rows 0, 1 printed in runs/dl_exact.log). The proof does not
+use it; dl_exact_cert.py certifies rank DG(0) = 5 via det(Asub) and encloses v with a rigorous arb
+solve instead.
 """
 import sympy as sp
 
@@ -26,10 +37,14 @@ def cos_k(n):   # cos(n pi/7), n integer >= 0
 def sin_k(n):   # sin(n pi/7)
     return sp.expand(s*Uc(n-1)) if n >= 1 else sp.Integer(0)
 
+ZERO_CHECKS = []   # (expr, num, den, quotients, rem, tag) of every is_zero call, for src/dl_exact_cert.py
+CUR_TAG = ['main']
+INTERIOR = []      # (label, tangential coordinate, half edge) of every contact-interiority test
 def is_zero(expr):
     num, den = sp.fraction(sp.together(sp.expand(expr)))
     num = sp.expand(num); den = sp.expand(den)
-    _, rem = sp.reduced(num, REL, s, c)
+    qs, rem = sp.reduced(num, REL, s, c)
+    ZERO_CHECKS.append((expr, num, den, qs, rem, CUR_TAG[0]))
     dval = sp.N(den.subs({c: CNUM, s: SNUM}), 50)
     return sp.simplify(rem) == 0, dval
 
@@ -70,6 +85,7 @@ for (i, j, m, k) in CONTACTS:
     # (4) tangential position inside the edge: |tangential| < half edge length = tan(pi/7) u = s
     nvec = normal(TH[i], k); tvec = sp.Matrix([-nvec[1], nvec[0]])
     tang = (tvec.T * w)[0]
+    INTERIOR.append((f'contact {(i, j, m, k)}', tang, s))
     tv = sp.N(tang.subs({c: CNUM, s: SNUM}), 50); half = sp.N(SNUM, 50)
     results.append((f'(4) contact {(i, j, m, k)} |tangential| = {sp.N(abs(tv), 12)} < {sp.N(half, 12)} (margin {sp.N(half - abs(tv), 6)})',
                     (bool(abs(tv) < half - sp.Rational(1, 10)), None)))
@@ -86,10 +102,12 @@ for name, (ok, d) in results:
 print('ALL PASS' if ok_all else 'SOME FAILED')
 
 # negative controls: the reducer must reject false identities
+CUR_TAG[0] = 'negctl'
 for name, e in (('c - 9/10', c - sp.Rational(9, 10)), ('area*2*delta - A + 1/1000', area*2*delta - Ahept + sp.Rational(1, 1000)),
                 ('contact (0,2,4,1) g + s/10^6', (normal(TH[0], 1).T*(C[2] + vert(TH[2], 4) - C[0]))[0] - u + s/10**6)):
     print('negative control', name, '-> zero?', is_zero(e)[0], '(must be False)')
 
+CUR_TAG[0] = 'main'
 # ---- H-DL extras: exact contact Jacobian, exact null vector, translation edge ----
 # variables z = (x1, y1, phi1, x2, y2, phi2) perturb Ht1 (index 1) and H2p2 (index 2); H0 fixed.
 def rot90(v): return sp.Matrix([-v[1], v[0]])

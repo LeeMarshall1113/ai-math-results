@@ -1,0 +1,66 @@
+lease-run: request heptagon-4520
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 19360 capped at 8 GB commit (whole process tree)
+CERTIFIED p(4/5) = -83/125 < 0 < p(1) = 1
+CERTIFIED p'(4/5) = 124/25 > 0, p'(1) = 12 > 0, p'' = 48x - 8 > 0 on [4/5,1]: p strictly increasing, unique root in [4/5,1]
+CERTIFIED cos(pi/7) >= 1 - x^2/2 >= 0.89929 > 4/5 (x <= 3.1416/7)
+CERTIFIED isolating interval  c in [6131676377838270444673271429405769910087/6805647338418769269267492148635364229120, 2452670551135308177869308571762307964035/2722258935367507707706996859454145691648]  (= [0.90096886790241915, 0.90096886790241915], width <= 1e-40)
+CERTIFIED isolating interval  s in [216941869558779060237884166424179377304929237/500000000000000000000000000000000000000000000, 86776747823511624095153666569671750922002207/200000000000000000000000000000000000000000000]  (s>0, s^2 = 1 - c^2; = [0.43388373911755812, 0.43388373911755812])
+c ball [0.900968867902419126236102319507 +/- 4.46e-31]  s ball [0.433883739117558120475768332848 +/- 3.59e-31]
+running src/dl_exact.py (stdout captured) ...
+CERTIFIED dl_exact.py reports ALL PASS (exact identities, 1-3, 6)  [elapsed 0s]
+13 is_zero calls recorded, 5 interiority comparisons recorded
+CERTIFIED is_zero #0 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #0 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #0 combined denominator nonzero: 1.0000000  (enclosure excludes 0)
+CERTIFIED is_zero #1 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #1 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #1 combined denominator nonzero: 1.0000000  (enclosure excludes 0)
+CERTIFIED is_zero #2 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #2 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #2 combined denominator nonzero: -0.099031132  (enclosure excludes 0)
+CERTIFIED is_zero #3 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #3 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #3 combined denominator nonzero: -0.19806226  (enclosure excludes 0)
+CERTIFIED is_zero #4 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #4 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #4 combined denominator nonzero: -0.19806226  (enclosure excludes 0)
+CERTIFIED is_zero #5 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #5 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #5 combined denominator nonzero: 1.0000000  (enclosure excludes 0)
+CERTIFIED is_zero #6 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #6 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #6 combined denominator nonzero: -0.19806226  (enclosure excludes 0)
+CERTIFIED is_zero #7 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #7 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #7 combined denominator nonzero: -0.19806226  (enclosure excludes 0)
+CERTIFIED is_zero #8 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #8 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #8 combined denominator nonzero: -0.19806226  (enclosure excludes 0)
+CERTIFIED is_zero #9 [main]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #9 rem == 0, so expression == 0 once denominators are nonzero
+CERTIFIED is_zero #9 combined denominator nonzero: -9.6060198  (enclosure excludes 0)
+CERTIFIED is_zero #10 [negctl]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #10 negative control has rem != 0 (as required)
+CERTIFIED is_zero #11 [negctl]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #11 negative control has rem != 0 (as required)
+CERTIFIED is_zero #12 [negctl]: num == sum q_i REL_i + rem (exact polynomial identity)
+CERTIFIED is_zero #12 negative control has rem != 0 (as required)
+10 positive identities, 3 negative controls
+CERTIFIED all 1 distinct denominator bases (every negative power in the input expressions, A_, B_, tangential coordinates, DL vertices) are nonzero; smallest |value| ~ 0.099031132
+CERTIFIED KK (a, b) linear system determinant nonzero: 0.58873505
+Asub entries are polynomials in c, s? False
+CERTIFIED det(Asub) (5x5 LUsolve matrix) nonzero: -0.092876273; hence rank DG(0) = 5 and ker DG(0) = R v
+CERTIFIED arb null vector v (y1 = 1): G v encloses 0 in all five rows (consistency; v is the unique kernel vector since det(Asub) != 0)
+v enclosure: ['0e-37', '1.00000000000000', '0e-34', '-0.974927912181824', '0.222520933956314', '0e-35']  max radius 3.597674278852634e-35
+max |v_arb - v_chart(Jlo row 6)| = 7.754974400424744e-36
+CERTIFIED interiority contact (0, 2, 4, 1): tangential in -0.21432087, half-edge s = 0.43388374; s - t > 0 (0.64820461), s + t > 0 (0.21956287)
+CERTIFIED interiority contact (1, 0, 0, 3): tangential in 0e-37, half-edge s = 0.43388374; s - t > 0 (0.43388374), s + t > 0 (0.43388374)
+CERTIFIED interiority contact (1, 2, 5, 2): tangential in 0.10716043, half-edge s = 0.43388374; s - t > 0 (0.32672331), s + t > 0 (0.54104417)
+CERTIFIED interiority contact (2, 0, 1, 4): tangential in -0.21432087, half-edge s = 0.43388374; s - t > 0 (0.64820461), s + t > 0 (0.21956287)
+CERTIFIED interiority contact (2, 1, 2, 5): tangential in 0.10716043, half-edge s = 0.43388374; s - t > 0 (0.32672331), s + t > 0 (0.54104417)
+elapsed 1s
+ALL CERTIFIED: denominators nonzero, Asub invertible, contact interiority strict
+jobcap: exit 0, peak job commit 0.07 GB of 8 GB cap
+lease-run: released heptagon-4520

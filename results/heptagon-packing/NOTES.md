@@ -879,3 +879,14 @@ sweep certifies whatever table it is given, but recorded here)
   post-resume work only, so box counts are not comparable; the verdicts agree.
   **Every slice of both sweeps is now certified by a from-scratch run or a verified resume chain**
   (main 38: two dump resumes plus 6 shards, multiset-checked).
+
+## 2026-11-05 referee pass (math-comms/ASTRA-HEPTAGON-REFEREE-2026-11-05.md)
+- FLAW (statement gap) fixed: (M) split into (M-off) b >= tau off the chart set and (M-on) b >= acrit on it;
+  Lemma 3.3 short-edge branch now b* >= acrit; averaging uses acrit only. Verified from logs/code: charts are
+  enabled only in the main sweep (54/54 main logs HEPT_CHARTS, 0 HEPT_OBT; 45/45 obtuse logs HEPT_OBT4, 0 charts),
+  and every chart region is within ~0.026 of the DL triangle (edges 1.83-1.92 < RTH, acute), so the short-edge
+  branch with Din = Dout = 0 applies. PROOFS-DRAFT sections 1, 4, 6, 6a, 7.
+- UNCLEAR (dl_exact) addressed: `src/dl_exact_cert.py` + `runs/dl_exact_cert.log` (arb, ALL CERTIFIED: c,s isolating
+  intervals, all denominators nonzero, det(Asub) != 0, five contact interiorities strict, arb null vector).
+  `dl_exact.py` only gained recording lists; its final symbolic LUsolve section still does not finish (not needed).
+- Hypothesis-to-script linkage and UNCLEAR-4 status: PROOFS-DRAFT section 6a (slice 38 remains a resume chain).
