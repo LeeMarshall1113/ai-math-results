@@ -10,3 +10,5 @@ results/karp10-partial/replay/*.json text eol=lf
 results/karp10-partial/replay/*.py text eol=lf
 results/karp10-partial/note/*.tex text eol=lf
 results/karp10-partial/note/*.pdf binary
+results/karp10-partial/note/*.json text eol=lf
+results/karp10-partial/note/explicit/*.json text eol=lf

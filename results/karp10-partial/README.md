@@ -47,14 +47,15 @@ with exit code 0 (about 2 minutes on one thread, well under 1 GB of memory). The
 * An AI referee read the proofs and the replay source and judged the method sound; it did **not** execute the replay.
 * No independent third party has replayed it yet. The authors' own mutation controls (1,116 deliberately corrupted inputs, all rejected) and an independently written second implementation of the graph and homology computations (`replay/mutation_controls.py`, `replay/indep_graph.py`, `replay/indep_homology.py`, `replay/crosscheck_independent.py`) are included, but these are the authors' checks too.
 * The group lists in the certificates were produced with GAP 4.12.1 from the conjugacy classes of subgroups of S₁₀; that generation script is not included. The replay does not rely on it: it re-verifies every group (order, normality, generation) from the generator lists in the certificates.
-* The type-5 searches (solver searches over necessary conditions from about 1,500 subgroup classes, and a second bounded attempt) were inconclusive: they found neither an exclusion nor a counterexample. Their logs are not part of this release.
+* The type-5 searches (solver searches over necessary conditions from about 1,500 subgroup classes, and a second bounded attempt) were inconclusive: they found neither an exclusion nor a counterexample. Their logs are not part of this release. A further 7.4-hour run on 11-12 November 2026 (Smith conditions of the eight 2-groups, one branch) also ended without a verdict.
 
 ## Files
 
 | path | contents |
 |---|---|
 | `note/non_evasive_ten_vertices.pdf`, `.tex` | the technical note (11 pages) |
-| `PARTIAL-THEOREM.md` | the theorem statement with the status of each part |
+| `PARTIAL-THEOREM.md`, `TYPE5-ATTEMPT-2.md` | working documents exactly as pinned in the manifest on 11 November 2026 (statement and status of each part; the second bounded type-5 attempt). They are internal notes, kept unedited so that `python replay/make_release_manifest.py --verify` passes; where they say nothing is published, that was true when they were written |
+| `note/check_explicit.py`, `note/z5_table.py`, `note/explicit/`, `note/z5_patterns.json`, `note/z5_table.tex`, `note/run_checks.sh`, `note/crosscheck_z3.py` | the scripts and data the note refers to (explicit groups of types 2, 4, 6, 8 and the pattern table); `crosscheck_z3.py` is optional and needs the `z3-solver` package, everything else is standard library |
 | `certs/` | the 20 certificates (JSON) |
 | `replay/` | `replay_all.py`, the checkers, the pinned manifest `RELEASE-MANIFEST.json`, the authors' mutation controls and independent cross-check, and `DEPENDENCIES.md` (audited list of every file, import and stdlib module the replay touches) |
 
