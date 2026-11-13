@@ -1,0 +1,84 @@
+{
+ "type": 1,
+ "claim": "Angel-Borja's own group for types 1/9 (order 16): link-Euler equation of the fixed edge {0,0'} excludes type 1",
+ "groups": {
+  "AB16": {
+   "gens": [
+    [
+     5,
+     1,
+     2,
+     3,
+     4,
+     0,
+     6,
+     7,
+     8,
+     9
+    ],
+    [
+     0,
+     2,
+     3,
+     4,
+     6,
+     5,
+     7,
+     8,
+     9,
+     1
+    ]
+   ],
+   "order": 16,
+   "p": 2,
+   "N_gens": [
+    [
+     5,
+     1,
+     2,
+     3,
+     4,
+     0,
+     6,
+     7,
+     8,
+     9
+    ],
+    [
+     0,
+     2,
+     3,
+     4,
+     6,
+     5,
+     7,
+     8,
+     9,
+     1
+    ]
+   ],
+   "g": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  }
+ },
+ "equations": [
+  {
+   "group": "AB16",
+   "kind": "lk",
+   "fixed_edge": [
+    0,
+    5
+   ]
+  }
+ ]
+}

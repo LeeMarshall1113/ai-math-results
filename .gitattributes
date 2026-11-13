@@ -5,3 +5,8 @@
 results/polygon-n4/proof/*.jsonl -text
 results/polygon-n4/proof/faces_canon.txt -text
 results/polygon-n4/proof/CHECKSUMS.sha256 -text
+results/karp10-partial/certs/*.json text eol=lf
+results/karp10-partial/replay/*.json text eol=lf
+results/karp10-partial/replay/*.py text eol=lf
+results/karp10-partial/note/*.tex text eol=lf
+results/karp10-partial/note/*.pdf binary

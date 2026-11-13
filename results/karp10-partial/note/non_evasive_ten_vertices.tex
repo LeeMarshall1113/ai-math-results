@@ -1,0 +1,652 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[compact]{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\setlist{itemsep=2pt,topsep=4pt}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\PP}{\mathcal P}
+\newcommand{\Del}{\Delta_{\mathcal P}}
+\newcommand{\bG}[1]{\overline{G}_{#1}}
+\newcommand{\lk}{\operatorname{lk}}
+\newcommand{\dl}{\operatorname{dl}}
+\newcommand{\Orb}{\operatorname{Orb}}
+\newcommand{\F}{\mathbb F}
+\newcommand{\file}[1]{\path{#1}}
+
+\title{Non-evasive monotone graph properties\\on ten vertices}
+\author{Lee Marshall}
+\date{Draft of 7 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+A graph property on $n$ vertices is \emph{evasive} if every decision tree for it must, in the worst case, ask about all $\binom n2$ possible edges.
+Karp's conjecture says that every nontrivial monotone graph property is evasive.
+It is known when $n$ is a prime power and when $n=6$.
+The smallest open case is $n=10$.
+Angel and Borja showed that a non-evasive monotone property on ten vertices has one of nine types, and excluded four of them.
+We exclude four more, which leaves one type, called type~5.
+For type~5 we show the following.
+Such a property contains every disconnected graph and no graph with disconnected complement.
+It contains nine explicit graphs and none of their complements.
+Its trace on a family of $32$ graph classes is one of eight patterns.
+It is not self-dual.
+Apart from the cited fixed point theorems, every step is a finite computation with explicit permutation groups.
+A Python program of about 1,200 lines, which uses only the standard library, replays the certificates.
+We do not decide type~5.
+\end{abstract}
+
+\section{Introduction}
+
+A property of graphs on $n$ labelled vertices is \emph{monotone} if it survives the removal of edges (or, in the dual version, the addition of edges).
+It is \emph{nontrivial} if some graphs have it and some do not.
+A decision tree for a property asks, one edge at a time, whether the edge is present, and must in the end say whether the graph has the property.
+The property is \emph{evasive} if every decision tree has depth $\binom n2$.
+Karp's evasiveness conjecture says that every nontrivial monotone graph property is evasive.
+Miller's survey \cite{Mil} gives the history.
+
+Rivest and Vuillemin \cite{RV} proved that a nontrivial monotone property needs a constant fraction of the $\binom n2$ queries.
+Kahn, Saks and Sturtevant \cite{KSS} showed that a non-evasive monotone property gives a collapsible simplicial complex.
+With fixed point theorems of Smith and Oliver they proved the conjecture for prime powers $n$ and for $n=6$.
+The smallest case that is still open is $n=10$.
+
+Two papers treat $n=10$.
+Engstr\"om \cite{Eng} applies Oliver's theorems to several explicit groups.
+He shows that the indicator vector of the $22$ vertex-transitive graphs on ten vertices must be one of six vectors (his Theorem~14).
+Angel and Borja \cite{AB} use a Sylow $5$-subgroup of $S_{10}$ and the Euler characteristic.
+They show that a non-evasive property meets ten particular graph classes in one of nine ways, which we call types $1$ to $9$.
+They exclude types $1,3,7,9$ with Oliver groups and Smith's theorem.
+They write that they did not find groups that exclude types $2,4,5,6,8$ \cite[Remark~5.2]{AB}.
+The same remark is in Borja's thesis \cite[Remark~1.8.2]{Bor}.
+
+This note proves the following (precise statements are in Theorem~\ref{thm:main}).
+Types $2,4,6,8$ cannot occur.
+The groups have order $112$ and $192$, and the argument can be checked by hand (Section~\ref{sec:t2468}).
+So a non-evasive property has type~5.
+Such a property contains every disconnected graph and no graph whose complement is disconnected.
+It contains nine explicit graphs, among them $C_{10}$, the Petersen graph and $K_5\,\square\,K_2$, and none of their complements.
+Its trace on $32$ graph classes is one of eight patterns (Appendix~\ref{app:patterns}).
+It is not self-dual.
+We also re-derive the exclusion of types $1,3,7,9$ with replayable certificates.
+
+\medskip\noindent
+\textbf{Credit.}
+The reduction to nine types, the Sylow $5$-subgroup argument and the exclusion of types $1,3,7,9$ are due to Angel and Borja.
+The use of Oliver's theorem on the vertex-transitive graphs of ten vertices is due to Engstr\"om.
+We use their method.
+Angel and Borja use the link of one fixed vertex of the complex once, for type~1.
+Our additions are the link and deletion equations for every group that fixes an edge, a computer search for contradicting groups among the conjugacy classes of subgroups of $S_{10}$ (GAP lists $1{,}593$; this count is GAP output and is not replayed), and the results listed above.
+
+\medskip\noindent
+\textbf{What is not claimed.}
+We do not decide type~5, and we do not know whether a type-5 property exists.
+Section~\ref{sec:open} says what has been tried.
+The note has not been peer reviewed.
+Each result is reduced to a finite check on explicit permutation groups, and a Python program replays the checks (Section~\ref{sec:replay}).
+The cited theorems of Smith and Oliver are not re-proved.
+
+\section{Setting and tools}
+
+\subsection{Properties and complexes}
+
+Let $V=\{0,1,\dots,9\}$ and let $E$ be the set of the $45$ two-element subsets of $V$.
+A \emph{graph} is a subset of $E$.
+The symmetric group $S_{10}$ acts on $V$, on $E$ and on graphs.
+A \emph{property} is a set $\PP$ of graphs.
+All properties in this note are
+invariant under $S_{10}$,
+closed under taking subgraphs,
+nonempty, and
+not equal to the set of all graphs.
+We call these \emph{nontrivial monotone}.
+Such a property contains the empty graph and does not contain $K_{10}$.
+A monotone increasing property is covered by passing to the set of graphs that are not in it.
+This does not change the depth of decision trees.
+
+A \emph{decision tree} for $\PP$ asks whether an edge is present, and ends in a leaf marked ``in $\PP$'' or ``not in $\PP$''.
+The property is \emph{non-evasive} if some decision tree for it has depth at most $44$, and \emph{evasive} otherwise.
+Karp's conjecture for $n=10$ says that no nontrivial monotone property is non-evasive.
+
+The simplicial complex $\Del$ has vertex set $E$.
+Its faces are the graphs in $\PP$.
+The group $S_{10}$ acts on it.
+We write $\chi(K)=\sum_{\sigma\ne\emptyset}(-1)^{\dim\sigma}$, with the empty face not counted.
+For an edge $e$ the \emph{link} and \emph{deletion} are
+\[
+\lk(e)=\{\sigma\in\Del:\ e\notin\sigma,\ \sigma\cup\{e\}\in\Del\},\qquad
+\dl(e)=\{\sigma\in\Del:\ e\notin\sigma\}.
+\]
+
+\subsection{Non-evasive implies acyclic}
+
+\begin{lemma}[Kahn--Saks--Sturtevant \cite{KSS}]\label{lem:kss}
+Let $W$ be a finite set and $f:2^W\to\{0,1\}$ a function with $f(\emptyset)=1$ and $f(S)\ge f(T)$ whenever $S\subseteq T$.
+Let $K_f=\{S: f(S)=1\}$.
+If some decision tree for $f$ has depth less than $|W|$, then $K_f$ is collapsible.
+In particular $K_f$ is contractible, acyclic over every coefficient ring, and $\chi(K_f)=1$.
+\end{lemma}
+
+\begin{proof}
+Induction on $|W|$.
+If $|W|=1$, the tree has depth $0$, so $f$ is constant, hence $f\equiv1$ and $K_f$ is a point.
+Let $|W|>1$ and let $w$ be the variable asked at the root.
+Put $f_0=f|_{x_w=0}$ and $f_1=f|_{x_w=1}$.
+Both are decreasing, have trees of depth less than $|W|-1$, and $f_0(\emptyset)=1$.
+Now $K_{f_0}=\dl(w)$ is collapsible by induction.
+If $f_1\equiv0$, then $K_f=K_{f_0}$.
+Otherwise $f_1(\emptyset)=1$ and $K_{f_1}=\lk(w)$ is collapsible by induction.
+Fix a sequence of elementary collapses of $\lk(w)$ to a point $p$.
+Each step removes a pair $\tau\subset\sigma$ with $\tau$ free in $\sigma$.
+In $K_f$ the same steps with $w$ added, that is, removing $\tau\cup\{w\}\subset\sigma\cup\{w\}$, are also elementary collapses.
+They remove every face containing $w$ except $\{w\}$ and $\{w,p\}$.
+Then $\{w\}$ is free in $\{w,p\}$, and removing that pair leaves $\dl(w)$.
+So $K_f$ collapses onto $\dl(w)$, which is collapsible.
+\end{proof}
+
+\begin{lemma}\label{lem:linkdel}
+Let $\PP$ be non-evasive and nontrivial monotone.
+Then $\Del$, and for every edge $e$ also $\lk(e)$ and $\dl(e)$, are collapsible.
+\end{lemma}
+
+\begin{proof}
+Apply Lemma~\ref{lem:kss} to $\Del$ with $W=E$.
+For $\lk(e)$ and $\dl(e)$ take a tree $T$ of depth at most $44$.
+Its root asks about some edge $e_0$.
+Choose $\pi\in S_{10}$ with $\pi(e_0)=e$.
+Relabelling $T$ by $\pi$ gives a tree for $\pi\PP=\PP$ whose root asks about $e$.
+The two subtrees below the root have depth at most $43$.
+They decide membership in $\dl(e)$ and in $\lk(e)$, as functions on subsets of $E\setminus\{e\}$.
+For $\lk(e)$ we need $f(\{e\})=1$.
+If a one-edge graph were not in $\PP$, then $\PP$ would contain only the empty graph.
+That property is evasive, since the all-zero input forces all $45$ queries.
+\end{proof}
+
+\subsection{Fixed point theorems}
+
+\begin{theorem}[Smith \cite{Smi}]\label{thm:smith}
+Let a finite $p$-group $Q$ act simplicially on a finite complex $K$ that is acyclic over $\F_p$.
+Then the fixed point set $|K|^Q$ is acyclic over $\F_p$.
+\end{theorem}
+
+\begin{theorem}[Oliver \cite{Oli}; see {\cite[Thm.~4.1]{AB}}, {\cite[Thm.~4]{Eng}}]\label{thm:oliver}
+Let $\Gamma$ be a finite group with a normal $p$-subgroup $N$ such that $\Gamma/N$ is cyclic.
+Let $\Gamma$ act simplicially on a finite complex $K$ that is acyclic over $\F_p$.
+Then $\chi(|K|^\Gamma)=1$.
+\end{theorem}
+
+We call a group as in Theorem~\ref{thm:oliver} an \emph{Oliver group}.
+Every $p$-group is one, and so is every cyclic group.
+A certificate names a prime $p$, the normal subgroup $N$, and an element $g$ with $\Gamma=\langle g\rangle N$.
+
+\subsection{The equations}
+
+Let $\Gamma\le S_{10}$.
+Write $\Orb(\Gamma)$ for the set of $\Gamma$-orbits on $E$, and $\bigcup T$ for the graph that is the union of the orbits in a set $T$.
+A point of $|K|$ fixed by $\Gamma$ has barycentric coordinates that are constant on $\Gamma$-orbits of vertices.
+Its support is a union of orbits that is a face.
+Adding the coordinates over each orbit identifies $|K|^\Gamma$ with the realisation of the complex whose vertices are the orbits that are faces and whose faces are the sets of such orbits with union a face \cite[\S2]{AB}.
+For $K=\Del$ this gives the following.
+
+\begin{proposition}\label{prop:eq}
+Let $\PP$ be non-evasive and nontrivial monotone, and let $\Gamma$ be an Oliver group.
+Then
+\begin{equation}\tag{fix}
+\sum_{\emptyset\ne T\subseteq\Orb(\Gamma),\ \bigcup T\in\PP}(-1)^{|T|-1}=1 .
+\end{equation}
+If $\Gamma$ fixes an edge $e$, put $\Orb'=\Orb(\Gamma)\setminus\{\{e\}\}$.
+Then
+\begin{align}\tag{lk}
+\sum_{\emptyset\ne T\subseteq\Orb',\ \{e\}\cup\bigcup T\in\PP}(-1)^{|T|-1}&=1,\\
+\tag{dl}
+\sum_{\emptyset\ne T\subseteq\Orb',\ \bigcup T\in\PP}(-1)^{|T|-1}&=1 .
+\end{align}
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:linkdel} the complexes $\Del$, $\lk(e)$, $\dl(e)$ are acyclic over every field.
+If $\Gamma$ fixes $e$, it acts on $\lk(e)$ and $\dl(e)$.
+Apply Theorem~\ref{thm:oliver} and the description of $|K|^\Gamma$ above.
+\end{proof}
+
+Each equation is linear in the numbers $x_C=[C\in\PP]\in\{0,1\}$, where $C$ runs over isomorphism classes of graphs of the form $\bigcup T$ (or $\{e\}\cup\bigcup T$).
+The coefficients are signed counts.
+Monotonicity adds the inequalities $x_C\le x_{C'}$ when $C'$ is a subgraph of $C$.
+
+\subsection{Duality}
+
+For a property $\PP$ let $\PP^*=\{G:\ \overline G\notin\PP\}$, where $\overline G=E\setminus G$.
+
+\begin{lemma}\label{lem:dual}
+If $\PP$ is nontrivial monotone, so is $\PP^*$, and $(\PP^*)^*=\PP$.
+Moreover $\PP^*$ is non-evasive if and only if $\PP$ is.
+\end{lemma}
+
+\begin{proof}
+If $G'\subseteq G$ then $\overline{G'}\supseteq\overline G$, so $\overline{G}\notin\PP$ implies $\overline{G'}\notin\PP$.
+Hence $\PP^*$ is closed under subgraphs.
+The empty graph is in $\PP^*$ because $K_{10}\notin\PP$, and $K_{10}\notin\PP^*$ because the empty graph is in $\PP$.
+Given a tree for $\PP$, keep its shape, answer each query about $e$ by the opposite answer, and flip the leaf labels.
+This is a tree of the same depth for $\PP^*$.
+\end{proof}
+
+\section{The nine types of Angel and Borja}\label{sec:types}
+
+Let $U=\{0,\dots,4\}$ and $U'=\{5,\dots,9\}$.
+Let $G_1,\dots,G_5$ be the following graphs on $V$ (disjoint unions, with isolated vertices where needed):
+\[
+G_1=C_5\cup5K_1,\quad G_2=K_5\cup5K_1,\quad G_3=C_5\cup C_5,\quad G_4=C_5\cup K_5,\quad G_5=K_5\cup K_5 .
+\]
+Let $\overline{G}_i$ be the complement of $G_i$; for example $\overline G_5=K_{5,5}$.
+Let $\mathcal G=\{G_1,\dots,G_5,\overline G_1,\dots,\overline G_5\}$, taken up to isomorphism.
+
+Let $S=\langle(0\,1\,2\,3\,4),(5\,6\,7\,8\,9)\rangle$, a Sylow $5$-subgroup of $S_{10}$.
+It has five orbits on $E$: the two $5$-cycles $c_1=\{i,i+1\}$ and $c_2=\{i,i+2\}$ inside $U$, the two $5$-cycles $c_1',c_2'$ inside $U'$, and the $25$ edges $m$ between $U$ and $U'$.
+Every nonempty union of orbits is isomorphic to $K_{10}$ or to a member of $\mathcal G$.
+For $G\in\mathcal G$ let $w(G)=\sum(-1)^{|T|-1}$, summed over the sets $T$ of orbits with $\bigcup T\cong G$.
+Counting the sets $T$ gives
+\[
+w(G_1)=4,\quad w(G_2)=-2,\quad w(G_3)=-4,\quad w(G_4)=4,\quad w(G_5)=-1 .
+\]
+For example, $G_3=C_5\cup C_5$ comes from the four sets $\{c_i,c'_j\}$, each with sign $-1$, and $G_4$ comes from the four sets $\{c_i,c'_1,c'_2\}$ and $\{c_1,c_2,c'_j\}$, each with sign $+1$.
+Since $\overline{\bigcup T}=\bigcup(\Orb(S)\setminus T)$, we also have $w(\overline G_i)=-w(G_i)$.
+
+Let $\PP$ be non-evasive and nontrivial monotone.
+The group $S$ is a $5$-group, so (fix) holds for $S$.
+The empty union is not counted, and $K_{10}\notin\PP$.
+Hence
+\begin{equation}\label{eq:sylow}
+\sum_{G\in\PP\cap\mathcal G}w(G)=1 .
+\end{equation}
+Since $\PP$ is closed under subgraphs, $\PP\cap\mathcal G$ is closed downward in the subgraph order on $\mathcal G$.
+There are exactly nine downward closed subsets of $\mathcal G$ with weight sum $1$.
+They are listed in Table~\ref{tab:types}, in the numbering of \cite[\S5]{AB}.
+We say $\PP$ has \emph{type $k$} if $\PP\cap\mathcal G$ is the $k$-th set.
+We recomputed the weights, the order and the nine sets by program, and the result agrees with \cite{AB}.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{cll}
+\toprule
+type & $\PP\cap\mathcal G$ & status\\
+\midrule
+1 & $\overline G_5$ & excluded in \cite{AB}\\
+2 & $G_1,\ \overline G_4,\ \overline G_5$ & excluded here\\
+3 & $G_1,\ G_3,\ \overline G_5$ & excluded in \cite{AB}\\
+4 & $G_1,G_2,\ \overline G_2,\overline G_4,\overline G_5$ & excluded here\\
+5 & $G_1,G_2,G_3,G_4,G_5$ & open\\
+6 & $G_1,G_3,\ \overline G_3,\overline G_4,\overline G_5$ & excluded here\\
+7 & $G_1,G_2,G_3,G_4,\ \overline G_2,\overline G_4,\overline G_5$ & excluded in \cite{AB}\\
+8 & $G_1,G_2,G_3,\ \overline G_2,\overline G_3,\overline G_4,\overline G_5$ & excluded here\\
+9 & $G_1,G_2,G_3,G_4,\ \overline G_1,\overline G_2,\overline G_3,\overline G_4,\overline G_5$ & excluded in \cite{AB}\\
+\bottomrule
+\end{tabular}
+\caption{The nine types.}\label{tab:types}
+\end{table}
+
+\begin{lemma}\label{lem:typedual}
+If $\PP$ has type $k$, then $\PP^*$ has type $10-k$.
+In particular, if $\PP$ has type~$5$ then so does $\PP^*$.
+\end{lemma}
+
+\begin{proof}
+We have $G_i\in\PP^*$ iff $\overline G_i\notin\PP$, and $\overline G_i\in\PP^*$ iff $G_i\notin\PP$.
+Apply this to the nine sets in Table~\ref{tab:types}.
+For example, type $2$ is $\{G_1,\overline G_4,\overline G_5\}$, and the dual set is $\{G_1,G_2,G_3,\overline G_2,\overline G_3,\overline G_4,\overline G_5\}$, which is type $8$.
+\end{proof}
+
+\section{Results}
+
+\begin{theorem}\label{thm:main}
+Let $\PP$ be a non-evasive nontrivial monotone graph property on ten vertices.
+Then the following hold.
+\begin{enumerate}[label=(\alph*)]
+\item $\PP$ has type~$5$.
+\item $\PP$ contains every disconnected graph, and no graph whose complement is disconnected.
+In particular $K_a\cup K_{10-a}\in\PP$ for $1\le a\le5$, and $\PP$ contains no graph with a vertex adjacent to all others.
+\item $\PP$ contains each of the following nine graphs and none of their complements:
+$C_{10}$; $C_5$ with a pendant edge at each vertex; the Petersen graph; the pentagonal prism $C_5\,\square\,K_2$; $K_5$ with a pendant edge at each vertex; $C_5$ with a triangle on each edge; the square of $C_{10}$ (the circulant with differences $\pm1,\pm2$); $(K_5\cup C_5)$ plus a perfect matching between the two parts; $K_5\,\square\,K_2$.
+\item Let $Q=\langle(0\,1\,2\,3\,4)(5\,6\,7\,8\,9)\rangle$.
+Among the $32$ isomorphism classes of connected graphs with connected complement that are unions of $Q$-orbits, the classes that lie in $\PP$ form one of eight explicit sets (Appendix~\ref{app:patterns}).
+\item $\PP\ne\PP^*$.
+\end{enumerate}
+\end{theorem}
+
+Parts (a) and (b) are proved in Sections~\ref{sec:t2468}--\ref{sec:t5}, parts (c) and (d) in Section~\ref{sec:z5}, and part (e) in Section~\ref{sec:nsd}.
+The proofs depend on Theorems~\ref{thm:smith} and~\ref{thm:oliver}, and on the computer certificates.
+So a counterexample to Karp's conjecture on ten vertices, if there is one, has the form $\PP=D\cup X$.
+Here $D$ is the set of disconnected graphs and $X$ is a downward closed set of connected graphs with connected complement.
+It satisfies (c)--(e).
+
+\section{Proofs}
+
+\subsection{Certificates}\label{sec:cert}
+
+A certificate for type $T$ lists groups $\Gamma\le S_{10}$ by generators, each with the data of an Oliver group (Theorem~\ref{thm:oliver}), and a list of equations (fix), (lk) or (dl), the last two with the fixed edge.
+The program in \file{replay/replay_cert.py} works as follows.
+(i)~It recomputes the nine types of Section~\ref{sec:types}.
+(ii)~For each group it closes the generators by brute force, checks the order, checks that $N$ is normal of order $p^k$ with $p$ prime and that $\Gamma=\langle g\rangle N$, and computes the edge orbits.
+(iii)~For each equation it forms the graph of every set of orbits and sorts these graphs into isomorphism classes (an embedding found by backtracking, with equal edge counts).
+(iv)~It gives each class a status for the type $T$: \emph{in} if the class embeds in a member of the type, \emph{out} if a graph of $\mathcal G\cup\{K_{10}\}$ outside the type embeds in it, and \emph{free} otherwise.
+A witness permutation is checked in the first two cases.
+(v)~Each equation becomes a constant plus a signed sum of free $0/1$ unknowns, equal to $1$.
+(vi)~A complete search with propagation tries all $0/1$ values of the free unknowns, subject to the equations and to $x_C\le x_{C'}$ among free classes.
+If there is no assignment, the type is excluded.
+Leaving out the inequalities between free and fixed classes can only add assignments, so ``no assignment'' remains a valid conclusion.
+A certificate for a statement ``$H\in\PP$'' adds the assumption $H\notin\PP$.
+Table~\ref{tab:cert} lists the certificates for types $1$--$4$ and $6$--$9$.
+The group names are positions in the list of conjugacy classes of subgroups of $S_{10}$ made by \file{gap/enum_subgroups.g} (GAP 4.12.1); the replay does not use them.
+
+\begin{table}[t]
+\centering
+\begin{tabular}{lllll}
+\toprule
+types & group & order & equation & source\\
+\midrule
+1, 9 & $\langle(0\,0'),(1\,2\,3\,4\,1'\,2'\,3'\,4')\rangle\cong C_2\times C_8$ & 16 & (lk) & \cite{AB}\\
+1, 9 & class 97 & 8 & (lk) & this work\\
+3, 7 & $\langle\sigma,\rho,\rho'\rangle$ (Section~\ref{sec:t1379}) & 50 & (fix) & \cite{AB}\\
+3, 7 & class 836 & 50 & (fix) & this work\\
+2, 8 & classes 1132 and 1279 & 112, 192 & (lk) for each & this work\\
+4, 6 & class 1279 & 192 & (lk) & this work\\
+4, 6 & an order-16 group found by a computer search & 16 & (lk) & this work\\
+\bottomrule
+\end{tabular}
+\caption{Certificates for the excluded types (files \texttt{certs/type*.json}); (lk) is taken at a fixed edge.}\label{tab:cert}
+\end{table}
+
+\subsection{Types 1, 3, 7, 9}\label{sec:t1379}
+
+These are due to Angel and Borja.
+We give the argument for types $3$ and $7$.
+Write $0',\dots,4'$ for $5,\dots,9$.
+Let $\sigma=(0\,0')(1\,1')(2\,2')(3\,3')(4\,4')$, $\rho=(0\,1\,2\,3\,4)$, $\rho'=(0'\,1'\,2'\,3'\,4')$ and $\Gamma=\langle\sigma,\rho,\rho'\rangle$.
+It has order $50$, and $N=C_5\times C_5$ is normal with quotient $C_2$.
+Its edge orbits are $A=K_{5,5}$, $B$ (the $5$-cycles $\{i,i+1\}$ in $U$ and $U'$) and $C$ (the $5$-cycles $\{i,i+2\}$ in $U$ and $U'$).
+Then $A\cong\overline G_5$, $B\cong C\cong G_3$, $A\cup B\cong A\cup C\cong\overline G_3$ and $B\cup C\cong G_5$.
+Types $3$ and $7$ contain $G_3$ and $\overline G_5$, but neither $\overline G_3$ nor $G_5$.
+So the fixed complex is three isolated points.
+Its Euler characteristic is $3$, not $1$.
+For types $1$ and $9$ the argument of \cite{AB} uses a group of order $16$ and the link of the fixed edge; the replay checks it, and also a group of order $8$.
+Type $9$ is dual to type $1$ and type $7$ to type $3$ (Lemma~\ref{lem:typedual}); the replay also checks the dual types directly.
+
+\subsection{Types 2, 4, 6, 8}\label{sec:t2468}
+
+Let the vertices be two \emph{hubs} $a,b$ and a set $W$ of eight vertices.
+Let $e=\{a,b\}$ and let $\tau=(a\,b)$.
+
+\smallskip\noindent
+\textbf{The group $\Gamma_1$} (order $112$).
+Identify $W$ with $\F_8$.
+Let $\Gamma_1=\mathrm{AGL}(1,8)\times\langle\tau\rangle$, where $\mathrm{AGL}(1,8)=\{x\mapsto\alpha x+\beta\}$ acts on $W$.
+It is $2$-transitive on $W$.
+The edge orbits are $\{e\}$, $A$ (the $16$ edges from hubs to $W$) and $B$ (the $28$ edges inside $W$).
+The subgroup $N_1=\{x\mapsto x+\beta\}\times\langle\tau\rangle$ is normal of order $16$, and $\Gamma_1/N_1\cong\F_8^\times\cong C_7$.
+
+\smallskip\noindent
+\textbf{The group $\Gamma_2$} (order $192$).
+Identify $W$ with $\F_2\times\F_4$.
+Let $\Gamma_2'$ be the set of maps $(t,z)\mapsto(t+s,\ \lambda z+\mu t+\nu)$ with $s\in\F_2$, $\lambda\in\F_4^\times$, $\mu,\nu\in\F_4$.
+This is a group of order $96$.
+Let $\Gamma_2=\Gamma_2'\times\langle\tau\rangle$.
+The subgroup $N_2$ with $\lambda=1$ is normal of order $64$, and $\Gamma_2/N_2\cong C_3$.
+The group $\Gamma_2'$ preserves the partition of $W$ into two sets of four, $\{t=0\}$ and $\{t=1\}$.
+It is transitive on the pairs inside a block and on the pairs across blocks.
+The edge orbits are $\{e\}$, $A$ as before, $B'=K_{4,4}$ (the $16$ edges across the blocks) and $C'=2K_4$ (the $12$ edges inside the blocks).
+
+Both groups are Oliver groups for $p=2$ and fix $e$.
+The script \file{note/check_explicit.py} builds both from these definitions, checks the claims above, and replays the type-2, 4, 6, 8 equations for them.
+The certificates in \file{certs/} use conjugates found by GAP.
+
+\begin{proposition}\label{prop:t24}
+There is no non-evasive nontrivial monotone property of type $2$, $4$, $6$ or $8$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:dual} and Lemma~\ref{lem:typedual} it is enough to treat types $2$ and $4$.
+Fix a non-evasive $\PP$.
+We use the link equation (lk) for $\Gamma_1$ and $\Gamma_2$ and the edge $e$.
+The complex $\lk(e)^{\Gamma}$ has one vertex for each orbit $O\ne\{e\}$ with $\{e\}\cup O\in\PP$.
+Its faces are the sets of such orbits whose union with $e$ lies in $\PP$.
+The graphs involved are these.
+\begin{itemize}[nosep]
+\item $e\cup A=K_{1,1,8}$, the join of an edge with eight independent vertices.
+\item $e\cup B'=K_2\cup K_{4,4}$.
+\item $e\cup C'=K_2\cup2K_4$ and $e\cup B=K_2\cup K_8$.
+\item $e\cup A\cup B'$ contains $2C_5=G_3$.
+Take the sides $X,Y$ of $K_{4,4}$ and cycles $(a,x_1,y_1,x_2,y_2)$ and $(b,x_3,y_3,x_4,y_4)$.
+\item $e\cup A\cup C'$ contains $2K_5=G_5$: the hub $a$ with one $K_4$, the hub $b$ with the other.
+\item $e\cup B'\cup C'=K_2\cup K_8$, which contains $K_5\cup5K_1=G_2$.
+\end{itemize}
+
+\emph{Type 2} ($\PP\cap\mathcal G=\{G_1,\overline G_4,\overline G_5\}$).
+For $\Gamma_1$: $e\cup B\supseteq G_2\notin\PP$, so $B$ is not a vertex.
+So $\lk(e)^{\Gamma_1}$ is empty or the single vertex $A$, and $\chi=1$ forces $K_{1,1,8}\in\PP$.
+For $\Gamma_2$: $A$ is a vertex by what we just proved.
+$B'$ is a vertex, because $K_2\cup K_{4,4}\subseteq K_{5,5}=\overline G_5\in\PP$.
+No two of $A,B',C'$ span an edge: the unions contain $G_3$, $G_5$ and $G_2$, which are not in $\PP$.
+So $\lk(e)^{\Gamma_2}$ has at least two vertices and no edges.
+Then $\chi\ge2$, a contradiction.
+
+\emph{Type 4} ($\PP\cap\mathcal G=\{G_1,G_2,\overline G_2,\overline G_4,\overline G_5\}$).
+Use $\Gamma_2$ only.
+The graph $\overline G_2$ is the join of $K_5$ with five independent vertices, and $K_{1,1,8}\subseteq\overline G_2$ (send the hubs to two vertices of the $K_5$).
+So $A$ is a vertex.
+$B'$ is a vertex, because $K_2\cup K_{4,4}\subseteq K_{5,5}=\overline G_5\in\PP$.
+The unions $A\cup B'$ and $A\cup C'$ contain $G_3$ and $G_5$, which are not in $\PP$, so they are not faces.
+The only possible edge is $B'C'$, which is a face iff $y=[K_2\cup K_8\in\PP]=1$.
+Put $x=[K_2\cup2K_4\in\PP]$.
+Then $C'$ is a vertex iff $x=1$, and $y\le x$ because $K_2\cup2K_4\subseteq K_2\cup K_8$.
+There is no triangle.
+So $\chi=2+x-y\ge2$, a contradiction.
+\end{proof}
+
+\subsection{Type 5: the sandwich}\label{sec:t5}
+
+\begin{proposition}\label{prop:A}
+Let $\PP$ be non-evasive, nontrivial, monotone, and of type~$5$.
+Then $K_a\cup K_{10-a}\in\PP$ for $a=1,2,3,4$.
+\end{proposition}
+
+\begin{proof}
+For each $a$ there is a certificate \file{certs/type5_force_K<a>_K<10-a>.json}.
+It consists of $6$ to $9$ equations of the kinds (fix), (lk), (dl) for $5$ to $8$ Oliver groups of orders $8$ to $192$ (primes $p=2,3,5,7$), together with the assumption $K_a\cup K_{10-a}\notin\PP$.
+The replay finds no solution; the final search runs over $68$ to $80$ free classes.
+The replay checks by an isomorphism test that the assumed graph is $K_a\cup K_{10-a}$, with $a$ taken from the command line of the manifest and not from the certificate.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}(a) and (b)]
+By Section~\ref{sec:types}, $\PP$ has one of the types $1,\dots,9$. Types $1,3,7,9$ are excluded in Section~\ref{sec:t1379}, and types $2,4,6,8$ by Proposition~\ref{prop:t24}. This leaves type~$5$, which is (a).
+For (b), let $H$ be a disconnected graph.
+Group its components into two sets with $a$ and $10-a$ vertices, $a\le5$.
+Then $H$ is a subgraph of a copy of $K_a\cup K_{10-a}$, which is in $\PP$ by Proposition~\ref{prop:A} (for $a\le4$) and by type~5 (for $a=5$, since $G_5=2K_5$).
+So $H\in\PP$.
+Now $\PP^*$ is non-evasive, nontrivial, monotone (Lemma~\ref{lem:dual}) and of type~5 (Lemma~\ref{lem:typedual}).
+So every disconnected $H$ lies in $\PP^*$, that is, $\overline H\notin\PP$.
+Every graph with disconnected complement has this form.
+\end{proof}
+
+Write $\mathrm{CC}$ for the set of connected graphs with connected complement.
+By (b), $\PP=D\cup X$ with $X=\PP\cap\mathrm{CC}$ downward closed in $\mathrm{CC}$.
+
+\subsection{Type 5: the group of order 5}\label{sec:z5}
+
+Let $q=(0\,1\,2\,3\,4)(5\,6\,7\,8\,9)$ and $Q=\langle q\rangle$.
+$Q$ acts freely on $E$, so it has nine orbits of five edges.
+Of the $511$ nonempty unions of orbits, $20$ are disconnected, $21$ are connected with disconnected complement, and $470$ lie in $\mathrm{CC}$.
+The $470$ fall into $32$ isomorphism classes.
+By Lemma~\ref{lem:linkdel} and Theorem~\ref{thm:smith} (with $p=5$) the fixed complex $\Del^Q$ is acyclic over $\F_5$.
+By (b) this complex is determined by the set $X_Q$ of the $32$ classes that lie in $\PP$: its faces are the sets of orbits whose union is disconnected, together with those whose union is in a class of $X_Q$.
+The set $X_Q$ is closed downward under embedding.
+The subcomplex of disconnected unions has reduced $\F_5$-homology of rank $5$ in dimension $0$, and the relative complex of the other faces must account for it.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}(c) and (d)]
+The program lists all $2{,}539$ downward closed subsets of the $32$ classes.
+For each it computes the $\F_5$-homology of the relative complex (the faces whose union is in $\mathrm{CC}$) and keeps the subset if this equals the homology of the disconnected part, shifted by one.
+By the long exact sequence of the pair, every subset with an acyclic fixed complex passes this test.
+The test is only necessary: equal dimensions do not force the connecting maps to be isomorphisms.
+So its survivors may include subsets that are not admissible, which does no harm to a statement that holds for all of them.
+Sixteen subsets pass.
+The script \file{replay/check_z5_absolute.py} computes the $\F_5$-homology of the whole fixed complex for each of the $2{,}539$ subsets.
+It finds that exactly the same $16$ are acyclic.
+So for this complex the necessary test is also sufficient, and this is replayed.
+Two further Oliver groups, of order $80$ and $160$ with three edge orbits each, give equations (fix) whose unions are all among the $32$ classes.
+Eight of the $16$ patterns satisfy both.
+The program checks that each of the nine graphs of (c) lies in all eight patterns and that each of their complements lies in none.
+The nine graphs are built from their definitions, and matched with the edge lists of the certificate by isomorphism tests, in \file{replay/check_nine_graphs.py}.
+The two certificates are \file{certs/lemma_z5.json} (seven graphs, using only Smith's theorem) and \file{certs/lemma_z5_euler.json} (nine graphs).
+\end{proof}
+
+The eight patterns have $9,11,11,13,19,21,21,23$ classes.
+They form four pairs under $\PP\leftrightarrow\PP^*$.
+They are listed in Appendix~\ref{app:patterns}.
+
+\subsection{Type 5 is not self-dual}\label{sec:nsd}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}(e)]
+Taking complements maps the union of a set $T$ of $Q$-orbits to the union of the complementary set.
+So it permutes the $32$ classes.
+No graph on ten vertices is isomorphic to its complement, since that would need $45/2$ edges.
+So the permutation has no fixed class, and it splits the $32$ classes into $16$ pairs.
+Suppose $\PP=\PP^*$.
+For every class $c$ we then have $c\in\PP$ iff $c\in\PP^*$ iff $\overline c\notin\PP$.
+So $X_Q$ contains exactly one class of each pair, and $|X_Q|=16$.
+By Theorem~\ref{thm:main}(d), $X_Q$ is one of the eight patterns, which have $9,11,11,13,19,21,21,23$ classes.
+None has $16$.
+\end{proof}
+
+The program \file{replay/replay_nonselfdual.py} re-derives the patterns and checks this count.
+It also checks that the patterns are closed under $X\mapsto\{c:\ \overline c\notin X\}$ and that none is fixed by it, which the argument above does not need.
+
+\section{Replaying the proofs}\label{sec:replay}
+
+Requirements: Python~3, standard library only (tested with Python~3.14.0).
+Do not run it with \texttt{-O}; the checks are assertions, and \file{replay/replay_lib.py} refuses to start without them.
+From the directory \file{karp10} of the archive:
+\begin{verbatim}
+python replay/replay_all.py
+\end{verbatim}
+It first checks that \file{certs/} and \file{replay/} contain exactly the files listed in \file{replay/RELEASE-MANIFEST.json} (the $20$ certificates and the scripts) and that each has the pinned SHA-256 hash.
+There is no option that skips this check.
+The checks are then run, in isolated interpreters, exactly as the manifest lists them.
+The SHA-256 hash of the manifest file itself, which the program prints, is to be quoted wherever the archive is published.
+Then it replays the $20$ certificates and three further checks (23 checks in all): non-self-duality (Section~\ref{sec:nsd}), absolute acyclicity of the $16$ patterns (Section~\ref{sec:z5}), and the identification of the nine graphs (Theorem~\ref{thm:main}(c)).
+It takes between one and three minutes, depending on the load of the machine, prints one line per check, and ends with \texttt{ALL VALID}.
+Single checks:
+\begin{verbatim}
+python replay/replay_cert.py certs/type4.json -v
+python replay/replay_smith.py certs/lemma_z5_euler.json
+python replay/replay_nonselfdual.py certs/lemma_z5_euler.json
+python replay/check_z5_absolute.py
+python replay/check_nine_graphs.py
+python note/check_explicit.py
+python note/z5_table.py
+\end{verbatim}
+The last two rebuild the groups of Section~\ref{sec:t2468} and the table of Appendix~\ref{app:patterns}.
+The script \file{note/run_checks.sh} runs all of them.
+Group closure, orbits, isomorphism tests and the search are written from scratch in \file{replay/replay_lib.py} and \file{replay/replay_cert.py}.
+Nothing from GAP, nauty or a solver is used.
+GAP and nauty were used only to find the groups and the certificates.
+As a second opinion on the search, \file{note/crosscheck_z3.py} (it needs z3 and is not part of the replay) rebuilds the $0/1$ systems of the $18$ equation certificates with separate code and gives them to z3.
+All $18$ are unsatisfiable, and the same systems against type~5 (or without the assumption in Proposition~\ref{prop:A}) are satisfiable.
+
+\section{What remains open}\label{sec:open}
+
+By Theorem~\ref{thm:main}, a counterexample on ten vertices is $\PP=D\cup X$ with $X$ a downward closed set of graphs in $\mathrm{CC}$, subject to (c)--(e).
+We did not find a contradiction, and we did not find an example.
+
+\medskip\noindent
+\textbf{Computer evidence (not certificates).}
+Nothing in this subsection is replayed by the programs of Section~\ref{sec:replay}.
+It rests on output of an SMT solver and of search programs whose data files (about $41{,}000$ graph classes, tables made with GAP and nauty) are not part of the replay archive.
+We tested further necessary conditions on $X$.
+\begin{itemize}[nosep]
+\item The equations (fix), (lk), (dl) for the $1{,}524$ conjugacy classes of subgroups of $S_{10}$ with at most $16$ edge orbits, and for four more classes (of orders $3$, $5$, $9$ and $10$).
+For one pattern we also imposed (fix) for the involution with five $2$-cycles.
+\item The relative-homology condition of Section~\ref{sec:z5}, which is necessary for acyclicity over $\F_p$, computed exactly for the fixed, link and deletion complexes of the $p$-groups among these groups ($1{,}647$ complexes) and for two more $p$-groups ($34$ complexes).
+\item Monotonicity on the $41{,}134$ isomorphism classes of graphs in $\mathrm{CC}$ that occur as unions of orbits of these groups.
+\end{itemize}
+With an SMT solver we found $0/1$ assignments to these classes that satisfy all of this together with pattern $1$, $2$ or $3$ of Appendix~\ref{app:patterns}.
+By duality the same holds for patterns $8$, $7$ and $6$.
+For each of the patterns $1$ to $4$ (and so $5$ to $8$) we also found assignments for the system without the four extra classes and the two extra $p$-groups, which in addition satisfy two further families: the depth-2 equations of one selector branch, and the Euler equations of eight further $2$-groups.
+The case of pattern~$4$ was found by a repair search that fixes most classes to a model satisfying one side of the system.
+We re-checked each assignment with separate code.
+These assignments are not graph properties known to be non-evasive.
+They show only that the conditions above do not contradict each other.
+The assignments fail three further tests, which we have not imposed: the same condition for the involution with five $2$-cycles, for a group of order $3$, and for eight $2$-groups of order $4$ or $8$.
+Whether the assignments can be repaired is open.
+The conditions from the transposition and from the trivial group are untested.
+Conditions from the second query of a decision tree were tested only in part, and conditions from later queries not at all.
+As a sanity check (also solver output, not replayed), the same kind of system, with all subgroup classes, has no solution for $n=5,6,7$; for $n=6$ it needs the link equations.
+
+\medskip\noindent
+\textbf{The obstruction.}
+The complex of disconnected graphs on $n$ vertices is homotopy equivalent to a wedge of $(n-1)!$ spheres of dimension $n-3$ \cite{Vas,BBLSW}.
+For $n=10$ this is $9!$ spheres of dimension $7$.
+A type-5 property adds graphs of $\mathrm{CC}$ to this complex so that the result is acyclic and the $S_{10}$-symmetry is kept.
+The conditions above are necessary for that.
+A proof along these lines needs a contradiction among such conditions, or an argument of a different kind, for example an adversary strategy for properties between $D$ and its dual.
+
+\section{Use of AI, and availability}
+
+This work was carried out with AI assistance (Claude, Anthropic), directed by the author.
+The certificates are replayable.
+The note has not been peer reviewed.
+The author is responsible for all content.
+The code, the certificates and the logs are in the archive that accompanies this note: \texttt{[location to be added]}.
+
+{\footnotesize
+\begin{thebibliography}{99}
+\setlength{\itemsep}{1pt}
+\bibitem{AB} A.~Angel and J.~Borja, \emph{The evasiveness conjecture and graphs on $2p$ vertices}, J.~Graph Theory \textbf{91} (2019), 35--52; arXiv:1603.04412. Section and theorem numbers in this note refer to arXiv version~1.
+\bibitem{BBLSW} E.~Babson, A.~Bj\"orner, S.~Linusson, J.~Shareshian and V.~Welker, \emph{Complexes of not $i$-connected graphs}, Topology \textbf{38} (1999), 271--299; arXiv:math/9705219.
+\bibitem{Bor} J.~M.~Borja Soto, \emph{Equivariant algebraic topology applied to some problems in topological combinatorics}, PhD thesis, Universidad de los Andes, 2016.
+\bibitem{Eng} A.~Engstr\"om, \emph{Transitive graphs in counterexamples to Karp's conjecture}, arXiv:math/0512421 (2005).
+\bibitem{KSS} J.~Kahn, M.~Saks and D.~Sturtevant, \emph{A topological approach to evasiveness}, Combinatorica \textbf{4} (1984), 297--306.
+\bibitem{Mil} C.~A.~Miller, \emph{Evasiveness of graph properties and topological fixed-point theorems}, Found.\ Trends Theor.\ Comput.\ Sci.\ \textbf{7} (2013), 337--415; arXiv:1306.0110.
+\bibitem{Oli} R.~Oliver, \emph{Fixed-point sets of group actions on finite acyclic complexes}, Comment.\ Math.\ Helv.\ \textbf{50} (1975), 155--177.
+\bibitem{RV} R.~L.~Rivest and J.~Vuillemin, \emph{On recognizing graph properties from adjacency matrices}, Theoret.\ Comput.\ Sci.\ \textbf{3} (1976), 371--384.
+\bibitem{Smi} P.~A.~Smith, \emph{Fixed-point theorems for periodic transformations}, Amer.\ J.\ Math.\ \textbf{63} (1941), 1--8.
+\bibitem{Vas} V.~A.~Vassiliev, \emph{Complexes of connected graphs}, in: The Gelfand Mathematical Seminars 1990--1992, Birkh\"auser, 1993, 223--235.
+\end{thebibliography}
+}
+
+\appendix
+\section{The 32 classes and the eight patterns}\label{app:patterns}
+
+Table~\ref{tab:patterns} lists the $32$ isomorphism classes of connected graphs with connected complement that are unions of $Q$-orbits.
+Here $e$ is the number of edges, $t$ the number of triangles, $q$ the number of $4$-cycles, and ``cpl.'' the class of the complement.
+Degrees are written degree$^{\text{multiplicity}}$.
+A star marks the nine graphs of Theorem~\ref{thm:main}(c).
+Column $j$ marks the classes in pattern $j$.
+Patterns are numbered by size, and pattern $j$ is dual to pattern $9-j$.
+Pattern~1 is the nine graphs alone.
+Patterns 2 and 3 add the classes $\{4,9\}$ and $\{4,15\}$, and pattern 4 adds $\{4,9,15,20\}$.
+The file \file{note/z5_patterns.json} has an edge list for each class.
+
+\begin{table}[!htb]
+\centering\footnotesize\setlength{\tabcolsep}{3.5pt}\renewcommand{\arraystretch}{0.88}
+\input{z5_table.tex}
+\caption{The $32$ classes and the eight patterns.}\label{tab:patterns}
+\end{table}
+
+\end{document}
