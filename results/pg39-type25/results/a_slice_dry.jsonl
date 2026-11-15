@@ -1,0 +1,2 @@
+{"tag": "control_hermitian", "kind": "control", "wall_start": "2026-11-08 12:48:48", "cnf_sha256": "c31eb4532f3e469de5e7dc83b1f89c61aa506cedb41b0a1f3250f594913c2abb", "solver_seconds": 17.2, "conflicts": 10178, "solver_cpu_seconds": 16.75, "max_rss_mb": 573.2, "status": "CONTROL_SAT_OK", "size": 280, "lines_ok": true, "equals_hermitian": false, "overlap_with_H": 118}
+{"tag": "a_slice_summary", "status": "BATCH_DONE", "peak_scratch_gb": 0.05, "stopped_on_sat": false, "time": "2026-11-08 12:49:06"}

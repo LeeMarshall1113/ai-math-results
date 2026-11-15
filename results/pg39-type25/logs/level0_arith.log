@@ -1,0 +1,6 @@
+k = 260: 4550 two-secants, 2912 five-secants; through a point of K: 35 two-secants (|Sigma|), 56 five-secants
+k = 287: 3731 two-secants, 3731 five-secants; through a point of K: 26 two-secants (|Sigma|), 65 five-secants
+plane section m = 26: 26 five-secants (planes of size 26 through P0 for |Sigma| = 26: x5 = 26, for |Sigma| = 35: x5 = 56), through P0: 5 two-secants, 5 five-secants; local counts: member 5, non-member 2 five-secants
+plane section m = 35: 56 five-secants (planes of size 26 through P0 for |Sigma| = 26: x5 = 26, for |Sigma| = 35: x5 = 56), through P0: 2 two-secants, 8 five-secants; local counts: member 8, non-member 5 five-secants
+|PGammaL(3,9)| = 84913920 ;  elations with centre P0: 729 = 9^3 ; homotheties diag(1,1,1,lambda): 8
+LEVEL-0 ARITHMETIC OK

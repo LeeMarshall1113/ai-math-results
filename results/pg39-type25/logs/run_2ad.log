@@ -1,0 +1,4 @@
+{"cls": "2a_homology_3+1", "k": 287, "status": "UNKNOWN", "seconds": 900.16, "vars": 255693, "clauses": 1328889, "orbits": 456, "lorbits": 3822, "conflicts": 3123486}
+{"cls": "2a_homology_3+1", "k": 260, "status": "UNKNOWN", "seconds": 900.37, "vars": 251598, "clauses": 1312509, "orbits": 456, "lorbits": 3822, "conflicts": 2487665}
+{"cls": "2d_baer", "k": 287, "status": "UNKNOWN", "seconds": 902.48, "vars": 219131, "clauses": 1179053, "orbits": 430, "lorbits": 3796, "conflicts": 1081083}
+{"cls": "2d_baer", "k": 260, "status": "UNKNOWN", "seconds": 909.13, "vars": 217312, "clauses": 1171777, "orbits": 430, "lorbits": 3796, "conflicts": 2145561}

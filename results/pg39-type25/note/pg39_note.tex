@@ -1,0 +1,303 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\setlist{itemsep=2pt,topsep=4pt}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\PG}{\mathrm{PG}}
+\newcommand{\PGL}{\mathrm{P\Gamma L}}
+\newcommand{\F}{\mathbb F}
+\newcommand{\file}[1]{\texttt{#1}}
+
+\title{No set of type $(2,5)$ with respect to lines\\in $\PG(3,9)$: a computer-assisted proof}
+\author{Lee Marshall}
+\date{Draft of 11 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+A set of points of a projective space has type $(a,b)$ with respect to lines if every line meets it in exactly $a$ or exactly $b$ points, and both values occur.
+We prove that there is no set of type $(2,5)$, and hence none of type $(5,8)$, in $\PG(3,9)$.
+Together with the theorem of Tallini Scafati, in the form stated by Calderbank and Kantor (Bull.\ London Math.\ Soc.\ 18 (1986), Theorem 12.5) and the case $(0,n)$ cited there, this gives:
+for every prime power $q<25$ and every $r\ge 3$, a set of points of $\PG(r,q)$ that meets every line in exactly $a$ or $b$ points, both occurring, is a point, a hyperplane, or the complement of one of these.
+The proof reduces a hypothetical set to $174$ finite cases, which are refuted by SAT solving.
+The refutations are checked with the formally verified checker \texttt{cake\_lpr}.
+The reductions are short hand proofs, repeated by independent scripts.
+The proof files of the main refutations ($571$ GB) were not kept; we give the commands that regenerate them.
+The work was done with AI assistance and has not been peer reviewed.
+\end{abstract}
+
+\section{Introduction}
+
+Let $O$ be a set of points of $\PG(r,q)$.
+It has \emph{type $(a,b)$ with respect to lines}, $a<b$, if every line meets $O$ in $a$ or $b$ points and both values occur.
+A point, a hyperplane, and the complements of these are of this kind (for example a point has type $(0,1)$); we call them \emph{trivial}.
+Calderbank and Kantor \cite[Theorem 12.5]{CK} state, for $r\ge 3$: if a non-trivial such set exists, then $q$ is an odd square and, up to complementation, $a=(q+1-\sqrt q(1-e))/2$ and $b=(q+1+\sqrt q(1+e))/2$ with $e=\pm1$, and the size of $O$ is given by an explicit formula.
+They add that no example is known.
+They attribute the result to Tallini Scafati; we have not read her papers and cite her only through \cite{CK} and later authors (\S\ref{sec:lit}).
+
+For $q=9$ and $e=-1$ the formula gives type $(2,5)$ and $|O|\in\{260,287\}$; the complement has type $(5,8)$ and size $560$ or $533$.
+Gavrilyuk and Matkin \cite{GM} write that $\PG(3,9)$ with $(a,b)=(2,5)$ is the first open case.
+Kurz, Landjev, Pavese and Rousseva \cite{KLPR} write that no such set is known when $r>2$.
+Ihringer \cite{Ihr}, Section~5.2 and footnote~4, calls $(n,m,q)=(4,2,9)$ the first open case and says that the existence question for a two-intersection set with respect to lines in $\PG(3,9)$ has been open for more than five decades.
+
+\begin{theorem}\label{thm:main}
+There is no set of points of $\PG(3,9)$ that meets every line in exactly $2$ or exactly $5$ points.
+Equivalently, there is no set of type $(2,5)$ and no set of type $(5,8)$ in $\PG(3,9)$.
+\end{theorem}
+
+\begin{corollary}\label{cor:all}
+Let $q<25$ be a prime power, $r\ge3$, and let $O\subseteq\PG(r,q)$ meet every line in exactly $a$ or exactly $b$ points, $a<b$, both values occurring.
+Then $O$ is a point, a hyperplane, the complement of a point or the complement of a hyperplane.
+\end{corollary}
+
+The corollary depends on Theorem~\ref{thm:main}, on \cite[Theorem 12.5]{CK} and on the theorem for type $(0,n)$ (Section~\ref{sec:reduce}).
+The smallest case not covered is $q=25$, with $(a,b)=(8,13)$ or $(13,18)$ (our own arithmetic, Section~\ref{sec:reduce}).
+
+\paragraph{What is and is not claimed.}
+We claim Theorem~\ref{thm:main}, modulo the trust base of Section~\ref{sec:trust}, and Corollary~\ref{cor:all}, modulo the cited theorems.
+We do not claim that Tallini Scafati's original papers were checked.
+We could not compare our planar classification (Section~\ref{sec:planar}) with the table of Penttila and Royle \cite{PR}; this is stated again in Section~\ref{sec:lit}.
+
+\section{Outline and the status of each step}\label{sec:outline}
+
+Every step carries a tag.
+\textbf{[H]}: proved by hand; the proof is in the file \file{PROOF-CHAIN.md}, and a finite check, where one exists, is repeated by a script.
+\textbf{[C]}: certified, that is, a CNF formula with a proof checked by \texttt{cake\_lpr}, and the formula is rebuilt from scratch by a script that uses only the Python standard library and compared by SHA-256 with a manifest.
+\textbf{[S]}: exact computation by an independent standard-library script, not formally certified.
+\textbf{[L]}: cited.
+
+Throughout, $\F_9=\F_3[i]/(i^2+1)$.
+A $(2,5)$-set of $\PG(2,9)$ is a point set meeting every line in $2$ or $5$ points.
+
+\subsection{Parameters and the star at a point}\label{sec:star}
+Suppose $K\subset\PG(3,9)$ meets every line in $2$ or $5$ points, $|K|=k$.
+Counting incidences and ordered pairs of points gives $k^2-547k+74620=0$, so $k=260$ or $k=287$ \textbf{[H]}.
+A plane $\pi$ meets $K$ in a $(2,5)$-set of $\PG(2,9)$, and the same count gives $|K\cap\pi|=26$ or $35$ \textbf{[H]}.
+Fix $P_0\in K$.
+A plane through $P_0$ with $26$ (resp.\ $35$) points of $K$ contains $5$ (resp.\ $2$) lines through $P_0$ that meet $K$ in exactly $2$ points.
+Let $\Sigma$ be the set of directions (points of the quotient plane $Q\cong\PG(2,9)$) of the lines through $P_0$ with two points of $K$.
+Then $\Sigma$ is a $(2,5)$-set of $Q$, with $|\Sigma|=26$ if $k=287$ and $|\Sigma|=35$ if $k=260$ \textbf{[H]}.
+\emph{(Checks: \file{replay/level0\_arith.py}, \file{replay/star\_setup.py}.)}
+
+\subsection{Classification of $(2,5)$-sets of $\PG(2,9)$}\label{sec:planar}
+Up to $\PGL(3,9)$ there are $3$ classes of $(2,5)$-sets of size $26$, with automorphism groups of orders $80,26,16$, and $7$ classes of size $35$, with orders $64,40,32,32,16,16,2$.
+They contain $9{,}634{,}464$ and $61{,}827{,}948$ labelled sets respectively.
+The proof has three parts.
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{[H]} A $(2,5)$-set has a $5$-secant ($26$ resp.\ $56$ of them).
+Move one to the line $z=0$; its section is a $5$-subset $R$ of the ten points.
+$\PGL(2,9)$ has two orbits on $5$-subsets (of sizes $180$ and $72$).
+The translations of the affine plane move any point of $K$ off the line to the origin.
+The remaining stabiliser $H_R$ (orders $64$ and $160$) is broken by lexicographic leader constraints.
+\item \textbf{[C]} For each size $m\in\{26,35\}$ and each of the two $R$, the CNF ``planar instance, units for $R$ and the origin, lex-leader clauses, one blocking clause per known solution'' is unsatisfiable.
+These are four certificates (\file{certs/planar\_complete\_k\{26,35\}\_R\{0,1\}}, LRAT sizes $37$ MB, $37$ MB, $2.7$ GB, $1.6$ GB).
+So the solution lists (in total $1{,}345$ sets) contain every $(2,5)$-set in this frame.
+\item \textbf{[H]+[S]} A counting identity.
+The solutions are one per $H_R$-orbit, and the number of labelled $(2,5)$-sets is $\sum_i|\PGL(3,9)|/|\mathrm{Aut}_i|$ for the representatives.
+The identity is recomputed from the solution lists (\file{replay/planar\_count.py}) and from the class list; both give the numbers above.
+The orders $|\mathrm{Aut}_i|$ are recomputed without nauty by counting ordered projective frames (\file{replay/planar\_aut.py}); the pairs with equal order are checked inequivalent by an exhaustive search for an isomorphism.
+Hence the ten representatives are pairwise inequivalent, and their orbit sizes add up to the total: the classification is complete.
+\end{enumerate}
+The validity of every listed solution (all $91$ lines meet it in $2$ or $5$ points), the lex-leader property against all of $H_R$ and the construction of $H_R$ are checked directly by \file{replay/planar\_validity.py} (all $1{,}345$ solutions, nothing sampled).
+A cross-check independent of the whole pipeline (\file{replay/order3\_check.py}) shows by exhaustive search with two solvers that no $(2,5)$-set of $\PG(2,9)$ is invariant under a collineation of order $3$, in agreement with the group orders above, all of which are prime to $3$.
+Penttila and Royle \cite{PR} classified sets of type $(m,n)$ in the planes of order nine by computer in 1995.
+We could not obtain their table, so we have not compared their classes and group orders with ours.
+A dissertation \cite{LH} says that Penttila and Royle found a 35-set of type (2,5) in PG(2,9) admitting $P\Omega(3,3)$ (order 12); our classes have no group of order divisible by 3. We read this as loose wording but could not decide it without \cite{PR}.
+
+\subsection{Normalisation and the base formula}
+\textbf{[H]} By transitivity of $\PGL(4,9)$ and the lifting of the quotient group, we may assume that $\Sigma$ is one of the ten representatives: cases $A_0,A_1,A_2$ ($k=287$) and $C_0,\dots,C_6$ ($k=260$).
+Choose three non-collinear points $v_1,v_2,v_3$ of $\Sigma$ (the first such triple in point order).
+The elations with centre $P_0$, $(x,x_4)\mapsto(x,x_4+r\cdot x)$, fix $P_0$ and every line through it, and $r\mapsto(r\cdot v_1,r\cdot v_2,r\cdot v_3)$ is a bijection of $\F_9^3$; so we may also assume that the second point of $K$ on each line $P_0v_i$ lies at ``height $0$''.
+The units of a case are: $P_0\in K$, the three height-$0$ points, and the type (two-secant or not) of each of the $91$ lines through $P_0$.
+\emph{(Checks: \file{replay/lemma\_checks.py}, all $729$ elations and all $8$ homotheties on the actual geometry.)}
+
+The \emph{base formula} of a case has one variable per point of $\PG(3,9)$ ($820$), for each of the $7{,}462$ lines an exact dynamic-programming encoding of ``the number of points in $K$ is $2$ or $5$'', the cardinality constraint $|K|=k$, and the units; it has $490{,}402$ variables and about $2.57$ million clauses.
+\textbf{[H]} The encoding is exact in both directions (completeness, soundness and functionality of the auxiliary variables); the proof, with the clause-generating code quoted, is \file{ENCODER-SEMANTICS.md}.
+For the refutations only completeness is needed: every genuine set yields a model.
+\textbf{[S]} \file{replay/encoder\_exhaustive.py} tests all inputs of the production line and local-count shapes with independent model counting, random shapes, and the plane pipeline on $\PG(2,3)$ and $\PG(2,4)$; at the real sizes ($91$ and $820$ variables) it can only sample.
+\textbf{[C]} All ten base formulas are rebuilt from scratch and agree with the recorded hashes.
+
+\subsection{First stage: sections of one plane}
+In each case let $\pi_1$ be the first plane through $P_0$ and two height-$0$ points that has $26$ points of $K$.
+The section $S=K\cap\pi_1$ is a $(2,5)$-set of the plane $\pi_1$ with prescribed line types through $P_0$ and with local counts: a point of $S$ lies on $d+3$ five-secants of $\pi_1$ and a point outside $S$ on $d$, $d=(m-20)/3$ \textbf{[H]}.
+Call the conjunction of these conditions the plane formula $G(\pi_1)$ ($91$ variables).
+The homotheties $h_\lambda=\mathrm{diag}(1,1,1,\lambda)$, $\lambda\in\F_9^*$, fix $P_0$, all lines through $P_0$ and all height-$0$ points, hence the units, and act on the sections \textbf{[H]}.
+\textbf{[C]} For each case, $G(\pi_1)$ plus one blocking clause for each section in the union of the $8$ homothety orbits of a list of representative sections is unsatisfiable (ten certificates, \file{certs/cover1\_*}, LRAT $48$--$248$ MB).
+So after applying a suitable $h_\lambda$ the section is one of the representatives.  There are $16$ or $18$ representatives per case, $174$ in all ($52$ in the cases $A$ and $122$ in the cases $C$).
+The blocked sets are expanded from the representatives by the script itself, so the representative lists need not be trusted.
+\textbf{[S]} \file{replay/cover\_asserts.py} checks, for every case, that the representatives list exactly the $91$ plane points ($88$ free), are valid sections, that the images are valid, that the stored cover formula equals the rebuilt one and blocks exactly the union of the orbits.
+
+\subsection{The $174$ cubes and the second stage}
+A \emph{cube} is the base formula plus $92$ unit clauses fixing a representative section and one further height-$0$ point.
+\textbf{[C]} Each of the $174$ cubes is refuted: $167$ directly (CaDiCaL with an LRAT proof, checked by \texttt{cake\_lpr}), and $7$ by a second split.
+For the seven cubes not closed within a two-hour solver limit, a second plane $\pi_2$ through $P_0$ meets $\pi_1$ in a line through $P_0$; $81$ points of $\pi_2$ lie off that line, one is fixed by the units, so $80$ are free.
+The sections of $\pi_2$ compatible with the cube form a list of $140$ or $122$ \emph{children}; a completeness certificate (the plane formula of $\pi_2$ with the section of $\pi_1$ and one blocking clause per child; nine certificates, \file{certs/cover2\_*}) shows that every set in the cube has one of these sections.
+All $1{,}224$ children are refuted.
+(Two further cubes were split although they had closed directly, so both proofs exist and the split is not needed: $C_2$ number $0$, by mistake, and $C_1$ number $4$, split locally on 13 November 2026 (second plane $10$, $140$ children) because the check of its direct proof needs a checker heap of $6500$ MB, more than the local machine allows.)
+
+\subsection{Assembly}
+Suppose $K$ exists.
+Then $k\in\{260,287\}$, and for $P_0\in K$ the set $\Sigma$ is a $(2,5)$-set of size $26$ or $35$, equivalent to exactly one representative; after normalisation $K$ satisfies the base formula of that case.
+Its section on $\pi_1$ satisfies $G(\pi_1)$, so after a homothety it is a representative, and $K$ satisfies a cube formula.
+That cube is refuted directly, or the section on $\pi_2$ is a child and $K$ satisfies a child formula, which is refuted.
+This is a contradiction.
+Table~\ref{tab:steps} lists all steps.
+Nothing about symmetry of $K$ itself is used.
+
+\begin{table}[!htb]
+\centering\small
+\begin{tabular}{@{}rlll@{}}
+\toprule
+ & step & tag & where \\
+\midrule
+1 & $k\in\{260,287\}$, $m\in\{26,35\}$, $\Sigma$ is a $(2,5)$-set & H & \S\ref{sec:star} \\
+2 & frame reduction and lex leader & H & \S\ref{sec:planar}(i) \\
+3 & completeness of the four planar enumerations & C & \file{certs/planar\_complete\_*} \\
+4 & the $3+7$ classes are all classes & H+S & \file{planar\_count, planar\_aut, planar\_validity} \\
+5 & lifting, elation normalisation, units & H+S & \file{lemma\_checks} \\
+6 & encoder semantics & H+S & \file{ENCODER-SEMANTICS.md}, \file{encoder\_exhaustive} \\
+7 & all formulas are the intended files & C & \file{rebuild\_all.py} versus manifest \\
+8 & plane formula valid for sections & H & local counts \\
+9 & first-stage completeness (10), cube list & C+S & \file{certs/cover1\_*}, \file{cover\_asserts} \\
+10 & homothety reduction & H+S & \file{lemma\_checks} \\
+11 & $174$ cube refutations ($167$ + $7$) & C & manifest \\
+12 & second-stage completeness (8), $1{,}084$ children & C+S & \file{certs/cover2\_*} \\
+13 & LRAT checker & L & \texttt{cake\_lpr} \cite{TanHM} \\
+\bottomrule
+\end{tabular}
+\caption{Steps of the proof and their status.}\label{tab:steps}
+\end{table}
+
+\section{Reduction from all $q<25$ and $r\ge3$ to $\PG(3,9)$}\label{sec:reduce}
+
+\paragraph{From $r\ge 4$ to $r=3$.}
+Let $O\subseteq\PG(r,q)$ have type $(a,b)$, $r\ge4$.
+If $0<a<b<q+1$, any solid $X$ meets $O$ in a non-empty proper subset $S$ all of whose lines meet it in $a$ or $b$ points.
+Only one value on the lines of $X$ is impossible (counting $|S|$ from a point inside and a point outside $S$ gives $1+(q^2+q+1)(c-1)=(q^2+q+1)c$), and $S$ is not a point, a hyperplane of $X$ or a complement of one, since these have values $0$ or $1$ or $q$ or $q+1$.
+So $S$ is non-trivial of type $(a,b)$ in $\PG(3,q)$.
+If $a=0$, take a line with $b$ points and a solid containing it, to get a non-empty proper subset of $\PG(3,q)$ whose lines meet it in $0$ or $b$ points, both values occurring; the counting conditions in the next paragraph and \cite{Nap} leave only $b=1$ and $b=q$, and these force $O$ itself to be a point or the complement of a hyperplane; the case $b=q+1$ with $a>0$ is the complement of a set whose first value is $0$ and is handled by complementation.
+This agrees with the remark in the proof of \cite[Theorem 12.5]{CK} that one may assume $r=3$.
+\textbf{[H]} (written out in \file{LITERATURE-CHECK.md}, Section~3).
+
+\paragraph{From $q<25$ to $q=9$, $r=3$.}
+By \cite[Theorem 12.5]{CK}, a non-trivial set of type $(a,b)$ in $\PG(r,q)$, $r\ge3$, forces $q$ to be an odd square; the only odd square below $25$ is $9$, and then $(a,b)$ is $(2,5)$ or $(5,8)$.
+\textbf{[S]} As a cross-check of this arithmetic we solved, for every prime power $q\le32$ and every $0\le a<b\le q+1$, the line-moment equation together with the integrality of point-local and plane-section counts.
+Besides the trivial types, the only survivors are the types $(0,t)$ with $t=2,3,4,5$ at $q=4,9,16,25$, the types $(2,5),(5,8)$ at $q=9$, and $(8,13),(13,18)$ at $q=25$.
+The types $(0,t)$ are excluded by Napolitano \cite[Corollary 4.4]{Nap}, which credits Tallini Scafati: for $r\ge3$ a set of type $(0,n)$ with respect to lines has $n=1$ or $n=q$ and is a point or the complement of a hyperplane.
+The case $(2,5)$ at $q=9$, $r=3$ is Theorem~\ref{thm:main}.
+
+\section{Verification}
+
+\paragraph{Tools.}
+CaDiCaL 3.0.1 (upstream commit \texttt{c607304}\dots, \texttt{-O3 -DNDEBUG}), binary SHA-256 \texttt{f30ecc0f\dots}, run as \texttt{cadical -t 7200 --lrat=true --binary=true --congruence=false} \cite{BFFF};
+\texttt{cake\_lpr} \cite{TanHM} built from upstream commit \texttt{a36874a8}\dots, binary SHA-256 \texttt{272a75de\dots}, run as \texttt{cake\_lpr --CML\_HEAP\_SIZE=<MB> --CML\_STACK\_SIZE=1000 cnf lrat}; a result counts only if its last line is \texttt{s VERIFIED UNSAT}.
+The solver's own answer is not trusted.
+Full hashes and commits are in \file{PROOF-CHAIN.md}, Section~4.
+
+\paragraph{Formulas.}
+$4$ planar-completeness, $10$ base, $167$ monolithically refuted cubes, $1{,}224$ children, and $19$ completeness formulas ($10$ first-stage, $9$ second-stage).
+The cube and child formulas are not stored; the script \file{replay/rebuild\_all.py} (standard library, about $33$ s) rebuilds all $1{,}424$ formulas from scratch, with its own $\F_9$, $\PG(3,9)$, star set-up and encoder, and compares each SHA-256 with \file{certs/manifest.jsonl}: no mismatch.
+
+\paragraph{Where the proofs were checked.}
+The $167$ cubes and $1{,}084$ children were solved and checked with \texttt{cake\_lpr} in cloud containers (one core and $4$ GiB each; one cube needed $8$ GiB because the checker's heap was exhausted at $3000$ MB), and only the verdict and the hashes of the formula and proof were returned.
+The proofs total $571$ GB and were deleted after checking.
+The $140$ children of the split of $C_1$ number $4$ were solved and checked locally only ($33.3$ GB of proofs, deleted after checking).
+Solving is deterministic: re-running the same binary on the same formula gives the same proof bit for bit.
+We then regenerated the cloud certificates locally with the same binaries: $1{,}250$ of the $1{,}251$ ($166$ of the $167$ directly closed cubes and all $1{,}084$ children; $77.5$ CPU-hours of solving and checking; a first part of $299$ was done on 11 November 2026, the rest, $951$ certificates, finished on 13 November 2026): all $1{,}250$ agree with the cloud records in status, conflict count, proof size, proof SHA-256 and formula SHA-256, and none timed out or failed the checker.
+The one cube not regenerated is $C_1$ number $4$ (proof $4.96$ GB, checker heap $6500$ MB); it is closed locally by its split, whose completeness proof and $140$ children were all verified locally.
+So each of the $174$ cubes has a refutation that was verified on the local machine.
+The $19$ completeness proofs and the $4$ planar proofs are stored (\file{certs/}); On 11 November 2026 we re-ran \texttt{cake\_lpr} (binary SHA-256 \texttt{272a75de\dots}, heap $2000$ MB, one thread, about four minutes) on the $18$ completeness proofs then existing and all $4$ planar proofs: all $22$ gave \texttt{s VERIFIED UNSAT}, and the SHA-256 of each formula and proof equals the manifest (\file{logs/cake\_recheck\_local.log}); the $19$th (\file{cover2\_C1\_c04}) was checked the same way on 13 November 2026 (\file{logs/cake\_recheck\_c1c04cover.log}).
+
+\paragraph{Independent checks of the hand steps.}
+\file{replay/lemma\_checks.py} (elations, homotheties, local counts on the actual geometry), \file{replay/cover\_asserts.py}, \file{replay/planar\_validity.py}, \file{replay/planar\_count.py}, \file{replay/planar\_aut.py}, \file{replay/encoder\_exhaustive.py} and \file{replay/order3\_check.py}.
+They are written in the standard library only, run in seconds to minutes, and each raises on failure.
+The proof was also reviewed by a second AI system acting as a referee; its report found no mathematical error and asked for several of these checks, which were then written; the exchange is in the archive.
+
+\paragraph{Compute.}
+From the manifest: the $167$ cubes took $72$ CPU-hours of solving, the $1{,}084$ children $47$, the $18$ earlier completeness proofs $0.15$; in all about $120$ CPU-hours, about $15$ hours on $8$ threads; the local split of $C_1$ number $4$ adds $4.2$ CPU-hours.
+The four planar enumerations took about $1.1$ CPU-hours of solving.
+
+\subsection{Trust base and limitations}\label{sec:trust}
+\begin{itemize}
+\item \texttt{cake\_lpr}, the CakeML compiler and the HOL4 proof of the checker are cited, not re-checked. CaDiCaL is not trusted.
+\item The refutation proofs were deleted after checking, so a reader trusts the drivers' records (formula hash, proof hash and size, the checker's last line) or re-runs them. For $1{,}250$ of the $1{,}251$ cloud certificates the local run agrees bit for bit with the cloud run, and the remaining cube is closed by a split verified locally only; no refutation rests on a cloud verdict alone. The proofs can be regenerated in about $125$ CPU-hours with the commands below.
+\item The hand lemmas (parameters, star, normalisation, homotheties, local counts) are proved in the text and machine-checked on the actual geometry, but are not formalised in a proof assistant.
+\item Exactness of the encoder at the real sizes rests on the size-independent proof and on exhaustive tests of small shapes and sampling at full size, not on enumeration (there are about $10^{23}$ subsets of size $26$ of $91$ points).
+\item The base formula as a whole has no positive example (that is the theorem). As a control, the same machinery finds a set of type $(1,4,10)$ with $280$ points on a Hermitian surface and the exact check accepts it.
+\item The planar classification has not been compared with \cite{PR}.
+\item The note has not been peer reviewed.
+\end{itemize}
+
+\section{Related work, citations and novelty}\label{sec:lit}
+Calderbank--Kantor \cite{CK} attribute their Theorem 12.5 to Tallini Scafati's 1966 notes \cite{TS66}; Kurz et al.\ and Ihringer cite \cite{TS72} and \cite{TS76}; Gavrilyuk--Matkin cite \cite{TS66} and \cite{CK}.
+We cite her through \cite{CK} and have not read these papers.
+Gavrilyuk and Matkin \cite{GM} remark that all planar sections of a hypothetical set are the $(2,5)$-sets of $\PG(2,9)$ found by Penttila and Royle, that one could try a computer search, and that it would probably require too much computational effort.
+Our first step is that remark.
+We searched the web, arXiv, and the cited papers for a proof or a partial result on $\PG(3,9)$ and found none; the search was repeated on 15 November 2026 (arXiv, Zenodo, and web search standing in for GitHub and Google Scholar), again with no result, and is recorded in the file \texttt{LITERATURE-CHECK.md}.
+
+\section{Reproduction and availability}
+All commands run from the folder \file{pg39/} of the archive.
+\begin{verbatim}
+python replay/rebuild_all.py --selftest   # 1,424 formulas vs manifest, stdlib, ~40 s
+python replay/cover_asserts.py --lrat     # cover logic, ~40 s
+python replay/planar_validity.py          # planar lists, ~6 s
+python replay/planar_count.py; python replay/planar_aut.py
+python replay/lemma_checks.py; python replay/level0_arith.py
+python replay/encoder_exhaustive.py       # ~2.5 min (--quick: shorter)
+python replay/order3_check.py
+# re-check a certificate (stored ones: certs/cover*, certs/planar*):
+cake_lpr --CML_HEAP_SIZE=2000 --CML_STACK_SIZE=1000 X.cnf X.lrat
+# check that the cube formulas of a case are the manifest's (writes nothing):
+python replay/rebuild_all.py --only cubes --cases A0
+# regenerate and check one refutation (about 125 CPU-hours for all; this cube about 55 minutes; WSL;
+# set ROOT and the tool paths at the top of the script; needs the base formulas cnf/ from Zenodo):
+python3 code/a_slice_driver.py results/full_rerun_stage3.json --only C0_c08 --dry --out one --workers 1
+# the driver writes the formula, runs
+#   cadical -t 7200 --lrat=true --binary=true --congruence=false X.cnf X.lrat
+#   cake_lpr --CML_HEAP_SIZE=2000 --CML_STACK_SIZE=1000 X.cnf X.lrat
+# and compares hashes and conflict counts with the cloud record
+\end{verbatim}
+The single-cube command above was run once on 15 November 2026 in the working tree (one thread: 49 minutes of solving, 6 of checking); the formula and proof hashes and the conflict count equal the cloud record (\texttt{results/one\_dry.jsonl}).
+Code, scripts, the cube and split lists, manifest and logs are at \url{https://github.com/LeeMarshall1113/ai-math-results/tree/main/results/pg39-type25}; the large formulas and the stored proofs are at \url{https://doi.org/10.5281/zenodo.24259948}.
+
+\section*{Use of AI}
+The search, the encodings, the certificates and the first draft of this note were produced by AI assistants (Claude, Anthropic) under the author's direction.
+An adversarial review was carried out by a second AI system.
+No human has refereed it.
+The author takes responsibility for the content.
+
+{\footnotesize
+\begin{thebibliography}{99}
+\setlength{\itemsep}{1pt}
+\bibitem{CK} R.~Calderbank and W.~M.~Kantor, \emph{The geometry of two-weight codes}, Bull.\ London Math.\ Soc.\ \textbf{18} (1986), no.~2, 97--122. doi:10.1112/blms/18.2.97. Theorem 12.5 read in the open scan at \url{https://darkwing.uoregon.edu/~kantor/PAPERS/2-WeightCodes.pdf}.
+\bibitem{GM} A.~L.~Gavrilyuk and I.~Matkin, \emph{Cameron--Liebler line classes in $\mathrm{PG}(3,5)$}, arXiv:1803.10442 (2018); J.\ Combin.\ Des.\ \textbf{26} (2018), no.~12, 563--580. doi:10.1002/jcd.21625.
+\bibitem{Ihr} F.~Ihringer, \emph{A survey of Cameron--Liebler sets and low degree Boolean functions in Grassmann graphs}, arXiv:2411.16288 (v1 Nov 2024, v2 Jun 2025); accepted to the conference volume of Sum(m)it280.
+\bibitem{KLPR} S.~Kurz, I.~Landjev, F.~Pavese and A.~Rousseva, \emph{The geometry of $(t \bmod q)$-arcs}, arXiv:2211.16793 (2022); Des.\ Codes Cryptogr.\ \textbf{93} (2025), no.~2, 359--372. doi:10.1007/s10623-023-01290-w.
+\bibitem{LH} E.~Lane-Harvard, \emph{New constructions of strongly regular graphs}, PhD dissertation, Colorado State University, 2014. \url{http://hdl.handle.net/10217/83754}, doi:10.25675/3.022716.
+\bibitem{Nap} V.~Napolitano, \emph{Two character sets in finite linear spaces}, Contrib.\ Discrete Math.\ \textbf{3} (2008), no.~1, 123--133. doi:10.55016/ojs/cdm.v3i1.61962. % UNVERIFIED (page range 123--133 not confirmed; journal page and Crossref list none)
+\bibitem{PR} T.~Penttila and G.~F.~Royle, \emph{Sets of type $(m,n)$ in the affine and projective planes of order nine}, Des.\ Codes Cryptogr.\ \textbf{6} (1995), 229--245. doi:10.1007/BF01388477. (Bibliographic data from zbMATH; full text not accessible to us.)
+\bibitem{TS66} M.~Tallini Scafati, \emph{$(k,n)$-archi di un piano grafico finito, con particolare riguardo a quelli con due caratteri}, Note I, II, Atti Accad.\ Naz.\ Lincei Rend.\ Cl.\ Sci.\ Fis.\ Mat.\ Natur.\ (8) \textbf{40} (1966), 812--818, 1020--1025. % UNVERIFIED (pages as in Calderbank--Kantor; another bibliography gives 1020--1024; no primary record found)
+\bibitem{TS72} M.~Tallini Scafati, \emph{Calotte di tipo $(m,n)$ in uno spazio di Galois $S_{r,q}$}, Atti Accad.\ Naz.\ Lincei Rend.\ Cl.\ Sci.\ Fis.\ Mat.\ Natur.\ (8) \textbf{53} (1972), no.~1--2, 71--81.
+\bibitem{TS76} M.~Tallini Scafati, \emph{Sui $k$-insiemi di uno spazio di Galois $S_{r,q}$ a due soli caratteri nella dimensione $d$}, Atti Accad.\ Naz.\ Lincei Rend.\ Cl.\ Sci.\ Fis.\ Mat.\ Natur.\ (8) \textbf{60} (1976), no.~6, 782--788. % UNVERIFIED (pages and issue as given by Ihringer; no primary record opened)
+\bibitem{TanHM} Y.~K.~Tan, M.~J.~H.~Heule and M.~O.~Myreen, \emph{cake\_lpr: verified propagation redundancy checking in CakeML}, TACAS 2021, LNCS 12652, 223--241. doi:10.1007/978-3-030-72013-1\_12.
+\bibitem{BFFF} A.~Biere, T.~Faller, K.~Fazekas, M.~Fleury, N.~Froleyks and F.~Pollitt, \emph{CaDiCaL 2.0}, CAV 2024, LNCS 14681, 133--152. doi:10.1007/978-3-031-65627-9\_7. We used version 3.0.1 of the solver, \url{https://github.com/arminbiere/cadical}.
+\end{thebibliography}
+}
+
+\end{document}

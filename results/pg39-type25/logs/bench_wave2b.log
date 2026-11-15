@@ -1,0 +1,10 @@
+lease-run: request pg39-4829
+GRANTED 3.0 GB
+lease-run: hard commit cap 9.0 GB for the whole job tree
+jobcap: pid 11616 capped at 9 GB commit (whole process tree)
+{"name": "w2_var_noamo", "cnf": "v_A1s1_noamo.cnf", "solver": "cad", "opts": "--congruence=false", "tlim": 900, "proof": null, "check": null, "start": "11:22:22", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 900.5, "cpu_s": 899.89, "conflicts": 4313809}
+{"name": "w2_var_noksum", "cnf": "v_A1s1_noksum.cnf", "solver": "cad", "opts": "--congruence=false", "tlim": 900, "proof": null, "check": null, "start": "11:22:22", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 900.6, "cpu_s": 899.97, "conflicts": 7985503}
+{"name": "w2_var_planes0", "cnf": "v_A1s1_planes0.cnf", "solver": "cad", "opts": "--congruence=false", "tlim": 900, "proof": null, "check": null, "start": "11:37:23", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 900.5, "cpu_s": 899.97, "conflicts": 5219253}
+{"name": "w2_var_loc91", "cnf": "v_A1s1_loc91.cnf", "solver": "cad", "opts": "--congruence=false", "tlim": 900, "proof": null, "check": null, "start": "11:37:23", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 900.5, "cpu_s": 899.83, "conflicts": 8174880}
+jobcap: exit 0, peak job commit 0.03 GB of 9 GB cap
+lease-run: released pg39-4829

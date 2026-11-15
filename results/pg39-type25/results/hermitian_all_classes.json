@@ -1,0 +1,67 @@
+{
+ "2a_homology_3+1": {
+  "status": "SATISFIABLE",
+  "seconds": 18.1,
+  "extra": "|K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}"
+ },
+ "2b_homology_2+2": {
+  "status": "SATISFIABLE",
+  "seconds": 11.3,
+  "extra": "|K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={37: 280, 28: 540}"
+ },
+ "2c_fixedpointfree": {
+  "status": "TIMEOUT",
+  "seconds": 150.1,
+  "extra": ""
+ },
+ "2d_baer": {
+  "status": "SATISFIABLE",
+  "seconds": 3.5,
+  "extra": "|K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}"
+ },
+ "3a_J211": {
+  "status": "SATISFIABLE",
+  "seconds": 55.3,
+  "extra": "|K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}"
+ },
+ "3b_J22": {
+  "status": "SATISFIABLE",
+  "seconds": 13.4,
+  "extra": "|K|=280 exact=True lines={4: 5670, 10: 112, 1: 1680} planes={37: 280, 28: 540}"
+ },
+ "3c_J31": {
+  "status": "TIMEOUT",
+  "seconds": 150.1,
+  "extra": ""
+ },
+ "5a_scalar_GF81": {
+  "status": "UNSATISFIABLE",
+  "seconds": 0.6,
+  "extra": ""
+ },
+ "5b_fixline": {
+  "status": "UNSATISFIABLE",
+  "seconds": 4.7,
+  "extra": ""
+ },
+ "5c_mixed": {
+  "status": "SATISFIABLE",
+  "seconds": 0.6,
+  "extra": "|K|=280 exact=True lines={10: 112, 1: 1680, 4: 5670} planes={37: 280, 28: 540}"
+ },
+ "7_singer3": {
+  "status": "SATISFIABLE",
+  "seconds": 2.5,
+  "extra": "|K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}"
+ },
+ "13_singer3": {
+  "status": "UNSATISFIABLE",
+  "seconds": 0.2,
+  "extra": ""
+ },
+ "41_singer4": {
+  "status": "UNSATISFIABLE",
+  "seconds": 0.1,
+  "extra": ""
+ }
+}

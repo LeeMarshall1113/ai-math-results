@@ -1,0 +1,1 @@
+[{"name": "w2_seed3", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": ["--congruence=false", "--seed=3"], "tlim": 600}, {"name": "w2_seed4", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": ["--congruence=false", "--seed=4"], "tlim": 600}, {"name": "w2_seed5", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": ["--congruence=false", "--seed=5"], "tlim": 600}]

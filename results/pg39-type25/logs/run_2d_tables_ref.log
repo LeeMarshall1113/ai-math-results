@@ -1,0 +1,10 @@
+planar sigma-invariant sets: {26: 3240, 35: 4212} (21.5s)
+S_empty: allowed sections per plane: min 432 max 432
+reference plane 0: section fixed (26 points)
+2dT S_empty k=260 : UNSATISFIABLE in 116.7s {'backend': 'wsl', 'conflicts': 160940} (vars 234592 clauses 2070469)
+S_point: allowed sections per plane: min 54 max 432
+reference plane 0: section fixed (26 points)
+2dT S_point k=287 : UNSATISFIABLE in 5.0s {'backend': 'wsl', 'conflicts': 1576} (vars 231497 clauses 1822217)
+S_27: allowed sections per plane: min 54 max 432
+reference plane 8: section fixed (26 points)
+2dT S_27 k=287 : UNSATISFIABLE in 2.4s {'backend': 'wsl', 'conflicts': 168} (vars 221669 clauses 1311161)

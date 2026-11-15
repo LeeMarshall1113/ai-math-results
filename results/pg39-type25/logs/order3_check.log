@@ -1,0 +1,75 @@
+plane: 91 points, 91 lines, 10 points/line, 10 lines/point, two lines meet in 1 point: OK
+
+== Step 1: elements of order 3 in PGammaL(3,9) ==
+Theory: |PGL(3,9)|=42456960, |PGammaL(3,9)|=84913920.
+  (g,f) of order 3 => f=0 (f is a homomorphism to Z/2, field automorphism has order 2).
+  In PGL: g^3=lambda*I; cubing is bijective on GF(9)* (gcd(3,8)=1), so g/mu has cube I; x^3-1=(x-1)^3 in char 3,
+  so g/mu is unipotent: Jordan type (2,1) [elation] or (3) [regular unipotent], and nothing else.
+  h u h^-1 = lambda u' with u,u' unipotent forces lambda=1, so PGL-classes of order-3 elements = GL-classes of unipotents.
+  Frobenius preserves Jordan type (rank of g-I), so PGammaL does not merge the two classes.
+  elation I+E13: rank(g-I)=1, commutant dim 5, |C_GL|=46656, class size=7280
+  regular unipotent I+E12+E23: rank(g-I)=2, commutant dim 3, |C_GL|=648, class size=524160
+  total = 531440 ; Steinberg count of nontrivial unipotents q^6-1 = 531440 -> COMPLETE
+  random PGammaL sample: 625 order-3 elements found, all with f=0: True, rank(g/mu - I) histogram {2: 203, 1: 422} (expected only ranks 1 and 2)
+
+== Step 2: exhaustive search, order-3 representatives ==
+
+-- elation I+E13: order 3, 37 point orbits (sizes [1, 3]), 37 line orbits
+   DPLL: 0 invariant (2,5)-sets found, nodes 5, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {}
+   SAT cross-check (pysat, clause per forbidden line assignment): 0 solutions (AGREES)
+
+-- regular unipotent I+E12+E23: order 3, 31 point orbits (sizes [1, 3]), 31 line orbits
+   DPLL: 0 invariant (2,5)-sets found, nodes 5, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {}
+   SAT cross-check (pysat, clause per forbidden line assignment): 0 solutions (AGREES)
+   Why exhaustive: DPLL branches on each free orbit variable both ways; it prunes only when some line's interval [assigned, assigned+free] misses both 2 and 5,
+   and forces a variable only when the other value is infeasible; at leaves all counts are exact. A (2,5)-set invariant under <g> is a union of <g>-orbits, i.e. one of the 2^k unions searched.
+
+== Step 3: controls (same code) ==
+
+-- control order 2: homology diag(1,1,-1): order 2, 51 point orbits (sizes [1, 2]), 51 line orbits
+   DPLL: 20000 invariant (2,5)-sets found, nodes 1728377, 120.2s, exhaustive=False
+   sizes of found sets (each verified directly against all 91 lines): {35: 16141, 26: 3859}
+
+-- control order 2: Frobenius (Baer involution): order 2, 52 point orbits (sizes [1, 2]), 52 line orbits
+   DPLL: 7452 invariant (2,5)-sets found, nodes 1729931, 130.2s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {26: 3240, 35: 4212}
+   SAT cross-check (pysat, clause per forbidden line assignment): 7452 solutions (AGREES)
+
+-- control order 13: order 13, 7 point orbits (sizes [13]), 7 line orbits
+   DPLL: 21 invariant (2,5)-sets found, nodes 41, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {26: 21}
+   SAT cross-check (pysat, clause per forbidden line assignment): 21 solutions (AGREES)
+
+-- control order 5: order 5, 19 point orbits (sizes [1, 5]), 19 line orbits
+   DPLL: 12 invariant (2,5)-sets found, nodes 247, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {35: 8, 26: 4}
+   SAT cross-check (pysat, clause per forbidden line assignment): 12 solutions (AGREES)
+   (all order-5 elements sampled have the same cycle type as the first control)
+
+== Step 4: conic groups ==
+   conic xz=y^2: 10 points (expect 10); line intersection numbers with it: [0, 1, 2]
+
+-- A4=PSL(2,3) via Sym^2 (PΩ(3,3), order 12): |G|=12, point-orbit sizes [3, 4, 6, 6, 6, 6, 12, 12, 12, 12, 12], has elements of order 3: True
+   unions of orbits checked: 2046 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 28 lines with count outside {2,5}; size 19, spectrum {1: 28, 2: 51, 5: 12}, orbit sizes [4, 3, 12]
+   no union of orbits has size 26 or 35
+
+-- S4=PGL(2,3) (SO(3,3), order 24): |G|=24, point-orbit sizes [3, 4, 6, 6, 12, 12, 12, 12, 24], has elements of order 3: True
+   unions of orbits checked: 510 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 28 lines with count outside {2,5}; size 19, spectrum {1: 28, 2: 51, 5: 12}, orbit sizes [4, 3, 12]
+   no union of orbits has size 26 or 35
+
+-- A6=PSL(2,9)=PΩ(3,9) (order 360): |G|=360, point-orbit sizes [10, 36, 45], has elements of order 3: True
+   unions of orbits checked: 6 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 46 lines with count outside {2,5}; size 10, spectrum {0: 36, 1: 10, 2: 45}, orbit sizes [10]
+   no union of orbits has size 26 or 35
+
+-- PGL(2,9)=SO(3,9) (order 720): |G|=720, point-orbit sizes [10, 36, 45], has elements of order 3: True
+   unions of orbits checked: 6 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 46 lines with count outside {2,5}; size 10, spectrum {0: 36, 1: 10, 2: 45}, orbit sizes [10]
+   no union of orbits has size 26 or 35
+
+== SUMMARY ==
+order-3 classes searched (count of invariant (2,5)-sets, exhaustive?): {'elation I+E13': (0, True), 'regular unipotent I+E12+E23': (0, True)}

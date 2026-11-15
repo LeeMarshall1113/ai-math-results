@@ -1,0 +1,14 @@
+lease-run: request pg39-4842
+GRANTED 2.5 GB
+lease-run: hard commit cap 8.5 GB for the whole job tree
+jobcap: pid 26944 capped at 8.5 GB commit (whole process tree)
+C0: plane 0, 122 sections, 16 cubes (9s)
+C1: plane 1, 140 sections, 18 cubes (19s)
+C2: plane 0, 140 sections, 18 cubes (36s)
+C3: plane 1, 122 sections, 16 cubes (48s)
+C4: plane 1, 140 sections, 18 cubes (60s)
+C5: plane 0, 140 sections, 18 cubes (71s)
+C6: plane 10, 140 sections, 18 cubes (82s)
+C jobs: 122
+jobcap: exit 0, peak job commit 0.06 GB of 8.5 GB cap
+lease-run: released pg39-4842

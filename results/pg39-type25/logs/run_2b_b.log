@@ -1,0 +1,8 @@
+PGL(2,9)-orbits on 2-subsets: [45] ; on 5-subsets: [180, 72]
+{"case": 0, "F1": 5, "F2": 2, "k": 287, "status": "UNSATISFIABLE", "seconds": 207.7, "backend": "win", "conflicts": 347485}
+{"case": 1, "F1": 5, "F2": 2, "k": 287, "status": "UNSATISFIABLE", "seconds": 59.5, "backend": "win", "conflicts": 61985}
+{"case": 2, "F1": 5, "F2": 5, "k": 260, "status": "UNSATISFIABLE", "seconds": 6.0, "backend": "win", "conflicts": 8134}
+{"case": 3, "F1": 5, "F2": 5, "k": 260, "status": "UNSATISFIABLE", "seconds": 3.2, "backend": "win", "conflicts": 4598}
+{"case": 4, "F1": 5, "F2": 5, "k": 260, "status": "UNSATISFIABLE", "seconds": 2.3, "backend": "win", "conflicts": 3151}
+{"case": 5, "F1": 5, "F2": 5, "k": 260, "status": "UNSATISFIABLE", "seconds": 2.0, "backend": "win", "conflicts": 2511}
+{"case": 6, "F1": 2, "F2": 2, "k": 260, "status": "TIMEOUT", "seconds": 360.0, "backend": "win"}

@@ -1,0 +1,8 @@
+classes: [64, 40, 32, 32, 16, 16, 2] labelled sets: 61827948 predicted star-normalised count: 6524
+   1000
+   2000
+   3000
+   4000
+   5000
+   6000
+observed 6524, predicted 6524 : MATCH

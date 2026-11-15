@@ -1,0 +1,2 @@
+{"cls": "5c_mixed", "k": 260, "case": 0, "rep": 3, "nforb": 0, "status": "UNKNOWN", "seconds": 904.2, "vars": 71752, "clauses": 405449, "conflicts": 1726490}
+{"cls": "5c_mixed", "k": 260, "case": 1, "rep": 0, "nforb": 160, "status": "UNSATISFIABLE", "seconds": 0.5, "vars": 71752, "clauses": 405609}

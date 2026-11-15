@@ -1,0 +1,19 @@
+{
+ "seed": 20261110,
+ "method": "random.Random(seed).sample(sorted(ids), 12) from the 119 C cubes with a monolithic UNSAT_VERIFIED Modal record, C1_c04 excluded (its cake_lpr check needs a 6500 MB heap)",
+ "population": 119,
+ "sample": [
+  "C1_c08",
+  "C2_c06",
+  "C2_c08",
+  "C2_c15",
+  "C3_c10",
+  "C4_c06",
+  "C4_c16",
+  "C5_c00",
+  "C5_c07",
+  "C5_c08",
+  "C5_c09",
+  "C6_c05"
+ ]
+}

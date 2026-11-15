@@ -1,0 +1,1 @@
+{"id": "A2_c05", "planes_tried": 6, "sections_per_plane": [140, 301, 301, 301, 301, 301], "secs": 333.3, "time": "2026-11-10 20:16:21", "status": "SPLIT", "plane": 1, "children": 140, "assumption_size": 80, "file": "split_A2_c05.json"}

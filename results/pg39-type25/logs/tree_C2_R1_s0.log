@@ -1,0 +1,3 @@
+case C class 2 (aut 32): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+base CNF: 483031 vars 2540820 clauses
+sample 0 depth 1: branching [140] ; fixed 91 points ; UNSAT in 2272.3s conflicts 13817781

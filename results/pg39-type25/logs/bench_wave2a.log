@@ -1,0 +1,10 @@
+lease-run: request pg39-4828
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 4400 capped at 8 GB commit (whole process tree)
+{"name": "w2_seed2", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": "--congruence=false --seed=2", "tlim": 900, "proof": null, "check": null, "start": "11:18:07", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 900.5, "cpu_s": 899.98, "conflicts": 5937236}
+{"name": "w2_seed1", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": "--congruence=false --seed=1", "tlim": 900, "proof": null, "check": null, "start": "11:18:07", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 900.5, "cpu_s": 900.04, "conflicts": 4656195}
+{"name": "w2_seed4", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": "--congruence=false --seed=4", "tlim": 900, "proof": null, "check": null, "start": "11:33:08", "rc": -1, "status": "LIMIT/OTHER", "wall_s": 41.3, "cpu_s": null, "conflicts": null}
+{"name": "w2_seed3", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": "--congruence=false --seed=3", "tlim": 900, "proof": null, "check": null, "start": "11:33:08", "rc": -1, "status": "LIMIT/OTHER", "wall_s": 41.5, "cpu_s": null, "conflicts": null}
+jobcap: exit 0, peak job commit 0.03 GB of 8 GB cap
+lease-run: released pg39-4828

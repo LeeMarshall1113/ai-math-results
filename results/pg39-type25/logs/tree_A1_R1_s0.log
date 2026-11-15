@@ -1,0 +1,4 @@
+case A class 1 (aut 26): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+sample 0 depth 1: branching [140] ; fixed 91 points ; UNSAT in 1957.4s conflicts 19722852
+sample 1 depth 1: branching [140] ; fixed 91 points ; UNSAT in 352.5s conflicts 2427498
+sample 2 depth 1: branching [140] ; fixed 91 points ; UNSAT in 1058.3s conflicts 6445831

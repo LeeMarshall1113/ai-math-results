@@ -1,0 +1,11 @@
+lease-run: request pg39-4821
+GRANTED 5.0 GB
+lease-run: hard commit cap 12.5 GB for the whole job tree
+jobcap: pid 22728 capped at 12.5 GB commit (whole process tree)
+A0: plane 0, 122 sections, 16 cubes (18s)
+A1: plane 0, 140 sections, 18 cubes (28s)
+A2: plane 0, 140 sections, 18 cubes (48s)
+jobs: 53 (1 control + 52 cubes)
+python3: can't open file '/mnt/c/Users/user/Documents/GitHub/erdos-triage/pg39/code/C:/Program Files/Git/mnt/c/Users/user/Documents/GitHub/erdos-triage/pg39/results/../code/a_slice_driver.py': [Errno 2] No such file or directory
+jobcap: exit 2, peak job commit 0.07 GB of 12.5 GB cap
+lease-run: released pg39-4821

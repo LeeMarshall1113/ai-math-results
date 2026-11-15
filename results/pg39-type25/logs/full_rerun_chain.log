@@ -1,0 +1,20 @@
+2026-11-11 14:58:38 waiting for lease pg39-5072 to leave the broker
+2026-11-12 00:16:08 lease pg39-5072 gone
+2026-11-12 00:16:08 stage 1: remaining 258, bad records 0
+2026-11-12 07:36:55 stage 1 slice ended rc=0: remaining 258 -> 20
+2026-11-12 07:37:26 stage 1: remaining 20, bad records 0
+2026-11-12 10:27:12 stage 1 slice ended rc=0: remaining 20 -> 8
+2026-11-12 10:27:42 stage 1: remaining 8, bad records 0
+2026-11-12 11:45:35 stage 1 slice ended rc=0: remaining 8 -> 0
+2026-11-12 11:46:05 stage 1: remaining 0, bad records 0
+2026-11-12 11:46:05 stage 2: remaining 18, bad records 0
+2026-11-12 13:02:09 stage 2 slice ended rc=0: remaining 18 -> 12
+2026-11-12 13:02:39 stage 2: remaining 12, bad records 0
+2026-11-12 18:56:40 stage 2 slice ended rc=0: remaining 12 -> 0
+2026-11-12 18:57:10 stage 2: remaining 0, bad records 0
+2026-11-12 18:57:11 stage 3: remaining 9, bad records 0
+2026-11-13 00:28:55 stage 3 slice ended rc=0: remaining 9 -> 2
+2026-11-13 00:29:25 stage 3: remaining 2, bad records 0
+2026-11-13 04:11:34 stage 3 slice ended rc=0: remaining 2 -> 0
+2026-11-13 04:12:04 stage 3: remaining 0, bad records 0
+2026-11-13 04:12:04 ALL STAGES DONE

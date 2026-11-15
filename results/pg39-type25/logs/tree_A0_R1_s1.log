@@ -1,0 +1,3 @@
+case A class 0 (aut 80): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+sample 0 depth 1: branching [122] ; fixed 91 points ; UNSAT in 821.1s conflicts 3459883
+sample 1 depth 1: branching [122] ; fixed 91 points ; ERR4294967295 in 2257.7s conflicts None

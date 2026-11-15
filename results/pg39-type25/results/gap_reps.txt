@@ -1,0 +1,35 @@
+Size(G) = 406078744780800   expected |PGammaL(4,9)| = 
+406078744780800   equal: true
+degree 820  primes [ 2, 3, 5, 7, 13, 41 ]
+2a_homology_3+1  order 2  |C_G(a)| = 679311360  class size 597780  fixed pts 
+92
+2b_homology_2+2  order 2  |C_G(a)| = 16588800  class size 24479091  fixed pts 
+20
+2c_fixedpointfree  order 2  |C_G(a)| = 21254400  class size 
+19105632  fixed pts 0
+2d_baer  order 2  |C_G(a)| = 24261120  class size 16737840  fixed pts 40
+3a_J211  order 3  |C_G(a)| = 680244480  class size 596960  fixed pts 91
+3b_J22  order 3  |C_G(a)| = 9447840  class size 42981120  fixed pts 10
+3c_J31  order 3  |C_G(a)| = 104976  class size 3868300800  fixed pts 10
+5a_scalar_GF81  order 5  |C_G(a)| = 5313600  class size 76422528  fixed pts 0
+5b_fixline  order 5  |C_G(a)| = 57600  class size 7049978208  fixed pts 10
+5c_mixed  order 5  |C_G(a)| = 1600  class size 253799215488  fixed pts 0
+7_singer3  order 7  |C_G(a)| = 728  class size 557800473600  fixed pts 1
+13_singer3  order 13  |C_G(a)| = 1456  class size 278900236800  fixed pts 1
+41_singer4  order 41  |C_G(a)| = 820  class size 495217981440  fixed pts 0
+2a_homology_3+1 ~ 2b_homology_2+2 as subgroups: false
+2a_homology_3+1 ~ 2c_fixedpointfree as subgroups: false
+2a_homology_3+1 ~ 2d_baer as subgroups: false
+2b_homology_2+2 ~ 2c_fixedpointfree as subgroups: false
+2b_homology_2+2 ~ 2d_baer as subgroups: false
+2c_fixedpointfree ~ 2d_baer as subgroups: false
+3a_J211 ~ 3b_J22 as subgroups: false
+3a_J211 ~ 3c_J31 as subgroups: false
+3b_J22 ~ 3c_J31 as subgroups: false
+5a_scalar_GF81 ~ 5b_fixline as subgroups: false
+5a_scalar_GF81 ~ 5c_mixed as subgroups: false
+5b_fixline ~ 5c_mixed as subgroups: false
+
+real	0m2.151s
+user	0m0.000s
+sys	0m0.076s

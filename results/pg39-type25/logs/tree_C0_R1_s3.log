@@ -1,0 +1,2 @@
+case C class 0 (aut 64): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+sample 0 depth 1: branching [122] ; fixed 91 points ; UNSAT in 601.5s conflicts 5451731

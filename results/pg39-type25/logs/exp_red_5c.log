@@ -1,0 +1,3 @@
+5c_mixed k=260 variant local   : 530536 vars 2240257 clauses (build 6s) -> UNKNOWN in 240.2s {'conflicts': 913280}
+5c_mixed k=260 variant both    : 832314 vars 3446549 clauses (build 16s) -> UNKNOWN in 240.3s {'conflicts': 183600}
+5c_mixed k=260 variant planes  : 373530 vars 1611741 clauses (build 10s) -> UNKNOWN in 240.4s {'conflicts': 265614}

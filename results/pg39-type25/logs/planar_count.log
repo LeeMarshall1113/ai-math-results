@@ -1,0 +1,14 @@
+lease-run: request pg39-5029
+GRANTED 1.0 GB
+lease-run: hard commit cap 7.0 GB for the whole job tree
+jobcap: pid 31852 capped at 7 GB commit (whole process tree)
+planar frame data built (4.8s): |H_R| = [64, 160]
+m=26 R#0 (orbit 180, |H_R| = 64): 54 lex-leader solutions, |Omega0| = 2940, N(R) = 11340
+m=26 R#1 (orbit 72, |H_R| = 160): 20 lex-leader solutions, |Omega0| = 2562, N(R) = 9882
+m=26: number of (2,5)-sets by the frame count (no nauty): 9634464 ; by the class list sum |G|/|Aut_i| (|G| = 84913920, Aut = [80, 26, 16]): 9634464 ; EQUAL
+m=35 R#0 (orbit 180, |H_R| = 64): 815 lex-leader solutions, |Omega0| = 50640, N(R) = 136728
+m=35 R#1 (orbit 72, |H_R| = 160): 456 lex-leader solutions, |Omega0| = 69120, N(R) = 186624
+m=35: number of (2,5)-sets by the frame count (no nauty): 61827948 ; by the class list sum |G|/|Aut_i| (|G| = 84913920, Aut = [64, 40, 32, 32, 16, 16, 2]): 61827948 ; EQUAL
+COUNTING IDENTITY HOLDS FOR m = 26 AND m = 35
+jobcap: exit 0, peak job commit 0.01 GB of 7 GB cap
+lease-run: released pg39-5029

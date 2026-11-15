@@ -1,0 +1,11 @@
+lease-run: request pg39-4853
+GRANTED 4.0 GB
+lease-run: hard commit cap 10.0 GB for the whole job tree
+jobcap: pid 22836 capped at 10 GB commit (whole process tree)
+12:47:45 start: 3 jobs to do (0 already done), workers 2, scratch cap 17.0 GB, wall limit 25 s per cube
+12:47:50 RECORD {"tag": "TEST_unsat", "kind": "cube", "wall_start": "2026-11-08 12:47:45", "solver_seconds": 1.1, "solver_cpu_seconds": 0.89, "max_rss_mb": 335.43, "cls": "star_A0", "k": 287, "case": "A", "cube_class": 0, "cube": 0, "orbit_size": 8, "plane": 0, "status": "UNSAT_VERIFIED", "cake_lpr": "s VERIFIED UNSAT", "cake_seconds": 4.2, "lrat_bytes": 848425, "total_cpu_hours": 0.0014}
+12:47:57 RECORD {"tag": "control_hermitian", "kind": "control", "wall_start": "2026-11-08 12:47:45", "solver_seconds": 11.9, "conflicts": 10178, "solver_cpu_seconds": 11.51, "max_rss_mb": 573.32, "status": "CONTROL_FAILED", "size": 280, "equals_hermitian": false}
+12:48:16 RECORD {"tag": "TEST_timeout", "kind": "cube", "wall_start": "2026-11-08 12:47:50", "solver_seconds": 25.2, "conflicts": 33950, "solver_cpu_seconds": 25.03, "max_rss_mb": 554.24, "cls": "star_A0", "k": 287, "case": "A", "cube_class": 0, "cube": 0, "orbit_size": 8, "plane": 0, "status": "TIMEOUT_2h", "flag": "not closed after 25 s: to be split to level 2 (split_level2.py), not run on"}
+12:48:16 RECORD {"tag": "a_slice_summary", "status": "BATCH_DONE", "peak_scratch_gb": 0.11, "stopped_on_sat": false, "time": "2026-11-08 12:48:16"}
+jobcap: exit 0, peak job commit 0.01 GB of 10 GB cap
+lease-run: released pg39-4853

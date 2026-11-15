@@ -1,0 +1,19 @@
+lease-run: request pg39-4846
+GRANTED 4.0 GB
+lease-run: hard commit cap 10.0 GB for the whole job tree
+jobcap: pid 32744 capped at 10 GB commit (whole process tree)
+cadical rc=20
+c conflicts:               2427498      7052.04    per second
+c total process time since initialization:       345.08    seconds
+c maximum resident set size of process:          588.11    MB
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:45.27
+	Maximum resident set size (kbytes): 602228
+lrat bytes 592548314
+92b303d6c95286d5dd79510aabf8492b4ef915fafe1eb6cecdee07a348b16699  calib.lrat
+80cb367b29be45513add4df4080832476032658da814830fa8b78d6e18a6cc92  b_A1s1.cnf
+cake rc=0
+s VERIFIED UNSAT
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:37.98
+	Maximum resident set size (kbytes): 3077376
+jobcap: exit 0, peak job commit 0.01 GB of 10 GB cap
+lease-run: released pg39-4846

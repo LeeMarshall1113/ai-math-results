@@ -1,0 +1,11 @@
+case A class 1 (aut 26): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+first plane L1: 140 sections (8.1s)
+first plane L2: 140 sections (16.3s)
+first plane L3: 140 sections (25.5s)
+case A class 2 (aut 16): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+first plane L1: 140 sections (21.3s)
+first plane L2: 140 sections (47.5s)
+first plane L3: 140 sections (56.5s)
+case B class 0 (aut 80): triple (2, 3, 11) ; plane sizes [35, 26, 26]
+case B class 1 (aut 26): triple (2, 3, 11) ; plane sizes [35, 26, 26]
+case B class 2 (aut 16): triple (2, 3, 12) ; plane sizes [35, 26, 26]

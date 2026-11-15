@@ -1,0 +1,16 @@
+q=3 point                k=1    type (0,1) lines {1: 13, 0: 117} planes {0: 27, 1: 13} : matches table row
+q=3 plane                k=13   type (1,4) lines {1: 117, 4: 13} planes {13: 1, 4: 39} : matches table row
+q=3 complement of plane  k=27   type (0,3) lines {3: 117, 0: 13} planes {0: 1, 9: 39} : matches table row
+q=3 complement of point  k=39   type (3,4) lines {3: 13, 4: 117} planes {13: 27, 12: 13} : matches table row
+q=4 point                k=1    type (0,1) lines {1: 21, 0: 336} planes {0: 64, 1: 21} : matches table row
+q=4 plane                k=21   type (1,5) lines {1: 336, 5: 21} planes {21: 1, 5: 84} : matches table row
+q=4 complement of plane  k=64   type (0,4) lines {4: 336, 0: 21} planes {0: 1, 16: 84} : matches table row
+q=4 complement of point  k=84   type (4,5) lines {4: 21, 5: 336} planes {21: 64, 20: 21} : matches table row
+q=5 point                k=1    type (0,1) lines {1: 31, 0: 775} planes {0: 125, 1: 31} : matches table row
+q=5 plane                k=31   type (1,6) lines {1: 775, 6: 31} planes {31: 1, 6: 155} : matches table row
+q=5 complement of plane  k=125  type (0,5) lines {5: 775, 0: 31} planes {0: 1, 25: 155} : matches table row
+q=5 complement of point  k=155  type (5,6) lines {5: 31, 6: 775} planes {31: 125, 30: 31} : matches table row
+PG(2,9) Hermitian curve (unital)   k=28 type (1,4) lines {4: 63, 1: 28} : matches planar table (b_P=9 d_P=6)
+PG(2,9) Baer subplane              k=13 type (1,4) lines {4: 13, 1: 78} : matches planar table (b_P=4 d_P=1)
+PG(3,9) Hermitian surface: |H| = 280, line counts {4: 5670, 1: 1680, 10: 112}, plane counts {28: 540, 37: 280}
+target (2,5) sets in PG(3,9): see results/params_table.txt

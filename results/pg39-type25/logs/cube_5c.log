@@ -1,0 +1,9 @@
+R' is in PGammaL(2,9)-orbit #1 (size 72)  (3.0s)
+|W| = 20, |H_R| = 160, |Q| = 12960
+labelled planar solutions with section R' on l1: 9882  (6.6s)
+U has 415 points = 83 orbits (free orbits: 81)
+  2000 cubes done, 8.0s, {'unsat': 2000, 'sat': 0}
+  4000 cubes done, 10.8s, {'unsat': 4000, 'sat': 0}
+  6000 cubes done, 13.1s, {'unsat': 6000, 'sat': 0}
+  8000 cubes done, 15.3s, {'unsat': 8000, 'sat': 0}
+cubes: 9882 total, {'unsat': 9882, 'sat': 0}, 17.8s

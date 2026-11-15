@@ -1,0 +1,21 @@
+lease-run: request pg39-4822
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 10532 capped at 8 GB commit (whole process tree)
+made b_A0s0
+made b_A0s1
+made b_A1s1
+made b_C0s3
+made b_A1s0
+made b_C2s0
+variant A1 noamo 490402 1921110
+variant A1 noksum 336610 1955139
+variant A1 planes0 670114 3288879
+variant A1 loc91 747982 3600444
+variant A0 noamo 490402 1921110
+variant A0 noksum 336610 1955139
+variant A0 planes0 670114 3288879
+variant A0 loc91 747982 3600444
+cover cnf made
+jobcap: exit 0, peak job commit 0.07 GB of 8 GB cap
+lease-run: released pg39-4822

@@ -1,0 +1,13 @@
+lease-run: request pg39-5020
+GRANTED 1.5 GB
+lease-run: hard commit cap 7.5 GB for the whole job tree
+jobcap: pid 25808 capped at 7.5 GB commit (whole process tree)
+encoder selftest OK
+planar frame data built (4.4s): |H_R| = [64, 160]
+planar_complete_k26_R0 rebuilt (14927 vars, 61731 clauses)
+planar_complete_k35_R0 rebuilt (15197 vars, 63572 clauses)
+planar_complete_k26_R1 rebuilt (22543 vars, 84545 clauses)
+planar_complete_k35_R1 rebuilt (22813 vars, 86061 clauses)
+SUMMARY: 4 CNFs rebuilt and equal to the recorded hash, 0 MISMATCHES, 0 tags not found in the manifest (5s)
+jobcap: exit 0, peak job commit 0.04 GB of 7.5 GB cap
+lease-run: released pg39-5020

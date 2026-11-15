@@ -1,0 +1,89 @@
+diff --git a/pg39/replay/cover_asserts.py b/pg39/replay/cover_asserts.py
+index a5f6413..7e1e885 100644
+--- a/pg39/replay/cover_asserts.py
++++ b/pg39/replay/cover_asserts.py
+@@ -268,7 +268,7 @@ def main():
+     for fn in sorted(os.listdir(CERTS)):
+         if fn.startswith("split_") and fn.endswith(".json"):
+             splits[fn[6:-5]] = json.load(open(os.path.join(CERTS, fn)))
+-    check(len(splits) == 8, "%d split files" % len(splits))
++    check(len(splits) == 9, "%d split files" % len(splits))      # 8 from the cloud timeouts + C1_c04 (local split, 2026-11-11)
+     n_children = 0
+     child_tags = {}
+     for sid, sp in sorted(splits.items()):
+@@ -334,7 +334,8 @@ def main():
+         print("  %-7s pi1=%2d pi2=%2d (m2=%d): common line %2d pts (P0 + dir %s), %d points off it, %d fixed there by units [%s] -> %d free; %3d children, all consistent sections; "
+               "cover2 CNF stored == rebuilt == manifest, blocking clauses == children" % (sid, L1, L2, P2.m, len(inter), G.points3[v], len(off), len(units_off),
+                                                                                        "; ".join(why) or "none", len(free2), sp["n"]), flush=True)
+-    check(n_children == 1084, "children total %d" % n_children)
++    check(n_children == 1084 + splits["C1_c04"]["n"], "children total %d" % n_children)      # 1,084 children with cloud records + the local children of C1_c04
++    check(all(sp["n"] == len(sp["children"]) for sp in splits.values()), "n")
+ 
+     # ---------------------------------------------------------------- coverage
+     print("== COVERAGE ==")
+@@ -346,7 +347,7 @@ def main():
+             check(verified(r), "%s has a non-verified manifest record %s" % (t, r.get("status")))
+     nomono = sorted(all_cubes - mono_ok)
+     check(len(mono_ok) == 167 and len(nomono) == 7, "monolithic verified %d, without %d" % (len(mono_ok), len(nomono)))
+-    check(set(nomono) <= set(splits) and set(splits) - set(nomono) == {"C2_c00"}, "cubes without a monolithic record are not exactly the split parents minus C2_c00")
++    check(set(nomono) <= set(splits) and set(splits) - set(nomono) == {"C2_c00", "C1_c04"}, "cubes without a monolithic record are not exactly the split parents minus C2_c00 and C1_c04")
+     ledger = {}
+     for l in open(os.path.join(RES, "modal_ledger.jsonl")):
+         try:
+@@ -369,6 +370,11 @@ def main():
+     print("      each of the 7 is a Modal TIMEOUT (stage-1 records: %s; manual operator-cancel line: %s) and each has a split file." % (timeouts, manual_to))
+     c2 = by["C2_c00"]
+     check(all(verified(r) for r in c2) and "C2_c00" in splits, "C2_c00")
++    c1 = by["C1_c04"]
++    check(len(c1) == 1 and verified(c1[0]) and "C1_c04" in splits, "C1_c04")
++    check(c1[0].get("via") == "modal" and c1[0].get("superseded_for_verification_by") == "split C1_c04: cover2_C1_c04 + local children", "C1_c04 cloud record is not marked as superseded-for-verification by the local split")
++    print("  M2b: second redundant split C1_c04: its monolithic cloud record is verified (cake_lpr heap 6500 MB, over the 6 GB WSL cap) and is marked superseded-for-verification in the manifest; the cube is closed again by cover2_C1_c04 + %d children,"
++          " all with LOCAL records (via = local, cake_lpr heap <= 4500 MB): two independent refutations of the cube" % splits["C1_c04"]["n"])
+     print("  M2: redundant 8th split C2_c00: monolithic manifest record verified (conflicts %s, conflicts recorded in ledger %s); its 140 children were nevertheless run and verified:" % (c2[0].get("conflicts"), ledger["C2_c00"].get("conflicts")))
+     print("      ledger note of the manual line: %s" % ledger["C2_c00#manual"][0]["note"][:260])
+     # M3
+@@ -379,10 +385,13 @@ def main():
+             bad.append(tag)
+     check(not bad, "children without a verified unique manifest record: %s" % bad[:5])
+     in_manifest = {t for t in by if re.match(r"^[AC]\d_c\d\d_p\d+_k\d+$", t)}
++    for t in child_tags:
++        if child_tags[t] == "C1_c04":
++            check(all(r.get("via") == "local" for r in by[t]), "%s: child of C1_c04 is not a local record" % t)
+     check(in_manifest == set(child_tags), "manifest child tags differ from the split files: extra %s missing %s" % (sorted(in_manifest - set(child_tags))[:3], sorted(set(child_tags) - in_manifest)[:3]))
+     covers = [t for t in by if t.startswith("cover1_") or t.startswith("cover2_")]
+-    check(len(covers) == 18 and all(verified(r) for t in covers for r in by[t]), "cover records")
+-    print("  M3: %d children in the 8 split files (%s); %d child tags in the manifest, the same set, each with a verified UNSAT record; 18 cover records verified" % (
++    check(len(covers) == 19 and all(verified(r) for t in covers for r in by[t]), "cover records")
++    print("  M3: %d children in the 8 split files (%s); %d child tags in the manifest, the same set, each with a verified UNSAT record; 19 cover records verified" % (
+         len(child_tags), ", ".join("%s:%d" % (s, p["n"]) for s, p in sorted(splits.items())), len(in_manifest)))
+     # M4
+     for t in sorted(covers):
+@@ -399,7 +408,7 @@ def main():
+     # M5: certs/PROOF-INDEX.tsv agrees with the manifest and with the split files
+     import csv
+     rows = list(csv.DictReader(open(os.path.join(CERTS, "PROOF-INDEX.tsv")), delimiter="	"))
+-    check(len(rows) == 174 + 1084, "PROOF-INDEX has %d rows" % len(rows))
++    check(len(rows) == 174 + n_children, "PROOF-INDEX has %d rows" % len(rows))
+     ids = {r["id"] for r in rows}
+     check(ids == all_cubes | set(child_tags), "PROOF-INDEX ids differ from the 174 cubes + 1,084 children")
+     for r in rows:
+@@ -412,7 +421,7 @@ def main():
+             check(r["cover_tag"].startswith("cover1_" + r["id"][:2]), "PROOF-INDEX %s: cover tag" % r["id"])
+     n_yes = sum(1 for r in rows if r["local_identical"] == "yes")
+     check(not any(r["local_identical"] == "NO" for r in rows), "PROOF-INDEX records a local disagreement")
+-    print("  M5: certs/PROOF-INDEX.tsv: 1,258 rows = 174 cubes + 1,084 children, hashes equal the manifest, parent / cover tags consistent with the split files; %d rows record a bit-identical local re-run, 0 disagreements" % n_yes)
++    print("  M5: certs/PROOF-INDEX.tsv: %d rows = 174 cubes + %d children, hashes equal the manifest, parent / cover tags consistent with the split files; %d rows record a bit-identical local re-run, 0 disagreements" % (len(rows), n_children, n_yes))
+ 
+     # ---------------------------------------------------------------- hashes of the cubes / children (rebuild)
+     if not FAST:
+@@ -426,8 +435,8 @@ def main():
+             pass
+         check(not rep.bad, "hash mismatches: %s" % rep.bad[:3])
+         check(sorted(rep.missing) == nomono, "tags absent from the manifest (cubes without a monolithic record) %s != %s" % (sorted(rep.missing), nomono))
+-        check(rep.ok == 10 + 167 + 1084, "rebuilt-and-equal count %d" % rep.ok)
+-        print("  L1f/L2e: %d CNFs (10 base, 167 cubes, 1,084 children) rebuilt and equal to the manifest; the only cube tags without a record are the 7 parents above" % rep.ok)
++        check(rep.ok == 10 + 167 + n_children, "rebuilt-and-equal count %d" % rep.ok)
++        print("  L1f/L2e: %d CNFs (10 base, 167 cubes, %d children) rebuilt and equal to the manifest; the only cube tags without a record are the 7 parents above" % (rep.ok, n_children))
+     print("COVER ASSERTIONS: ALL PASS (%.0fs)" % (time.time() - t0))
+ 
+ 

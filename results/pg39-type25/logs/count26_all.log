@@ -1,0 +1,19 @@
+== case A class 0
+case A class 0 (aut 80): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+plane L1 (size 26): 122 sections, 16 orbits under the 8 homotheties
+plane L2 (size 26): 122 sections, 16 orbits under the 8 homotheties
+plane L3 (size 26): 140 sections, 18 orbits under the 8 homotheties
+== case A class 1
+case A class 1 (aut 26): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+plane L1 (size 26): 140 sections, 18 orbits under the 8 homotheties
+plane L2 (size 26): 140 sections, 18 orbits under the 8 homotheties
+plane L3 (size 26): 140 sections, 18 orbits under the 8 homotheties
+== case A class 2
+case A class 2 (aut 16): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+plane L1 (size 26): 140 sections, 18 orbits under the 8 homotheties
+plane L2 (size 26): 140 sections, 18 orbits under the 8 homotheties
+plane L3 (size 26): 140 sections, 18 orbits under the 8 homotheties
+== case B class 0
+case B class 0 (aut 80): triple (2, 3, 11) ; plane sizes [35, 26, 26]
+plane L1 has size 35 (skipped)
+plane L2 (size 26): 7552 sections, 944 orbits under the 8 homotheties

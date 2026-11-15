@@ -1,0 +1,19 @@
+lease-run: request pg39-4841
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 9976 capped at 8 GB commit (whole process tree)
+jobcap: pid 8332 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 27792 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 852 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 22856 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 8284 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 21992 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 12704 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 25000 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 23792 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 10140 escaped the job (Store-Python app activation); watching it against the cap instead
+jobcap: pid 27448 escaped the job (Store-Python app activation); watching it against the cap instead
+{"name": "w3_cov140", "cnf": "cov140_A1s1.cnf", "solver": "cad", "opts": "--congruence=false", "tlim": 800, "proof": null, "check": null, "start": "12:17:02", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 800.3, "cpu_s": 799.72, "conflicts": 5050905}
+jobcap: exit 0, peak job commit 0.02 GB of 8 GB cap
+jobcap: NOTE 11 process(es) ran outside the job (Store-Python app activation); they were soft-capped by polling. Call the venv python directly to get the hard cap.
+lease-run: released pg39-4841

@@ -1,0 +1,9 @@
+lease-run: request pg39-4831
+GRANTED 1.5 GB
+lease-run: hard commit cap 7.5 GB for the whole job tree
+jobcap: pid 9936 capped at 7.5 GB commit (whole process tree)
+{"name": "w2_seed3", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": "--congruence=false --seed=3", "tlim": 600, "proof": null, "check": null, "start": "11:34:25", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 600.4, "cpu_s": 599.98, "conflicts": 4413057}
+{"name": "w2_seed4", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": "--congruence=false --seed=4", "tlim": 600, "proof": null, "check": null, "start": "11:44:26", "rc": 20, "status": "UNSAT", "wall_s": 464.6, "cpu_s": 464.36, "conflicts": 3118666}
+{"name": "w2_seed5", "cnf": "b_A1s1.cnf", "solver": "cad", "opts": "--congruence=false --seed=5", "tlim": 600, "proof": null, "check": null, "start": "11:52:10", "rc": 0, "status": "LIMIT/OTHER", "wall_s": 600.2, "cpu_s": 599.98, "conflicts": 4824305}
+jobcap: exit 0, peak job commit 0.02 GB of 7.5 GB cap
+lease-run: released pg39-4831

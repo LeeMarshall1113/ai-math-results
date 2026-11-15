@@ -1,0 +1,6 @@
+lease-run: request pg39-4993
+GRANTED 8.0 GB
+lease-run: hard commit cap 20.0 GB for the whole job tree
+jobcap: pid 4740 capped at 20 GB commit (whole process tree)
+jobcap: exit 0, peak job commit 0.33 GB of 20 GB cap
+lease-run: released pg39-4993

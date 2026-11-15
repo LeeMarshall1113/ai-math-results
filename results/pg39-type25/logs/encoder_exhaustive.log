@@ -1,0 +1,34 @@
+E1/E2: production shapes, all 2^10 inputs, plus independent model counting
+  line shape {2,5} amo=True             :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 262 clauses
+  line shape {2,5} amo=False            :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 175 clauses
+  local count m=26 {d, d+3} = {2,5}     :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 175 clauses
+  local count m=35 {d, d+3} = {5,8}     :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 175 clauses
+E3: random shapes and unit-weight shapes up to n = 16, ALL inputs
+  300 random weighted shapes (n <= 12, weights 1..3, 1-3 allowed sums, amo on/off): all 261034 inputs correct; model count = valid inputs for the n <= 7 ones (13s)
+  unit weights n=14 allowed [5], amo=False: all 16384 inputs correct (2002 valid; 74 vars, 237 clauses; 1s)
+  unit weights n=14 allowed [7], amo=False: all 16384 inputs correct (3432 valid; 78 vars, 253 clauses; 1s)
+  unit weights n=14 allowed [2, 5], amo=False: all 16384 inputs correct (2093 valid; 83 vars, 271 clauses; 1s)
+  unit weights n=14 allowed [5, 8], amo=False: all 16384 inputs correct (5005 valid; 95 vars, 319 clauses; 1s)
+  unit weights n=16 allowed [2, 5], amo=False: all 65536 inputs correct (4488 valid; 97 vars, 319 clauses; 4s)
+E4: real planar CNF (rebuild_all.planar_cnf), q = 9
+planar frame data built (4.4s): |H_R| = [64, 160]
+  m=26 (10063 vars, 47075 clauses): 74 real solutions all accepted; 296 perturbed sets (swap/delete/add) all decided as the direct geometric check decides (0 of them were genuine (2,5)-sets and accepted) (3s)
+  m=35 (10333 vars, 48155 clauses): 1271 real solutions all accepted; 5084 perturbed sets (swap/delete/add) all decided as the direct geometric check decides (0 of them were genuine (2,5)-sets and accepted) (50s)
+E5: the plane pipeline (line shapes, size, local counts) on PG(2,3) and PG(2,4): brute force vs CNF
+planar frame data built (4.8s): |H_R| = [64, 160]
+  replica clause stream == rebuild_all.planar_cnf (PG(2,9), m=26, 47075 clauses): identical
+  PG(2,3) type (1,4), m=4 (the lines)                 : 8192 subsets tested (all subsets of size 0..13, plus random neighbours for q = 4): CNF == brute force for every one; 13 genuine sets (1s)
+  PG(2,4) type (0,2), m=6 (hyperovals)                : 60264 subsets tested (all subsets of size [6], plus random neighbours for q = 4): CNF == brute force for every one; 168 genuine sets (30s)
+  PG(2,4) type (3,5), m=15 (complements of hyperovals): 60264 subsets tested (all subsets of size [15], plus random neighbours for q = 4): CNF == brute force for every one; 168 genuine sets (25s)
+E6: lex-leader clause gadget
+  120 random instances (n in {8,10,12}, 1-4 permutations, partial compare order), ALL 2^n inputs: accepted inputs == {x : x <=_lex x o h for all h}
+E7: plain sum constraints at the real sizes (SAMPLED)
+  [1]*91 = 26 (1873 vars, 7125 clauses): 100 random inputs of weight 26 extend (unique total model satisfying every clause), 402 inputs of weight 26+-1,+-2, 0, 91 rejected (1s)
+  [1]*91 = 35 (2143 vars, 8205 clauses): 100 random inputs of weight 35 extend (unique total model satisfying every clause), 402 inputs of weight 35+-1,+-2, 0, 91 rejected (1s)
+  [1]*820 = 260 (147241 vars, 585681 clauses): 3 random inputs of weight 260 extend (unique total model satisfying every clause), 14 inputs of weight 260+-1,+-2, 0, 820 rejected (3s)
+  [1]*820 = 287 (154612 vars, 615165 clauses): 3 random inputs of weight 287 extend (unique total model satisfying every clause), 14 inputs of weight 287+-1,+-2, 0, 820 rejected (3s)
+ENCODER TESTS: ALL PASS (153s)
+
+real	2m33.247s
+user	0m0.000s
+sys	0m0.015s

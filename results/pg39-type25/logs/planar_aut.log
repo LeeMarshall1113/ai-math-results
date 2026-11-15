@@ -1,0 +1,19 @@
+lease-run: request pg39-5028
+UNKNOWN request id (expired or released)
+ 7.0 GB for the whole job tree
+jobcap: pid 10908 capped at 7 GB commit (whole process tree)
+A0: |Aut| by the frame count = 80, nauty = 80 (3s) EQUAL
+A1: |Aut| by the frame count = 26, nauty = 26 (4s) EQUAL
+A2: |Aut| by the frame count = 16, nauty = 16 (3s) EQUAL
+C0: |Aut| by the frame count = 64, nauty = 64 (13s) EQUAL
+C1: |Aut| by the frame count = 40, nauty = 40 (15s) EQUAL
+C2: |Aut| by the frame count = 32, nauty = 32 (13s) EQUAL
+C3: |Aut| by the frame count = 32, nauty = 32 (15s) EQUAL
+C4: |Aut| by the frame count = 16, nauty = 16 (15s) EQUAL
+C5: |Aut| by the frame count = 16, nauty = 16 (13s) EQUAL
+C6: |Aut| by the frame count = 2, nauty = 2 (16s) EQUAL
+C2 ~ C3 (equal |Aut| = 32): isomorphism none exists (inequivalent)
+C4 ~ C5 (equal |Aut| = 16): isomorphism none exists (inequivalent)
+ALL |Aut| CONFIRMED AND ALL REPRESENTATIVES PAIRWISE INEQUIVALENT
+jobcap: exit 0, peak job commit 0.04 GB of 7 GB cap
+lease-run: released pg39-5028

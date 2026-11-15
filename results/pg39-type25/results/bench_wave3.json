@@ -1,0 +1,1 @@
+[{"name": "w3_cov140", "cnf": "cov140_A1s1.cnf", "solver": "cad", "opts": ["--congruence=false"], "tlim": 800}]

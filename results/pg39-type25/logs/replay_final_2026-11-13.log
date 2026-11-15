@@ -1,0 +1,251 @@
+### replay/rebuild_all.py --selftest
+encoder selftest OK
+planar frame data built (4.1s): |H_R| = [64, 160]
+planar_complete_k26_R0 rebuilt (14927 vars, 61731 clauses)
+planar_complete_k35_R0 rebuilt (15197 vars, 63572 clauses)
+planar_complete_k26_R1 rebuilt (22543 vars, 84545 clauses)
+planar_complete_k35_R1 rebuilt (22813 vars, 86061 clauses)
+geometry built (0.3s): 820 points, 7462 lines
+full_A_c0 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 973f16eb84d66700 (3s)
+cover1_A0 rebuilt: 122 sections from 16 representatives
+full_A_c1 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 b7e89318212b5a8d (3s)
+cover1_A1 rebuilt: 140 sections from 18 representatives
+cover2_A1_c04 rebuilt: 140 children
+full_A_c2 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 01859df4af5d48d7 (3s)
+cover1_A2 rebuilt: 140 sections from 18 representatives
+cover2_A2_c01 rebuilt: 140 children
+cover2_A2_c04 rebuilt: 140 children
+cover2_A2_c05 rebuilt: 140 children
+cover2_A2_c17 rebuilt: 140 children
+full_C_c0 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 130d2cb92f9b19b1 (3s)
+cover1_C0 rebuilt: 122 sections from 16 representatives
+cover2_C0_c15 rebuilt: 122 children
+full_C_c1 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 9bebb1dc671f189f (3s)
+cover1_C1 rebuilt: 140 sections from 18 representatives
+cover2_C1_c04 rebuilt: 140 children
+full_C_c2 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 3a54afc7f7a6a6ac (3s)
+cover1_C2 rebuilt: 140 sections from 18 representatives
+cover2_C2_c00 rebuilt: 140 children
+full_C_c3 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 b6a22d10fc185b26 (3s)
+cover1_C3 rebuilt: 122 sections from 16 representatives
+full_C_c4 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 bb24d78dd9b0c7b6 (3s)
+cover1_C4 rebuilt: 140 sections from 18 representatives
+full_C_c5 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 4f7975a984f013a4 (3s)
+cover1_C5 rebuilt: 140 sections from 18 representatives
+full_C_c6 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 5a8216091cea9f96 (3s)
+cover1_C6 rebuilt: 140 sections from 18 representatives
+cover2_C6_c08 rebuilt: 122 children
+SUMMARY: 1424 CNFs rebuilt and equal to the recorded hash, 0 MISMATCHES, 7 tags not found in the manifest (37s)
+not in manifest: ['A1_c04', 'A2_c01', 'A2_c04', 'A2_c05', 'A2_c17', 'C0_c15', 'C6_c08'] 
+### rc=0 37 s
+### replay/cover_asserts.py --lrat
+geometry built (0.3s): 820 points, 7462 lines
+== LEVEL 1 ==
+  A0  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 16 cubes, orbit sizes {8: 15, 2: 1} (recorded = recomputed), 122 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  A1  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  A2  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C0  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 16 cubes, orbit sizes {8: 15, 2: 1} (recorded = recomputed), 122 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C1  plane L1 =  1 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C2  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C3  plane L1 =  1 (|Sigma n L1| = 5, m = 26): 16 cubes, orbit sizes {8: 15, 2: 1} (recorded = recomputed), 122 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C4  plane L1 =  1 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C5  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C6  plane L1 = 10 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {4: 1, 8: 17} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+== LEVEL 2 ==
+  A1_c04  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c01  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c04  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c05  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c17  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  C0_c15  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 122 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  C1_c04  pi1= 1 pi2=10 (m2=26): common line 10 pts (P0 + dir (1, 0, 0)), 81 points off it, 1 fixed there by units [height-0 point of direction (0, 1, 0) (v2)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  C2_c00  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  C6_c08  pi1=10 pi2= 2 (m2=26): common line 10 pts (P0 + dir (1, 1, 0)), 81 points off it, 1 fixed there by units [height-0 point of direction (0, 0, 1) (v1)] -> 80 free; 122 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+== COVERAGE ==
+  M1: 174 cubes = 167 with a verified monolithic manifest record + 7 without; the 7 are ['A1_c04', 'A2_c01', 'A2_c04', 'A2_c05', 'A2_c17', 'C0_c15', 'C6_c08'];
+      each of the 7 is a Modal TIMEOUT (stage-1 records: ['A1_c04', 'A2_c01', 'A2_c04', 'A2_c05', 'A2_c17', 'C0_c15']; manual operator-cancel line: ['C6_c08']) and each has a split file.
+  M2b: second redundant split C1_c04: its monolithic cloud record is verified (cake_lpr heap 6500 MB, over the 6 GB WSL cap) and is marked superseded-for-verification in the manifest; the cube is closed again by cover2_C1_c04 + 140 children, all with LOCAL records (via = local, cake_lpr heap <= 4500 MB): two independent refutations of the cube
+  M2: redundant 8th split C2_c00: monolithic manifest record verified (conflicts 30551701, conflicts recorded in ledger 30551701); its 140 children were nevertheless run and verified:
+      ledger note of the manual line: Call: cancelled by the operator at 22:25 EST after more than 2 h of cumulative container time (preemption restarts) without a verdict; split to level 2 (stop rule) || CORRECTION 22:40: the cube had in fact been verified (UNSAT_VERIFIED record at 22:24:28, 19 s
+  M3: 1224 children in the 9 split files (A1_c04:140, A2_c01:140, A2_c04:140, A2_c05:140, A2_c17:140, C0_c15:122, C1_c04:140, C2_c00:140, C6_c08:122); 1224 child tags in the manifest, the same set, each with a verified UNSAT record; 19 cover records verified
+  M4: stored cover LRAT files have the recorded sizes and sha256
+  M5: certs/PROOF-INDEX.tsv: 1398 rows = 174 cubes + 1224 children, hashes equal the manifest, parent / cover tags consistent with the split files; 1250 rows record a bit-identical local re-run, 0 disagreements
+== HASH REBUILD of cube and child CNFs (rebuild_all machinery) ==
+full_A_c0 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 973f16eb84d66700 (3s)
+full_A_c1 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 b7e89318212b5a8d (3s)
+full_A_c2 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 01859df4af5d48d7 (3s)
+full_C_c0 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 130d2cb92f9b19b1 (3s)
+full_C_c1 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 9bebb1dc671f189f (3s)
+full_C_c2 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 3a54afc7f7a6a6ac (3s)
+full_C_c3 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 b6a22d10fc185b26 (3s)
+full_C_c4 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 bb24d78dd9b0c7b6 (3s)
+full_C_c5 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 4f7975a984f013a4 (3s)
+full_C_c6 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 5a8216091cea9f96 (3s)
+  L1f/L2e: 1401 CNFs (10 base, 167 cubes, 1224 children) rebuilt and equal to the manifest; the only cube tags without a record are the 7 parents above
+COVER ASSERTIONS: ALL PASS (36s)
+### rc=0 36 s
+### replay/planar_validity.py
+group of maps diag(A,1) frob^e: 11520 pairs (A,e) -> 11520 distinct permutations of the 91 points (0.6s)
+PGammaL(2,9) induced on l0: 1440 permutations; orbits on the 252 five-subsets of l0 have sizes [180, 72]
+H_R0: orbit of R under PGammaL(2,9) has 180 members; |H_R| = 64 (constructed) = 8*1440/180 (orbit-stabiliser) = 64 (file); group closure checked on all 4096 products
+H_R1: orbit of R under PGammaL(2,9) has 72 members; |H_R| = 160 (constructed) = 8*1440/72 (orbit-stabiliser) = 160 (file); group closure checked on all 25600 products
+planar frame data built (3.9s): |H_R| = [64, 160]
+cross-check: the groups H_R0, H_R1 used by rebuild_all.planar_cnf are IDENTICAL (as sets of permutations) to the ones constructed here
+k=26 R#0: 54 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 64, checked against every element), pairwise distinct orbits; 14 have a non-trivial stabiliser; |Omega0| = 2940
+k=26 R#1: 20 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 160, checked against every element), pairwise distinct orbits; 6 have a non-trivial stabiliser; |Omega0| = 2562
+k=26: N(R0), N(R1) = 11340, 9882;  N_total = 9634464  (frame count, own group);  class list sum |PGammaL(3,9)|/|Aut_i| = 9634464  (|G| = 84913920, |Aut| = [80, 26, 16])  ->  EQUAL
+k=35 R#0: 815 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 64, checked against every element), pairwise distinct orbits; 46 have a non-trivial stabiliser; |Omega0| = 50640
+k=35 R#1: 456 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 160, checked against every element), pairwise distinct orbits; 44 have a non-trivial stabiliser; |Omega0| = 69120
+k=35: N(R0), N(R1) = 136728, 186624;  N_total = 61827948  (frame count, own group);  class list sum |PGammaL(3,9)|/|Aut_i| = 61827948  (|G| = 84913920, |Aut| = [64, 40, 32, 32, 16, 16, 2])  ->  EQUAL
+PLANAR VALIDITY: ALL CHECKS PASS  (N_total(26) = 9634464, N_total(35) = 61827948; 6s)
+### rc=0 6 s
+### replay/planar_count.py
+planar frame data built (3.8s): |H_R| = [64, 160]
+m=26 R#0 (orbit 180, |H_R| = 64): 54 lex-leader solutions, |Omega0| = 2940, N(R) = 11340
+m=26 R#1 (orbit 72, |H_R| = 160): 20 lex-leader solutions, |Omega0| = 2562, N(R) = 9882
+m=26: number of (2,5)-sets by the frame count (no nauty): 9634464 ; by the class list sum |G|/|Aut_i| (|G| = 84913920, Aut = [80, 26, 16]): 9634464 ; EQUAL
+m=35 R#0 (orbit 180, |H_R| = 64): 815 lex-leader solutions, |Omega0| = 50640, N(R) = 136728
+m=35 R#1 (orbit 72, |H_R| = 160): 456 lex-leader solutions, |Omega0| = 69120, N(R) = 186624
+m=35: number of (2,5)-sets by the frame count (no nauty): 61827948 ; by the class list sum |G|/|Aut_i| (|G| = 84913920, Aut = [64, 40, 32, 32, 16, 16, 2]): 61827948 ; EQUAL
+COUNTING IDENTITY HOLDS FOR m = 26 AND m = 35
+### rc=0 5 s
+### replay/planar_aut.py
+A0: |Aut| by the frame count = 80, nauty = 80 (2s) EQUAL
+A1: |Aut| by the frame count = 26, nauty = 26 (3s) EQUAL
+A2: |Aut| by the frame count = 16, nauty = 16 (2s) EQUAL
+C0: |Aut| by the frame count = 64, nauty = 64 (10s) EQUAL
+C1: |Aut| by the frame count = 40, nauty = 40 (11s) EQUAL
+C2: |Aut| by the frame count = 32, nauty = 32 (10s) EQUAL
+C3: |Aut| by the frame count = 32, nauty = 32 (12s) EQUAL
+C4: |Aut| by the frame count = 16, nauty = 16 (13s) EQUAL
+C5: |Aut| by the frame count = 16, nauty = 16 (12s) EQUAL
+C6: |Aut| by the frame count = 2, nauty = 2 (16s) EQUAL
+C2 ~ C3 (equal |Aut| = 32): isomorphism none exists (inequivalent)
+C4 ~ C5 (equal |Aut| = 16): isomorphism none exists (inequivalent)
+ALL |Aut| CONFIRMED AND ALL REPRESENTATIVES PAIRWISE INEQUIVALENT
+### rc=0 81 s
+### replay/lemma_checks.py
+geometry built (0.4s): 820 points, 7462 lines
+1. homotheties: OK (8 homotheties x 820 points, 10 cases)
+2. elations: OK (729 elations x 91 directions, regular on the heights of the triple in all ten cases)
+3. lifting: OK (300 random A in GL(3,9) x {frob^0, frob^1} x 820 points)
+4. local counts: OK (1345 real planar (2,5)-sets)
+LEMMA CHECKS OK
+### rc=0 9 s
+### replay/level0_arith.py
+k = 260: 4550 two-secants, 2912 five-secants; through a point of K: 35 two-secants (|Sigma|), 56 five-secants
+k = 287: 3731 two-secants, 3731 five-secants; through a point of K: 26 two-secants (|Sigma|), 65 five-secants
+plane section m = 26: 26 five-secants (planes of size 26 through P0 for |Sigma| = 26: x5 = 26, for |Sigma| = 35: x5 = 56), through P0: 5 two-secants, 5 five-secants; local counts: member 5, non-member 2 five-secants
+plane section m = 35: 56 five-secants (planes of size 26 through P0 for |Sigma| = 26: x5 = 26, for |Sigma| = 35: x5 = 56), through P0: 2 two-secants, 8 five-secants; local counts: member 8, non-member 5 five-secants
+|PGammaL(3,9)| = 84913920 ;  elations with centre P0: 729 = 9^3 ; homotheties diag(1,1,1,lambda): 8
+LEVEL-0 ARITHMETIC OK
+### rc=0 0 s
+### replay/order3_check.py
+plane: 91 points, 91 lines, 10 points/line, 10 lines/point, two lines meet in 1 point: OK
+
+== Step 1: elements of order 3 in PGammaL(3,9) ==
+Theory: |PGL(3,9)|=42456960, |PGammaL(3,9)|=84913920.
+  (g,f) of order 3 => f=0 (f is a homomorphism to Z/2, field automorphism has order 2).
+  In PGL: g^3=lambda*I; cubing is bijective on GF(9)* (gcd(3,8)=1), so g/mu has cube I; x^3-1=(x-1)^3 in char 3,
+  so g/mu is unipotent: Jordan type (2,1) [elation] or (3) [regular unipotent], and nothing else.
+  h u h^-1 = lambda u' with u,u' unipotent forces lambda=1, so PGL-classes of order-3 elements = GL-classes of unipotents.
+  Frobenius preserves Jordan type (rank of g-I), so PGammaL does not merge the two classes.
+  elation I+E13: rank(g-I)=1, commutant dim 5, |C_GL|=46656, class size=7280
+  regular unipotent I+E12+E23: rank(g-I)=2, commutant dim 3, |C_GL|=648, class size=524160
+  total = 531440 ; Steinberg count of nontrivial unipotents q^6-1 = 531440 -> COMPLETE
+  random PGammaL sample: 625 order-3 elements found, all with f=0: True, rank(g/mu - I) histogram {2: 203, 1: 422} (expected only ranks 1 and 2)
+
+== Step 2: exhaustive search, order-3 representatives ==
+
+-- elation I+E13: order 3, 37 point orbits (sizes [1, 3]), 37 line orbits
+   DPLL: 0 invariant (2,5)-sets found, nodes 5, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {}
+   SAT cross-check (pysat, clause per forbidden line assignment): 0 solutions (AGREES)
+
+-- regular unipotent I+E12+E23: order 3, 31 point orbits (sizes [1, 3]), 31 line orbits
+   DPLL: 0 invariant (2,5)-sets found, nodes 5, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {}
+   SAT cross-check (pysat, clause per forbidden line assignment): 0 solutions (AGREES)
+   Why exhaustive: DPLL branches on each free orbit variable both ways; it prunes only when some line's interval [assigned, assigned+free] misses both 2 and 5,
+   and forces a variable only when the other value is infeasible; at leaves all counts are exact. A (2,5)-set invariant under <g> is a union of <g>-orbits, i.e. one of the 2^k unions searched.
+
+== Step 3: controls (same code) ==
+
+-- control order 2: homology diag(1,1,-1): order 2, 51 point orbits (sizes [1, 2]), 51 line orbits
+   DPLL: 20000 invariant (2,5)-sets found, nodes 1728377, 142.6s, exhaustive=False
+   sizes of found sets (each verified directly against all 91 lines): {35: 16141, 26: 3859}
+
+-- control order 2: Frobenius (Baer involution): order 2, 52 point orbits (sizes [1, 2]), 52 line orbits
+   DPLL: 7452 invariant (2,5)-sets found, nodes 1729931, 153.5s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {26: 3240, 35: 4212}
+   SAT cross-check (pysat, clause per forbidden line assignment): 7452 solutions (AGREES)
+
+-- control order 13: order 13, 7 point orbits (sizes [13]), 7 line orbits
+   DPLL: 21 invariant (2,5)-sets found, nodes 41, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {26: 21}
+   SAT cross-check (pysat, clause per forbidden line assignment): 21 solutions (AGREES)
+
+-- control order 5: order 5, 19 point orbits (sizes [1, 5]), 19 line orbits
+   DPLL: 12 invariant (2,5)-sets found, nodes 247, 0.0s, exhaustive=True
+   sizes of found sets (each verified directly against all 91 lines): {35: 8, 26: 4}
+   SAT cross-check (pysat, clause per forbidden line assignment): 12 solutions (AGREES)
+   (all order-5 elements sampled have the same cycle type as the first control)
+
+== Step 4: conic groups ==
+   conic xz=y^2: 10 points (expect 10); line intersection numbers with it: [0, 1, 2]
+
+-- A4=PSL(2,3) via Sym^2 (PΩ(3,3), order 12): |G|=12, point-orbit sizes [3, 4, 6, 6, 6, 6, 12, 12, 12, 12, 12], has elements of order 3: True
+   unions of orbits checked: 2046 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 28 lines with count outside {2,5}; size 19, spectrum {1: 28, 2: 51, 5: 12}, orbit sizes [4, 3, 12]
+   no union of orbits has size 26 or 35
+
+-- S4=PGL(2,3) (SO(3,3), order 24): |G|=24, point-orbit sizes [3, 4, 6, 6, 12, 12, 12, 12, 24], has elements of order 3: True
+   unions of orbits checked: 510 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 28 lines with count outside {2,5}; size 19, spectrum {1: 28, 2: 51, 5: 12}, orbit sizes [4, 3, 12]
+   no union of orbits has size 26 or 35
+
+-- A6=PSL(2,9)=PΩ(3,9) (order 360): |G|=360, point-orbit sizes [10, 36, 45], has elements of order 3: True
+   unions of orbits checked: 6 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 46 lines with count outside {2,5}; size 10, spectrum {0: 36, 1: 10, 2: 45}, orbit sizes [10]
+   no union of orbits has size 26 or 35
+
+-- PGL(2,9)=SO(3,9) (order 720): |G|=720, point-orbit sizes [10, 36, 45], has elements of order 3: True
+   unions of orbits checked: 6 ; (2,5)-sets among them: none
+   nearest miss over all proper unions: 46 lines with count outside {2,5}; size 10, spectrum {0: 36, 1: 10, 2: 45}, orbit sizes [10]
+   no union of orbits has size 26 or 35
+
+== SUMMARY ==
+order-3 classes searched (count of invariant (2,5)-sets, exhaustive?): {'elation I+E13': (0, True), 'regular unipotent I+E12+E23': (0, True)}
+### rc=0 335 s
+### replay/encoder_exhaustive.py
+E1/E2: production shapes, all 2^10 inputs, plus independent model counting
+  line shape {2,5} amo=True             :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 262 clauses
+  line shape {2,5} amo=False            :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 175 clauses
+  local count m=26 {d, d+3} = {2,5}     :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 175 clauses
+  local count m=35 {d, d+3} = {5,8}     :  297 valid inputs of 1024 accepted, all others rejected; models of the CNF counted = 297 (= valid inputs); 55 variables, 175 clauses
+E3: random shapes and unit-weight shapes up to n = 16, ALL inputs
+  300 random weighted shapes (n <= 12, weights 1..3, 1-3 allowed sums, amo on/off): all 261034 inputs correct; model count = valid inputs for the n <= 7 ones (16s)
+  unit weights n=14 allowed [5], amo=False: all 16384 inputs correct (2002 valid; 74 vars, 237 clauses; 1s)
+  unit weights n=14 allowed [7], amo=False: all 16384 inputs correct (3432 valid; 78 vars, 253 clauses; 1s)
+  unit weights n=14 allowed [2, 5], amo=False: all 16384 inputs correct (2093 valid; 83 vars, 271 clauses; 1s)
+  unit weights n=14 allowed [5, 8], amo=False: all 16384 inputs correct (5005 valid; 95 vars, 319 clauses; 2s)
+  unit weights n=16 allowed [2, 5], amo=False: all 65536 inputs correct (4488 valid; 97 vars, 319 clauses; 5s)
+E4: real planar CNF (rebuild_all.planar_cnf), q = 9
+planar frame data built (5.4s): |H_R| = [64, 160]
+  m=26 (10063 vars, 47075 clauses): 74 real solutions all accepted; 296 perturbed sets (swap/delete/add) all decided as the direct geometric check decides (0 of them were genuine (2,5)-sets and accepted) (3s)
+  m=35 (10333 vars, 48155 clauses): 1271 real solutions all accepted; 5084 perturbed sets (swap/delete/add) all decided as the direct geometric check decides (0 of them were genuine (2,5)-sets and accepted) (52s)
+E5: the plane pipeline (line shapes, size, local counts) on PG(2,3) and PG(2,4): brute force vs CNF
+planar frame data built (5.1s): |H_R| = [64, 160]
+  replica clause stream == rebuild_all.planar_cnf (PG(2,9), m=26, 47075 clauses): identical
+  PG(2,3) type (1,4), m=4 (the lines)                 : 8192 subsets tested (all subsets of size 0..13, plus random neighbours for q = 4): CNF == brute force for every one; 13 genuine sets (1s)
+  PG(2,4) type (0,2), m=6 (hyperovals)                : 60264 subsets tested (all subsets of size [6], plus random neighbours for q = 4): CNF == brute force for every one; 168 genuine sets (33s)
+  PG(2,4) type (3,5), m=15 (complements of hyperovals): 60264 subsets tested (all subsets of size [15], plus random neighbours for q = 4): CNF == brute force for every one; 168 genuine sets (28s)
+E6: lex-leader clause gadget
+  120 random instances (n in {8,10,12}, 1-4 permutations, partial compare order), ALL 2^n inputs: accepted inputs == {x : x <=_lex x o h for all h}
+E7: plain sum constraints at the real sizes (SAMPLED)
+  [1]*91 = 26 (1873 vars, 7125 clauses): 100 random inputs of weight 26 extend (unique total model satisfying every clause), 402 inputs of weight 26+-1,+-2, 0, 91 rejected (1s)
+  [1]*91 = 35 (2143 vars, 8205 clauses): 100 random inputs of weight 35 extend (unique total model satisfying every clause), 402 inputs of weight 35+-1,+-2, 0, 91 rejected (1s)
+  [1]*820 = 260 (147241 vars, 585681 clauses): 3 random inputs of weight 260 extend (unique total model satisfying every clause), 14 inputs of weight 260+-1,+-2, 0, 820 rejected (3s)
+  [1]*820 = 287 (154612 vars, 615165 clauses): 3 random inputs of weight 287 extend (unique total model satisfying every clause), 14 inputs of weight 287+-1,+-2, 0, 820 rejected (3s)
+ENCODER TESTS: ALL PASS (168s)
+### rc=0 168 s

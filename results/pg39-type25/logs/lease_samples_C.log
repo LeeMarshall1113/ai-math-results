@@ -1,0 +1,11 @@
+lease-run: request pg39-4735
+GRANTED 1.0 GB
+lease-run: hard commit cap 7.0 GB for the whole job tree
+jobcap: pid 18572 capped at 7 GB commit (whole process tree)
+case C class 0 (aut 64): triple (0, 1, 10) ; plane sizes [26, 26, 26]
+base CNF: 483031 vars 2540820 clauses
+sample 0 depth 1: branching [122] ; fixed 91 points ; TIMEOUT in 3600.0s conflicts None
+sample 1 depth 1: branching [122] ; fixed 91 points ; UNSAT in 823.7s conflicts 4930592
+sample 2 depth 1: branching [122] ; fixed 91 points ; UNSAT in 668.1s conflicts 7080541
+jobcap: exit 0, peak job commit 0.58 GB of 7 GB cap
+lease-run: released pg39-4735

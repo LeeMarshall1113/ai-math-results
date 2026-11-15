@@ -1,0 +1,24 @@
+{"cls": "41_singer4", "k": 260, "status": "UNSATISFIABLE", "seconds": 0.09, "vars": 4188, "clauses": 23115, "orbits": 20, "lorbits": 182}
+{"cls": "41_singer4", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.08, "vars": 4300, "clauses": 23559, "orbits": 20, "lorbits": 182, "conflicts": 75}
+{"cls": "13_singer3", "k": 260, "status": "UNSATISFIABLE", "seconds": 1.11, "vars": 25143, "clauses": 143475, "orbits": 64, "lorbits": 574, "conflicts": 5537}
+{"cls": "13_singer3", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.74, "vars": 25185, "clauses": 143643, "orbits": 64, "lorbits": 574, "conflicts": 4258}
+{"cls": "7_singer3", "k": 260, "status": "UNSATISFIABLE", "seconds": 0.3, "vars": 49425, "clauses": 280883, "orbits": 118, "lorbits": 1066, "conflicts": 189}
+{"cls": "7_singer3", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.36, "vars": 49581, "clauses": 281507, "orbits": 118, "lorbits": 1066, "conflicts": 855}
+{"cls": "3a_J211", "k": 260, "status": "UNSATISFIABLE", "seconds": 0.71, "vars": 155911, "clauses": 829108, "orbits": 334, "lorbits": 2602}
+{"cls": "3a_J211", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.66, "vars": 158170, "clauses": 838144, "orbits": 334, "lorbits": 2602}
+{"cls": "3b_J22", "k": 260, "status": "UNSATISFIABLE", "seconds": 0.57, "vars": 136897, "clauses": 748111, "orbits": 280, "lorbits": 2548}
+{"cls": "3b_J22", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.57, "vars": 138205, "clauses": 753343, "orbits": 280, "lorbits": 2548}
+{"cls": "3c_J31", "k": 260, "status": "UNSATISFIABLE", "seconds": 0.62, "vars": 132418, "clauses": 729808, "orbits": 280, "lorbits": 2494}
+{"cls": "3c_J31", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.62, "vars": 133237, "clauses": 733084, "orbits": 280, "lorbits": 2494}
+{"cls": "5a_scalar_GF81", "k": 260, "status": "UNSATISFIABLE", "seconds": 29.16, "vars": 72901, "clauses": 411813, "orbits": 164, "lorbits": 1558, "conflicts": 109314}
+{"cls": "5a_scalar_GF81", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.38, "vars": 66912, "clauses": 387861, "orbits": 164, "lorbits": 1558}
+{"cls": "2c_fixedpointfree", "k": 260, "status": "UNKNOWN", "seconds": 120.07, "vars": 204091, "clauses": 1117383, "orbits": 410, "lorbits": 3772, "conflicts": 728388}
+{"cls": "2c_fixedpointfree", "k": 287, "status": "UNSATISFIABLE", "seconds": 0.96, "vars": 167280, "clauses": 970143, "orbits": 410, "lorbits": 3772}
+{"cls": "5b_fixline", "k": 260, "status": "UNSATISFIABLE", "seconds": 24.73, "vars": 90245, "clauses": 478753, "orbits": 172, "lorbits": 1494, "conflicts": 50398}
+{"cls": "5b_fixline", "k": 287, "status": "UNSATISFIABLE", "seconds": 29.98, "vars": 91734, "clauses": 484709, "orbits": 172, "lorbits": 1494, "conflicts": 67387}
+{"cls": "2a_homology_3+1", "k": 287, "status": "UNKNOWN", "seconds": 900.16, "vars": 255693, "clauses": 1328889, "orbits": 456, "lorbits": 3822, "conflicts": 3123486}
+{"cls": "5c_mixed", "k": 260, "status": "UNKNOWN", "seconds": 900.08, "vars": 71752, "clauses": 405448, "orbits": 164, "lorbits": 1494, "conflicts": 1935448}
+{"cls": "5c_mixed", "k": 287, "status": "UNSATISFIABLE", "seconds": 1.28, "vars": 65763, "clauses": 381496, "orbits": 164, "lorbits": 1494}
+{"cls": "2a_homology_3+1", "k": 260, "status": "UNKNOWN", "seconds": 900.37, "vars": 251598, "clauses": 1312509, "orbits": 456, "lorbits": 3822, "conflicts": 2487665}
+{"cls": "2d_baer", "k": 287, "status": "UNKNOWN", "seconds": 902.48, "vars": 219131, "clauses": 1179053, "orbits": 430, "lorbits": 3796, "conflicts": 1081083}
+{"cls": "2d_baer", "k": 260, "status": "UNKNOWN", "seconds": 909.13, "vars": 217312, "clauses": 1171777, "orbits": 430, "lorbits": 3796, "conflicts": 2145561}

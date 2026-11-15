@@ -1,0 +1,7 @@
+PGammaL(2,9) orbits on 2-subsets of the 10 points of a line: 1  (sizes [45])
+R#0: orbit size 45, |H_R| = 256
+   ... 500 solutions, 533s
+k=35 R#0 (orbit size 45): 694 solutions so far, finished=False (781.0s)
+{(35, 0): 694}
+PGammaL(2,9) orbits on 2-subsets of the 10 points of a line: 1  (sizes [45])
+R#0: orbit size 45, |H_R| = 256

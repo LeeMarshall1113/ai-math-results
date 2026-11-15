@@ -1,0 +1,16 @@
+2026-11-11 19:44:51 waiting for the regeneration chain
+2026-11-13 04:15:33 chain done; starting the C1_c04 split
+2026-11-13 05:08:19 slice 1 rc=3
+2026-11-13 05:31:54 slice 2 rc=3
+2026-11-13 06:37:23 slice 3 rc=3
+2026-11-13 06:48:08 slice 4 rc=3
+2026-11-13 06:50:08 done (run code/c1c04_finish.py after checking results/c1c04_manifest_local.jsonl)
+2026-11-13 06:51:00 wide split: 24 planes, cap 1200
+2026-11-13 07:17:06 wide split rc=0
+2026-11-13 11:54:01 wide slice 1 rc=0
+2026-11-13 11:56:03 wide slice 2 rc=0
+2026-11-13 11:58:06 wide slice 3 rc=0
+2026-11-13 12:00:08 wide slice 4 rc=0
+2026-11-13 12:02:10 wide slice 5 rc=0
+2026-11-13 12:04:13 wide slice 6 rc=0
+2026-11-13 12:06:13 wide: done (run code/c1c04_finish.py after checking results/c1c04_manifest_local.jsonl)

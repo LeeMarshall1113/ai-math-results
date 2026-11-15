@@ -1,0 +1,14 @@
+homology diag(1,1,-1)      order 2  fixed pts 11 orbits 51  k=26 : SATISFIABLE (3.3s) |K|=26 exact check True
+homology diag(1,1,-1)      order 2  fixed pts 11 orbits 51  k=35 : SATISFIABLE (4.4s) |K|=35 exact check True
+baer (frobenius)           order 2  fixed pts 13 orbits 52  k=26 : SATISFIABLE (4.9s) |K|=26 exact check True
+baer (frobenius)           order 2  fixed pts 13 orbits 52  k=35 : SATISFIABLE (5.0s) |K|=35 exact check True
+elation I+e13 (order 3)    order 3  fixed pts 10 orbits 37  k=26 : UNSATISFIABLE (3.8s)
+elation I+e13 (order 3)    order 3  fixed pts 10 orbits 37  k=35 : UNSATISFIABLE (4.1s)
+unipotent J3 (order 3)     order 3  fixed pts 1  orbits 31  k=26 : UNSATISFIABLE (2.7s)
+unipotent J3 (order 3)     order 3  fixed pts 1  orbits 31  k=35 : UNSATISFIABLE (1.5s)
+order5 diag(1,M1)          order 5  fixed pts 1  orbits 19  k=26 : SATISFIABLE (1.3s) |K|=26 exact check True
+order5 diag(1,M1)          order 5  fixed pts 1  orbits 19  k=35 : SATISFIABLE (0.6s) |K|=35 exact check True
+order7 singer GF(9^3)      order 7  fixed pts 0  orbits 13  k=26 : UNSATISFIABLE (1.2s)
+order7 singer GF(9^3)      order 7  fixed pts 0  orbits 13  k=35 : UNSATISFIABLE (1.7s)
+order13 singer GF(9^3)     order 13 fixed pts 0  orbits 7   k=26 : SATISFIABLE (3.3s) |K|=26 exact check True
+order13 singer GF(9^3)     order 13 fixed pts 0  orbits 7   k=35 : UNSATISFIABLE (3.1s)

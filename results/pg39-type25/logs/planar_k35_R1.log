@@ -1,0 +1,4 @@
+PGammaL(2,9) orbits on 5-subsets of the 10 points of a line: 2  (sizes [180, 72])
+R#1: orbit size 72, |H_R| = 160
+k=35 R#1 (orbit size 72): 456 solutions so far, finished=True (514.7s)
+{(35, 1): 456}

@@ -1,0 +1,4 @@
+{"cls": "5b_fixline", "k": 260, "status": "UNSATISFIABLE", "seconds": 24.73, "vars": 90245, "clauses": 478753, "orbits": 172, "lorbits": 1494, "conflicts": 50398}
+{"cls": "5b_fixline", "k": 287, "status": "UNSATISFIABLE", "seconds": 29.98, "vars": 91734, "clauses": 484709, "orbits": 172, "lorbits": 1494, "conflicts": 67387}
+{"cls": "5c_mixed", "k": 260, "status": "UNKNOWN", "seconds": 900.08, "vars": 71752, "clauses": 405448, "orbits": 164, "lorbits": 1494, "conflicts": 1935448}
+{"cls": "5c_mixed", "k": 287, "status": "UNSATISFIABLE", "seconds": 1.28, "vars": 65763, "clauses": 381496, "orbits": 164, "lorbits": 1494}

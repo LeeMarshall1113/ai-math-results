@@ -1,0 +1,17 @@
+group of maps diag(A,1) frob^e: 11520 pairs (A,e) -> 11520 distinct permutations of the 91 points (0.5s)
+PGammaL(2,9) induced on l0: 1440 permutations; orbits on the 252 five-subsets of l0 have sizes [180, 72]
+H_R0: orbit of R under PGammaL(2,9) has 180 members; |H_R| = 64 (constructed) = 8*1440/180 (orbit-stabiliser) = 64 (file); group closure checked on all 4096 products
+H_R1: orbit of R under PGammaL(2,9) has 72 members; |H_R| = 160 (constructed) = 8*1440/72 (orbit-stabiliser) = 160 (file); group closure checked on all 25600 products
+planar frame data built (3.4s): |H_R| = [64, 160]
+cross-check: the groups H_R0, H_R1 used by rebuild_all.planar_cnf are IDENTICAL (as sets of permutations) to the ones constructed here
+k=26 R#0: 54 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 64, checked against every element), pairwise distinct orbits; 14 have a non-trivial stabiliser; |Omega0| = 2940
+k=26 R#1: 20 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 160, checked against every element), pairwise distinct orbits; 6 have a non-trivial stabiliser; |Omega0| = 2562
+k=26: N(R0), N(R1) = 11340, 9882;  N_total = 9634464  (frame count, own group);  class list sum |PGammaL(3,9)|/|Aut_i| = 9634464  (|G| = 84913920, |Aut| = [80, 26, 16])  ->  EQUAL
+k=35 R#0: 815 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 64, checked against every element), pairwise distinct orbits; 46 have a non-trivial stabiliser; |Omega0| = 50640
+k=35 R#1: 456 solutions: all (2,5)-sets (91 lines each), K n l0 = R, origin in K, lex-least in the H_R orbit (|H_R| = 160, checked against every element), pairwise distinct orbits; 44 have a non-trivial stabiliser; |Omega0| = 69120
+k=35: N(R0), N(R1) = 136728, 186624;  N_total = 61827948  (frame count, own group);  class list sum |PGammaL(3,9)|/|Aut_i| = 61827948  (|G| = 84913920, |Aut| = [64, 40, 32, 32, 16, 16, 2])  ->  EQUAL
+PLANAR VALIDITY: ALL CHECKS PASS  (N_total(26) = 9634464, N_total(35) = 61827948; 6s)
+
+real	0m5.593s
+user	0m0.000s
+sys	0m0.000s

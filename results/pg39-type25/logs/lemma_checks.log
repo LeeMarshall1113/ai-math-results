@@ -1,0 +1,12 @@
+lease-run: request pg39-5031
+GRANTED 0.5 GB
+lease-run: hard commit cap 6.5 GB for the whole job tree
+jobcap: pid 20972 capped at 6.5 GB commit (whole process tree)
+geometry built (0.2s): 820 points, 7462 lines
+1. homotheties: OK (8 homotheties x 820 points, 10 cases)
+2. elations: OK (729 elations x 91 directions, regular on the heights of the triple in all ten cases)
+3. lifting: OK (300 random A in GL(3,9) x {frob^0, frob^1} x 820 points)
+4. local counts: OK (1345 real planar (2,5)-sets)
+LEMMA CHECKS OK
+jobcap: exit 0, peak job commit 0.01 GB of 6.5 GB cap
+lease-run: released pg39-5031

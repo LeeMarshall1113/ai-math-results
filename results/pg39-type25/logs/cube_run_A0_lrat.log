@@ -1,0 +1,8 @@
+lease-run: request pg39-4740
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 9168 capped at 8 GB commit (whole process tree)
+case A class 0 (|Aut| 80): plane 0 size 26: 122 sections, 16 homothety orbits
+{"case": "A", "cls": 0, "cube": 0, "orbit_size": 8, "plane": 0, "status": "UNSAT", "seconds": 1172.0, "cnf_sha256": "0d3dd0797a63f7f1fe3711a2775f7e15bbcc910103b47dac4d18051b31d5eddd"}
+jobcap: exit 0, peak job commit 0.05 GB of 8 GB cap
+lease-run: released pg39-4740

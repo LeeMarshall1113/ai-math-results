@@ -1,0 +1,43 @@
+lease-run: request pg39-5023
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 17136 capped at 8 GB commit (whole process tree)
+encoder selftest OK
+planar frame data built (3.9s): |H_R| = [64, 160]
+planar_complete_k26_R0 rebuilt (14927 vars, 61731 clauses)
+planar_complete_k35_R0 rebuilt (15197 vars, 63572 clauses)
+planar_complete_k26_R1 rebuilt (22543 vars, 84545 clauses)
+planar_complete_k35_R1 rebuilt (22813 vars, 86061 clauses)
+geometry built (0.2s): 820 points, 7462 lines
+full_A_c0 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 973f16eb84d66700 (3s)
+cover1_A0 rebuilt: 122 sections from 16 representatives
+full_A_c1 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 b7e89318212b5a8d (3s)
+cover1_A1 rebuilt: 140 sections from 18 representatives
+cover2_A1_c04 rebuilt: 140 children
+full_A_c2 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 01859df4af5d48d7 (3s)
+cover1_A2 rebuilt: 140 sections from 18 representatives
+cover2_A2_c01 rebuilt: 140 children
+cover2_A2_c04 rebuilt: 140 children
+cover2_A2_c05 rebuilt: 140 children
+cover2_A2_c17 rebuilt: 140 children
+full_C_c0 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 130d2cb92f9b19b1 (3s)
+cover1_C0 rebuilt: 122 sections from 16 representatives
+cover2_C0_c15 rebuilt: 122 children
+full_C_c1 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 9bebb1dc671f189f (3s)
+cover1_C1 rebuilt: 140 sections from 18 representatives
+full_C_c2 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 3a54afc7f7a6a6ac (3s)
+cover1_C2 rebuilt: 140 sections from 18 representatives
+cover2_C2_c00 rebuilt: 140 children
+full_C_c3 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 b6a22d10fc185b26 (3s)
+cover1_C3 rebuilt: 122 sections from 16 representatives
+full_C_c4 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 bb24d78dd9b0c7b6 (3s)
+cover1_C4 rebuilt: 140 sections from 18 representatives
+full_C_c5 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 4f7975a984f013a4 (3s)
+cover1_C5 rebuilt: 140 sections from 18 representatives
+full_C_c6 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 5a8216091cea9f96 (3s)
+cover1_C6 rebuilt: 140 sections from 18 representatives
+cover2_C6_c08 rebuilt: 122 children
+SUMMARY: 1283 CNFs rebuilt and equal to the recorded hash, 0 MISMATCHES, 7 tags not found in the manifest (33s)
+not in manifest: ['A1_c04', 'A2_c01', 'A2_c04', 'A2_c05', 'A2_c17', 'C0_c15', 'C6_c08'] 
+jobcap: exit 0, peak job commit 0.06 GB of 8 GB cap
+lease-run: released pg39-5023

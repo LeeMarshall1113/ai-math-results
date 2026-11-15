@@ -1,0 +1,8 @@
+lease-run: request pg39-4837
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 32388 capped at 8 GB commit (whole process tree)
+plane 1: 140 sections (15s)
+chosen plane 1: 140 children, 80 assumptions each (15s)
+jobcap: exit 0, peak job commit 0.04 GB of 8 GB cap
+lease-run: released pg39-4837

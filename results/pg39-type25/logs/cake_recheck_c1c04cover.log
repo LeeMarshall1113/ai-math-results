@@ -1,0 +1,4 @@
+2026-11-13 re-check of certs/cover2_C1_c04 with cake_lpr (sha256 272a75de5b8add99371f7098a1af076e7c419c9eba2e7f2915e67a530671acaf), heap 1500 MB, one thread
+cnf_sha256  9c2b9662796e64d8bd59f09f21b01bd291190c215fa8e65081f911fac8bb44bb  (equals certs/manifest.jsonl)
+lrat_sha256 3c18afe833d84e96b4c2eb4f66aee161f0e1b48f6deb3168daeb1e936ee87645  (equals certs/manifest.jsonl)
+result: s VERIFIED UNSAT   (wall 6.8 s, max resident 1.54 GB)

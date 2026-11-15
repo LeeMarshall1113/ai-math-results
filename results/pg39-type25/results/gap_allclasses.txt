@@ -1,0 +1,30 @@
+number of conjugacy classes: 480   time 25563 ms
+sum of class sizes = |G| : true
+classes of elements of prime order: 20
+classes of subgroups of prime order: 13
+prime 2  element classes [ 2 ]  |C(a)| = 16588800  fixed points 
+20  #elements in the union 24479091
+prime 3  element classes [ 3 ]  |C(a)| = 680244480  fixed points 
+91  #elements in the union 596960
+prime 2  element classes [ 9 ]  |C(a)| = 24261120  fixed points 
+40  #elements in the union 16737840
+prime 2  element classes [ 10 ]  |C(a)| = 679311360  fixed points 
+92  #elements in the union 597780
+prime 13  element classes [ 39, 40, 41, 42 ]  |C(a)| = 1456  fixed points 
+1  #elements in the union 1115600947200
+prime 7  element classes [ 43 ]  |C(a)| = 728  fixed points 
+1  #elements in the union 557800473600
+prime 5  element classes [ 112 ]  |C(a)| = 57600  fixed points 
+10  #elements in the union 7049978208
+prime 5  element classes [ 150 ]  |C(a)| = 5313600  fixed points 
+0  #elements in the union 76422528
+prime 5  element classes [ 195 ]  |C(a)| = 1600  fixed points 
+0  #elements in the union 253799215488
+prime 2  element classes [ 297 ]  |C(a)| = 21254400  fixed points 
+0  #elements in the union 19105632
+prime 41  element classes [ 298, 299, 300, 301, 302 ]  |C(a)| = 
+820  fixed points 0  #elements in the union 2476089907200
+prime 3  element classes [ 428 ]  |C(a)| = 104976  fixed points 
+10  #elements in the union 3868300800
+prime 3  element classes [ 435 ]  |C(a)| = 9447840  fixed points 
+10  #elements in the union 42981120

@@ -1,0 +1,12 @@
+lease-run: request pg39-5021
+GRANTED 1.5 GB
+lease-run: hard commit cap 7.5 GB for the whole job tree
+jobcap: pid 30840 capped at 7.5 GB commit (whole process tree)
+geometry built (0.3s): 820 points, 7462 lines
+full_A_c1 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 b7e89318212b5a8d (3s)
+cover1_A1 rebuilt: 140 sections from 18 representatives
+cover2_A1_c04 rebuilt: 140 children
+SUMMARY: 159 CNFs rebuilt and equal to the recorded hash, 0 MISMATCHES, 2 tags not found in the manifest (3s)
+not in manifest: ['A1_c04', 'cover1_A1'] 
+jobcap: exit 0, peak job commit 0.05 GB of 7.5 GB cap
+lease-run: released pg39-5021

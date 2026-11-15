@@ -1,0 +1,9 @@
+PGammaL(2,9) orbits on 5-subsets of the 10 points of a line: 2  (sizes [180, 72])
+R#0: orbit size 180, |H_R| = 64
+k=26 R#0 (orbit size 180): 54 solutions (7.2s)
+   ... 500 solutions, 752s
+k=35 R#0 (orbit size 180): 815 solutions (1639.8s)
+R#1: orbit size 72, |H_R| = 160
+skip existing C:\Users\user\Documents\GitHub\erdos-triage\pg39\code\..\results\planar_k26_R1.json
+skip existing C:\Users\user\Documents\GitHub\erdos-triage\pg39\code\..\results\planar_k35_R1.json
+{(26, 0): 54, (35, 0): 815}

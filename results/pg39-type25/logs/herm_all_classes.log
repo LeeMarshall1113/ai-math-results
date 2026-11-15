@@ -1,0 +1,13 @@
+2a_homology_3+1      SATISFIABLE      18.1s |K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}
+2b_homology_2+2      SATISFIABLE      11.3s |K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={37: 280, 28: 540}
+2c_fixedpointfree    TIMEOUT         150.1s 
+2d_baer              SATISFIABLE       3.5s |K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}
+3a_J211              SATISFIABLE      55.3s |K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}
+3b_J22               SATISFIABLE      13.4s |K|=280 exact=True lines={4: 5670, 10: 112, 1: 1680} planes={37: 280, 28: 540}
+3c_J31               TIMEOUT         150.1s 
+5a_scalar_GF81       UNSATISFIABLE     0.6s 
+5b_fixline           UNSATISFIABLE     4.7s 
+5c_mixed             SATISFIABLE       0.6s |K|=280 exact=True lines={10: 112, 1: 1680, 4: 5670} planes={37: 280, 28: 540}
+7_singer3            SATISFIABLE       2.5s |K|=280 exact=True lines={4: 5670, 1: 1680, 10: 112} planes={28: 540, 37: 280}
+13_singer3           UNSATISFIABLE     0.2s 
+41_singer4           UNSATISFIABLE     0.1s 

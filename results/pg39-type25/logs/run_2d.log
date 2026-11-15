@@ -1,0 +1,3 @@
+2d S_empty k=260 : UNKNOWN in 380.5s {'conflicts': 687778} (vars 217312 clauses 1171817)
+2d S_point k=287 : UNKNOWN in 86.0s {} (vars 219131 clauses 1179093)
+2d S_27 k=287 : UNKNOWN in 0.7s {} (vars 219131 clauses 1179093)

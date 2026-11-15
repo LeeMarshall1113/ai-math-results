@@ -1,0 +1,7 @@
+lease-run: request pg39-4851
+GRANTED 0.5 GB
+lease-run: hard commit cap 6.5 GB for the whole job tree
+jobcap: pid 23012 capped at 6.5 GB commit (whole process tree)
+hermitian points 280 lines 7462
+jobcap: exit 0, peak job commit 0.01 GB of 6.5 GB cap
+lease-run: released pg39-4851

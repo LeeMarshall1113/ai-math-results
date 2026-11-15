@@ -1,0 +1,42 @@
+geometry built (0.2s): 820 points, 7462 lines
+== LEVEL 1 ==
+  A0  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 16 cubes, orbit sizes {8: 15, 2: 1} (recorded = recomputed), 122 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  A1  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  A2  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C0  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 16 cubes, orbit sizes {8: 15, 2: 1} (recorded = recomputed), 122 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C1  plane L1 =  1 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C2  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C3  plane L1 =  1 (|Sigma n L1| = 5, m = 26): 16 cubes, orbit sizes {8: 15, 2: 1} (recorded = recomputed), 122 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C4  plane L1 =  1 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C5  plane L1 =  0 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {8: 17, 4: 1} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+  C6  plane L1 = 10 (|Sigma n L1| = 5, m = 26): 18 cubes, orbit sizes {4: 1, 8: 17} (recorded = recomputed), 140 blocked sections = union of orbits; 91-point sections, 88 free, cover1 CNF stored == rebuilt, manifest hash ok
+== LEVEL 2 ==
+  A1_c04  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c01  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c04  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c05  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  A2_c17  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  C0_c15  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 122 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  C2_c00  pi1= 0 pi2= 1 (m2=26): common line 10 pts (P0 + dir (0, 0, 1)), 81 points off it, 1 fixed there by units [height-0 point of direction (1, 0, 0) (v3)] -> 80 free; 140 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+  C6_c08  pi1=10 pi2= 2 (m2=26): common line 10 pts (P0 + dir (1, 1, 0)), 81 points off it, 1 fixed there by units [height-0 point of direction (0, 0, 1) (v1)] -> 80 free; 122 children, all consistent sections; cover2 CNF stored == rebuilt == manifest, blocking clauses == children
+== COVERAGE ==
+  M1: 174 cubes = 167 with a verified monolithic manifest record + 7 without; the 7 are ['A1_c04', 'A2_c01', 'A2_c04', 'A2_c05', 'A2_c17', 'C0_c15', 'C6_c08'];
+      each of the 7 is a Modal TIMEOUT (stage-1 records: ['A1_c04', 'A2_c01', 'A2_c04', 'A2_c05', 'A2_c17', 'C0_c15']; manual operator-cancel line: ['C6_c08']) and each has a split file.
+  M2: redundant 8th split C2_c00: monolithic manifest record verified (conflicts 30551701, conflicts recorded in ledger 30551701); its 140 children were nevertheless run and verified:
+      ledger note of the manual line: Call: cancelled by the operator at 22:25 EST after more than 2 h of cumulative container time (preemption restarts) without a verdict; split to level 2 (stop rule) || CORRECTION 22:40: the cube had in fact been verified (UNSAT_VERIFIED record at 22:24:28, 19 s
+  M3: 1084 children in the 8 split files (A1_c04:140, A2_c01:140, A2_c04:140, A2_c05:140, A2_c17:140, C0_c15:122, C2_c00:140, C6_c08:122); 1084 child tags in the manifest, the same set, each with a verified UNSAT record; 18 cover records verified
+  M4: stored cover LRAT files have the recorded sizes and sha256
+  M5: certs/PROOF-INDEX.tsv: 1,258 rows = 174 cubes + 1,084 children, hashes equal the manifest, parent / cover tags consistent with the split files; 299 rows record a bit-identical local re-run, 0 disagreements
+== HASH REBUILD of cube and child CNFs (rebuild_all machinery) ==
+full_A_c0 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 973f16eb84d66700 (3s)
+full_A_c1 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 b7e89318212b5a8d (3s)
+full_A_c2 base CNF rebuilt: 490402 vars, 2570304 clauses, sha256 01859df4af5d48d7 (3s)
+full_C_c0 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 130d2cb92f9b19b1 (3s)
+full_C_c1 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 9bebb1dc671f189f (3s)
+full_C_c2 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 3a54afc7f7a6a6ac (3s)
+full_C_c3 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 b6a22d10fc185b26 (3s)
+full_C_c4 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 bb24d78dd9b0c7b6 (3s)
+full_C_c5 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 4f7975a984f013a4 (3s)
+full_C_c6 base CNF rebuilt: 483031 vars, 2540820 clauses, sha256 5a8216091cea9f96 (3s)
+  L1f/L2e: 1261 CNFs (10 base, 167 cubes, 1,084 children) rebuilt and equal to the manifest; the only cube tags without a record are the 7 parents above
+COVER ASSERTIONS: ALL PASS (35s)

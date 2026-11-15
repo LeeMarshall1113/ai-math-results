@@ -1,0 +1,10 @@
+  enumerated 1000 40s
+  enumerated 2000 66s
+  enumerated 3000 93s
+  enumerated 4000 128s
+  enumerated 5000 172s
+  enumerated 6000 223s
+  enumerated 7000 298s
+  enumerated 8000 405s
+  enumerated 9000 592s
+sections S (|S|=26, S n l1 = R): 9882  (1539s)

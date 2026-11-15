@@ -1,0 +1,12 @@
+k=26 plain, point 0 in K: result True in 0.7s (vars 5968, clauses 30968)
+   |K| = 26 {5: 26, 2: 65}
+k=35 plain, point 0 in K: result True in 2.0s (vars 6238, clauses 32048)
+   |K| = 35 {5: 56, 2: 35}
+k=26 R#0 (orbit 180) + origin: result True in 0.8s (vars 5968, clauses 30978)
+   |K| = 26 {2: 65, 5: 26}
+k=26 R#1 (orbit 72) + origin: result True in 0.7s (vars 5968, clauses 30978)
+   |K| = 26 {5: 26, 2: 65}
+k=35 R#0 (orbit 180) + origin: result True in 0.9s (vars 6238, clauses 32058)
+   |K| = 35 {5: 56, 2: 35}
+k=35 R#1 (orbit 72) + origin: result True in 0.3s (vars 6238, clauses 32058)
+   |K| = 35 {5: 56, 2: 35}

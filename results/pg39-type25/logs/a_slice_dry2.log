@@ -1,0 +1,9 @@
+lease-run: request pg39-4854
+GRANTED 2.0 GB
+lease-run: hard commit cap 8.0 GB for the whole job tree
+jobcap: pid 21360 capped at 8 GB commit (whole process tree)
+12:48:48 start: 1 jobs to do (0 already done), workers 1, scratch cap 17.0 GB, wall limit 25 s per cube
+12:49:06 RECORD {"tag": "control_hermitian", "kind": "control", "wall_start": "2026-11-08 12:48:48", "solver_seconds": 17.2, "conflicts": 10178, "solver_cpu_seconds": 16.75, "max_rss_mb": 573.2, "status": "CONTROL_SAT_OK", "size": 280, "lines_ok": true, "equals_hermitian": false, "overlap_with_H": 118}
+12:49:06 RECORD {"tag": "a_slice_summary", "status": "BATCH_DONE", "peak_scratch_gb": 0.05, "stopped_on_sat": false, "time": "2026-11-08 12:49:06"}
+jobcap: exit 0, peak job commit 0.01 GB of 8 GB cap
+lease-run: released pg39-4854

@@ -1,0 +1,3 @@
+group expansion: R' in orbit #1, |W|=20, |Q|=12960, sections 9882 (9s)
+independent SAT enumeration: 9882 sections ; sets equal: True
+{"cls": "5c_mixed", "k": 260, "tag": "5c_cover_k260", "status": "UNSATISFIABLE", "solver_seconds": 191.9, "vars": 81634, "clauses": 1225655, "cnf_sha256": "a57869355a78e27b2b98947bf3a7754a34eea4c95b27c2a17a0eeea17b1325f1", "cubes": 9882, "backend": "wsl", "conflicts": 40943, "lrat_bytes": 598004973, "lrat_sha256": "f13ebdd2fe9470bbc961f4f24736353d89d38dda211e22f02511fbb47f7717d1", "cake_lpr": "s VERIFIED UNSAT", "cake_seconds": 103.9, "cake_rc": 0}
