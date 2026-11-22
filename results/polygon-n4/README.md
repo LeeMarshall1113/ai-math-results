@@ -1,6 +1,6 @@
 # Agaev-Chebotarev polygon conjecture, n = 4: Lambda_4 = S_4
 
-**Status: complete, computer-assisted, exact arithmetic. Passed one hostile AI referee ("SURVIVES"). No human peer review. No formal (Lean) check.**
+**Status: complete, computer-assisted, exact arithmetic. Passed one hostile AI referee ("SURVIVES"). Reviewed by a domain expert (correspondence; not formal journal peer review). No formal (Lean) check.**
 
 ## Statement and sources
 
