@@ -30,6 +30,9 @@ $v$ is a dilate of a permutation of one of
 * **New proofs of LRC(6) and LRC(7).** B1 and LRC(5) give LRC(6). B2 and LRC(6) give
   LRC(7). In each case: if some $v$ had ML below the bound, the theorem would make it a
   dilate of a tuple whose ML equals the bound exactly.
+  * The chain is LRC(5) → B1 → LRC(6) → B2 → LRC(7). Its only external lonely-runner
+    input is LRC(5) (Bohman–Holzman–Kleitman 2001). It does not use Barajas–Serra or
+    Rosenfeld.
 * **Kravitz's Conjecture 8.3 for 7 and 8 speeds.** This is the "one very fast runner"
   form of his loneliness spectrum conjecture (N. Kravitz, *Barely lonely runners and very
   lonely runners*, Comb. Theory 1 (2021) #17, arXiv:1912.06034).
@@ -177,9 +180,12 @@ in `code/`.
 **Dependencies.**
 * **B1** uses LRC(5) (Bohman–Holzman–Kleitman 2001; also Renault 2004), in Lemma T and in
   Lemma G.
-* **B2** uses LRC(6), in Lemma T and in Lemma G. Either published proof works:
-  * Barajas–Serra 2008 with H. Chen's repair (Zenodo 22852990);
-  * Corollary 1 here (B1 + LRC(5)). B2 then also depends on the B1 computation.
+* **B2** uses LRC(6), in Lemma T and in Lemma G. Barajas–Serra is not required: either
+  source of LRC(6) works.
+  * Corollary 1 here (B1 + LRC(5)). B2 then also depends on the B1 computation. This is
+    the route that makes the proofs of LRC(6) and LRC(7) new.
+  * Barajas–Serra 2008 with H. Chen's repair (Zenodo 22852990). With this route B2 is
+    independent of the B1 computation, but the resulting LRC(7) proof rests on theirs.
 * **MSS** (arXiv:2411.06903). Lemma T reruns their §3 argument with a different scale.
   The full proof is in `PROOF.md` §3. It has not been refereed by a journal.
 * **The Kravitz corollary** uses his Theorem 10.3 and Prop. 10.4. The numbering follows
