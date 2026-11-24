@@ -2,31 +2,87 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748157.svg)](https://doi.org/10.5281/zenodo.23748157)
 
-Computer-assisted mathematical results by Lee Marshall, produced with AI assistance and checked by independent verifiers. Every result comes with its certificates and a checker you can run yourself.
+**Thirteen computer-assisted mathematical results, each shipped with its certificates and a checker you can run yourself.**
 
-Each folder under `results/` has its own README with:
+By Lee Marshall, produced with AI assistance (Claude, Anthropic). The rule of this repository: you should not have to trust us. Every folder states exactly what is proved, what earlier work exists, and what the check does and does not cover.
+
+**Status at a glance:** 2 results reviewed by a domain expert · 2 with Lean 4 components · 6 with proofs checked by the formally verified checker `cake_lpr` · none peer reviewed by a journal yet.
+
+## Start here: check one in a minute
+
+```
+git clone https://github.com/LeeMarshall1113/ai-math-results
+cd ai-math-results/results/ulam-explicit-radius && python certify.py          # about 1 s
+cd ../thickness-k14/code && bash check_all.sh                                  # about 1 min
+cd ../../polygon-n4/proof/indep3 && python -I check3.py                        # about 5 min, standard library only
+```
+
+## Headline results
+
+### Hadwiger covering in ℝ³: 13 copies suffice
+Every convex body in ℝ³ is covered by 13 smaller homothetic copies, so H₃ ≤ 13. The previous published bound was 14 (Prymak, 2023). Also corrects two points in the H₃ ≤ 14 argument.
+
+- **Evidence:** exact LP certificate (7.56 million leaves) checked by two separately written exact checkers; the reduction is formalised in Lean 4 with the certificate as an axiom.
+- **Check:** `cd results/hadwiger-h3/code && bash check_sample.sh` (about 4 min; the full check is about 45 CPU-hours with the Zenodo data).
+- **Links:** [folder](results/hadwiger-h3) · [standalone repository](https://github.com/LeeMarshall1113/hadwiger-h3) · [DOI 10.5281/zenodo.24451161](https://doi.org/10.5281/zenodo.24451161)
+
+### Regular heptagons: the double lattice is the densest packing
+Every packing of congruent regular heptagons in the plane has density at most the Kuperberg double-lattice density (2/97)(−111 + 492u − 356u²), u = cos(π/7), about 0.8927. This was the conjectured optimum; local optimality is due to Kallus–Kusner, and the method follows Hales–Kusner for the pentagon.
+
+- **Evidence:** rigorous interval branch-and-bound (about 125.6 million boxes, none stuck) plus a certified tube of 1,530 charts; two hostile AI audits. Not formally verified. The certificates are rerunnable logs, not a stored per-box proof; the folder's caveats say exactly which slices were rerun from scratch.
+- **Check:** `cd results/heptagon-packing`, then see the README (one slice takes minutes to hours).
+- **Links:** [folder](results/heptagon-packing) · [standalone repository](https://github.com/LeeMarshall1113/heptagon-packing) · [DOI 10.5281/zenodo.24451167](https://doi.org/10.5281/zenodo.24451167)
+
+### No two-intersection set of type (2,5) in PG(3,9)
+No set of points of PG(3,9) meets every line in exactly 2 or exactly 5 points (so no set of type (2,5) or (5,8) with respect to lines). Stated as the first open case by Gavrilyuk–Matkin (2018) and Ihringer (2025).
+
+- **Evidence:** SAT with cube splitting; every refutation has an LRAT proof checked by `cake_lpr`; full local regeneration; adversarial review by a second AI system. Not compared with Penttila–Royle's planar classification.
+- **Check:** `cd results/pg39-type25`, then the replay scripts in the README (about 11 min, one thread).
+- **Links:** [folder](results/pg39-type25) · [standalone repository](https://github.com/LeeMarshall1113/pg39-type25) · [DOI 10.5281/zenodo.24451165](https://doi.org/10.5281/zenodo.24451165)
+
+### The Agaev–Chebotarev polygon conjecture, n = 4
+Λ₄ = S₄. Together with n ≤ 3 (2005) and Chebotarev's disproof for n ≥ 5 (2026), this settles the conjecture. An earlier computer-assisted proof by D. Z. Liu is credited in the folder.
+
+- **Evidence:** reviewed by a domain expert. Exact certificates for 836 face inequalities; two independent full replays (one using only the Python standard library) plus a partial third check.
+- **Check:** `cd results/polygon-n4/proof && bash fullcheck.sh`, or `cd indep3 && python -I check3.py` (about 5 min).
+- **Links:** [folder](results/polygon-n4) · [DOI 10.5281/zenodo.23748158](https://doi.org/10.5281/zenodo.23748158)
+
+### Collatz: no cycle with 111 or fewer local minima
+No nontrivial positive Collatz cycle has 111 or fewer local minima. An extension to 133 is computed (two independent codes per table value, two chain implementations per m) but not formally verified.
+
+- **Evidence:** reviewed by a domain expert. Lean 4, kernel-checked, conditional on one published input (Barina's verification to 2^71), stated in the folder.
+- **Check:** `lake build Collatz && lake env lean scripts/Statement.lean` in [collatz-m-cycles](https://github.com/LeeMarshall1113/collatz-m-cycles) (about 9–10 h).
+- **Links:** [folder](results/collatz-m-cycles) · [DOI 10.5281/zenodo.23748153](https://doi.org/10.5281/zenodo.23748153)
+
+## More results
+
+| Result | Evidence | Check | Folder |
+|---|---|---|---|
+| **Karp's evasiveness conjecture, n = 10 (partial).** A non-evasive monotone graph property on ten vertices must be of Angel–Borja type 5; eight of the nine types are excluded, four of them new. Type 5 is open, so n = 10 is not settled | Exact finite checks on explicit permutation groups, conditional on cited theorems of Smith and Oliver; replayed by the authors only | about 2 min, standard library | [karp10-partial](results/karp10-partial) |
+| **No torus with 10 convex quadrilateral faces.** The F = 10 case of Grünbaum–Szilassi Conjecture 3.2; with Seamons's 11-face torus (2026) it settles which face counts occur | LRAT proofs checked by `cake_lpr`; two independently written encoders agree | about 2 min | [torus-quad10](results/torus-quad10) |
+| **Geometric thickness of K₁₄ is 4.** With the Dillencourt–Eppstein–Hirschberg upper bound (2000), this completes θ̄(Kₙ) for n ≤ 16 | LRAT proofs checked by `cake_lpr`; two encoders with separate case trees agree | about 1 min (full: 3.5 h) | [thickness-k14](results/thickness-k14) |
+| **Lonely runner, tight instances for 6 and 7 speeds.** Classifies every speed set attaining the bound; answers Perarnau–Serra's Problem 1 for 7 and 8 runners and gives Kravitz's Conjecture 8.3 for 7 and 8 speeds | Strict Malikiosis–Santos–Schymura bound (proved in full) plus prime gates; two independent implementations agree exactly | about 2 h | [lonely-runner-tight-6-7](results/lonely-runner-tight-6-7) |
+| **Erdős problem #580 (vertex form)** for n ≤ 21; n = 20 and 21 are new | LRAT proofs checked by `cake_lpr`, plus cited theorems | quick mode; full run about 6 CPU-hours | [erdos-580](results/erdos-580) |
+| **Ulam's packing conjecture near the ball.** Holds for origin-symmetric convex bodies within Banach–Mazur distance 1 + 6·10⁻⁸ of the ball | Interval arithmetic | about 1 s | [ulam-explicit-radius](results/ulam-explicit-radius) |
+| **Lonely runner, 8, 9 and 10 runners.** Formally checked certificates for cases already proved in the literature (not new theorems) | LRAT proofs checked by `cake_lpr` | see folder | [lonely-runner-8-10](results/lonely-runner-8-10) |
+| **Turán density of K₄⁻:** π(K₄⁻) < 0.28674302. Since superseded by Lidický–Volec (0.2865, arXiv 2610.33850); kept as an exact, checkable certificate | Exact rational flag-algebra certificate | about 25 min | [turan-k4minus](results/turan-k4minus) |
+
+Exact commands are in each folder's README.
+
+## How a result gets here
+
+1. **Novelty search** of the literature, arXiv, Zenodo and GitHub. Earlier or overlapping claims are credited in the folder.
+2. **Certificates, not trust.** The search code produces a certificate (an LRAT proof, an exact LP solution, an interval log, a Lean proof). A separate checker verifies it; where possible a second checker is written independently.
+3. **Replay from scratch** on a clean checkout.
+4. **Hostile review** by a second AI system instructed to break the argument. Reports are included where they exist.
+5. **Plain statement of limits.** Each README says what is conditional, what was not checked by machine, and what a reader must still take on trust.
+
+## What each folder contains
+
 - the precise statement and its sources;
 - prior work, including any earlier or overlapping claims;
 - the method;
 - how to check it, and what the check does and does not cover.
-
-## Results
-
-| Result | Verification | How to check | Folder |
-|---|---|---|---|
-| **Karp's evasiveness conjecture, n = 10 (partial):** a non-evasive monotone graph property on ten vertices must be of Angel–Borja type 5; the other eight of the nine types are excluded (four of them new). Also: it contains every disconnected graph and nine explicit graphs, and is never self-dual. Type 5 is open, so the n = 10 case is not settled | Computer-assisted, AI-generated, not peer reviewed. Exact finite checks on explicit permutation groups, conditional on the cited fixed-point theorems of Smith and Oliver; replay by the authors only, no independent replay yet; an AI referee read the proofs but did not run it | `cd results/karp10-partial && python replay/replay_all.py` (about 2 min, standard library only; expect `ALL VALID (23 rows)`) | [results/karp10-partial](results/karp10-partial) |
-| **Two-intersection sets in PG(3,9):** no set of points of PG(3,9) meets every line in exactly 2 or exactly 5 points (no set of type (2,5) or (5,8) with respect to lines). Stated as the first open case by Gavrilyuk-Matkin (2018) and Ihringer (2025) | Computer-assisted, AI-generated, not peer reviewed. SAT with cube splitting; every refutation has an LRAT proof checked by the verified checker cake_lpr; full local regeneration; adversarial review by a second AI system; not compared with Penttila-Royle's planar classification | `cd results/pg39-type25`, then the replay scripts in the README (about 11 min, one thread; certificates at https://doi.org/10.5281/zenodo.24259948) | [results/pg39-type25](results/pg39-type25) |
-| **Heptagon packing density:** every packing of congruent regular heptagons in the plane has density at most the Kuperberg double-lattice density (2/97)(-111 + 492u - 356u²), u = cos(π/7) ≈ 0.8927. Conjectured optimal; local optimality by Kallus–Kusner; method follows Hales–Kusner (pentagon) | Computer-assisted, AI-generated, not peer reviewed, not formally verified. Rigorous interval branch-and-bound (about 125.6M boxes, 0 stuck) plus a certified tube of 1,530 charts; two hostile AI audits; six checkpoint-resumed slices still being replayed. Certificates are rerunnable logs, not a stored per-box proof | `cd results/heptagon-packing`, then see the README (one slice takes minutes to hours) | [results/heptagon-packing](results/heptagon-packing) |
-| **Hadwiger covering in ℝ³:** every convex body in ℝ³ is covered by 13 smaller homothetic copies, so H₃ ≤ 13 (previously 14, Prymak 2023). Also corrects two points in the H₃ ≤ 14 argument | Exact LP certificate (7.56M leaves) checked by two separately written exact checkers; reduction formalised in Lean 4 with the certificate as an axiom | `cd results/hadwiger-h3/code && bash check_sample.sh` (about 4 min; full check about 45 CPU-hours with the Zenodo data) | [results/hadwiger-h3](results/hadwiger-h3) |
-| **Collatz cycles:** no nontrivial positive cycle has 111 or fewer local minima. A further extension to 133 is computed (two independent codes per table value, two chain implementations per m) but not formally verified | Reviewed by a domain expert. Lean 4, kernel-checked, conditional on one published input (Barina's verification to 2^71), stated in the README | `lake build Collatz && lake env lean scripts/Statement.lean` in [collatz-m-cycles](https://github.com/LeeMarshall1113/collatz-m-cycles) (about 9–10 h) | [results/collatz-m-cycles](results/collatz-m-cycles) |
-| **Agaev–Chebotarev polygon conjecture, n = 4:** Λ₄ = S₄. Together with n ≤ 3 (2005) and Chebotarev's disproof for n ≥ 5 (2026), this settles the conjecture. An earlier computer-assisted proof by D. Z. Liu is credited in the folder | Reviewed by a domain expert. Exact certificates for 836 face inequalities; two independent full replays (one using only the Python standard library) plus a partial third check | `cd results/polygon-n4/proof && bash fullcheck.sh` (about 10 min), or `cd indep3 && python -I check3.py` (about 5 min) | [results/polygon-n4](results/polygon-n4) |
-| **Lonely runner, tight instances for 6 and 7 speeds:** every 6-speed set with maximal loneliness ≤ 1/7 is a dilate of (1,…,6); every 7-speed set with ≤ 1/8 is a dilate of (1..7), (1,2,3,4,5,7,12) or (1,4,5,6,7,11,13). Answers Perarnau–Serra's Problem 1 for 7 and 8 runners and gives Kravitz's Conjecture 8.3 for 7 and 8 speeds | Strict Malikiosis–Santos–Schymura bound (proved in full) plus prime gates; two independent implementations agree exactly | `cd results/lonely-runner-tight-6-7/code && bash run_all.sh` (about 2 h, one thread) | [results/lonely-runner-tight-6-7](results/lonely-runner-tight-6-7) |
-| **No torus with 10 convex quadrilateral faces:** no acoptic polyhedral torus in R³ has exactly 10 strictly convex quadrilateral faces. This is the F = 10 case of Grünbaum–Szilassi Conjecture 3.2; with Seamons's 11-face torus (2026) it settles which face counts occur | LRAT certificates checked by cake_lpr (a formally verified checker); two independently written encoders agree | `cd results/torus-quad10/code && LRAT_CHECK=cake_lpr bash check_all.sh` (about 2 min) | [results/torus-quad10](results/torus-quad10) |
-| **Geometric thickness of K14 is 4:** no straight-line drawing of K14 splits into 3 crossing-free layers. With the Dillencourt–Eppstein–Hirschberg upper bound (2000) this gives θ̄(K14) = 4, which completes the values of θ̄(K_n) for n ≤ 16 | SAT with LRAT proofs checked by cake_lpr (a formally verified checker); two independently written encoders with separate case trees agree | `cd results/thickness-k14/code && bash check_all.sh` (about 1 min; full re-certification `FULL=1 LRAT_CHECK=cake_lpr`, about 3.5 h on one thread) | [results/thickness-k14](results/thickness-k14) |
-| **Erdős problem #580 (vertex form)** holds for n ≤ 21; n = 20 and 21 are new | SAT with LRAT proofs checked by cake_lpr (a formally verified checker), plus cited theorems | `cd results/erdos-580 && python verify.py --quick` (full run about 6 CPU-hours) | [results/erdos-580](results/erdos-580) |
-| **Lonely runner conjecture, 8, 9 and 10 runners:** formally verified certificates for cases already proved in the literature | LRAT certificates checked by cake_lpr | `python proofs/common/verify.py proofs/k7` in the folder | [results/lonely-runner-8-10](results/lonely-runner-8-10) |
-| **Ulam's packing conjecture** holds for origin-symmetric convex bodies within Banach–Mazur distance 1 + 6·10⁻⁸ of the ball | Interval arithmetic | `cd results/ulam-explicit-radius && python certify.py` (about 1 s) | [results/ulam-explicit-radius](results/ulam-explicit-radius) |
-| **Turán density of K₄⁻:** π(K₄⁻) < 0.28674302. Since superseded by Lidický–Volec (0.2865, arXiv 2610.33850); kept as an exact, checkable certificate | Exact rational flag-algebra certificate | `cd results/turan-k4minus && python check_bound.py 0.2867433 certs/cert_plain.json.gz certs/cert_C.json.gz` (about 25 min) | [results/turan-k4minus](results/turan-k4minus) |
 
 ## Citing
 
