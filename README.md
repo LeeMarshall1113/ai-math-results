@@ -6,6 +6,8 @@
 
 By Lee Marshall, produced with AI assistance (Claude, Anthropic). The rule of this repository: you should not have to trust us. Every folder states exactly what is proved, what earlier work exists, and what the check does and does not cover.
 
+**Not a mathematician?** Try the [interactive page](https://leemarshall1113.github.io/ai-math-results/) (four of the problems as things you can play with), or read [In plain words](PLAIN-LANGUAGE.md): what each result says, why it mattered, and why a computer-checked proof can be trusted.
+
 **Status at a glance:** 2 results reviewed by a domain expert · 2 with Lean 4 components · 6 with proofs checked by the formally verified checker `cake_lpr` · none peer reviewed by a journal yet.
 
 ## Start here: check one in a minute

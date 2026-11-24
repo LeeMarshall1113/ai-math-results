@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four problems you can play with</title>
+<meta name="description" content="Hands-on versions of four mathematical problems, each with a computer-checked result: covering shapes, packing heptagons, Collatz loops and the lonely runner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column set like a journal page; each problem is a figure on squared paper, then the result stated as a theorem. */
+:root{
+  --paper:#fcfcfd; --ink:#101a2b; --mute:#566176; --rule:#d5dbe5; --grid:#e6ebf2; --field:#f3f5f9;
+  --blue:#1d4ed8; --ochre:#b7791f; --red:#c2362b; --ok:#0f7a55;
+  --c1:#1d4ed8; --c2:#b7791f; --c3:#7c3aed; --c4:#0f7a55; --c5:#be185d;
+  --text:"STIX Two Text",Georgia,"Times New Roman",serif;
+  --ui:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#0e1522; --ink:#e4e9f1; --mute:#98a4b8; --rule:#2a3447; --grid:#1a2333; --field:#151e2e;
+  --blue:#7ea6ff; --ochre:#e0b060; --red:#ff7a6b; --ok:#4fd1a1;
+  --c1:#7ea6ff; --c2:#e0b060; --c3:#b79bff; --c4:#4fd1a1; --c5:#f58ab8; color-scheme:dark;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.125rem/1.6 var(--text)}
+main{max-width:47rem;margin:0 auto;padding-block:3rem 4rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header p,section>p,.thm,footer p{max-width:39rem}
+h1{font-size:2.5rem;line-height:1.1;font-weight:600;margin:.4rem 0 1rem;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:1.7rem;line-height:1.2;font-weight:600;margin:.2rem 0 .7rem;text-wrap:balance}
+p{margin:0 0 .8rem}
+a{color:var(--blue);text-underline-offset:.15em}
+.eyebrow{font:500 .78rem/1.2 var(--ui);letter-spacing:.09em;text-transform:uppercase;color:var(--mute);margin:0}
+.lede{color:var(--mute)}
+section{border-top:1px solid var(--rule);margin-top:3.2rem;padding-top:2rem}
+figure{margin:1.2rem 0 .6rem}
+canvas{display:block;width:100%;height:auto;background:var(--field);border:1px solid var(--rule);touch-action:none}
+.controls{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;align-items:center;font:.9rem/1.2 var(--ui);margin:.2rem 0 .8rem}
+.controls label{display:flex;gap:.45rem;align-items:center;color:var(--mute)}
+button,select,input[type=number]{font:500 .9rem/1 var(--ui);color:var(--ink);background:var(--paper);border:1px solid var(--mute);padding:.5rem .75rem;border-radius:3px}
+button{cursor:pointer;border-color:var(--blue);color:var(--blue)}
+button:hover{background:var(--blue);color:var(--paper)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+input[type=range]{accent-color:var(--blue);min-width:0;max-width:100%}
+.readout{font:.92rem/1.5 var(--mono);margin:.5rem 0 1rem;min-height:1.5em;white-space:pre-wrap}
+.ok{color:var(--ok)}.no{color:var(--red)}
+.note{font-size:1rem;color:var(--mute)}
+.thm{margin:1.4rem 0 0}
+.thm b{font-variant:small-caps;letter-spacing:.03em;font-weight:600}
+.thm i{font-style:italic}
+.ladder{display:block;width:100%;max-width:39rem;height:auto;margin:1rem 0 .2rem;overflow:visible}
+.ladder text{font:500 12px var(--ui);fill:var(--mute)}
+.ladder .v{font:500 15px var(--mono);fill:var(--ink)}
+.ladder .now{fill:var(--blue)}
+.ladder line,.ladder path{stroke:var(--rule);stroke-width:1.5;fill:none}
+.ladder circle{fill:var(--paper);stroke:var(--mute);stroke-width:1.5}
+.ladder circle.now{fill:var(--blue);stroke:var(--blue)}
+.ladder circle.goal{stroke-dasharray:2 2}
+footer{border-top:1px solid var(--rule);margin-top:3.2rem;padding-top:1.4rem;color:var(--mute);font-size:.98rem}
+@media (max-width:520px){h1{font-size:2rem}h2{font-size:1.4rem}body{font-size:1.05rem}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<p class="eyebrow">ai-math-results</p>
+<h1>Four problems you can play with</h1>
+<p class="lede">Each one below is an open problem in mathematics, small enough to try by hand. After you have tried it, the page says what has now been proved. Every proof comes with files and programs that let anyone check it: see the <a href="https://github.com/LeeMarshall1113/ai-math-results">repository</a> or the <a href="https://github.com/LeeMarshall1113/ai-math-results/blob/main/PLAIN-LANGUAGE.md">plain-language guide</a>.</p>
+</header>
+
+<section id="cover">
+<p class="eyebrow">Hadwiger's covering problem · posed 1957</p>
+<h2>Cover a shape with smaller copies of itself</h2>
+<p>Drag the coloured copies onto the shape until no red is left. Each copy is the same shape, shrunk. You may slide it but not turn it. Try the square with 3 copies, then with 4.</p>
+<div class="controls">
+<label for="cvShape">Shape <select id="cvShape"><option value="square">square</option><option value="triangle">triangle</option><option value="disc">disc</option></select></label>
+<label for="cvN">Copies <select id="cvN"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></label>
+<label for="cvL">Copy size <input id="cvL" type="range" min="50" max="95" value="80"></label>
+<button id="cvSolve" type="button">Show a cover</button>
+</div>
+<figure><canvas id="cv" width="820" height="440" aria-label="Draggable copies over a shape"></canvas></figure>
+<p class="readout" id="cvRead"></p>
+<p class="note">A copy that is even slightly smaller can reach only one corner of the square at a time, and there are four corners. In the plane that is the whole story: every convex shape needs at most 4 copies, and only parallelograms need all 4.</p>
+<p>The open problem is the same question for solid shapes. A cube needs 8 copies, one per corner, and the conjecture says 8 are always enough. Nobody can prove 8. The number that can be proved has come down slowly.</p>
+<svg class="ladder" viewBox="0 0 600 78" role="img" aria-label="Proved number of copies: 20 in 1998, 16 in 1999, 14 in 2023, 13 here; conjectured 8">
+<line x1="20" y1="34" x2="580" y2="34"/>
+<circle cx="560" cy="34" r="5"/><text class="v" x="560" y="20" text-anchor="middle">20</text><text x="560" y="56" text-anchor="middle">1998</text>
+<circle cx="380" cy="34" r="5"/><text class="v" x="380" y="20" text-anchor="middle">16</text><text x="380" y="56" text-anchor="middle">1999</text>
+<circle cx="290" cy="34" r="5"/><text class="v" x="290" y="20" text-anchor="middle">14</text><text x="290" y="56" text-anchor="middle">2023</text>
+<circle class="now" cx="245" cy="34" r="6"/><text class="v now" x="245" y="20" text-anchor="middle">13</text><text class="now" x="245" y="72" text-anchor="middle">this result</text>
+<circle class="goal" cx="20" cy="34" r="5"/><text class="v" x="20" y="20" text-anchor="middle">8</text><text x="20" y="56" text-anchor="start">conjectured</text>
+</svg>
+<p class="thm"><b>Result.</b> <i>Every convex body in three-dimensional space can be covered by 13 smaller copies of itself.</i> The proof is about 7.5 million exact calculations, each stored and checked by two independent programs. <a href="https://github.com/LeeMarshall1113/ai-math-results/tree/main/results/hadwiger-h3">Proof and checkers</a></p>
+</section>
+
+<section id="hept">
+<p class="eyebrow">Heptagon packing · pattern found 1990</p>
+<h2>Pack seven-sided tiles as tightly as you can</h2>
+<p>Regular heptagons cannot tile a floor without gaps. Squeeze this pattern together and watch how much of the floor it covers. It locks when the tiles touch.</p>
+<div class="controls">
+<label for="hpS">Squeeze <input id="hpS" type="range" min="0" max="100" value="35"></label>
+<label for="hpC"><input id="hpC" type="checkbox" checked> colour the two orientations</label>
+</div>
+<figure><canvas id="hp" width="820" height="440" aria-label="Double-lattice packing of heptagons"></canvas></figure>
+<p class="readout" id="hpRead"></p>
+<p class="note">The pattern uses the tile two ways up. Fully squeezed it covers 89.27% of the plane. It was long conjectured that nothing does better; the same question for five-sided tiles was settled in 2016.</p>
+<p class="thm"><b>Result.</b> <i>No arrangement of congruent regular heptagons covers more of the plane than this pattern.</i> The proof is computer-assisted, about 125 million cases. It has not yet been formally verified or read by a specialist, and the repository says so. <a href="https://github.com/LeeMarshall1113/ai-math-results/tree/main/results/heptagon-packing">Proof and caveats</a></p>
+</section>
+
+<section id="collatz">
+<p class="eyebrow">The Collatz problem · open since 1937</p>
+<h2>Halve it if even, triple it and add one if odd</h2>
+<p>Pick a starting number and follow the rule. Every number anyone has tried ends at 1. Nobody can prove that it always does.</p>
+<div class="controls">
+<label for="czN">Start <input id="czN" type="number" min="2" max="999999999999" value="27" style="width:10rem"></label>
+<button id="czGo" type="button">Run</button><button id="czRnd" type="button">Random</button>
+</div>
+<figure><canvas id="cz" width="820" height="340" aria-label="Collatz trajectory"></canvas></figure>
+<p class="readout" id="czRead"></p>
+<p class="note">The line shows the size of the number at each step, on a compressed scale so that large values fit. Each dot is a low point, where the number stops falling and starts to climb again.</p>
+<p>One way the conjecture could fail is a loop: a number that eventually comes back to itself. If a loop exists, how many low points must it have?</p>
+<svg class="ladder" viewBox="0 0 600 78" role="img" aria-label="A loop needs more than 68 low points (2005), 91 (2023), 111 (this result)">
+<line x1="20" y1="34" x2="580" y2="34"/>
+<circle cx="120" cy="34" r="5"/><text class="v" x="120" y="20" text-anchor="middle">68</text><text x="120" y="56" text-anchor="middle">2005</text>
+<circle cx="350" cy="34" r="5"/><text class="v" x="350" y="20" text-anchor="middle">91</text><text x="350" y="56" text-anchor="middle">2023</text>
+<circle class="now" cx="550" cy="34" r="6"/><text class="v now" x="550" y="20" text-anchor="middle">111</text><text class="now" x="550" y="56" text-anchor="middle">this result</text>
+</svg>
+<p class="thm"><b>Result.</b> <i>A Collatz loop other than 1, 4, 2 has at least 112 low points.</i> This does not solve the problem. It shows how complicated a counterexample of this kind would have to be. The proof is checked line by line by the proof assistant Lean. <a href="https://github.com/LeeMarshall1113/ai-math-results/tree/main/results/collatz-m-cycles">Proof</a></p>
+</section>
+
+<section id="runner">
+<p class="eyebrow">The lonely runner conjecture · 1967</p>
+<h2>Is every runner alone at some moment?</h2>
+<p>Runners circle a track, each at a steady speed of their own. The conjecture says each runner is at some moment lonely: at least one lap divided by the number of runners away from everyone else. Watch the runner standing at the top. Only differences in speed matter, so that runner can stand still.</p>
+<div class="controls">
+<label for="lrP">Speeds <select id="lrP">
+<option value="0,1,2,3,4,5,6">0 1 2 3 4 5 6 (hardest case, 7 runners)</option>
+<option value="0,1,2,3,4,5,7,12">0 1 2 3 4 5 7 12 (hardest case, 8 runners)</option>
+<option value="0,1,3,4,7">0 1 3 4 7 (hardest case, 5 runners)</option>
+<option value="0,2,5,9,14">0 2 5 9 14 (easy)</option>
+</select></label>
+<label for="lrV">Pace <input id="lrV" type="range" min="1" max="40" value="10"></label>
+<button id="lrPlay" type="button">Pause</button><button id="lrR" type="button">Restart</button>
+</div>
+<figure><canvas id="lr" width="820" height="400" aria-label="Runners on a circular track"></canvas></figure>
+<p class="readout" id="lrRead"></p>
+<p class="note">In a hardest case the runner becomes lonely only just: the gap reaches the required distance exactly and never goes beyond it.</p>
+<p class="thm"><b>Result.</b> <i>The hardest cases with 6 moving runners and with 7 moving runners are now completely listed:</i> one for 6 (speeds 1 to 6) and three for 7, among them the 8-runner example above. This answers a question posed by Perarnau and Serra. <a href="https://github.com/LeeMarshall1113/ai-math-results/tree/main/results/lonely-runner-tight-6-7">Proof</a></p>
+</section>
+
+<footer>
+<p>These figures illustrate the problems. They are not the proofs. The results were produced with AI assistance (Claude, Anthropic), directed by Lee Marshall. None has been through journal peer review yet, and the repository states the limits of each.</p>
+</footer>
+</main>
+<script>
+"use strict";
+const tok=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const $=id=>document.getElementById(id);
+const redraws=[];
+function grid(g,W,H,step){g.strokeStyle=tok('--grid');g.lineWidth=1;g.beginPath();
+  for(let x=step;x<W;x+=step){g.moveTo(x+.5,0);g.lineTo(x+.5,H);}
+  for(let y=step;y<H;y+=step){g.moveTo(0,y+.5);g.lineTo(W,y+.5);}g.stroke();}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>redraws.forEach(f=>f()));
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>redraws.forEach(f=>f()));
+
+/* covering */
+(function(){
+const c=$('cv'),g=c.getContext('2d');const S=100,CX=410,CY=220;
+let shape='square',n=3,lam=.8,cop=[],drag=-1,off=[0,0];
+const TRI=[[0,-1.15],[0.996,0.575],[-0.996,0.575]];
+function inside(x,y){
+  if(shape==='square')return Math.abs(x)<=1&&Math.abs(y)<=1;
+  if(shape==='disc')return x*x+y*y<=1;
+  for(let i=0;i<3;i++){const a=TRI[i],b=TRI[(i+1)%3];if((b[0]-a[0])*(y-a[1])-(b[1]-a[1])*(x-a[0])<-1e-9)return false;}
+  return true;}
+function path(cx,cy,s){g.beginPath();
+  if(shape==='square')g.rect(CX+(cx-s)*S,CY+(cy-s)*S,2*s*S,2*s*S);
+  else if(shape==='disc')g.arc(CX+cx*S,CY+cy*S,s*S,0,7);
+  else{TRI.forEach((p,i)=>{const X=CX+(cx+p[0]*s)*S,Y=CY+(cy+p[1]*s)*S;i?g.lineTo(X,Y):g.moveTo(X,Y)});g.closePath();}}
+function reset(){cop=[];for(let i=0;i<n;i++){const a=2*Math.PI*i/n-Math.PI/2;cop.push([2.7*Math.cos(a),1.2*Math.sin(a)]);}draw();}
+function solve(){
+  if(shape==='square'){n=Math.max(n,4);lam=Math.max(lam,.55);cop=[[-1,-1],[1,-1],[1,1],[-1,1]].map(p=>[p[0]*(1-lam),p[1]*(1-lam)]);}
+  else if(shape==='triangle'){n=Math.max(n,3);lam=Math.max(lam,.7);cop=TRI.map(p=>[p[0]*(1-lam),p[1]*(1-lam)]);}
+  else{n=Math.max(n,3);lam=Math.max(lam,.9);cop=[0,1,2].map(i=>{const a=2*Math.PI*i/3-Math.PI/2;return[.5*Math.cos(a),.5*Math.sin(a)]});}
+  while(cop.length<n)cop.push([2.9,-1+cop.length*.3]);
+  $('cvN').value=n;$('cvL').value=Math.round(lam*100);draw();}
+function draw(){
+  g.clearRect(0,0,c.width,c.height);grid(g,c.width,c.height,20);
+  g.fillStyle=tok('--rule');path(0,0,1);g.fill();g.strokeStyle=tok('--ink');g.lineWidth=1.5;path(0,0,1);g.stroke();
+  cop.forEach((p,i)=>{const col=tok('--c'+(i+1));g.globalAlpha=.35;g.fillStyle=col;path(p[0],p[1],lam);g.fill();g.globalAlpha=1;g.strokeStyle=col;g.lineWidth=2;path(p[0],p[1],lam);g.stroke();});
+  let tot=0,un=0;g.fillStyle=tok('--red');const N=64;
+  for(let i=0;i<=N;i++)for(let j=0;j<=N;j++){const x=-1.2+2.4*i/N,y=-1.2+2.4*j/N;if(!inside(x,y))continue;tot++;
+    let ok=false;for(const p of cop){if(inside((x-p[0])/lam,(y-p[1])/lam)){ok=true;break;}}
+    if(!ok){un++;g.fillRect(CX+x*S-1.2,CY+y*S-1.2,2.4,2.4);}}
+  const size=Math.round(lam*100)+'% size';
+  $('cvRead').innerHTML=un===0?'<span class="ok">covered</span> with '+n+' copies at '+size
+    :'<span class="no">'+(100*(1-un/tot)).toFixed(1)+'% covered</span> with '+n+' copies at '+size;}
+function pos(e){const r=c.getBoundingClientRect();return[((e.clientX-r.left)*c.width/r.width-CX)/S,((e.clientY-r.top)*c.height/r.height-CY)/S];}
+c.addEventListener('pointerdown',e=>{const[x,y]=pos(e);for(let i=cop.length-1;i>=0;i--){if(inside((x-cop[i][0])/lam,(y-cop[i][1])/lam)){drag=i;off=[x-cop[i][0],y-cop[i][1]];c.setPointerCapture(e.pointerId);break;}}});
+c.addEventListener('pointermove',e=>{if(drag<0)return;const[x,y]=pos(e);cop[drag]=[x-off[0],y-off[1]];draw();});
+c.addEventListener('pointerup',()=>drag=-1);c.addEventListener('pointercancel',()=>drag=-1);
+$('cvShape').onchange=e=>{shape=e.target.value;reset();};
+$('cvN').onchange=e=>{n=+e.target.value;reset();};
+$('cvL').oninput=e=>{lam=e.target.value/100;draw();};
+$('cvSolve').onclick=solve;redraws.push(draw);reset();
+})();
+
+/* heptagons: Kuperberg double lattice, coordinates from the proof's own code */
+(function(){
+const c=$('hp'),g=c.getContext('2d');
+const T1=1.900968867902419,T2=3.2250406002059724,SH=[1.0329216320822666,1.6125203001029862];
+const K=[];for(let i=0;i<7;i++)K.push([Math.cos(2*Math.PI*i/7),Math.sin(2*Math.PI*i/7)]);
+function hep(cx,cy,sg,S,col,edge){g.beginPath();K.forEach((p,i)=>{const X=410+(cx+sg*p[0])*S,Y=220-(cy+sg*p[1])*S;i?g.lineTo(X,Y):g.moveTo(X,Y)});g.closePath();g.fillStyle=col;g.fill();g.strokeStyle=edge;g.lineWidth=1;g.stroke();}
+function draw(){
+  const s=1+.45*(1-$('hpS').value/100),two=$('hpC').checked,S=34;
+  g.clearRect(0,0,c.width,c.height);
+  const A=tok('--blue'),B=two?tok('--ochre'):A,E=tok('--field');
+  for(let i=-9;i<=9;i++)for(let j=-5;j<=5;j++){hep(i*T1*s,j*T2*s,1,S,A,E);hep((i*T1+SH[0])*s,(j*T2+SH[1])*s,-1,S,B,E);}
+  const d=89.2690686/(s*s);
+  $('hpRead').innerHTML='floor covered: '+d.toFixed(2)+'%'+(s<1.0001?'  <span class="ok">locked, the tiles touch</span>':'');}
+$('hpS').oninput=draw;$('hpC').onchange=draw;redraws.push(draw);draw();
+})();
+
+/* Collatz */
+(function(){
+const c=$('cz'),g=c.getContext('2d');
+function run(){
+  let n=Math.floor(+$('czN').value);if(!(n>=2))n=27;if(n>999999999999)n=999999999999;$('czN').value=n;
+  let x=BigInt(n);const seq=[x];let guard=0;
+  while(x!==1n&&guard++<5000){x=(x%2n===0n)?x/2n:3n*x+1n;seq.push(x);}
+  const L=seq.map(v=>{const s=v.toString();return (s.length-1)*Math.LN10+Math.log(Number(s.slice(0,15))/Math.pow(10,Math.min(14,s.length-1)));});
+  const mins=[];for(let i=1;i<seq.length-1;i++)if(seq[i]<seq[i-1]&&seq[i]<seq[i+1])mins.push(i);
+  const mx=seq.reduce((a,b)=>a>b?a:b);
+  const W=c.width,H=c.height,pad=30,top=Math.max(...L)||1;
+  g.clearRect(0,0,W,H);grid(g,W,H,20);
+  const X=i=>pad+(W-2*pad)*i/Math.max(1,seq.length-1),Y=v=>H-pad-(H-2*pad)*v/top;
+  g.strokeStyle=tok('--blue');g.lineWidth=2;g.lineJoin='round';g.beginPath();L.forEach((v,i)=>i?g.lineTo(X(i),Y(v)):g.moveTo(X(i),Y(v)));g.stroke();
+  g.fillStyle=tok('--ochre');mins.forEach(i=>{g.beginPath();g.arc(X(i),Y(L[i]),3.4,0,7);g.fill();});
+  g.fillStyle=tok('--mute');g.font='500 13px '+tok('--ui');g.fillText('start: '+n.toLocaleString(),pad,H-9);const e='ends at 1';g.fillText(e,W-pad-g.measureText(e).width,H-9);
+  $('czRead').textContent=(seq.length-1)+' steps   peak '+mx.toLocaleString()+'   '+mins.length+' low points';}
+$('czGo').onclick=run;$('czN').onkeydown=e=>{if(e.key==='Enter')run();};
+$('czRnd').onclick=()=>{$('czN').value=2+Math.floor(Math.random()*999998);run();};redraws.push(run);run();
+})();
+
+/* lonely runner */
+(function(){
+const c=$('lr'),g=c.getContext('2d');let sp=[],t=0,best=0,last=0,hit=false;
+let playing=!matchMedia('(prefers-reduced-motion: reduce)').matches;
+function set(){sp=$('lrP').value.split(',').map(Number);t=0;best=0;hit=false;if(!playing){t=1/sp.length;draw();}}
+function draw(){
+  const k=sp.length,need=1/k,W=c.width,H=c.height,cx=230,cy=H/2,R=150;
+  g.clearRect(0,0,W,H);grid(g,W,H,20);
+  const pos=sp.map(v=>((v*t)%1+1)%1);let gap=1;
+  for(let i=1;i<k;i++){const d=Math.min(pos[i],1-pos[i]);if(d<gap)gap=d;}
+  const lonely=gap>=need-1e-4;if(gap>best)best=gap;if(lonely)hit=true;
+  g.lineWidth=10;g.strokeStyle=tok('--rule');g.beginPath();g.arc(cx,cy,R,0,7);g.stroke();
+  g.strokeStyle=lonely?tok('--ok'):tok('--red');g.beginPath();g.arc(cx,cy,R,-Math.PI/2-2*Math.PI*need,-Math.PI/2+2*Math.PI*need);g.stroke();
+  pos.forEach((p,i)=>{const a=-Math.PI/2+2*Math.PI*p;g.beginPath();g.arc(cx+R*Math.cos(a),cy+R*Math.sin(a),i?8:11,0,7);g.fillStyle=i?tok('--ink'):tok('--ochre');g.fill();g.strokeStyle=tok('--field');g.lineWidth=2;g.stroke();});
+  const bx=455,bw=320;g.font='500 13px '+tok('--ui');g.fillStyle=tok('--mute');g.fillText('gap to the nearest runner, in laps',bx,150);
+  g.fillStyle=tok('--rule');g.fillRect(bx,162,bw,14);g.fillStyle=lonely?tok('--ok'):tok('--ochre');g.fillRect(bx,162,bw*Math.min(1,gap/.5),14);
+  const nx=bx+bw*need/.5;g.strokeStyle=tok('--ink');g.lineWidth=2;g.beginPath();g.moveTo(nx,154);g.lineTo(nx,184);g.stroke();
+  g.fillStyle=tok('--ink');g.fillText('needed: 1/'+k,nx-30,202);
+  g.fillStyle=tok('--mute');g.fillText('The marked arc must be empty for the',bx,246);g.fillText('runner at the top to count as lonely.',bx,264);
+  $('lrRead').innerHTML=(lonely?'<span class="ok">lonely now</span>':'<span class="no">not lonely now</span>')+'   largest gap so far '+best.toFixed(4)+'   needed '+need.toFixed(4)+(hit?'   <span class="ok">reached</span>':'');}
+function frame(ts){const dt=Math.min(.05,(ts-last)/1000||0);last=ts;if(playing){t+=dt*$('lrV').value/400;draw();}requestAnimationFrame(frame);}
+$('lrP').onchange=set;$('lrR').onclick=set;
+$('lrPlay').onclick=()=>{playing=!playing;$('lrPlay').textContent=playing?'Pause':'Play';};
+$('lrPlay').textContent=playing?'Pause':'Play';redraws.push(draw);set();draw();requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
